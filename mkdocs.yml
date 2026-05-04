@@ -1,0 +1,98 @@
+site_name: Open Strategy Games
+site_url: https://openstrategygames.github.io/
+site_description: A reference for faction-scale, argument-driven play
+site_author: Roberto Bisceglie
+repo_url: https://github.com/openstrategygames/openstrategygames.github.io
+repo_name: openstrategygames/openstrategygames.github.io
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  palette:
+    - scheme: default
+      primary: white
+      accent: white
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: grey
+      accent: grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/openstrategygames/openstrategygames.github.io
+
+copyright: >
+  The Open Strategy Games Handbook by Roberto Bisceglie is licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+  Logo by Delapouite under
+  <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+
+nav:
+  - Home: index.md
+  - Learn:
+    - Handbook:
+      - Introduction: handbook/introduction.md
+      - "Ch. 0 — [Chapter Title]": handbook/ch00.md
+      - "Ch. 1 — [Chapter Title]": handbook/ch01.md
+      - "Ch. 2 — [Chapter Title]": handbook/ch02.md
+      - "Ch. 3 — [Chapter Title]": handbook/ch03.md
+      - "Ch. 4 — [Chapter Title]": handbook/ch04.md
+      - "Ch. 5 — [Chapter Title]": handbook/ch05.md
+      - "Ch. 6 — [Chapter Title]": handbook/ch06.md
+      - "Ch. 7 — [Chapter Title]": handbook/ch07.md
+      - "Ch. 8 — [Chapter Title]": handbook/ch08.md
+      - "Ch. 9 — [Chapter Title]": handbook/ch09.md
+      - "Ch. 10 — [Chapter Title]": handbook/ch10.md
+      - "Ch. 11 — [Chapter Title]": handbook/ch11.md
+      - "Ch. 12 — [Chapter Title]": handbook/ch12.md
+      - "Ch. 13 — [Chapter Title]": handbook/ch13.md
+      - "Ch. 14 — [Chapter Title]": handbook/ch14.md
+      - "Appendix A — [Title]": handbook/appendix-a.md
+      - "Appendix B — [Title]": handbook/appendix-b.md
+      - "Appendix C — [Title]": handbook/appendix-c.md
+      - "Appendix D — [Title]": handbook/appendix-d.md
+      - "Appendix E — [Title]": handbook/appendix-e.md
+      - "Appendix F — [Title]": handbook/appendix-f.md
+      - "Appendix G — [Title]": handbook/appendix-g.md
+  - Play:
+    - Contested Ground: contested-ground.md
+  - Log:
+    - Factionlog: factionlog.md
+  - Resources: resources.md

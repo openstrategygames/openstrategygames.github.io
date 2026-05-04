@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="osg-hero">
+  <div class="osg-hero__inner">
+    <img src="{{ base_url }}/assets/logo.svg" alt="OSG Logo" class="osg-hero__logo">
+    <h1 class="osg-hero__title">Open Strategy Games</h1>
+    <p class="osg-hero__tagline">A reference for faction-scale, argument-driven play</p>
+  </div>
+</div>
+
+<div class="osg-cards md-grid">
+
+  <a href="{{ base_url }}/handbook/introduction/" class="osg-card">
+    <span class="osg-card__icon">📖</span>
+    <h2>Learn</h2>
+    <p>Read the Open Strategy Games Handbook — the complete guide to running and designing OSG sessions.</p>
+  </a>
+
+  <a href="{{ base_url }}/contested-ground/" class="osg-card">
+    <span class="osg-card__icon">⚔️</span>
+    <h2>Play</h2>
+    <p>Contested Ground is a ready-to-use rules framework built on the OSG format.</p>
+  </a>
+
+  <a href="{{ base_url }}/factionlog/" class="osg-card">
+    <span class="osg-card__icon">📋</span>
+    <h2>Log</h2>
+    <p>Factionlog is the standard notation for recording OSG session events.</p>
+  </a>
+
+</div>
+
+<div class="osg-about md-grid">
+  <div class="osg-about__text">
+    <p>
+      Open Strategy Games are faction-scale, argument-driven games where players
+      control organisations rather than individuals, resolve conflict through
+      reasoned argument and probability, and build shared history through play.
+      This site is the central reference for the format, its rules, and its tools.
+    </p>
+    <p class="osg-credits">
+      The Open Strategy Game format was defined by Chris McDowall, originating in
+      the Matrix Game tradition established by Chris Engle and Tom Mouat.<br>
+      Logo by <a href="https://delapouite.com" target="_blank">Delapouite</a>
+      under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.
+    </p>
+  </div>
+</div>
+{% endblock %}

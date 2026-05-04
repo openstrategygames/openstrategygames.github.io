@@ -1,0 +1,2801 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A reference for faction-scale, argument-driven play">
+      
+      
+        <meta name="author" content="Roberto Bisceglie">
+      
+      
+        <link rel="canonical" href="https://openstrategygames.github.io/factionlog/">
+      
+      
+        <link rel="prev" href="../contested_ground/">
+      
+      
+        <link rel="next" href="../resources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Factionlog - Open Strategy Games</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Strategy Games" class="md-header__button md-logo" aria-label="Open Strategy Games" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Strategy Games
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Factionlog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="white"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="grey"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/openstrategygames/openstrategygames.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    openstrategygames/openstrategygames.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../osg_handbook/" class="md-tabs__link">
+          
+  
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../contested_ground/" class="md-tabs__link">
+          
+  
+  
+  Play
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Log
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../resources/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Strategy Games" class="md-nav__button md-logo" aria-label="Open Strategy Games" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    Open Strategy Games
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/openstrategygames/openstrategygames.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    openstrategygames/openstrategygames.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learn
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learn
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../osg_handbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Play
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Play
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contested_ground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contested Ground
+  
+
+    
+      <br>
+      <small>An Open Strategy Game System Reference</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Log
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factionlog
+  
+
+    
+      <br>
+      <small>A Standard Notation for Open Strategy Game Session Logging</small>
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factionlog
+  
+
+    
+      <br>
+      <small>A Standard Notation for Open Strategy Game Session Logging</small>
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-why-factionlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Why Factionlog?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-what-factionlog-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 What Factionlog Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-how-to-use-this-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 How to Use This Notation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-quick-start-your-first-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Quick Start: Your First Turn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-factionlog-and-lonelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Factionlog and Lonelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-digital-vs-analog-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Digital vs. Analog Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Digital vs. Analog Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-digital-format-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Digital Format (Markdown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-analog-format-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Analog Format (Notebooks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-format-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Format Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-core-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Core Notation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Core Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-your-factions-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Your Faction's Action (@)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Your Faction&#39;s Action (@)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-spendable-bonuses-in-the-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Spendable Bonuses in the Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-rival-and-npa-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Rival and NPA Actions (!)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Rival and NPA Actions (!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-the-distinction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 The @ / ! Distinction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-solo-play-emulating-rival-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Solo Play: Emulating Rival Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-leverage-grade-lev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Leverage Grade ([Lev:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-the-dice-mechanic-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 The Dice Mechanic (d:)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 The Dice Mechanic (d:)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-force-of-nature-doubles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Force of Nature (Doubles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-adjudication-result-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Adjudication Result (-&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-consequences-and-board-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Consequences and Board State (=&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-the-report-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 The Report Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-optional-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Optional Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Optional Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-persistent-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Persistent Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Persistent Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-faction-tags-fac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.1 Faction Tags ([Fac:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-spendable-bonuses-bon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.2 Spendable Bonuses ([Bon:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-rival-npa-tags-rival" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.3 Rival / NPA Tags ([Rival:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414-locations-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.4 Locations ([L:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#415-objectives-obj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.5 Objectives ([Obj:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#416-events-and-clocks-e-clock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.6 Events and Clocks ([E:], Clock:)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-turn-zero-t0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Turn Zero ([T0])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-random-tables-and-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Random Tables and Oracle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-meta-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Meta Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-optional-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Optional Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Optional Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-game-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Game Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-session-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Session Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-debrief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Debrief
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-complete-turn-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Complete Turn Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dice-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dice Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credits &amp; License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-why-factionlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Why Factionlog?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-what-factionlog-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 What Factionlog Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-how-to-use-this-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 How to Use This Notation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-quick-start-your-first-turn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Quick Start: Your First Turn
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-factionlog-and-lonelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Factionlog and Lonelog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-digital-vs-analog-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Digital vs. Analog Formats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Digital vs. Analog Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-digital-format-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Digital Format (Markdown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-analog-format-notebooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Analog Format (Notebooks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-format-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Format Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-core-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Core Notation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Core Notation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-your-factions-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Your Faction's Action (@)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Your Faction&#39;s Action (@)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-spendable-bonuses-in-the-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Spendable Bonuses in the Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-rival-and-npa-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Rival and NPA Actions (!)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Rival and NPA Actions (!)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-the-distinction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 The @ / ! Distinction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-solo-play-emulating-rival-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Solo Play: Emulating Rival Arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-leverage-grade-lev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Leverage Grade ([Lev:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-the-dice-mechanic-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 The Dice Mechanic (d:)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 The Dice Mechanic (d:)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-force-of-nature-doubles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 Force of Nature (Doubles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-adjudication-result-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Adjudication Result (-&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-consequences-and-board-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Consequences and Board State (=&gt;)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-the-report-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 The Report Block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-optional-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Optional Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Optional Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-persistent-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Persistent Elements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Persistent Elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-faction-tags-fac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.1 Faction Tags ([Fac:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-spendable-bonuses-bon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.2 Spendable Bonuses ([Bon:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-rival-npa-tags-rival" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.3 Rival / NPA Tags ([Rival:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#414-locations-l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.4 Locations ([L:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#415-objectives-obj" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.5 Objectives ([Obj:])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#416-events-and-clocks-e-clock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.6 Events and Clocks ([E:], Clock:)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-turn-zero-t0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Turn Zero ([T0])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-random-tables-and-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Random Tables and Oracle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-meta-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Meta Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-optional-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Optional Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Optional Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-game-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Game Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-session-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Session Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-debrief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Debrief
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-complete-turn-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Complete Turn Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Quick Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Quick Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Symbols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Argument
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dice-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dice Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tags
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credits-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credits &amp; License
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Factionlog</h1>
+
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<h3 id="11-why-factionlog">1.1 Why Factionlog?<a class="headerlink" href="#11-why-factionlog" title="Permanent link">&para;</a></h3>
+<p>If you've ever played an Open Strategy Game solo — emulating the referee,
+running rival factions, tracking the board state — you know the problem.
+You submit your action. You roll dice. Three things happen you didn't predict.
+The world looks different from the Brief. And you're trying to record all of it
+without breaking the fiction or losing the argument that made your roll matter.</p>
+<p>Free-form journaling loses the mechanics. A dice log loses the leverage.
+A pure narrative loses the board state. Factionlog offers a different approach:
+a lightweight shorthand that captures the essential elements of OSG play —
+the three-part action argument, the adjudication, the public report, the
+changing positions of every faction — while leaving room for as much or as
+little narrative as you want.</p>
+<h3 id="12-what-factionlog-does">1.2 What Factionlog Does<a class="headerlink" href="#12-what-factionlog-does" title="Permanent link">&para;</a></h3>
+<p>Whether you're playing solo with an oracle as referee, running a live game
+as scribe, or logging a multi-session campaign, this notation helps you:</p>
+<ul>
+<li>Record the full three-part action (act / out / lev) without slowing down</li>
+<li>Track faction positions, spendable bonuses, and board-state changes across turns</li>
+<li>Log rival and NPA actions with the same argument structure as your own</li>
+<li>Share your game log with other players who'll understand the format at a glance</li>
+<li>Review past turns and trace how each outcome followed from established fiction</li>
+</ul>
+<p>The notation is designed to be:</p>
+<ul>
+<li><strong>Compact</strong> — the argument is structured, not verbose</li>
+<li><strong>Traceable</strong> — every outcome points back to earlier fiction</li>
+<li><strong>Format-agnostic</strong> — works in digital markdown or paper notebooks</li>
+<li><strong>Fork-compatible</strong> — shares Lonelog's tag system and symbol logic</li>
+</ul>
+<h3 id="13-how-to-use-this-notation">1.3 How to Use This Notation<a class="headerlink" href="#13-how-to-use-this-notation" title="Permanent link">&para;</a></h3>
+<p>Think of this as a toolbox, not a rulebook. At its core are five elements
+that mirror the natural flow of OSG play:</p>
+<ul>
+<li><code>@</code> for your faction's submitted action (three-part argument)</li>
+<li><code>!</code> for rival faction or NPA actions — the world acting without you</li>
+<li><code>d:</code> for the OSG dice mechanic (2d6, keep-high or keep-low)</li>
+<li><code>-&gt;</code> for the adjudicated outcome</li>
+<li><code>=&gt;</code> for the consequence on the board state</li>
+</ul>
+<p>That's it. Everything else — faction tags, bonus tracking, report blocks,
+NPA oracles — is optional. Add it when it helps. Skip it when it doesn't.</p>
+<h3 id="14-quick-start-your-first-turn">1.4 Quick Start: Your First Turn<a class="headerlink" href="#14-quick-start-your-first-turn" title="Permanent link">&para;</a></h3>
+<p>Never used notation before? Here's everything you need:</p>
+<div class="highlight"><pre><span></span><code>@ Meranto
+  act: Send the debt review notice to Caldrath&#39;s treasury
+  out: Delay Caldrath&#39;s army movement for thirty days
+  lev: We hold all loan documentation; emergency clause has precedent
+[Lev:Strong]
+d: 2d6 → 5,3  keep high → 5
+-&gt; Partial success
+=&gt; Caldrath treasury enters review; army movement delayed one turn
+
+! Saivorn opens a diplomatic channel to Corenth
+  lev: No established presence; Corenth has reason to be cautious
+[Lev:Weak]
+d: 2d6 → 2,4  keep low → 2
+-&gt; Failure — Corenth does not respond publicly
+
+ [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/41219805/0e425845-4152-4649-a75e-c52524ef0d0f/osg_handbook.md)
+ Meranto stalls Caldrath. Saivorn&#39;s overture is rebuffed.
+    The Conclave issues no statement. Essaveth watches. 
+</code></pre></div>
+<p>That's a full turn. Everything else in this document helps you handle
+complexity when you need it.</p>
+<h3 id="15-factionlog-and-lonelog">1.5 Factionlog and Lonelog<a class="headerlink" href="#15-factionlog-and-lonelog" title="Permanent link">&para;</a></h3>
+<p>Factionlog is a fork of Lonelog, a notation system for solo RPG session
+logging. Lonelog's core philosophy — separate mechanics from fiction, stay
+compact, scale from one-shots to long campaigns — carries directly into OSG
+play. The tag system, progress tracking, and formatting philosophy are shared
+DNA. The core symbols shift to reflect OSG's specific model: faction-scale
+play, turn structure, and the three-part argument at the heart of every action.</p>
+<p>If you know Lonelog, you'll feel at home. If you don't, this document is
+fully standalone.</p>
+<p>The fundamental design change from Lonelog is this: in solo RPG play, the
+world only speaks when asked (<code>?</code>). In OSG play, rival factions and NPAs
+act on their own interests every turn without being asked. The <code>!</code> symbol
+— borrowed from Partylog — captures this: the world pushing events into the
+fiction, not waiting for your oracle query.</p>
+<h2 id="2-digital-vs-analog-formats">2. Digital vs. Analog Formats<a class="headerlink" href="#2-digital-vs-analog-formats" title="Permanent link">&para;</a></h2>
+<h3 id="21-digital-format-markdown">2.1 Digital Format (Markdown)<a class="headerlink" href="#21-digital-format-markdown" title="Permanent link">&para;</a></h3>
+<p>In digital markdown files:</p>
+<ul>
+<li>Campaign metadata: YAML front matter, top of file</li>
+<li>Campaign title: Level 1 heading</li>
+<li>Sessions: Level 2 headings (<code>## Session 1</code>)</li>
+<li>Turns: <code>[Turn:N]</code> markers within sessions</li>
+<li>Core notation and tracking: inside code blocks</li>
+<li>Narrative and reports: regular prose between code blocks</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> Always wrap notation in code blocks when using digital markdown.
+This prevents conflicts with Markdown syntax and ensures symbols like <code>=&gt;</code>
+render correctly.</p>
+</blockquote>
+<h3 id="22-analog-format-notebooks">2.2 Analog Format (Notebooks)<a class="headerlink" href="#22-analog-format-notebooks" title="Permanent link">&para;</a></h3>
+<p>In paper notebooks:</p>
+<ul>
+<li>Write headers and metadata directly as shown</li>
+<li>Core notation works identically but without code fences</li>
+<li>Use the same symbols and structure</li>
+<li>Brackets and tags help scanning paper pages</li>
+</ul>
+<h3 id="23-format-examples">2.3 Format Examples<a class="headerlink" href="#23-format-examples" title="Permanent link">&para;</a></h3>
+<p><strong>Digital:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="gu">## Session 1</span>
+Date: 2026-05-01 | Turns: 1–2
+</code></pre></div>
+<p>[Turn:1]</p>
+<p>@ Meranto
+  act: File debt review against Caldrath's treasury
+  out: Delay army movement thirty days
+  lev: Emergency clause, full documentation, precedent established
+[Lev:Strong]
+d: 2d6 → 6,2  keep high → 6
+-&gt; Success
+=&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Analog:</strong></p>
+<div class="highlight"><pre><span></span><code>Turn 1
+
+@ Meranto
+  act: File debt review against Caldrath&#39;s treasury
+  out: Delay army movement thirty days
+  lev: Emergency clause, full documentation, precedent established
+[Lev:Strong]
+d: 2d6 → 6,2  keep high → 6
+-&gt; Success
+=&gt; [Fac:Caldrath | pos:army held | Clock:LiquidityReview 1/3]
+</code></pre></div>
+<p>Both formats use identical notation — only the wrapping differs.</p>
+<h2 id="3-core-notation">3. Core Notation<a class="headerlink" href="#3-core-notation" title="Permanent link">&para;</a></h2>
+<p>This is the heart of the system. Five elements mirror the natural flow
+of OSG play: you argue your action, the world argues back, dice decide,
+and the board changes.</p>
+<h3 id="31-your-factions-action">3.1 Your Faction's Action (<code>@</code>)<a class="headerlink" href="#31-your-factions-action" title="Permanent link">&para;</a></h3>
+<p>The <code>@</code> symbol represents your faction submitting its turn action.
+Every action in OSG follows the same three-part structure:</p>
+<div class="highlight"><pre><span></span><code>@ FactionName
+  act: What specifically are you doing?
+  out: What result do you want?
+  lev: Why is this action likely to produce that outcome?
+</code></pre></div>
+<p>The three sub-lines are not optional decoration. They are the argument.
+<code>act</code> commits you to a specific course of conduct. <code>out</code> separates what
+you're doing from what you want — the referee adjudicates the outcome,
+not just the action. <code>lev</code> is the case for why your plan should work,
+grounded in established fiction: resources, relationships, positioning,
+prior actions.</p>
+<p><strong>Example — full argument:</strong></p>
+<div class="highlight"><pre><span></span><code>@ Meranto
+  act: Send formal notice of debt review to Caldrath&#39;s treasury,
+       citing the emergency clause in our lending agreements
+  out: Delay Caldrath&#39;s army movement by forcing a liquidity
+       assessment before any major campaign expenditure
+  lev: Caldrath&#39;s military expansion was financed by Meranto loans.
+       The emergency clause exists, has precedent, and their treasury
+       minister knows invoking it freezes discretionary spending for
+       thirty days. We hold documentation for every transaction.
+</code></pre></div>
+<p><strong>Example — compact (fast play):</strong></p>
+<div class="highlight"><pre><span></span><code>@ Meranto
+  act: Invoke emergency debt clause against Caldrath
+  out: Freeze army expenditure for one turn
+  lev: Full documentation; clause has precedent
+</code></pre></div>
+<p>Both are valid. Use the level of detail your play requires.</p>
+<h4 id="311-spendable-bonuses-in-the-argument">3.1.1 Spendable Bonuses in the Argument<a class="headerlink" href="#311-spendable-bonuses-in-the-argument" title="Permanent link">&para;</a></h4>
+<p>If your action spends a named bonus asset, record the spend inside
+the leverage line using the <code>[Bon:]</code> tag:</p>
+<div class="highlight"><pre><span></span><code>@ Saivorn
+  act: Rush naval assets to the Corenth harbour mouth
+  out: Establish a naval blockade before Caldrath can resupply
+  lev: Two deep-water ports give us unmatched transit speed;
+       [Bon:HarbourRights 1/2 → 0/2] — we invoke our treaty
+       access to Corenth&#39;s outer anchorage
+</code></pre></div>
+<p>The bonus tag ticks down at the point of use and is visible in
+the leverage argument, which is where it matters for adjudication.</p>
+<h3 id="32-rival-and-npa-actions">3.2 Rival and NPA Actions (<code>!</code>)<a class="headerlink" href="#32-rival-and-npa-actions" title="Permanent link">&para;</a></h3>
+<p>The <code>!</code> symbol represents any faction acting whose action you did not
+submit — a rival player faction, a Non-Player Actor (NPA), or any
+force that acts on its own interests this turn.</p>
+<p>In solo play, <code>!</code> events are generated by oracle query, random NPA
+behavior tables, or referee-authored logic. In group play, <code>!</code> logs
+the actions submitted by other players.</p>
+<p>The three-part argument structure applies to <code>!</code> actions exactly
+as it does to <code>@</code> actions. This matters: the leverage argument is
+what the referee (or oracle) grades, and it should be visible in
+the log for every actor.</p>
+<div class="highlight"><pre><span></span><code>! Caldrath
+  act: Deploy advance units to Essaveth&#39;s northern pass
+  out: Establish military presence before any treaty negotiation
+  lev: Largest army on the peninsula; Essaveth has no defensive
+       pact; units are already at the border — one day&#39;s march
+[Lev:Strong]
+d: 2d6 → 6,2  keep high → 6
+-&gt; Success, and...
+=&gt; [Fac:Caldrath | pos:pass occupied]
+=&gt; [Fac:Essaveth | pos:under occupation | Clock:Resistance 0/4]
+=&gt; Essaveth&#39;s border garrison stands down without resistance —
+   visible to all factions in the Report
+</code></pre></div>
+<h4 id="321-the-distinction">3.2.1 The <code>@</code> / <code>!</code> Distinction<a class="headerlink" href="#321-the-distinction" title="Permanent link">&para;</a></h4>
+<p>This is Factionlog's central design choice:</p>
+<ul>
+<li><code>@</code> is <strong>your faction acting</strong> — you chose this, you own it</li>
+<li><code>!</code> is <strong>a rival or the world acting</strong> — it acts on its own,
+  you respond to it</li>
+</ul>
+<p>In OSG, all factions submit actions privately and simultaneously.
+The distinction in the log reflects whose argument you are logging
+and whose you are reconstructing from the Report or oracle.</p>
+<h4 id="322-solo-play-emulating-rival-arguments">3.2.2 Solo Play: Emulating Rival Arguments<a class="headerlink" href="#322-solo-play-emulating-rival-arguments" title="Permanent link">&para;</a></h4>
+<p>When playing solo, you reconstruct rival arguments from the
+Report and NPA behavior rules. Use <code>?</code> (Lonelog oracle syntax)
+to generate what you don't know:</p>
+<div class="highlight"><pre><span></span><code>! Saivorn
+? What does Saivorn attempt this turn? (oracle: NPA behavior table)
+- tbl:NPAAction → &quot;Opportunistic diplomacy&quot;
+  act: Open a quiet channel to Corenth, bypassing Caldrath
+  out: Establish a private relationship before the army arrives
+  lev: Sea access gives Saivorn direct reach; Caldrath&#39;s
+       aggression gives Corenth reason to listen
+[Lev:Weak]  (no established presence in Corenth yet)
+d: 2d6 → 3,1  keep low → 1
+-&gt; Failure, and... Corenth alerts Caldrath to the approach
+=&gt; [Fac:Saivorn | pos:diplomatically exposed]
+</code></pre></div>
+<p>The oracle determines the attempt; you record it with the same
+structure as any other action. What enters the log is always
+the full argument, regardless of how it was generated.</p>
+<h3 id="33-leverage-grade-lev">3.3 Leverage Grade (<code>[Lev:]</code>)<a class="headerlink" href="#33-leverage-grade-lev" title="Permanent link">&para;</a></h3>
+<p>Before rolling, the referee (or you, as solo oracle-referee)
+grades the acting faction's leverage as <strong>Strong</strong> or <strong>Weak</strong>
+relative to any opposition.</p>
+<p>Record the grade on its own line between the argument and the roll:</p>
+<div class="highlight"><pre><span></span><code>[Lev:Strong]
+[Lev:Weak]
+</code></pre></div>
+<p><strong>Strong</strong> means the faction has enough established advantage —
+resources, relationships, positioning, prior actions — that you'd
+expect success more often than not.</p>
+<p><strong>Weak</strong> means the attempt is plausible but without a strong basis
+for expecting success: thin resources, an entrenched opponent,
+no established presence in the relevant domain.</p>
+<p>When playing solo, use an oracle query to grade leverage if you
+are uncertain:</p>
+<div class="highlight"><pre><span></span><code>? Is my leverage Strong against Essaveth&#39;s pass claim?
+- Yes, but... → Strong, but traceability is thin
+</code></pre></div>
+<h3 id="34-the-dice-mechanic-d">3.4 The Dice Mechanic (<code>d:</code>)<a class="headerlink" href="#34-the-dice-mechanic-d" title="Permanent link">&para;</a></h3>
+<p>OSG uses 2d6: <strong>keep the high die</strong> for Strong leverage,
+<strong>keep the low die</strong> for Weak leverage.</p>
+<div class="highlight"><pre><span></span><code>d: 2d6 → 5,3  keep high → 5   (Strong)
+d: 2d6 → 5,3  keep low  → 3   (Weak)
+</code></pre></div>
+<p><strong>Result interpretation:</strong></p>
+<p>| Kept die | Outcome                                                |
+| -------- | undefined---------------------------------------------------- |
+| 6        | Success; something especially good may also occur      |
+| 4–5      | Desired outcome occurs                                 |
+| 2–3      | Action proceeds, but outcome is worse than desired     |
+| 1        | Worst outcome; something especially bad may also occur |</p>
+<h4 id="341-force-of-nature-doubles">3.4.1 Force of Nature (Doubles)<a class="headerlink" href="#341-force-of-nature-doubles" title="Permanent link">&para;</a></h4>
+<p>When both dice show the same number, the referee may introduce
+a Force of Nature — a chaotic event outside any faction's control.
+Record it with an oracle query:</p>
+<div class="highlight"><pre><span></span><code>d: 2d6 → 3,3  DOUBLES
+? Force of Nature relevant to current fiction?
+- Yes → [E:HarborStorm | emerges]
+=&gt; All sea transit actions opposed next turn
+=&gt; Saivorn&#39;s naval advantage is temporarily neutralized
+</code></pre></div>
+<p>The Force of Nature is a prompt, not a requirement. Use it when
+it fits the fiction and creates genuine new complications —
+sparingly, once or twice per game at most.</p>
+<h3 id="35-adjudication-result-">3.5 Adjudication Result (<code>-&gt;</code>)<a class="headerlink" href="#35-adjudication-result-" title="Permanent link">&para;</a></h3>
+<p>The <code>-&gt;</code> line declares the adjudicated outcome — what actually
+happened, following from the leverage grade and the dice.</p>
+<div class="highlight"><pre><span></span><code>-&gt; Success
+-&gt; Partial success — review opens, but scope is disputed
+-&gt; Failure — Corenth does not respond
+-&gt; Success, and... Essaveth&#39;s garrison stands down unprompted
+-&gt; Failure, and... Caldrath learns of the attempt
+</code></pre></div>
+<p>The result should be Reasonable (proportionate to the fiction),
+Actionable (it leaves something for other factions to respond to),
+and Traceable (it points to earlier events). These are the OSG
+RAT criteria. When playing solo, check them with brief oracle
+queries before writing the outcome:</p>
+<div class="highlight"><pre><span></span><code>? RAT: Is this outcome actionable for other factions?
+- Yes → write a visible hook into the Report
+</code></pre></div>
+<h3 id="36-consequences-and-board-state">3.6 Consequences and Board State (<code>=&gt;</code>)<a class="headerlink" href="#36-consequences-and-board-state" title="Permanent link">&para;</a></h3>
+<p>The <code>=&gt;</code> symbol records what changes in the world as a result of
+the adjudicated outcome. In OSG, this means faction positions,
+contested zones, clock progress, and anything other factions
+will now have to contend with.</p>
+<div class="highlight"><pre><span></span><code>=&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]
+=&gt; Caldrath&#39;s chancellor publicly accuses Meranto of bad faith
+=&gt; [Fac:Meranto | pos:diplomatically exposed in Corenth]
+</code></pre></div>
+<p>Chain multiple <code>=&gt;</code> lines for cascading effects. Every outcome
+should leave at least one visible hook for another faction.</p>
+<h3 id="37-the-report-block">3.7 The Report Block<a class="headerlink" href="#37-the-report-block" title="Permanent link">&para;</a></h3>
+<p>At the end of each turn, the referee publishes a public Report.
+In solo play, write it yourself as the oracle-referee, summarizing
+outcomes and seeding hooks for the next turn.</p>
+<div class="highlight"><pre><span></span><code> Meranto&#39;s debt clause stalls Caldrath&#39;s army at the border.
+    Saivorn&#39;s diplomatic overture is rebuffed — and Caldrath now
+    knows. Essaveth has gone quiet. The Conclave has summoned
+    representatives from all factions to the temple complex.
+    Next turn: the question is who arrives first. 
+</code></pre></div>
+<p>The `` delimiters separate the Report narrative from the
+notation log. The Report is public fiction; everything inside
+it is known to all factions.</p>
+<h2 id="4-optional-layers">4. Optional Layers<a class="headerlink" href="#4-optional-layers" title="Permanent link">&para;</a></h2>
+<h3 id="41-persistent-elements">4.1 Persistent Elements<a class="headerlink" href="#41-persistent-elements" title="Permanent link">&para;</a></h3>
+<h4 id="411-faction-tags-fac">4.1.1 Faction Tags (<code>[Fac:]</code>)<a class="headerlink" href="#411-faction-tags-fac" title="Permanent link">&para;</a></h4>
+<p>Track faction state across turns. Establish at <code>[T0]</code> and update
+as the board changes.</p>
+<div class="highlight"><pre><span></span><code>[Fac:Meranto | obj:control Corenth debt leverage
+             | pos:agents everywhere, no map token
+             | bon:&quot;Emergency Recall&quot; 1/1, &quot;Debt Clause&quot; 2/2]
+</code></pre></div>
+<p>Fields:</p>
+<ul>
+<li><code>obj:</code> — Faction's objectives (from the Brief; does not change)</li>
+<li><code>pos:</code> — Current position on the board (updates each turn)</li>
+<li><code>bon:</code> — Spendable bonuses with remaining uses</li>
+</ul>
+<p>Updating faction state:</p>
+<div class="highlight"><pre><span></span><code>[Fac:Caldrath | pos:army held at border]        — position update
+[Fac:Caldrath | pos:pass occupied]              — after successful action
+[Fac:Saivorn  | pos:diplomatically exposed]     — consequence of failure
+</code></pre></div>
+<p>You do not need to restate all fields on every update — show only
+what changed.</p>
+<h4 id="412-spendable-bonuses-bon">4.1.2 Spendable Bonuses (<code>[Bon:]</code>)<a class="headerlink" href="#412-spendable-bonuses-bon" title="Permanent link">&para;</a></h4>
+<p>Bonuses are named, one-use (or limited-use) assets tied to a
+faction's starting position. They are spent in the leverage
+argument to shift leverage from Weak to Strong for one action.</p>
+<div class="highlight"><pre><span></span><code>[Bon:&quot;Debt Clause&quot; 2/2]      — full, two uses remaining
+[Bon:&quot;Debt Clause&quot; 1/2]      — one use spent
+[Bon:&quot;Debt Clause&quot; 0/2]      — exhausted
+</code></pre></div>
+<p>A bonus should be contextually bounded — its narrative name
+indicates when it applies. <code>"Debt Clause"</code> applies to financial
+and legal arguments; it does not apply to a military engagement.
+A spent bonus cannot be recovered.</p>
+<h4 id="413-rival-npa-tags-rival">4.1.3 Rival / NPA Tags (<code>[Rival:]</code>)<a class="headerlink" href="#413-rival-npa-tags-rival" title="Permanent link">&para;</a></h4>
+<p>For factions you do not control, track what is publicly known
+from Reports and what has been revealed through oracle play.</p>
+<div class="highlight"><pre><span></span><code>[Rival:Caldrath | obj:military dominance | pos:army at border
+               | behavior:aggressive; moves on Corenth if unopposed T3+]
+[Rival:Saivorn  | obj:secure port access | pos:coast
+               | behavior:opportunistic if Caldrath weakened]
+[Rival:Conclave | obj:Corenth autonomy   | pos:temple complex
+               | behavior:mediates; escalates if temple threatened]
+</code></pre></div>
+<p>The <code>behavior:</code> field is for solo play — it defines the NPA's
+decision logic for oracle-driven action generation.</p>
+<h4 id="414-locations-l">4.1.4 Locations (<code>[L:]</code>)<a class="headerlink" href="#414-locations-l" title="Permanent link">&para;</a></h4>
+<p>Mark significant locations and their current control state.</p>
+<div class="highlight"><pre><span></span><code>[L:Corenth       | contested | Conclave extraterritorial temple]
+[L:Northern Pass | Caldrath-occupied]
+[L:Harbour Mouth | Saivorn-patrolled]
+</code></pre></div>
+<h4 id="415-objectives-obj">4.1.5 Objectives (<code>[Obj:]</code>)<a class="headerlink" href="#415-objectives-obj" title="Permanent link">&para;</a></h4>
+<p>Track your faction's objectives from the Brief. Mark them at
+game end for the debrief.</p>
+<div class="highlight"><pre><span></span><code>[Obj:Control Corenth debt leverage      | Open]
+[Obj:Prevent Caldrath military presence | Open]
+[Obj:Isolate Saivorn from Conclave      | Achieved T4]
+[Obj:Preserve Meranto financial network | Failed]
+</code></pre></div>
+<h4 id="416-events-and-clocks-e-clock">4.1.6 Events and Clocks (<code>[E:]</code>, <code>Clock:</code>)<a class="headerlink" href="#416-events-and-clocks-e-clock" title="Permanent link">&para;</a></h4>
+<p>Use standard Lonelog clock notation for escalating threats and
+timed pressures.</p>
+<div class="highlight"><pre><span></span><code>[E:CaldhrathLiquidity | Clock: 1/3]   — Caldrath treasury under review
+[E:ConclaveSummit     | Clock: 0/1]   — imminent
+[E:EssavethResistance | Clock: 2/4]   — building
+</code></pre></div>
+<h3 id="42-turn-zero-t0">4.2 Turn Zero (<code>[T0]</code>)<a class="headerlink" href="#42-turn-zero-t0" title="Permanent link">&para;</a></h3>
+<p>Turn Zero is the pre-game clarification session. Log world
+assumptions, faction setups, and any rulings made before
+Turn 1 here.</p>
+<div class="highlight"><pre><span></span><code>[T0]
+rule: Unopposed actions succeed; the referee still determines
+      how they land — every success reshapes the board
+rule: Talking is free — negotiation between factions costs no
+      turn; only what you actually do costs your action
+rule: One action per faction per turn; two things in one
+      action will be returned for revision
+assumption: Caldrath&#39;s army is one day&#39;s march from Corenth
+            at game start
+assumption: Meranto has no physical presence on the map —
+            leverage only, no tokens
+
+[Fac:Meranto | obj:control Corenth debt leverage
+             | pos:agents everywhere, no map token
+             | bon:&quot;Emergency Recall&quot; 1/1, &quot;Debt Clause&quot; 2/2]
+[Rival:Caldrath  | obj:military dominance of Corenth
+                 | pos:army at northern border
+                 | behavior:aggressive; moves on Corenth if unopposed by T3]
+[Rival:Saivorn   | obj:secure port access to Corenth
+                 | pos:coast, two deep-water ports
+                 | behavior:opportunistic if Caldrath weakened]
+[Rival:Essaveth  | obj:preserve pass autonomy
+                 | pos:northern passes, small garrison
+                 | behavior:defensive; seeks alliance if threatened]
+[Rival:Conclave  | obj:Corenth remains neutral
+                 | pos:temple complex, extraterritorial
+                 | behavior:mediates; escalates if temple threatened]
+</code></pre></div>
+<h3 id="43-random-tables-and-oracle">4.3 Random Tables and Oracle<a class="headerlink" href="#43-random-tables-and-oracle" title="Permanent link">&para;</a></h3>
+<p>For solo play, use standard Lonelog oracle and table notation
+to generate NPA arguments, Force of Nature events, and
+adjudication inputs.</p>
+<div class="highlight"><pre><span></span><code>? What does Caldrath attempt this turn?
+tbl: NPAAction d6
+  1 Hold position
+  2 Apply diplomatic pressure
+  3 Military advance
+  4 Economic blockade
+  5 Alliance approach
+  6 Escalate — open aggression
+tbl: NPAAction d6 → 3
+- Military advance
+
+! Caldrath
+  act: [generated from table result]
+  ...
+</code></pre></div>
+<p>Inline table definitions make the log self-contained — readers
+see the full table and the result without needing external tools.</p>
+<h3 id="44-meta-notes">4.4 Meta Notes<a class="headerlink" href="#44-meta-notes" title="Permanent link">&para;</a></h3>
+<p>Step outside the fiction for rulings, design notes, and
+retrospective annotations.</p>
+<div class="highlight"><pre><span></span><code>(rule: NPA behavior tables rolled before each turn, results private
+       until logged as ! actions)
+(post: Turn 3 reconstructed from notes — dialogue is paraphrased)
+(note: Caldrath player absent Turn 2; NPA holding action used)
+</code></pre></div>
+<h2 id="5-optional-structure">5. Optional Structure<a class="headerlink" href="#5-optional-structure" title="Permanent link">&para;</a></h2>
+<h3 id="51-game-header">5.1 Game Header<a class="headerlink" href="#51-game-header" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The Corentine Crisis</span>
+<span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Open Strategy Game</span>
+<span class="nt">hack</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Factionlog</span>
+<span class="nt">turns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6</span>
+<span class="nt">faction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">House Meranto</span>
+<span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-05-01</span>
+<span class="nn">---</span>
+</code></pre></div>
+<h3 id="52-session-header">5.2 Session Header<a class="headerlink" href="#52-session-header" title="Permanent link">&para;</a></h3>
+<p>For multi-session games:</p>
+<div class="highlight"><pre><span></span><code>## Session 1
+Date: 2026-05-01
+Turns: 1–2
+Recap: Turn Zero complete. Factions established.
+       Caldrath is already moving.
+Goals: Delay Caldrath; open a quiet channel to Essaveth.
+</code></pre></div>
+<h3 id="53-debrief">5.3 Debrief<a class="headerlink" href="#53-debrief" title="Permanent link">&para;</a></h3>
+<p>At game end, record each faction's self-assessment:</p>
+<div class="highlight"><pre><span></span><code>[Debrief]
+Meranto:  Debt Clause delayed Caldrath two turns. Conclave
+          alliance failed. Financial network intact.
+          Obj:1 Achieved | Obj:2 Partial | Obj:3 Failed
+
+[Obj:Control Corenth debt leverage      | Achieved]
+[Obj:Prevent Caldrath military presence | Partial]
+[Obj:Preserve Meranto financial network | Achieved]
+</code></pre></div>
+<h2 id="6-complete-turn-example">6. Complete Turn Example<a class="headerlink" href="#6-complete-turn-example" title="Permanent link">&para;</a></h2>
+<p>A full two-faction turn from <em>The Corentine Crisis</em>, Turn 2.</p>
+<div class="highlight"><pre><span></span><code>@ Meranto
+  act: Approach Essaveth privately — offer to underwrite their
+       garrison costs in exchange for pass access rights
+  out: Establish a quiet alliance before Caldrath occupies the pass
+  lev: Essaveth is under military pressure and has no defensive pact.
+       Meranto holds their small infrastructure debt. We can offer
+       immediate financial relief — something Caldrath cannot match.
+       [Bon:&quot;Debt Clause&quot; 2/2 → 1/2]
+[Lev:Strong]
+d: 2d6 → 4,6  keep high → 6
+-&gt; Success, and... Essaveth accepts — and volunteers intelligence
+   on Caldrath&#39;s supply line through the pass
+=&gt; [Fac:Essaveth | pos:quiet Meranto ally | Bon:IntelligenceFile 1/1]
+=&gt; [Fac:Meranto  | pos:pass access secured | bon:&quot;Debt Clause&quot; 1/2]
+=&gt; Essaveth&#39;s public posture remains neutral — the alliance is secret
+
+! Caldrath
+  act: Send an envoy to Essaveth demanding right of passage for
+       the army, framed as a treaty obligation
+  out: Secure legal cover for army movement through the pass
+  lev: Largest army on the peninsula; Essaveth owes historical
+       obligations from the old compact; the army is already visible
+       at the border — implicit threat requires no elaboration
+[Lev:Strong]
+d: 2d6 → 2,5  keep high → 5
+-&gt; Partial success — Essaveth stalls, citing the need for
+   Conclave ratification before any troop movement
+=&gt; [Fac:Caldrath | pos:army delayed at border | Clock:PassNegotiation 1/3]
+=&gt; Caldrath&#39;s envoy returns empty-handed — publicly noted
+
+! Conclave (NPA)
+? Conclave action this turn — does the summit invitation stand?
+- Yes, but... → Invitation sent, but with conditions
+  act: Issue a formal invitation to all factions for a Corenth
+       summit, citing the army movements as a threat to the
+       neutral zone
+  out: Establish itself as the legitimate mediating authority
+       before any faction can act unilaterally in Corenth
+  lev: Extraterritorial status; all factions have obligations
+       under the old treaty; the neutral city gives the Conclave
+       standing no other actor can claim
+[Lev:Strong]
+d: 2d6 → 3,5  keep high → 5
+-&gt; Success — all factions receive the invitation
+=&gt; [E:ConclaveSummit | Clock: 1/1] — summit is imminent, Turn 3
+=&gt; Every faction must now decide: attend, refuse, or act before it
+
+Caldrath&#39;s envoy returns from Essaveth without an answer.
+    The Conclave has summoned all factions to Corenth.
+    The summit will be held next turn. Essaveth has gone quiet.
+    Meranto&#39;s agents were seen near the northern pass.
+    The question now is who arrives in Corenth, and how. 
+</code></pre></div>
+<h2 id="7-best-practices">7. Best Practices<a class="headerlink" href="#7-best-practices" title="Permanent link">&para;</a></h2>
+<p><strong>Do</strong> write the full three-part argument before grading leverage.
+The leverage grade follows from the argument — not the other way around.</p>
+<p><strong>Don't</strong> write the leverage grade and then construct an argument
+to justify it. The argument is the game.</p>
+<p><strong>Do</strong> log <code>!</code> rival actions with the same argument structure as
+your own, even when reconstructed from the Report or oracle.</p>
+<p><strong>Don't</strong> log rival actions as bare outcomes: <code>! Caldrath moves army.</code>
+The argument is what makes the log traceable.</p>
+<p><strong>Do</strong> let the <code>-&gt;</code> outcome be proportionate and leave a hook.
+Every result — success or failure — should give at least one other
+faction something to respond to.</p>
+<p><strong>Don't</strong> write outcomes that close the fiction: <code>-&gt; Success.
+Caldrath is defeated.</code> OSG ends after a fixed number of turns,
+not when one faction is eliminated.</p>
+<p><strong>Do</strong> tick down <code>[Bon:]</code> tags at the moment of spend, inside the
+leverage argument where they appear.</p>
+<p><strong>Don't</strong> track bonuses separately from the argument. The spend is
+part of the case for why the action should succeed.</p>
+<p><strong>Do</strong> write the <code>[Report:N]</code> block in the voice of the public
+record — what all factions know. Keep private outcomes out of it.</p>
+<p><strong>Don't</strong> put private intelligence or secret alliance details in
+the Report. Log them in <code>=&gt;</code> consequences under your faction's
+block, not in the public summary.</p>
+<h2 id="8-quick-reference">8. Quick Reference<a class="headerlink" href="#8-quick-reference" title="Permanent link">&para;</a></h2>
+<h3 id="core-symbols">Core Symbols<a class="headerlink" href="#core-symbols" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@</code></td>
+<td>Your faction's action (three-part argument)</td>
+<td><code>@ Meranto</code></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Rival / NPA action</td>
+<td><code>! Caldrath</code></td>
+</tr>
+<tr>
+<td><code>d:</code></td>
+<td>OSG dice roll (2d6 keep high/low)</td>
+<td><code>d: 2d6 → 4,6  keep high → 6</code></td>
+</tr>
+<tr>
+<td><code>-&gt;</code></td>
+<td>Adjudicated outcome</td>
+<td><code>-&gt; Partial success</code></td>
+</tr>
+<tr>
+<td><code>=&gt;</code></td>
+<td>Board-state consequence</td>
+<td><code>=&gt; [Fac:Caldrath | pos:...]</code></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Oracle query (solo, optional)</td>
+<td><code>? What does Saivorn attempt?</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="action-argument">Action Argument<a class="headerlink" href="#action-argument" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>@ FactionName
+  act: What specifically are you doing?
+  out: What result do you want?
+  lev: Why is this likely to produce that outcome?
+[Lev:Strong] or [Lev:Weak]
+d: 2d6 → H,L  keep high/low → result
+-&gt; outcome
+=&gt; consequence
+</code></pre></div>
+<h3 id="dice-results">Dice Results<a class="headerlink" href="#dice-results" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Kept die</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>Success, and... (something especially good may occur)</td>
+</tr>
+<tr>
+<td>4–5</td>
+<td>Desired outcome occurs</td>
+</tr>
+<tr>
+<td>2–3</td>
+<td>Outcome worse than desired</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Failure, and... (something especially bad may occur)</td>
+</tr>
+<tr>
+<td>Doubles</td>
+<td>Potential Force of Nature — query oracle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tags">Tags<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Fac:Name \| ...]</code></td>
+<td>Your faction state</td>
+<td><code>[Fac:Meranto \| pos:...]</code></td>
+</tr>
+<tr>
+<td><code>[Rival:Name \| ...]</code></td>
+<td>Rival / NPA state</td>
+<td><code>[Rival:Caldrath \| behavior:...]</code></td>
+</tr>
+<tr>
+<td><code>[Lev:Strong/Weak]</code></td>
+<td>Leverage grade</td>
+<td><code>[Lev:Strong]</code></td>
+</tr>
+<tr>
+<td><code>[Bon:Name N/max]</code></td>
+<td>Spendable bonus</td>
+<td><code>[Bon:"Debt Clause" 1/2]</code></td>
+</tr>
+<tr>
+<td><code>[Obj:... \| state]</code></td>
+<td>Faction objective</td>
+<td><code>[Obj:Isolate Saivorn \| Achieved T4]</code></td>
+</tr>
+<tr>
+<td><code>[L:Name \| ...]</code></td>
+<td>Location state</td>
+<td><code>[L:Corenth \| contested]</code></td>
+</tr>
+<tr>
+<td><code>[E:Name \| Clock: X/Y]</code></td>
+<td>Event / clock</td>
+<td><code>[E:ConclaveSummit \| Clock: 1/1]</code></td>
+</tr>
+<tr>
+<td><code>[Turn:N]</code></td>
+<td>Turn marker</td>
+<td><code>[Turn:3]</code></td>
+</tr>
+<tr>
+<td><code>[T0]</code></td>
+<td>Turn Zero block</td>
+<td><code>[T0]</code></td>
+</tr>
+<tr>
+<td><code>[Report:N]</code></td>
+<td>Public report block</td>
+<td><code>[Report:2]</code></td>
+</tr>
+<tr>
+<td><code>[Debrief]</code></td>
+<td>End-of-game assessment</td>
+<td><code>[Debrief]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-faq">9. FAQ<a class="headerlink" href="#9-faq" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Do I need to write the full three-part argument every turn?</strong>
+A: Yes, always — but compact form is fine for fast play.
+<code>act/out/lev</code> can each be a single line. What matters is that all
+three are present. The leverage line is what gets graded; without
+it, the roll has no context.</p>
+<p><strong>Q: What if I genuinely don't know what leverage grade to give
+a rival's action?</strong>
+A: Use an oracle query: <code>? Is Caldrath's leverage Strong here?</code>
+Then commit to the answer and grade accordingly. The grade should
+follow from the fiction, not from what result you want.</p>
+<p><strong>Q: Can I play Factionlog with a live referee instead of solo?</strong>
+A: Yes. In a live game, the referee grades leverage and adjudicates
+outside the log — you record the grade and outcome. The <code>!</code> blocks
+log other players' actions as they are revealed in the Report.
+The <code>?</code> oracle notation is not needed.</p>
+<p><strong>Q: How do I handle a faction that drops out mid-game?</strong>
+A: Convert them to an NPA. Add a <code>behavior:</code> field to their
+<code>[Rival:]</code> tag and note the transition:</p>
+<div class="highlight"><pre><span></span><code>[Rival:Essaveth | pos:occupied | behavior:passive; holds position
+                | note: player absent from T4, NPA from T4]
+</code></pre></div>
+<p><strong>Q: What's the difference between <code>[Rival:]</code> and <code>[Fac:]</code>?</strong>
+A: <code>[Fac:]</code> is your faction — the one whose action you submit with
+<code>@</code>. <code>[Rival:]</code> is everyone else. In a group game with a scribe,
+you might have multiple <code>[Fac:]</code> tags, one per player-controlled
+faction.</p>
+<p><strong>Q: Does Factionlog work with any OSG scenario?</strong>
+A: Yes. The notation is system-agnostic within the OSG framework —
+it assumes the three-part action structure, the 2d6 keep-high/low
+mechanic, and the turn/report cycle. Scenario-specific mechanics
+(spendable bonuses, NPAs, maps) are all optional layers.</p>
+<p><strong>Q: How does Factionlog relate to Lonelog add-ons?</strong>
+A: Factionlog is a fork, not an add-on. It replaces the solo
+character-action model entirely. Lonelog add-ons (Combat, Dungeon
+Crawling, Resource Tracking) are not designed for faction-scale
+play and are not compatible with Factionlog without adaptation.</p>
+<h2 id="credits-license">Credits &amp; License<a class="headerlink" href="#credits-license" title="Permanent link">&para;</a></h2>
+<p>© 2026 Roberto Bisceglie</p>
+<p>Factionlog is forked from Lonelog v1.3.0 by Roberto Bisceglie. It shares Lonelog's core philosophy, tag system, and structural conventions, adapted for Open Strategy Game play.</p>
+<p>The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.</p>
+<p>Version History:</p>
+<ul>
+<li>v 0.1.0  Initial draft</li>
+</ul>
+<p>This work is licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International License.
+Session logs and play records created using this notation
+are your own work and are not subject to this license.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../contested_ground/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contested Ground">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Contested Ground
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Resources">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Resources
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      The Open Strategy Games Handbook by Roberto Bisceglie is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Logo by Delapouite under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/openstrategygames/openstrategygames.github.io" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -67,32 +67,9 @@ copyright: >
 nav:
   - Home: index.md
   - Learn:
-    - Handbook:
-      - Introduction: handbook/introduction.md
-      - "Ch. 0 — [Chapter Title]": handbook/ch00.md
-      - "Ch. 1 — [Chapter Title]": handbook/ch01.md
-      - "Ch. 2 — [Chapter Title]": handbook/ch02.md
-      - "Ch. 3 — [Chapter Title]": handbook/ch03.md
-      - "Ch. 4 — [Chapter Title]": handbook/ch04.md
-      - "Ch. 5 — [Chapter Title]": handbook/ch05.md
-      - "Ch. 6 — [Chapter Title]": handbook/ch06.md
-      - "Ch. 7 — [Chapter Title]": handbook/ch07.md
-      - "Ch. 8 — [Chapter Title]": handbook/ch08.md
-      - "Ch. 9 — [Chapter Title]": handbook/ch09.md
-      - "Ch. 10 — [Chapter Title]": handbook/ch10.md
-      - "Ch. 11 — [Chapter Title]": handbook/ch11.md
-      - "Ch. 12 — [Chapter Title]": handbook/ch12.md
-      - "Ch. 13 — [Chapter Title]": handbook/ch13.md
-      - "Ch. 14 — [Chapter Title]": handbook/ch14.md
-      - "Appendix A — [Title]": handbook/appendix-a.md
-      - "Appendix B — [Title]": handbook/appendix-b.md
-      - "Appendix C — [Title]": handbook/appendix-c.md
-      - "Appendix D — [Title]": handbook/appendix-d.md
-      - "Appendix E — [Title]": handbook/appendix-e.md
-      - "Appendix F — [Title]": handbook/appendix-f.md
-      - "Appendix G — [Title]": handbook/appendix-g.md
+    - Handbook: osg_handbook.md
   - Play:
-    - Contested Ground: contested-ground.md
+    - Contested Ground: contested_ground.md
   - Log:
     - Factionlog: factionlog.md
   - Resources: resources.md

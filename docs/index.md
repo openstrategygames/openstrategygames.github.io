@@ -17,19 +17,19 @@ A reference for faction-scale, argument-driven play
 
 <div class="osg-card" markdown>
 📖
-## [Learn](handbook/introduction.md)
+## [Learn](osg_handbook)
 Read the Open Strategy Games Handbook — the complete guide to running and designing OSG sessions.
 </div>
 
 <div class="osg-card" markdown>
 ⚔️
-## [Play](contested-ground.md)
+## [Play](contested_ground)
 Contested Ground is a ready-to-use rules framework built on the OSG format.
 </div>
 
 <div class="osg-card" markdown>
 📋
-## [Log](factionlog.md)
+## [Log](factionlog)
 Factionlog is the standard notation for recording OSG session events.
 </div>
 

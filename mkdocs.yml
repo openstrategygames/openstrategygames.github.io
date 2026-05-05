@@ -1,9 +1,9 @@
-site_name: Open Strategy Games
+site_name: Open Strategy Games Resources
 site_url: https://openstrategygames.github.io/
 site_description: A reference for faction-scale, argument-driven play
 site_author: Roberto Bisceglie
-repo_url: https://github.com/openstrategygames/openstrategygames.github.io
-repo_name: openstrategygames/openstrategygames.github.io
+repo_url: https://github.com/openstrategygames/osg_resources
+repo_name: openstrategygames/osg_resources
 edit_uri: ""
 
 theme:
@@ -56,11 +56,11 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/openstrategygames/openstrategygames.github.io
+      link: https://github.com/openstrategygames/osg_resources
 
 copyright: >
-  The Open Strategy Games Handbook by Roberto Bisceglie is licensed under
-  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+  The Open Strategy Games Resources are licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</br>
   Logo by Delapouite under
   <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
 

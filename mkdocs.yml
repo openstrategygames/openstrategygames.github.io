@@ -73,3 +73,8 @@ nav:
   - Log:
     - Factionlog: factionlog.md
   - Resources: resources.md
+  - Blog: blog/index.md
+
+plugins:
+  - search
+  - blog

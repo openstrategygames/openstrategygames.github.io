@@ -18,16 +18,15 @@ jobs:
 
       - name: Install Lora and Montserrat fonts for Typst
         run: |
-          mkdir -p /tmp/typst-fonts
-          BASE="https://raw.githubusercontent.com/google/fonts/main/ofl"
-          curl -fL "$BASE/lora/Lora%5Bwght%5D.ttf"           -o /tmp/typst-fonts/Lora.ttf
-          curl -fL "$BASE/lora/Lora%5Bital%2Cwght%5D.ttf"    -o /tmp/typst-fonts/Lora-Italic.ttf
-          curl -fL "$BASE/montserrat/Montserrat%5Bwght%5D.ttf"      -o /tmp/typst-fonts/Montserrat.ttf
-          curl -fL "$BASE/montserrat/Montserrat%5Bital%2Cwght%5D.ttf" -o /tmp/typst-fonts/Montserrat-Italic.ttf
+          mkdir -p ~/.local/share/fonts
+          curl -sL "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bwght%5D.ttf" \
+            -o ~/.local/share/fonts/Lora.ttf
+          curl -sL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf" \
+            -o ~/.local/share/fonts/Montserrat.ttf
+          fc-cache -fv
 
       - uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TYPST_FONT_PATHS: /tmp/typst-fonts

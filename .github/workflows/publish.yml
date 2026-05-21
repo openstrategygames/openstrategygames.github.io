@@ -20,12 +20,10 @@ jobs:
         run: |
           mkdir -p /tmp/typst-fonts
           BASE="https://raw.githubusercontent.com/google/fonts/main/ofl"
-          for v in Regular Italic Bold BoldItalic; do
-            curl -fL "$BASE/lora/static/Lora-${v}.ttf" -o /tmp/typst-fonts/Lora-${v}.ttf
-          done
-          for v in Regular Medium SemiBold Bold Black; do
-            curl -fL "$BASE/montserrat/static/Montserrat-${v}.ttf" -o /tmp/typst-fonts/Montserrat-${v}.ttf
-          done
+          curl -fL "$BASE/lora/Lora%5Bwght%5D.ttf"           -o /tmp/typst-fonts/Lora.ttf
+          curl -fL "$BASE/lora/Lora%5Bital%2Cwght%5D.ttf"    -o /tmp/typst-fonts/Lora-Italic.ttf
+          curl -fL "$BASE/montserrat/Montserrat%5Bwght%5D.ttf"      -o /tmp/typst-fonts/Montserrat.ttf
+          curl -fL "$BASE/montserrat/Montserrat%5Bital%2Cwght%5D.ttf" -o /tmp/typst-fonts/Montserrat-Italic.ttf
 
       - uses: quarto-dev/quarto-actions/publish@v2
         with:

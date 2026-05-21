@@ -46,6 +46,39 @@
   #body
 ]
 
+// Pandoc syntax highlighting tokens
+#let NormalTok(content) = content
+#let AlertTok(content) = text(fill: rgb("#cd3c14"))[#content]
+#let AnnotationTok(content) = text(fill: rgb("#60a0b0"), style: "italic")[#content]
+#let AttributeTok(content) = text(fill: rgb("#7d9029"))[#content]
+#let BaseNTok(content) = text(fill: rgb("#40a070"))[#content]
+#let BuiltInTok(content) = content
+#let CharTok(content) = text(fill: rgb("#4070a0"))[#content]
+#let CommentTok(content) = text(fill: rgb("#60a0b0"), style: "italic")[#content]
+#let CommentVarTok(content) = text(fill: rgb("#60a0b0"), weight: "bold", style: "italic")[#content]
+#let ConstantTok(content) = text(fill: rgb("#880000"))[#content]
+#let ControlFlowTok(content) = text(fill: rgb("#007020"), weight: "bold")[#content]
+#let DataTypeTok(content) = text(fill: rgb("#902000"))[#content]
+#let DecValTok(content) = text(fill: rgb("#40a070"))[#content]
+#let DocumentationTok(content) = text(fill: rgb("#ba2121"), style: "italic")[#content]
+#let ErrorTok(content) = text(fill: rgb("#ff0000"), weight: "bold")[#content]
+#let ExtensionTok(content) = content
+#let FloatTok(content) = text(fill: rgb("#40a070"))[#content]
+#let FunctionTok(content) = text(fill: rgb("#06287e"))[#content]
+#let ImportTok(content) = content
+#let InformationTok(content) = text(fill: rgb("#60a0b0"), weight: "bold", style: "italic")[#content]
+#let KeywordTok(content) = text(fill: rgb("#007020"), weight: "bold")[#content]
+#let OperatorTok(content) = text(fill: rgb("#666666"))[#content]
+#let OtherTok(content) = text(fill: rgb("#007020"))[#content]
+#let PreprocessorTok(content) = text(fill: rgb("#bc7a00"))[#content]
+#let RegionMarkerTok(content) = text(fill: rgb("#4444ff"), weight: "bold")[#content]
+#let SpecialCharTok(content) = text(fill: rgb("#4070a0"))[#content]
+#let SpecialStringTok(content) = text(fill: rgb("#4070a0"))[#content]
+#let StringTok(content) = text(fill: rgb("#4070a0"))[#content]
+#let VariableTok(content) = text(fill: rgb("#19177c"))[#content]
+#let VerbatimStringTok(content) = text(fill: rgb("#4070a0"))[#content]
+#let WarningTok(content) = text(fill: rgb("#60a0b0"), weight: "bold", style: "italic")[#content]
+
 // ============================================
 // 1. CONFIGURATION
 // ============================================

@@ -1,3 +1,11 @@
+---
+title: The Open Strategy Game Handbook
+author: Roberto Bisceglie
+version: 1.0.0
+license: CC BY-SA 4.0
+lang: en
+---
+
 # The Open Strategy Game Handbook
 
 ## Introduction

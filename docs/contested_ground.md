@@ -4,7 +4,7 @@ subtitle: An Open Strategy Game System Reference
 author: Roberto Bisceglie
 license: CC BY-SA 4.0
 lang: en
-version: 1.0
+version: 1.0.0
 ---
 
 This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.

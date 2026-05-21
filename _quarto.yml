@@ -1,0 +1,70 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - "docs/**/*.md"
+    - "docs/**/*.qmd"
+    - "!handbook/**"
+    - "!sources/**"
+    - "!case_study/**"
+
+website:
+  title: "Open Strategy Games"
+  description: "A reference for faction-scale, argument-driven play"
+  site-url: "https://openstrategygames.github.io/"
+  repo-url: "https://github.com/openstrategygames/osg_resources"
+  repo-actions: [issue]
+
+  navbar:
+    left:
+      - text: "Learn"
+        href: docs/osg_handbook.html
+      - text: "Play"
+        href: docs/contested_ground.html
+      - text: "Log"
+        href: docs/factionlog.html
+      - text: "Resources"
+        href: docs/resources.html
+      - text: "Blog"
+        href: docs/blog/index.html
+    right:
+      - icon: github
+        href: https://github.com/openstrategygames/openstrategygames.github.io
+
+  favicon: docs/assets/logo.svg
+
+  page-footer:
+    left: "Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)"
+    right: "Logo by [Delapouite](https://delapouite.com) under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)"
+
+brand: _brand.yml
+
+filters:
+  - _extensions/gfm-callout.lua
+  - _extensions/typst-pagebreak-h1.lua
+
+format:
+  html:
+    theme:
+      light: [materia, assets/custom.scss]
+      dark:  [darkly, assets/custom.scss]
+    toc: true
+    toc-depth: 3
+    include-in-header: assets/fonts.html
+    include-after-body: assets/format-links-top.html
+  typst:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    fontsize: 11pt
+    tbl-colwidths: auto
+    template: _extensions/typst-template.typ
+    template-partials:
+      - _extensions/typst-show.typ
+  odt:
+    toc: true
+  epub:
+    toc: true
+  gfm:
+    toc: false

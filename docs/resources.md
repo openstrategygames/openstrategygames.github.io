@@ -1,3 +1,8 @@
+---
+title: Resources
+format-links: false
+---
+
 # Resources
 
 ## Chris Engle's Official Pages

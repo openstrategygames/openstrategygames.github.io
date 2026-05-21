@@ -146,9 +146,9 @@
 
 #align(right)[
   #set par(justify: false)
-  $if(logo)$
+  $if(cover-logo)$
   #v(12em)
-  #image("$logo$", width: 0.75in)
+  #image("$cover-logo$", width: 0.75in)
   #v(1.5em)
   $else$
   #v(14em)

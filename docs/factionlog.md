@@ -6,7 +6,7 @@ version: 0.1.0
 license: CC BY-SA 4.0
 lang: en
 parent: Lonelog v1.4.0
-logo: assets/logo.svg
+cover-logo: assets/logo.svg
 format:
   typst:
     toc: true

@@ -4,7 +4,7 @@ author: Roberto Bisceglie
 version: 1.0.0
 license: CC BY-SA 4.0
 lang: en
-logo: assets/logo.svg
+cover-logo: assets/logo.svg
 format:
   typst:
     toc: true

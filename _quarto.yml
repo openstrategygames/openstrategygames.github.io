@@ -53,18 +53,3 @@ format:
     toc-depth: 3
     include-in-header: assets/fonts.html
     include-after-body: assets/format-links-top.html
-  typst:
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    fontsize: 11pt
-    tbl-colwidths: auto
-    template: _extensions/typst-template.typ
-    template-partials:
-      - _extensions/typst-show.typ
-  odt:
-    toc: true
-  epub:
-    toc: true
-  gfm:
-    toc: false

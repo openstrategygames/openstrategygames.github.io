@@ -5,6 +5,23 @@ author: Roberto Bisceglie
 license: CC BY-SA 4.0
 lang: en
 version: 1.0.0
+logo: assets/logo.svg
+format:
+  typst:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    fontsize: 11pt
+    tbl-colwidths: auto
+    template: ../_extensions/typst-template.typ
+    template-partials:
+      - ../_extensions/typst-show.typ
+  odt:
+    toc: true
+  epub:
+    toc: true
+  gfm:
+    toc: false
 ---
 
 This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.

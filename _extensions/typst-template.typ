@@ -146,9 +146,13 @@
 
 #align(right)[
   #set par(justify: false)
+  $if(logo)$
   #v(12em)
-  #image("assets/logo.svg", width: 0.75in)
+  #image("$logo$", width: 0.75in)
   #v(1.5em)
+  $else$
+  #v(14em)
+  $endif$
   #text(font: font-title, size: 22pt, weight: "black", fill: black, hyphenate: false)[
     $title$
   ]

@@ -16,6 +16,19 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install Lora and Montserrat fonts for Typst
+        run: |
+          mkdir -p ~/.local/share/fonts
+          curl -sL "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bwght%5D.ttf" \
+            -o ~/.local/share/fonts/Lora.ttf
+          curl -sL "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bital%2Cwght%5D.ttf" \
+            -o ~/.local/share/fonts/Lora-Italic.ttf
+          curl -sL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bwght%5D.ttf" \
+            -o ~/.local/share/fonts/Montserrat.ttf
+          curl -sL "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/Montserrat%5Bital%2Cwght%5D.ttf" \
+            -o ~/.local/share/fonts/Montserrat-Italic.ttf
+          fc-cache -fv
+
       - uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages

@@ -6,6 +6,7 @@ license: CC BY-SA 4.0
 lang: en
 cover-logo: assets/logo.svg
 format:
+  html: {}
   typst:
     toc: true
     toc-depth: 2

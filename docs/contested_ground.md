@@ -7,6 +7,7 @@ lang: en
 version: 1.0.0
 cover-logo: assets/logo.svg
 format:
+  html: {}
   typst:
     toc: true
     toc-depth: 2

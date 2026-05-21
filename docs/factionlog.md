@@ -8,6 +8,7 @@ lang: en
 parent: Lonelog v1.4.0
 cover-logo: assets/logo.svg
 format:
+  html: {}
   typst:
     toc: true
     toc-depth: 2

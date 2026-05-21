@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Roberto Bisceglie">
+
+<title>Contested Ground – Open Strategy Games</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../docs/assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cdd650f4b4a940d6724863b003ac0667.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-3c3e288a8de7ba828eba47d98a432bf8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-cdd650f4b4a940d6724863b003ac0667.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Montserrat:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Open Strategy Games</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/osg_handbook.html"> 
+<span class="menu-text">Learn</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../docs/contested_ground.html" aria-current="page"> 
+<span class="menu-text">Play</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/factionlog.html"> 
+<span class="menu-text">Log</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/openstrategygames/openstrategygames.github.io"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-i-core-concepts" id="toc-part-i-core-concepts" class="nav-link active" data-scroll-target="#part-i-core-concepts">Part I: Core Concepts</a>
+  <ul class="collapse">
+  <li><a href="#what-this-game-is" id="toc-what-this-game-is" class="nav-link" data-scroll-target="#what-this-game-is">What This Game Is</a></li>
+  </ul></li>
+  <li><a href="#part-ii-roles" id="toc-part-ii-roles" class="nav-link" data-scroll-target="#part-ii-roles">Part II: Roles</a>
+  <ul class="collapse">
+  <li><a href="#the-referee" id="toc-the-referee" class="nav-link" data-scroll-target="#the-referee">The Referee</a></li>
+  <li><a href="#actors" id="toc-actors" class="nav-link" data-scroll-target="#actors">Actors</a></li>
+  <li><a href="#extras-overflow-players" id="toc-extras-overflow-players" class="nav-link" data-scroll-target="#extras-overflow-players">Extras (Overflow Players)</a></li>
+  </ul></li>
+  <li><a href="#part-iii-the-turn" id="toc-part-iii-the-turn" class="nav-link" data-scroll-target="#part-iii-the-turn">Part III: The Turn</a>
+  <ul class="collapse">
+  <li><a href="#action-format" id="toc-action-format" class="nav-link" data-scroll-target="#action-format">Action Format</a></li>
+  <li><a href="#one-action-per-turn" id="toc-one-action-per-turn" class="nav-link" data-scroll-target="#one-action-per-turn">One Action Per Turn</a></li>
+  <li><a href="#talking-is-free" id="toc-talking-is-free" class="nav-link" data-scroll-target="#talking-is-free">Talking Is Free</a></li>
+  <li><a href="#private-submission" id="toc-private-submission" class="nav-link" data-scroll-target="#private-submission">Private Submission</a></li>
+  <li><a href="#timing" id="toc-timing" class="nav-link" data-scroll-target="#timing">Timing</a></li>
+  </ul></li>
+  <li><a href="#part-iv-adjudication" id="toc-part-iv-adjudication" class="nav-link" data-scroll-target="#part-iv-adjudication">Part IV: Adjudication</a>
+  <ul class="collapse">
+  <li><a href="#the-core-assessment" id="toc-the-core-assessment" class="nav-link" data-scroll-target="#the-core-assessment">The Core Assessment</a></li>
+  <li><a href="#the-dice-mechanic" id="toc-the-dice-mechanic" class="nav-link" data-scroll-target="#the-dice-mechanic">The Dice Mechanic</a></li>
+  <li><a href="#unopposed-actions" id="toc-unopposed-actions" class="nav-link" data-scroll-target="#unopposed-actions">Unopposed Actions</a></li>
+  <li><a href="#force-of-nature" id="toc-force-of-nature" class="nav-link" data-scroll-target="#force-of-nature">Force of Nature</a></li>
+  <li><a href="#the-rat-checklist" id="toc-the-rat-checklist" class="nav-link" data-scroll-target="#the-rat-checklist">The RAT Checklist</a></li>
+  <li><a href="#no-action-without-friction" id="toc-no-action-without-friction" class="nav-link" data-scroll-target="#no-action-without-friction">No Action Without Friction</a></li>
+  </ul></li>
+  <li><a href="#part-v-the-report" id="toc-part-v-the-report" class="nav-link" data-scroll-target="#part-v-the-report">Part V: The Report</a>
+  <ul class="collapse">
+  <li><a href="#hook-seeding" id="toc-hook-seeding" class="nav-link" data-scroll-target="#hook-seeding">Hook-Seeding</a></li>
+  <li><a href="#private-outcomes-and-traceable-crumbs" id="toc-private-outcomes-and-traceable-crumbs" class="nav-link" data-scroll-target="#private-outcomes-and-traceable-crumbs">Private Outcomes and Traceable Crumbs</a></li>
+  </ul></li>
+  <li><a href="#part-vi-the-debrief" id="toc-part-vi-the-debrief" class="nav-link" data-scroll-target="#part-vi-the-debrief">Part VI: The Debrief</a>
+  <ul class="collapse">
+  <li><a href="#debrief-sequence" id="toc-debrief-sequence" class="nav-link" data-scroll-target="#debrief-sequence">Debrief Sequence</a></li>
+  </ul></li>
+  <li><a href="#part-vii-scenario-design" id="toc-part-vii-scenario-design" class="nav-link" data-scroll-target="#part-vii-scenario-design">Part VII: Scenario Design</a>
+  <ul class="collapse">
+  <li><a href="#the-seven-steps" id="toc-the-seven-steps" class="nav-link" data-scroll-target="#the-seven-steps">The Seven Steps</a></li>
+  <li><a href="#the-problem-statement" id="toc-the-problem-statement" class="nav-link" data-scroll-target="#the-problem-statement">The Problem Statement</a></li>
+  <li><a href="#actors-1" id="toc-actors-1" class="nav-link" data-scroll-target="#actors-1">Actors</a></li>
+  <li><a href="#briefs" id="toc-briefs" class="nav-link" data-scroll-target="#briefs">Briefs</a></li>
+  <li><a href="#the-map" id="toc-the-map" class="nav-link" data-scroll-target="#the-map">The Map</a></li>
+  <li><a href="#spendable-bonuses-optional" id="toc-spendable-bonuses-optional" class="nav-link" data-scroll-target="#spendable-bonuses-optional">Spendable Bonuses <em>(Optional)</em></a></li>
+  <li><a href="#non-player-actors-npas-optional" id="toc-non-player-actors-npas-optional" class="nav-link" data-scroll-target="#non-player-actors-npas-optional">Non-Player Actors (NPAs) <em>(Optional)</em></a></li>
+  <li><a href="#turn-zero" id="toc-turn-zero" class="nav-link" data-scroll-target="#turn-zero">Turn Zero</a></li>
+  </ul></li>
+  <li><a href="#part-viii-referee-checklist" id="toc-part-viii-referee-checklist" class="nav-link" data-scroll-target="#part-viii-referee-checklist">Part VIII: Referee Checklist</a>
+  <ul class="collapse">
+  <li><a href="#pre-game-scenario-review" id="toc-pre-game-scenario-review" class="nav-link" data-scroll-target="#pre-game-scenario-review">Pre-Game Scenario Review</a></li>
+  <li><a href="#per-turn-adjudication-checklist" id="toc-per-turn-adjudication-checklist" class="nav-link" data-scroll-target="#per-turn-adjudication-checklist">Per-Turn Adjudication Checklist</a></li>
+  </ul></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="contested_ground.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="contested_ground.odt"><i class="bi bi-file"></i>OpenOffice</a></li><li><a href="contested_ground.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="contested_ground-gfm.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Contested Ground</h1>
+<p class="subtitle lead">An Open Strategy Game System Reference</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Roberto Bisceglie </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.</p>
+<section id="part-i-core-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-core-concepts">Part I: Core Concepts</h2>
+<section id="what-this-game-is" class="level3">
+<h3 class="anchored" data-anchor-id="what-this-game-is">What This Game Is</h3>
+<p>You play a <strong>faction</strong>. Not a character, not a hero: a collective entity with interests, leverage, and objectives. The game is a shared crisis: a structural problem that every faction must respond to, but that no faction can solve alone, and that no faction will solve in the same way.</p>
+<p>The game ends after a fixed number of turns. Each player then assesses whether they achieved their objectives. The debrief that follows is part of the game.</p>
+<p><strong>Two things are true simultaneously:</strong></p>
+<ul>
+<li>The goal of the game is to achieve your objectives.</li>
+<li>The point of the game is to create a credible narrative.</li>
+</ul>
+<p>Play to win. Play to find out. Both at once.</p>
+</section>
+</section>
+<section id="part-ii-roles" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-roles">Part II: Roles</h2>
+<section id="the-referee" class="level3">
+<h3 class="anchored" data-anchor-id="the-referee">The Referee</h3>
+<p>The Referee adjudicates all actions, writes the public Report each turn, and maintains the internal consistency of the fiction. The Referee is not a Game Master; they do not author a story or protect a narrative outcome. They adjudicate, report, and stay consistent.</p>
+<p>The Referee operates by <strong>Benevolent Dictatorship</strong>: full authority, no public argument from other players before ruling. This keeps the game moving and protects interesting outcomes from being argued away by the loudest voice at the table.</p>
+</section>
+<section id="actors" class="level3">
+<h3 class="anchored" data-anchor-id="actors">Actors</h3>
+<p>Each Actor controls one faction. A faction is defined by three things:</p>
+<ol type="1">
+<li><strong>What it is</strong>: its fundamental nature and identity in the world</li>
+<li><strong>What it wants</strong>: its core drive and why it wants it</li>
+<li><strong>What makes it unlike others</strong>: the specific leverage type or constraint that distinguishes it from every other faction in this game</li>
+</ol>
+<p>If you cannot write these three bullets distinctly for a faction, it is not yet designed.</p>
+</section>
+<section id="extras-overflow-players" class="level3">
+<h3 class="anchored" data-anchor-id="extras-overflow-players">Extras (Overflow Players)</h3>
+<p>When player count exceeds the Actor roster, Extras participate through one of these portable roles:</p>
+<p><strong>Consultant.</strong> One question to the Referee per turn. No action submitted. The question is open-ended; the Referee answers at their discretion, fully, partially, or not at all if it would reveal another Actor’s private information. The constraint is the mechanism: one question forces a choice about what you actually need to know.</p>
+<p><strong>Team Actor.</strong> Two to three players share one Actor, deliberate internally, and submit a single action. Maximum three players per team. The deliberation moderates extreme positions and models how real collective entities behave. Keep team Actors to roles with no internal information asymmetry; a role with secrets that must stay secret within the team should be played solo.</p>
+<p><strong>Scenario-Specific Roles.</strong> Some scenarios embed participation structures into the fiction itself (an electorate that votes, a mob whose actions are randomly selected, a council that deliberates). These are not portable; they must be designed for their specific scenario and explained to participants before play.</p>
+</section>
+</section>
+<section id="part-iii-the-turn" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-the-turn">Part III: The Turn</h2>
+<section id="action-format" class="level3">
+<h3 class="anchored" data-anchor-id="action-format">Action Format</h3>
+<p>Every action follows this three-part structure, submitted privately to the Referee:</p>
+<blockquote class="blockquote">
+<p><strong>Actor:</strong> <em>(your faction)</em> <strong>Turn:</strong> <em>(turn number)</em></p>
+<p><strong>Action:</strong> What specifically are you doing?</p>
+<p><strong>Outcome:</strong> What result do you want from this action?</p>
+<p><strong>Leverage:</strong> Why is this action likely to produce that outcome? Ground it in established fiction: resources, relationships, position, prior actions.</p>
+</blockquote>
+<p>The three parts do distinct work. <strong>Action</strong> commits you to a specific course of conduct, not a vague intention. <strong>Outcome</strong> separates what you’re doing from what you want; the Referee adjudicates the outcome, not just the action. <strong>Leverage</strong> requires you to think about why your plan should work before the Referee has to assess it.</p>
+</section>
+<section id="one-action-per-turn" class="level3">
+<h3 class="anchored" data-anchor-id="one-action-per-turn">One Action Per Turn</h3>
+<p>Each Actor submits exactly one action per turn. Not two bundled into one. If a submission is clearly two actions, the Referee returns it and asks which one matters more. The choice of what to prioritize is part of the game.</p>
+</section>
+<section id="talking-is-free" class="level3">
+<h3 class="anchored" data-anchor-id="talking-is-free">Talking Is Free</h3>
+<p>Actors may communicate with each other at any time about anything. Negotiating an alliance, sharing intelligence, issuing a warning: none of these cost your turn. The limit is what you actually <em>do</em>. Talking about building a fleet is free. Building the fleet costs a turn.</p>
+</section>
+<section id="private-submission" class="level3">
+<h3 class="anchored" data-anchor-id="private-submission">Private Submission</h3>
+<p>Actions are sent directly to the Referee, not posted publicly. This prevents reactive play from dominating over genuine strategy, allows the Referee to adjudicate the full turn before any outcomes are public, and keeps genuinely covert operations covert until the Referee decides what to reveal.</p>
+</section>
+<section id="timing" class="level3">
+<h3 class="anchored" data-anchor-id="timing">Timing</h3>
+<p><strong>Asynchronous play:</strong> 48-hour submission window from Report publication is a practical default.</p>
+<p><strong>Missed deadline:</strong> Either a one-turn pass (the faction takes no action) or a Referee-authored holding action: something plausible and low-stakes that keeps the faction present in the Report. Declare the policy before the game begins.</p>
+<p><strong>Live play:</strong> The single-action discipline and private submission rules still apply; the timing window compresses from days to minutes.</p>
+</section>
+</section>
+<section id="part-iv-adjudication" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-adjudication">Part IV: Adjudication</h2>
+<section id="the-core-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="the-core-assessment">The Core Assessment</h3>
+<p>When an action faces opposition, the Referee asks one qualitative question: <em>given what is established in the fiction, does this Actor have enough of an advantage that success is more likely than not?</em></p>
+<p><strong>Strong leverage:</strong> the Actor has established resources, relationships, position, or prior actions that tip the balance in their favor.</p>
+<p><strong>Weak leverage:</strong> the action is plausible, but without a strong basis for expecting success.</p>
+<p>The Referee is not scoring a debate. Strong or weak is a judgment, not a calculation.</p>
+</section>
+<section id="the-dice-mechanic" class="level3">
+<h3 class="anchored" data-anchor-id="the-dice-mechanic">The Dice Mechanic</h3>
+<p>When an action faces opposition, roll <strong>2d6</strong>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Leverage</th>
+<th style="text-align: left;">Keep</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Strong</td>
+<td style="text-align: left;">The <strong>higher</strong> die</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weak</td>
+<td style="text-align: left;">The <strong>lower</strong> die</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>6</strong></td>
+<td style="text-align: left;">Success: something especially good may also occur</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>4–5</strong></td>
+<td style="text-align: left;">The desired outcome occurs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>2–3</strong></td>
+<td style="text-align: left;">The action proceeds, but the outcome is worse than desired</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Failure: something especially bad may also occur</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="unopposed-actions" class="level3">
+<h3 class="anchored" data-anchor-id="unopposed-actions">Unopposed Actions</h3>
+<p>When no other faction is directly opposing the action and the fiction raises no inherent obstacle, the action is Unopposed: the Actor gets their desired outcome. Unopposed does not mean free. The Referee still determines how the outcome lands and writes it into the Report as a fact other Actors now have to contend with.</p>
+</section>
+<section id="force-of-nature" class="level3">
+<h3 class="anchored" data-anchor-id="force-of-nature">Force of Nature</h3>
+<p>When both dice show the same number, the Referee <em>may</em> introduce a <strong>Force of Nature</strong>: a chaotic event originating outside any player’s influence. This is a prompt, not a requirement. Use it only when a good Force of Nature is available: unpredictable but traceable, emerging from threads already present in the fiction, creating problems for everyone rather than punishing one Actor. Once or twice per game.</p>
+</section>
+<section id="the-rat-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="the-rat-checklist">The RAT Checklist</h3>
+<p>Before writing any outcome, check it against three criteria:</p>
+<p><strong>Reasonable.</strong> Is this outcome proportionate? Does it feel like something that would actually happen given what the fiction has established?</p>
+<p><strong>Actionable.</strong> Does this outcome create hooks for future play? Does it leave at least one other Actor something to respond to, investigate, or exploit?</p>
+<p><strong>Traceable.</strong> Can you point to earlier events in the fiction that led here? Does this feel like a consequence of prior decisions, not something that came from nowhere?</p>
+<p>If an outcome fails any of these tests, rewrite it before publishing the Report.</p>
+</section>
+<section id="no-action-without-friction" class="level3">
+<h3 class="anchored" data-anchor-id="no-action-without-friction">No Action Without Friction</h3>
+<p>Every outcome, successful or not, leaves a mark on the world. A success that is wholly positive with no complicating consequence is not yet a complete outcome: ask who notices, what becomes harder, what new possibility or problem it creates.</p>
+<p>The distinction between <strong>friction</strong> and <strong>hurdles</strong>: a hurdle blocks an action (<em>“you can’t do this”</em>). Friction complicates it (<em>“you can do this, but it costs something”</em>). Hurdles are referee veto by another name. Replace “no” with “yes, but.”</p>
+<p>A failure that produces three hooks is better for the game than a success that produces one. When writing a failure, ask: what did the attempt reveal? Who noticed? What is now in motion that wasn’t before?</p>
+</section>
+</section>
+<section id="part-v-the-report" class="level2">
+<h2 class="anchored" data-anchor-id="part-v-the-report">Part V: The Report</h2>
+<p>The Report does two things simultaneously: it <strong>chronicles</strong> what happened, and it <strong>re-seeds</strong> the game for the next turn.</p>
+<p><strong>Style:</strong> Write in the voice of a news roundup. Brief, factual, third-person. State outcomes as facts about the world, not explanations of adjudication reasoning. The Referee’s reasoning belongs in private feedback to the Actor, not in the public record.</p>
+<p><strong>Length:</strong> Short. A Report with one paragraph per action, plus a closing observation, is better than a three-page narrative that buries the hooks.</p>
+<section id="hook-seeding" class="level3">
+<h3 class="anchored" data-anchor-id="hook-seeding">Hook-Seeding</h3>
+<p>After each outcome, ask: <em>what does this create for other players?</em> Write at least one thing another Actor has a reason to respond to. Unexplained details are better hooks than explained ones: they invite interpretation and action rather than just acknowledgment.</p>
+<p>Fill the Report with hooks the way you fill the initial Brief with problems.</p>
+</section>
+<section id="private-outcomes-and-traceable-crumbs" class="level3">
+<h3 class="anchored" data-anchor-id="private-outcomes-and-traceable-crumbs">Private Outcomes and Traceable Crumbs</h3>
+<p>For every private outcome (a covert operation, a secret deal), plant a <strong>traceable crumb</strong> in the public Report: a proper name, a meeting observed, a shipment delayed; something specific enough for a careful reader to notice, not specific enough to give away the secret.</p>
+<p>When the private outcome becomes relevant later, the crumb makes the revelation feel earned rather than arbitrary.</p>
+</section>
+</section>
+<section id="part-vi-the-debrief" class="level2">
+<h2 class="anchored" data-anchor-id="part-vi-the-debrief">Part VI: The Debrief</h2>
+<p>Run the debrief. Always.</p>
+<p>Before the debrief, the Referee publishes a <strong>closing frame</strong>: either a state-of-world table (faction-by-faction summary of final position, most significant achievement, most significant loss) or a brief narrative epilogue. The frame marks the transition from playing the game to talking about it.</p>
+<section id="debrief-sequence" class="level3">
+<h3 class="anchored" data-anchor-id="debrief-sequence">Debrief Sequence</h3>
+<ol type="1">
+<li><strong>In-role closing</strong> <em>(1–2 minutes)</em>. Each player says one or two sentences in the voice of their faction. Not a recap: a farewell. One or two sentences, around the table.</li>
+<li><strong>Self-assessment reveal</strong> <em>(no discussion yet)</em>. Each player states, for each objective: did they achieve it, and why or why not? One player at a time, uninterrupted. This is disclosure, not argument.</li>
+<li><strong>Table response</strong>. Open discussion. Players can agree, disagree, contest, or add context to anyone’s self-assessment. The Referee participates as another voice, not as arbiter. There is no official verdict.</li>
+<li><strong>Out-of-role reflection</strong>. What were you actually trying to do? Where did your strategy shift? What turn surprised you most? What would you do differently? This phase is about the experience of play, not the narrative outcomes.</li>
+<li><strong>Referee reflection</strong>. What did the Referee not anticipate? What worked better than expected? What would they change about the scenario design? This is not a post-mortem apology: it is honest accounting.</li>
+</ol>
+<p>The Referee does not arbitrate self-assessment disputes. Two players disagreeing about whether an objective was achieved is itself part of the outcome. Let both versions stand.</p>
+</section>
+</section>
+<section id="part-vii-scenario-design" class="level2">
+<h2 class="anchored" data-anchor-id="part-vii-scenario-design">Part VII: Scenario Design</h2>
+<section id="the-seven-steps" class="level3">
+<h3 class="anchored" data-anchor-id="the-seven-steps">The Seven Steps</h3>
+<p>Design proceeds in this order. Each step produces what the next step requires.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1. <strong>Problem</strong></td>
+<td style="text-align: left;">One-sentence crisis statement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. <strong>Actors</strong></td>
+<td style="text-align: left;">5–8 differentiated factions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. <strong>Briefs</strong></td>
+<td style="text-align: left;">Objectives + Position for each Actor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4. <strong>Map</strong></td>
+<td style="text-align: left;">Argued playing field</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5. <strong>Bonuses</strong></td>
+<td style="text-align: left;">Spendable leverage asymmetry <em>(optional)</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6. <strong>NPAs</strong></td>
+<td style="text-align: left;">Referee-controlled faction pressure <em>(optional)</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7. <strong>Turn Zero</strong></td>
+<td style="text-align: left;">Shared fictional assumptions before Turn 1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Design minimum: Problem + Actors + Briefs.</strong> Map is strongly recommended. Bonuses and NPAs are optional.</p>
+</section>
+<section id="the-problem-statement" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem-statement">The Problem Statement</h3>
+<p>One sentence. Declarative. Names what has changed, implies competing interests without specifying them, and refuses to point at a correct answer.</p>
+<p><strong>A generative problem has three properties:</strong></p>
+<ul>
+<li><strong>Multiple plausible responses</strong>: at least four or five distinct strategic orientations feel reasonable (enforcement, accommodation, exploitation, neutrality, escalation, deflection)</li>
+<li><strong>No single correct answer</strong>: the problem is structurally contested, not just politically contested</li>
+<li><strong>Inherent friction between at least two Actors</strong>: before anyone makes a single decision</li>
+</ul>
+<p><strong>What a problem statement is not:</strong> a scenario description, a list of objectives, a question. It is a starting condition, not instructions.</p>
+<p><strong>Three-Angles Test:</strong> Can you argue for three different responses from three different fictional positions, none obviously correct? If not, the problem is under- or over-determined. Revise.</p>
+</section>
+<section id="actors-1" class="level3">
+<h3 class="anchored" data-anchor-id="actors-1">Actors</h3>
+<p><strong>5–8 Actors.</strong> Below five, no interesting alliance dynamics. Above eight, the Report becomes unmanageable and player cognitive load exceeds capacity.</p>
+<p>Factions differ by <strong>leverage type</strong>, not power level. Primary leverage types:</p>
+<ul>
+<li><strong>Military</strong>: direct force or credible threat; expensive, fast, politically costly</li>
+<li><strong>Economic</strong>: financial resources, trade control; slow, persistent, creates dependency</li>
+<li><strong>Geographic</strong>: territory, chokepoints, transit routes; static but often decisive</li>
+<li><strong>Informational</strong>: intelligence, secrets, communications; hard to assess from outside, enables surprise</li>
+</ul>
+<p>Give each faction a clear primary leverage type and a secondary type that creates tradeoffs.</p>
+<p><strong>Specificity principle:</strong> Vague positions make vague arguments. “Has resources” is not a position. “Controls the only two deep-water ports” is a position. When writing a position bullet, ask: could two players interpret this in ways that lead to different leverage arguments? If yes, it’s too vague.</p>
+<p><strong>Typecasting traps to avoid:</strong></p>
+<ul>
+<li><em>The pure military faction</em>: no interesting decisions when the answer to everything is “deploy more force.” Fix: give it a significant non-military vulnerability.</li>
+<li><em>The pure diplomat</em>: no stakes when the faction can never be directly threatened. Fix: give it interests that require outcomes it cannot achieve through negotiation alone.</li>
+<li><em>The pure wildcard</em>: no coherent objectives means nothing to self-assess. Fix: every faction needs objectives that conflict with at least two others.</li>
+</ul>
+</section>
+<section id="briefs" class="level3">
+<h3 class="anchored" data-anchor-id="briefs">Briefs</h3>
+<p>Each Brief contains two mandatory fields:</p>
+<p><strong>Objectives.</strong> Two paired objectives: one <strong>short-term</strong> (achievable within the game’s turn count) and one <strong>long-term</strong> (groundwork laid during the game; full achievement may be beyond its scope). The pair creates tension: chasing the short-term may undermine the long-term, and vice versa.</p>
+<p>Apply the <strong>Pithy Objectives Test</strong>: add “!” to any objective and read it aloud. If it reads like something a faction leader would say with conviction, it passes. If it reads like a policy document, it fails: rewrite with more specificity.</p>
+<p><strong>Position.</strong> What is especially significant about this faction relative to others. Not an inventory; only what matters for play. Include specific assets, specific vulnerabilities, key relationships, and geographic or positional constraints. Exclude things true of every faction and background information that doesn’t affect play decisions.</p>
+<p><strong>Public vs.&nbsp;Private.</strong> Each Brief has a public component (what all Actors know about this faction) and a private component (what only this Actor knows: secret objectives, private assets, hidden intelligence).</p>
+<blockquote class="blockquote">
+<p><strong>Brief Template</strong></p>
+<p><em>General Brief: distributed to all players</em></p>
+<p><strong>The Problem:</strong> <em>(one sentence)</em> <strong>The World:</strong> <em>(broad strokes, shared context)</em> <strong>The Actors:</strong> <em>(one public sentence per faction)</em> <strong>Structure:</strong> Each Actor submits one Action per turn in the format Action / Outcome / Leverage. The game ends after <em>(X)</em> turns. Objectives are self-assessed at game end. <strong>Expectations:</strong> The goal of the game is to achieve your objectives. The point of the game is to create a credible narrative.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><em>Private Brief: this Actor only</em></td>
+</tr>
+<tr class="even">
+<td><strong>Faction Name:</strong> <strong>Objectives:</strong></td>
+</tr>
+<tr class="odd">
+<td>- Short-term: - Long-term:</td>
+</tr>
+<tr class="even">
+<td><strong>Position:</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<p><strong>Special Abilities</strong> <em>(if using bonuses)</em>:</p>
+</blockquote>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Uses</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-map" class="level3">
+<h3 class="anchored" data-anchor-id="the-map">The Map</h3>
+<p>The map is an editorial statement about which parts of the world are in play, not a neutral representation. Map design starts with: <em>what should players be arguing about?</em></p>
+<p><strong>Geographic maps</strong> support arguments about movement, terrain, chokepoints, and supply. <strong>Schematic maps</strong> support arguments about influence, alliance, and informational control. Match the map type to your faction leverage types.</p>
+<p><strong>What belongs on the map:</strong></p>
+<ul>
+<li>Contested zones: locations multiple Actors have reason to control</li>
+<li>Faction starting positions: visually distinct, asymmetrically placed</li>
+<li>Named arguable locations: any location that will appear in actions and Reports must be named and locatable</li>
+</ul>
+<p><strong>Minimum viable map:</strong> 3–5 locations and 3–5 connection lines. Sufficient to run a game. Readable at a glance by someone who has never seen it before.</p>
+<p><strong>Minimum components:</strong></p>
+<ul>
+<li>One token per faction (distinctive color or shape)</li>
+<li>Markers for contested zone control</li>
+<li>Optional: named asset markers for specific established resources</li>
+</ul>
+</section>
+<section id="spendable-bonuses-optional" class="level3">
+<h3 class="anchored" data-anchor-id="spendable-bonuses-optional">Spendable Bonuses <em>(Optional)</em></h3>
+<p>Bonuses are named, one-use assets tied to a faction’s starting position that can be spent to strengthen leverage in a specific action. They add asymmetry beyond faction identity.</p>
+<p><strong>Name bonuses narratively</strong>, not mechanically. <em>Io Dust ×3</em> is better than <em>Military Advantage Token ×3</em>. A narrative name implies a context: when and how it can be used, which makes adjudication cleaner.</p>
+<p><strong>Traits vs.&nbsp;Bonuses:</strong> A <strong>trait</strong> is a persistent characteristic that strengthens leverage whenever contextually relevant and never diminishes (<em>“largest standing army on the peninsula”</em>). A <strong>bonus</strong> is spent: one-use, gone after deployment, creating strategic decisions about timing.</p>
+<p><strong>Scoping bonuses:</strong> A bonus should shift leverage from weak to strong, not guarantee success regardless of other factors. It must be contextually bounded; the narrative name indicates its scope.</p>
+<p><strong>Bonus design checklist:</strong></p>
+<ul>
+<li>Every faction has at least one named bonus</li>
+<li>All bonuses are narratively named</li>
+<li>No bonus guarantees success regardless of other leverage</li>
+<li>No faction has more than twice the high-value bonuses of any other</li>
+<li>Multi-use vs.&nbsp;single-use allocations match the intended strategic style of each faction</li>
+</ul>
+</section>
+<section id="non-player-actors-npas-optional" class="level3">
+<h3 class="anchored" data-anchor-id="non-player-actors-npas-optional">Non-Player Actors (NPAs) <em>(Optional)</em></h3>
+<p>An NPA is a faction the Referee controls. It has a Brief, submits actions, and appears in the Report exactly as any Actor does; players do not need to know it is Referee-controlled.</p>
+<p><strong>Use NPAs when</strong> a force exists in the fiction with plausible independent interests, no player is available to control it, and it matters enough to appear in Reports.</p>
+<p><strong>Don’t use NPAs when</strong> the fiction already generates sufficient pressure from player actions, the NPA would crowd out player agency, or the Referee is already at capacity.</p>
+<p><strong>NPA Brief (minimal):</strong></p>
+<ul>
+<li>One objective: what does it want from the game situation?</li>
+<li>One position item: what is most significant about its current state?</li>
+<li>One leverage type: how does it act?</li>
+<li>Optional: a behavior rule (<em>“acts defensively unless directly threatened”</em>) and a turn-limit rule</li>
+</ul>
+<p><strong>Referee-controlled vs.&nbsp;Random-controlled:</strong> Use Referee control for NPAs with coherent rational interests. Use random control (dice table, or Extras proposing actions with one selected randomly) for NPAs that are chaotic, emergent, or mob-like by nature.</p>
+</section>
+<section id="turn-zero" class="level3">
+<h3 class="anchored" data-anchor-id="turn-zero">Turn Zero</h3>
+<p>Turn Zero runs before the first formal turn. No actions are adjudicated; no outcomes produced; the game clock does not advance. It is a structured Q&amp;A that surfaces false assumptions before they produce mid-game disputes.</p>
+<p><strong>Three categories of questions:</strong></p>
+<ul>
+<li>Fictional world assumptions: details not explicit in the Brief that turn out to matter for strategy</li>
+<li>Edge cases in the problem statement: interpretive questions about the starting condition whose answers change what early actions are viable</li>
+<li>Rules questions: action format, leverage assessment, private submission, bonus usage</li>
+</ul>
+<p>Actors submit questions privately or in a shared channel. The Referee publishes a compiled Turn Zero FAQ visible to all players. Turn Zero has a deadline, the same as a regular turn.</p>
+<p><strong>The Referee prepares:</strong></p>
+<ul>
+<li>A private world-assumptions cheat-sheet (answers to likely questions, drafted in advance for consistency)</li>
+<li>An intentionally ambiguous list (details the Referee has decided <em>not</em> to settle: ambiguity whose resolution should come from play, not pre-game answers)</li>
+<li>Clear answers to common rules questions</li>
+</ul>
+<p><strong>Assign roles before players read the scenario.</strong> Players who receive faction assignment first read their Brief as players, looking for what their faction can do. Players who read first and assign afterward read as analysts. The first posture produces investment in the role; the second produces detached evaluation.</p>
+<p><strong>Typecasting guidance when assigning roles:</strong></p>
+<ul>
+<li>Assertive, confrontational players: factions with overt pressure leverage (military powers, creditors)</li>
+<li>Collaborative, negotiation-oriented players: factions that multiply leverage through alliance (brokers, neutral parties)</li>
+<li>Detail-oriented, systematic players: factions that accumulate positional advantage through information or procedure</li>
+<li>Improvisational players: factions with deliberately underspecified briefs</li>
+</ul>
+</section>
+</section>
+<section id="part-viii-referee-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="part-viii-referee-checklist">Part VIII: Referee Checklist</h2>
+<section id="pre-game-scenario-review" class="level3">
+<h3 class="anchored" data-anchor-id="pre-game-scenario-review">Pre-Game Scenario Review</h3>
+<p><strong>Problem:</strong></p>
+<ul>
+<li>Does the problem statement fit in one sentence?</li>
+<li>Does it name what has changed, imply competing interests, and refuse a correct answer?</li>
+<li>Does it pass the Three-Angles Test (three viable responses, none obviously superior)?</li>
+</ul>
+<p><strong>Actors:</strong></p>
+<ul>
+<li>Are there 5–8 Actors (or Extras planned for overflow)?</li>
+<li>Can you write three distinct bullets for each faction?</li>
+<li>Do factions have different leverage types, not just different power levels?</li>
+<li>Does every faction have objectives that conflict with at least two others?</li>
+<li>Have you avoided the pure-military, pure-diplomat, and pure-wildcard traps?</li>
+</ul>
+<p><strong>Briefs:</strong></p>
+<ul>
+<li>Does every Actor have two paired objectives (short/long-term)?</li>
+<li>Do objectives pass the Pithy Test?</li>
+<li>Does every position field describe only what is especially significant relative to other Actors?</li>
+<li>Does every Actor have at least one named bonus (if using bonuses)?</li>
+</ul>
+<p><strong>Map:</strong></p>
+<ul>
+<li>Are there 3–5 contested zones with names?</li>
+<li>Are faction starting positions spread asymmetrically?</li>
+<li>Is the map readable at a glance?</li>
+</ul>
+</section>
+<section id="per-turn-adjudication-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="per-turn-adjudication-checklist">Per-Turn Adjudication Checklist</h3>
+<p><strong>Before adjudicating:</strong></p>
+<ul>
+<li>Is every action in complete format (Action / Outcome / Leverage)?</li>
+<li>Is each action a single course of conduct, not two bundled?</li>
+<li>Is leverage grounded in established fiction, not just assertion?</li>
+</ul>
+<p><strong>During adjudication:</strong></p>
+<ul>
+<li>Is this action Unopposed or opposed?</li>
+<li>If opposed: is leverage Strong or Weak?</li>
+<li>Does each outcome pass the RAT check (Reasonable / Actionable / Traceable)?</li>
+<li>Is every outcome leaving a mark on the world (No Action Without Friction)?</li>
+<li>Are you applying friction, not hurdles?</li>
+</ul>
+<p><strong>After writing the Report:</strong></p>
+<ul>
+<li>Does every outcome have at least one hook for another Actor?</li>
+<li>Is every private outcome accompanied by a traceable crumb in the public Report?</li>
+<li>Is the Report written in news-roundup style, not adjudication explanation?</li>
+</ul>
+</section>
+</section>
+<section id="glossary" class="level2">
+<h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
+<p><strong>Action</strong>: The specific course of conduct an Actor pursues this turn. Submitted privately in the format Action / Outcome / Leverage. Narrower than a general claim about the world: it describes what you <em>do</em>.</p>
+<p><strong>Actor</strong>: A faction controlled by a single player (or team, via Team Actor). Equivalent to “Player/Faction” in traditional Matrix Game literature; Actor foregrounds the role-play dimension.</p>
+<p><strong>Benevolent Dictatorship</strong>: The OSG adjudication model: one Referee, full authority, no public argument before ruling.</p>
+<p><strong>Bonus</strong>: A named, spendable one-use asset tied to a faction’s starting position. Spent to shift leverage from weak to strong in a specific action. Distinguished from a Trait (persistent, never diminishes).</p>
+<p><strong>Brief</strong>: The document each Actor receives before the game: public information (shared with all) and private information (this Actor only). Contains Objectives and Position.</p>
+<p><strong>Consultant</strong>: An Extras sub-role: one question to the Referee per turn, no action submitted.</p>
+<p><strong>Force of Nature</strong>: A chaotic external event the Referee may introduce when both dice show the same number. A prompt, not a requirement.</p>
+<p><strong>Friction</strong>: The principle that every outcome leaves a mark. Complicates actions rather than blocking them. Opposed to Hurdles.</p>
+<p><strong>Hurdle</strong>: An adjudication error: blocking an action outright rather than complicating it. Replace “no” with “yes, but.”</p>
+<p><strong>Leverage</strong>: The reasons an action is likely to succeed: resources, relationships, positioning, established fiction. Graded as Strong or Weak relative to opposition.</p>
+<p><strong>NPA (Non-Player Actor)</strong>: A faction the Referee controls. Has a Brief, acts each turn, appears in Reports.</p>
+<p><strong>Objectives</strong>: What an Actor is trying to accomplish. Two paired objectives per Actor: short-term and long-term. Self-assessed at game end.</p>
+<p><strong>Outcome</strong>: The result the Actor wants from their Action. Declared before adjudication; the Referee determines whether it occurs.</p>
+<p><strong>Position</strong>: An Actor’s starting configuration as it is especially significant relative to other Actors. Not an inventory.</p>
+<p><strong>RAT</strong>: Adjudication checklist. <strong>R</strong>easonable / <strong>A</strong>ctionable / <strong>T</strong>raceable.</p>
+<p><strong>Referee</strong>: Adjudicates actions, writes Reports, maintains consistency. Not a Game Master: does not author fiction or protect a narrative agenda.</p>
+<p><strong>Report</strong>: The public document the Referee produces at the end of each turn: outcomes chronicled, hooks seeded.</p>
+<p><strong>Talk-Back / Debrief</strong>: The post-game conversation in which Actors reveal Objectives, self-assess, and reconstruct what happened. Not optional.</p>
+<p><strong>Team Actor</strong>: An Extras sub-role in which 2–3 players share one Actor.</p>
+<p><strong>Trait</strong>: A persistent leverage characteristic (e.g., “largest standing army”). Always available when contextually relevant; never diminished by use. Distinguished from a Bonus.</p>
+<p><strong>Turn</strong>: One full play cycle: Actions submitted, adjudicated, Report published.</p>
+<p><strong>Turn Zero</strong>: A pre-game Q&amp;A session before Turn 1. No actions; produces shared fictional and procedural assumptions.</p>
+</section>
+<section id="credits-license" class="level2">
+<h2 class="anchored" data-anchor-id="credits-license">Credits &amp; License</h2>
+<p>© 2026 Roberto Bisceglie</p>
+<p>The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.</p>
+<p>This work is licensed under Creative Commons Attribution-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section></div></main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var sidebar = document.getElementById("quarto-margin-sidebar");
+  var formats = document.querySelector(".quarto-alternate-formats");
+  if (sidebar && formats) {
+    sidebar.insertBefore(formats, sidebar.firstChild);
+  }
+
+  // Rename "Typst" label to "PDF"
+  document.querySelectorAll(".quarto-alternate-formats a").forEach(function (a) {
+    a.childNodes.forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === "Typst") {
+        node.textContent = "PDF";
+      }
+    });
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/openstrategygames\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Logo by <a href="https://delapouite.com">Delapouite</a> under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

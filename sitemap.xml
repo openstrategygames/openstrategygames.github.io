@@ -2,18 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://openstrategygames.github.io/docs/blog/index.html</loc>
-    <lastmod>2026-05-21T16:47:24.425Z</lastmod>
+    <lastmod>2026-05-21T17:01:26.657Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/osg_handbook.html</loc>
+    <lastmod>2026-05-21T17:01:26.658Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/factionlog.html</loc>
+    <lastmod>2026-05-21T17:01:26.657Z</lastmod>
   </url>
   <url>
     <loc>https://openstrategygames.github.io/index.html</loc>
-    <lastmod>2026-05-21T16:47:24.426Z</lastmod>
+    <lastmod>2026-05-21T17:01:26.658Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/contested_ground.html</loc>
+    <lastmod>2026-05-21T17:01:26.657Z</lastmod>
   </url>
   <url>
     <loc>https://openstrategygames.github.io/docs/index.html</loc>
-    <lastmod>2026-05-21T16:47:24.425Z</lastmod>
+    <lastmod>2026-05-21T17:01:26.657Z</lastmod>
   </url>
   <url>
     <loc>https://openstrategygames.github.io/docs/resources.html</loc>
-    <lastmod>2026-05-21T16:47:24.426Z</lastmod>
+    <lastmod>2026-05-21T17:01:26.658Z</lastmod>
   </url>
 </urlset>

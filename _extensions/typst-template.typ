@@ -46,6 +46,18 @@
   #body
 ]
 
+// Pandoc syntax-highlighted code block wrapper
+#let Skylighting(lines) = block(
+  fill: luma(246),
+  width: 100%,
+  inset: (x: 8pt, y: 6pt),
+  radius: 2pt,
+  breakable: true,
+)[
+  #set text(font: ("Courier New", "Courier", "monospace"), size: 0.9em)
+  #lines.join(linebreak())
+]
+
 // Pandoc syntax highlighting tokens
 #let NormalTok(content) = content
 #let AlertTok(content) = text(fill: rgb("#cd3c14"))[#content]

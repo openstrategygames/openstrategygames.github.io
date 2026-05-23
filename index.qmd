@@ -11,7 +11,7 @@ format-links: false
 ::: {.text-center .py-5}
 ![](docs/assets/logo.svg){width="120px" fig-alt="Open Strategy Games logo" fig-align="center"}
 
-# Open Strategy Games
+# [Open Strategy Games]{style="color: black;"}
 
 A reference for faction-scale, argument-driven play
 :::

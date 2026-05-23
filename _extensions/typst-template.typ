@@ -243,12 +243,7 @@ $if(toc)$
 #outline(title: [$toc-title$], depth: $toc-depth$)
 $endif$
 
-// Create a blank page after TOC (will be in roman numerals)
-//#pagebreak(weak: false, to: "even")
-// Add nearly invisible content to force this page to render with roman numerals
-#text(size: 0.01pt, fill: white)[.]
-// Force another pagebreak to "close" the roman page before format switch
-//#pagebreak()
+#pagebreak(to: "odd")
 
 // ============================================
 // 4. BODY (Arabic numerals, restart at 1)
@@ -266,6 +261,6 @@ $endif$
   ]
 )
 
-#counter(page).update(0)
+#counter(page).update(1)
 
 $body$

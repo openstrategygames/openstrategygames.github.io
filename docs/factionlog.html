@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,14 +76,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cdd650f4b4a940d6724863b003ac0667.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3c3e288a8de7ba828eba47d98a432bf8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-cdd650f4b4a940d6724863b003ac0667.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f6c01fde8906d65facae5dd47b986891.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -346,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-factionlog" id="toc-why-factionlog" class="nav-link" data-scroll-target="#why-factionlog">1.1 Why Factionlog?</a></li>
   <li><a href="#what-factionlog-does" id="toc-what-factionlog-does" class="nav-link" data-scroll-target="#what-factionlog-does">1.2 What Factionlog Does</a></li>
   <li><a href="#how-to-use-this-notation" id="toc-how-to-use-this-notation" class="nav-link" data-scroll-target="#how-to-use-this-notation">1.3 How to Use This Notation</a></li>
-  <li><a href="#quick-start-your-first-turn" id="toc-quick-start-your-first-turn" class="nav-link" data-scroll-target="#quick-start-your-first-turn">1.4 Quick Start: Your First Turn</a></li>
+  <li><a href="#quick-start-one-turn" id="toc-quick-start-one-turn" class="nav-link" data-scroll-target="#quick-start-one-turn">1.4 Quick Start: One Turn</a></li>
   <li><a href="#factionlog-and-lonelog" id="toc-factionlog-and-lonelog" class="nav-link" data-scroll-target="#factionlog-and-lonelog">1.5 Factionlog and Lonelog</a></li>
   </ul></li>
   <li><a href="#digital-vs.-analog-formats" id="toc-digital-vs.-analog-formats" class="nav-link" data-scroll-target="#digital-vs.-analog-formats">2. Digital vs.&nbsp;Analog Formats</a>
@@ -357,20 +357,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#core-notation" id="toc-core-notation" class="nav-link" data-scroll-target="#core-notation">3. Core Notation</a>
   <ul class="collapse">
-  <li><a href="#your-factions-action" id="toc-your-factions-action" class="nav-link" data-scroll-target="#your-factions-action">3.1 Your Faction’s Action (<code>@</code>)</a></li>
-  <li><a href="#rival-and-npa-actions" id="toc-rival-and-npa-actions" class="nav-link" data-scroll-target="#rival-and-npa-actions">3.2 Rival and NPA Actions (<code>!</code>)</a></li>
-  <li><a href="#leverage-grade-lev" id="toc-leverage-grade-lev" class="nav-link" data-scroll-target="#leverage-grade-lev">3.3 Leverage Grade (<code>[Lev:]</code>)</a></li>
-  <li><a href="#the-dice-mechanic-d" id="toc-the-dice-mechanic-d" class="nav-link" data-scroll-target="#the-dice-mechanic-d">3.4 The Dice Mechanic (<code>d:</code>)</a></li>
-  <li><a href="#adjudication-result--" id="toc-adjudication-result--" class="nav-link" data-scroll-target="#adjudication-result--">3.5 Adjudication Result (<code>-&gt;</code>)</a></li>
-  <li><a href="#consequences-and-board-state" id="toc-consequences-and-board-state" class="nav-link" data-scroll-target="#consequences-and-board-state">3.6 Consequences and Board State (<code>=&gt;</code>)</a></li>
-  <li><a href="#the-report-block" id="toc-the-report-block" class="nav-link" data-scroll-target="#the-report-block">3.7 The Report Block</a></li>
+  <li><a href="#faction-actions" id="toc-faction-actions" class="nav-link" data-scroll-target="#faction-actions">3.1 Faction Actions (<code>@</code>)</a></li>
+  <li><a href="#leverage-grade-lev" id="toc-leverage-grade-lev" class="nav-link" data-scroll-target="#leverage-grade-lev">3.2 Leverage Grade (<code>[Lev:]</code>)</a></li>
+  <li><a href="#the-dice-mechanic-d" id="toc-the-dice-mechanic-d" class="nav-link" data-scroll-target="#the-dice-mechanic-d">3.3 The Dice Mechanic (<code>d:</code>)</a></li>
+  <li><a href="#adjudication-result--" id="toc-adjudication-result--" class="nav-link" data-scroll-target="#adjudication-result--">3.4 Adjudication Result (<code>-&gt;</code>)</a></li>
+  <li><a href="#consequences-and-board-state" id="toc-consequences-and-board-state" class="nav-link" data-scroll-target="#consequences-and-board-state">3.5 Consequences and Board State (<code>=&gt;</code>)</a></li>
+  <li><a href="#the-report-block" id="toc-the-report-block" class="nav-link" data-scroll-target="#the-report-block">3.6 The Report Block</a></li>
   </ul></li>
   <li><a href="#optional-layers" id="toc-optional-layers" class="nav-link" data-scroll-target="#optional-layers">4. Optional Layers</a>
   <ul class="collapse">
   <li><a href="#persistent-elements" id="toc-persistent-elements" class="nav-link" data-scroll-target="#persistent-elements">4.1 Persistent Elements</a></li>
   <li><a href="#turn-zero-t0" id="toc-turn-zero-t0" class="nav-link" data-scroll-target="#turn-zero-t0">4.2 Turn Zero (<code>[T0]</code>)</a></li>
-  <li><a href="#random-tables-and-oracle" id="toc-random-tables-and-oracle" class="nav-link" data-scroll-target="#random-tables-and-oracle">4.3 Random Tables and Oracle</a></li>
-  <li><a href="#meta-notes" id="toc-meta-notes" class="nav-link" data-scroll-target="#meta-notes">4.4 Meta Notes</a></li>
+  <li><a href="#meta-notes" id="toc-meta-notes" class="nav-link" data-scroll-target="#meta-notes">4.3 Meta Notes</a></li>
   </ul></li>
   <li><a href="#optional-structure" id="toc-optional-structure" class="nav-link" data-scroll-target="#optional-structure">5. Optional Structure</a>
   <ul class="collapse">
@@ -379,18 +377,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#debrief" id="toc-debrief" class="nav-link" data-scroll-target="#debrief">5.3 Debrief</a></li>
   </ul></li>
   <li><a href="#complete-turn-example" id="toc-complete-turn-example" class="nav-link" data-scroll-target="#complete-turn-example">6. Complete Turn Example</a></li>
-  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">7. Best Practices</a></li>
-  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">8. Quick Reference</a>
+  <li><a href="#solo-extension" id="toc-solo-extension" class="nav-link" data-scroll-target="#solo-extension">7. Solo Extension</a>
+  <ul class="collapse">
+  <li><a href="#oracle-queries" id="toc-oracle-queries" class="nav-link" data-scroll-target="#oracle-queries">7.1 Oracle Queries (<code>?</code>)</a></li>
+  <li><a href="#aa-action-tables-tbl" id="toc-aa-action-tables-tbl" class="nav-link" data-scroll-target="#aa-action-tables-tbl">7.2 AA Action Tables (<code>tbl:</code>)</a></li>
+  <li><a href="#rival-tags-rival" id="toc-rival-tags-rival" class="nav-link" data-scroll-target="#rival-tags-rival">7.3 Rival Tags (<code>[Rival:]</code>)</a></li>
+  </ul></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">8. Best Practices</a></li>
+  <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">9. Quick Reference</a>
   <ul class="collapse">
   <li><a href="#core-symbols" id="toc-core-symbols" class="nav-link" data-scroll-target="#core-symbols">Core Symbols</a></li>
   <li><a href="#action-argument" id="toc-action-argument" class="nav-link" data-scroll-target="#action-argument">Action Argument</a></li>
   <li><a href="#dice-results" id="toc-dice-results" class="nav-link" data-scroll-target="#dice-results">Dice Results</a></li>
   <li><a href="#tags" id="toc-tags" class="nav-link" data-scroll-target="#tags">Tags</a></li>
   </ul></li>
-  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">9. FAQ</a></li>
+  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">10. FAQ</a></li>
   <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="factionlog.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="factionlog.odt"><i class="bi bi-file"></i>OpenOffice</a></li><li><a href="factionlog.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="factionlog-gfm.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -426,66 +430,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
 <section id="why-factionlog" class="level3">
 <h3 class="anchored" data-anchor-id="why-factionlog">1.1 Why Factionlog?</h3>
-<p>If you’ve ever played an Open Strategy Game — as player, scribe, or solo referee — you know the problem. You submit your action. You roll dice. Three things happen you didn’t predict. The world looks different from the Brief. And you’re trying to record all of it without breaking the fiction or losing the argument that made your roll matter.</p>
-<p>Free-form journaling loses the mechanics. A dice log loses the leverage. A pure narrative loses the board state. Factionlog offers a different approach: a lightweight shorthand that captures the essential elements of OSG play — the three-part action argument, the adjudication, the public report, the changing positions of every faction — while leaving room for as much or as little narrative as you want.</p>
+<p>The Referee’s job doesn’t end when the dice drop. Every adjudication needs to be recorded with enough structure to be traceable: what the faction argued, why their leverage was graded the way it was, what the dice produced, and what changed in the world as a result. The Report is the public face of this work. The session log is the working record behind it.</p>
+<p>Free-form notes lose the mechanics. A raw dice log loses the leverage argument. A pure narrative loses the board state. Factionlog offers a different approach: a compact shorthand that captures the essential elements of OSG play (the three-part action argument, the leverage grade, the adjudication, and the consequences) in a format that is fast to write, easy to review, and legible to anyone who knows the system.</p>
 </section>
 <section id="what-factionlog-does" class="level3">
 <h3 class="anchored" data-anchor-id="what-factionlog-does">1.2 What Factionlog Does</h3>
-<p>Whether you’re running a live game as scribe, playing solo with an oracle as referee, or logging a multi-session campaign, this notation helps you:</p>
+<p>For live tables, asynchronous campaigns, and archived records, this notation helps you:</p>
 <ul>
-<li>Record the full three-part action (act / out / lev) without slowing down</li>
+<li>Record every faction’s three-part action (act / out / lev) in a consistent structure</li>
+<li>Document the leverage grade and dice result for every adjudicated action</li>
 <li>Track faction positions, spendable bonuses, and board-state changes across turns</li>
-<li>Log rival and NPA actions with the same argument structure as your own</li>
-<li>Share your game log with other players who’ll understand the format at a glance</li>
-<li>Review past turns and trace how each outcome followed from established fiction</li>
+<li>Write Reports that are grounded in and traceable to the session log</li>
+<li>Share the complete game record with players who will understand the format at a glance</li>
 </ul>
 <p>The notation is designed to be:</p>
 <ul>
-<li><strong>Compact</strong> — the argument is structured, not verbose</li>
-<li><strong>Traceable</strong> — every outcome points back to earlier fiction</li>
-<li><strong>Format-agnostic</strong> — works in digital markdown or paper notebooks</li>
-<li><strong>Fork-compatible</strong> — shares Lonelog’s tag system and symbol logic</li>
+<li><strong>Compact</strong>: the argument is structured, not verbose</li>
+<li><strong>Traceable</strong>: every outcome points back to the leverage argument that produced it</li>
+<li><strong>Format-agnostic</strong>: works in digital markdown or paper notebooks</li>
+<li><strong>Extensible</strong>: optional layers for persistent tracking and solo play</li>
 </ul>
 </section>
 <section id="how-to-use-this-notation" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-use-this-notation">1.3 How to Use This Notation</h3>
-<p>Think of this as a toolbox, not a rulebook. At its core are five elements that mirror the natural flow of OSG play:</p>
+<p>Five elements mirror the natural flow of OSG adjudication:</p>
 <ul>
-<li><code>@</code> for your faction’s submitted action (three-part argument)</li>
-<li><code>!</code> for rival faction or NPA actions — the world acting without you</li>
-<li><code>d:</code> for the OSG dice mechanic (2d6, keep-high or keep-low)</li>
+<li><code>@</code> for each faction’s submitted action (three-part argument)</li>
+<li><code>d:</code> for the dice mechanic (2d6, keep-high or keep-low)</li>
 <li><code>-&gt;</code> for the adjudicated outcome</li>
 <li><code>=&gt;</code> for the consequence on the board state</li>
+<li>The Report block for the public summary</li>
 </ul>
-<p>That’s it. Everything else — faction tags, bonus tracking, report blocks, NPA oracles — is optional. Add it when it helps. Skip it when it doesn’t.</p>
+<p>That’s the core. Everything else (faction tags, bonus tracking, location markers, clocks) is optional. Add it when the game’s complexity requires it.</p>
 </section>
-<section id="quick-start-your-first-turn" class="level3">
-<h3 class="anchored" data-anchor-id="quick-start-your-first-turn">1.4 Quick Start: Your First Turn</h3>
-<p>Never used notation before? Here’s everything you need:</p>
+<section id="quick-start-one-turn" class="level3">
+<h3 class="anchored" data-anchor-id="quick-start-one-turn">1.4 Quick Start: One Turn</h3>
 <pre><code>@ Meranto
   act: Send the debt review notice to Caldrath's treasury
   out: Delay Caldrath's army movement for thirty days
   lev: We hold all loan documentation; emergency clause has precedent
 [Lev:Strong]
 d: 2d6 → 5,3  keep high → 5
--&gt; Partial success
+-&gt; Partial success — review opens, but scope is disputed
 =&gt; Caldrath treasury enters review; army movement delayed one turn
 
-! Saivorn opens a diplomatic channel to Corenth
-  lev: No established presence; Corenth has reason to be cautious
-[Lev:Weak]
-d: 2d6 → 2,4  keep low → 2
--&gt; Failure — Corenth does not respond publicly
+@ Caldrath
+  act: Deploy advance units to Essaveth's northern pass
+  out: Establish military presence before any treaty negotiation
+  lev: Largest army on the peninsula; units are one day's march away
+[Lev:Strong]
+d: 2d6 → 6,2  keep high → 6
+-&gt; Success, and...
+=&gt; [Fac:Caldrath | pos:pass occupied]
+=&gt; Essaveth's border garrison stands down without resistance
 
- Meranto stalls Caldrath. Saivorn's overture is rebuffed.
-    The Conclave issues no statement. Essaveth watches. </code></pre>
-<p>That’s a full turn. Everything else in this document helps you handle complexity when you need it.</p>
+ Meranto stalls Caldrath's army. Caldrath moves on Essaveth.
+    The Conclave issues no statement. The pass is occupied. </code></pre>
+<p>That is a full turn. Everything else in this document handles complexity when you need it.</p>
 </section>
 <section id="factionlog-and-lonelog" class="level3">
 <h3 class="anchored" data-anchor-id="factionlog-and-lonelog">1.5 Factionlog and Lonelog</h3>
-<p>Factionlog is a fork of Lonelog, a notation system for solo RPG session logging. Lonelog’s core philosophy — separate mechanics from fiction, stay compact, scale from one-shots to long campaigns — carries directly into OSG play. The tag system, progress tracking, and formatting philosophy are shared DNA. The core symbols shift to reflect OSG’s specific model: faction-scale play, turn structure, and the three-part argument at the heart of every action.</p>
+<p>Factionlog is a fork of Lonelog, a notation system for solo RPG session logging. Lonelog’s core philosophy (separate mechanics from fiction, stay compact, scale from one-shots to campaigns) carries directly into OSG play. The tag system and formatting conventions are shared. The core symbols shift to reflect OSG’s specific model: faction-scale play, simultaneous action submission, and the three-part argument that structures every action.</p>
 <p>If you know Lonelog, you’ll feel at home. If you don’t, this document is fully standalone.</p>
-<p>The fundamental design change from Lonelog is this: in solo RPG play, the world only speaks when asked (<code>?</code>). In OSG play, rival factions and NPAs act on their own interests every turn without being asked. The <code>!</code> symbol — borrowed from Partylog — captures this: the world pushing events into the fiction, not waiting for your oracle query.</p>
 </section>
 </section>
 <section id="digital-vs.-analog-formats" class="level2">
@@ -499,7 +505,7 @@ d: 2d6 → 2,4  keep low → 2
 <li>Sessions: Level 2 headings (<code>## Session 1</code>)</li>
 <li>Turns: <code>[Turn:N]</code> markers within sessions</li>
 <li>Core notation and tracking: inside code blocks</li>
-<li>Narrative and reports: regular prose between code blocks</li>
+<li>Report text: regular prose between code blocks</li>
 </ul>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> Always wrap notation in code blocks when using digital markdown. This prevents conflicts with Markdown syntax and ensures symbols like <code>=&gt;</code> render correctly.</p>
@@ -520,9 +526,16 @@ d: 2d6 → 2,4  keep low → 2
 <p><strong>Digital:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Session 1</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Date: 2026-05-01 | Turns: 1–2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>[Turn:1]</p>
-<p>@ Meranto act: File debt review against Caldrath’s treasury out: Delay army movement thirty days lev: Emergency clause, full documentation, precedent established [Lev:Strong] d: 2d6 → 6,2 keep high → 6 -&gt; Success =&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]</p>
-<pre><code></code></pre>
+<pre><code>[Turn:1]
+
+@ Meranto
+  act: File debt review against Caldrath's treasury
+  out: Delay army movement thirty days
+  lev: Emergency clause, full documentation, precedent established
+[Lev:Strong]
+d: 2d6 → 6,2  keep high → 6
+-&gt; Success
+=&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]</code></pre>
 <p><strong>Analog:</strong></p>
 <pre><code>Turn 1
 
@@ -534,21 +547,21 @@ d: 2d6 → 2,4  keep low → 2
 d: 2d6 → 6,2  keep high → 6
 -&gt; Success
 =&gt; [Fac:Caldrath | pos:army held | Clock:LiquidityReview 1/3]</code></pre>
-<p>Both formats use identical notation — only the wrapping differs.</p>
+<p>Both formats use identical notation; only the wrapping differs.</p>
 </section>
 </section>
 <section id="core-notation" class="level2">
 <h2 class="anchored" data-anchor-id="core-notation">3. Core Notation</h2>
-<p>This is the heart of the system. Five elements mirror the natural flow of OSG play: you argue your action, the world argues back, dice decide, and the board changes.</p>
-<section id="your-factions-action" class="level3">
-<h3 class="anchored" data-anchor-id="your-factions-action">3.1 Your Faction’s Action (<code>@</code>)</h3>
-<p>The <code>@</code> symbol represents your faction submitting its turn action. Every action in OSG follows the same three-part structure:</p>
+<p>This is the heart of the system. Five elements mirror the natural flow of OSG adjudication: the faction argues its action, the Referee grades leverage, dice decide, and the board changes.</p>
+<section id="faction-actions" class="level3">
+<h3 class="anchored" data-anchor-id="faction-actions">3.1 Faction Actions (<code>@</code>)</h3>
+<p>The <code>@</code> symbol represents a faction submitting its turn action. Every action in OSG follows the same three-part structure:</p>
 <pre><code>@ FactionName
-  act: What specifically are you doing?
-  out: What result do you want?
+  act: What specifically are they doing?
+  out: What result do they want?
   lev: Why is this action likely to produce that outcome?</code></pre>
-<p>The three sub-lines are not optional decoration. They are the argument. <code>act</code> commits you to a specific course of conduct. <code>out</code> separates what you’re doing from what you want — the referee adjudicates the outcome, not just the action. <code>lev</code> is the case for why your plan should work, grounded in established fiction: resources, relationships, positioning, prior actions.</p>
-<p><strong>Example — full argument:</strong></p>
+<p>The three sub-lines are not optional decoration. They are the argument the Referee adjudicates. <code>act</code> commits the faction to a specific course of conduct. <code>out</code> separates what they are doing from what they want: the Referee adjudicates the outcome, not just the action. <code>lev</code> is the case for why the plan should work, grounded in established fiction: resources, relationships, positioning, prior actions.</p>
+<p><strong>Example: full argument:</strong></p>
 <pre><code>@ Meranto
   act: Send formal notice of debt review to Caldrath's treasury,
        citing the emergency clause in our lending agreements
@@ -558,132 +571,104 @@ d: 2d6 → 6,2  keep high → 6
        The emergency clause exists, has precedent, and their treasury
        minister knows invoking it freezes discretionary spending for
        thirty days. We hold documentation for every transaction.</code></pre>
-<p><strong>Example — compact (fast play):</strong></p>
+<p><strong>Example: compact (fast play):</strong></p>
 <pre><code>@ Meranto
   act: Invoke emergency debt clause against Caldrath
   out: Freeze army expenditure for one turn
   lev: Full documentation; clause has precedent</code></pre>
-<p>Both are valid. Use the level of detail your play requires.</p>
+<p>Both are valid. Use the level of detail the game requires.</p>
 <section id="spendable-bonuses-in-the-argument" class="level4">
 <h4 class="anchored" data-anchor-id="spendable-bonuses-in-the-argument">3.1.1 Spendable Bonuses in the Argument</h4>
-<p>If your action spends a named bonus asset, record the spend inside the leverage line using the <code>[Bon:]</code> tag:</p>
+<p>If an action spends a named bonus asset, record the spend inside the leverage line using the <code>[Bon:]</code> tag:</p>
 <pre><code>@ Saivorn
   act: Rush naval assets to the Corenth harbour mouth
   out: Establish a naval blockade before Caldrath can resupply
-  lev: Two deep-water ports give us unmatched transit speed;
-       [Bon:HarbourRights 1/2 → 0/2] — we invoke our treaty
-       access to Corenth's outer anchorage</code></pre>
-<p>The bonus tag ticks down at the point of use and is visible in the leverage argument, which is where it matters for adjudication.</p>
-</section>
-</section>
-<section id="rival-and-npa-actions" class="level3">
-<h3 class="anchored" data-anchor-id="rival-and-npa-actions">3.2 Rival and NPA Actions (<code>!</code>)</h3>
-<p>The <code>!</code> symbol represents any faction acting whose action you did not submit — a rival player faction, a Non-Player Actor (NPA), or any force that acts on its own interests this turn.</p>
-<p>In group play, <code>!</code> logs the actions submitted by other players as they are revealed in the Report. In solo play, <code>!</code> events are generated by oracle query, random NPA behavior tables, or referee-authored logic.</p>
-<p>The three-part argument structure applies to <code>!</code> actions exactly as it does to <code>@</code> actions. This matters: the leverage argument is what the referee (or oracle) grades, and it should be visible in the log for every actor.</p>
-<pre><code>! Caldrath
-  act: Deploy advance units to Essaveth's northern pass
-  out: Establish military presence before any treaty negotiation
-  lev: Largest army on the peninsula; Essaveth has no defensive
-       pact; units are already at the border — one day's march
-[Lev:Strong]
-d: 2d6 → 6,2  keep high → 6
--&gt; Success, and...
-=&gt; [Fac:Caldrath | pos:pass occupied]
-=&gt; [Fac:Essaveth | pos:under occupation | Clock:Resistance 0/4]
-=&gt; Essaveth's border garrison stands down without resistance —
-   visible to all factions in the Report</code></pre>
-<section id="the-distinction" class="level4">
-<h4 class="anchored" data-anchor-id="the-distinction">3.2.1 The <code>@</code> / <code>!</code> Distinction</h4>
-<p>This is Factionlog’s central design choice:</p>
-<ul>
-<li><code>@</code> is <strong>your faction acting</strong> — you chose this, you own it</li>
-<li><code>!</code> is <strong>a rival or the world acting</strong> — it acts on its own, you respond to it</li>
-</ul>
-<p>In OSG, all factions submit actions privately and simultaneously. The distinction in the log reflects whose argument you are logging and whose you are reconstructing from the Report or oracle.</p>
-</section>
-<section id="solo-play-emulating-rival-arguments" class="level4">
-<h4 class="anchored" data-anchor-id="solo-play-emulating-rival-arguments">3.2.2 Solo Play: Emulating Rival Arguments</h4>
-<p>When playing solo, you reconstruct rival arguments from the Report and NPA behavior rules. Use <code>?</code> (Lonelog oracle syntax) to generate what you don’t know:</p>
-<pre><code>! Saivorn
-? What does Saivorn attempt this turn? (oracle: NPA behavior table)
-- tbl:NPAAction → "Opportunistic diplomacy"
-  act: Open a quiet channel to Corenth, bypassing Caldrath
-  out: Establish a private relationship before the army arrives
-  lev: Sea access gives Saivorn direct reach; Caldrath's
-       aggression gives Corenth reason to listen
-[Lev:Weak]  (no established presence in Corenth yet)
-d: 2d6 → 3,1  keep low → 1
--&gt; Failure, and... Corenth alerts Caldrath to the approach
-=&gt; [Fac:Saivorn | pos:diplomatically exposed]</code></pre>
-<p>The oracle determines the attempt; you record it with the same structure as any other action. What enters the log is always the full argument, regardless of how it was generated.</p>
+  lev: Two deep-water ports give unmatched transit speed;
+       [Bon:HarbourRights 1/2 → 0/2] — treaty access to
+       Corenth's outer anchorage invoked</code></pre>
+<p>The bonus tag ticks down at the point of use, visible in the leverage argument where it matters for adjudication.</p>
 </section>
 </section>
 <section id="leverage-grade-lev" class="level3">
-<h3 class="anchored" data-anchor-id="leverage-grade-lev">3.3 Leverage Grade (<code>[Lev:]</code>)</h3>
-<p>Before rolling, the referee (or you, as solo oracle-referee) grades the acting faction’s leverage as <strong>Strong</strong> or <strong>Weak</strong> relative to any opposition.</p>
+<h3 class="anchored" data-anchor-id="leverage-grade-lev">3.2 Leverage Grade (<code>[Lev:]</code>)</h3>
+<p>Before rolling, the Referee grades the acting faction’s leverage as <strong>Strong</strong> or <strong>Weak</strong> relative to any opposition.</p>
 <p>Record the grade on its own line between the argument and the roll:</p>
 <pre><code>[Lev:Strong]
 [Lev:Weak]</code></pre>
-<p><strong>Strong</strong> means the faction has enough established advantage — resources, relationships, positioning, prior actions — that you’d expect success more often than not.</p>
+<p><strong>Strong</strong> means the faction has enough established advantage (resources, relationships, positioning, prior actions) that success is more likely than not.</p>
 <p><strong>Weak</strong> means the attempt is plausible but without a strong basis for expecting success: thin resources, an entrenched opponent, no established presence in the relevant domain.</p>
-<p>In a group game, the referee grades leverage — record the grade as given. When playing solo, use an oracle query if you are uncertain:</p>
-<pre><code>? Is my leverage Strong against Essaveth's pass claim?
-- Yes, but... → Strong, but traceability is thin</code></pre>
+<p>The Referee is not scoring a debate. Strong or Weak is a qualitative judgment following from the leverage argument and the established fiction.</p>
 </section>
 <section id="the-dice-mechanic-d" class="level3">
-<h3 class="anchored" data-anchor-id="the-dice-mechanic-d">3.4 The Dice Mechanic (<code>d:</code>)</h3>
+<h3 class="anchored" data-anchor-id="the-dice-mechanic-d">3.3 The Dice Mechanic (<code>d:</code>)</h3>
 <p>OSG uses 2d6: <strong>keep the high die</strong> for Strong leverage, <strong>keep the low die</strong> for Weak leverage.</p>
 <pre><code>d: 2d6 → 5,3  keep high → 5   (Strong)
 d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
 <p><strong>Result interpretation:</strong></p>
-<div class="line-block">Kept die | Outcome |<br>
-——– | undefined—————————————————- |<br>
-6 | Success; something especially good may also occur |<br>
-4–5 | Desired outcome occurs |<br>
-2–3 | Action proceeds, but outcome is worse than desired |<br>
-1 | Worst outcome; something especially bad may also occur |</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kept die</th>
+<th style="text-align: left;">Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Success; something especially good may also occur</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4–5</td>
+<td style="text-align: left;">Desired outcome occurs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2–3</td>
+<td style="text-align: left;">Action proceeds, but outcome is worse than desired</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Worst outcome; something especially bad may also occur</td>
+</tr>
+</tbody>
+</table>
 <section id="force-of-nature-doubles" class="level4">
-<h4 class="anchored" data-anchor-id="force-of-nature-doubles">3.4.1 Force of Nature (Doubles)</h4>
-<p>When both dice show the same number, the referee may introduce a Force of Nature — a chaotic event outside any faction’s control. In a group game, the referee narrates it directly. In solo play, generate it with an oracle query:</p>
+<h4 class="anchored" data-anchor-id="force-of-nature-doubles">3.3.1 Force of Nature (Doubles)</h4>
+<p>When both dice show the same number, the Referee may introduce a Force of Nature: a chaotic event outside any faction’s control. Record it on its own line:</p>
 <pre><code>d: 2d6 → 3,3  DOUBLES
-? Force of Nature relevant to current fiction?
-- Yes → [E:HarborStorm | emerges]
+[FoN: harbour storm grounds all sea transit next turn]
 =&gt; All sea transit actions opposed next turn
-=&gt; Saivorn's naval advantage is temporarily neutralized</code></pre>
-<p>The Force of Nature is a prompt, not a requirement. Use it when it fits the fiction and creates genuine new complications — sparingly, once or twice per game at most.</p>
+=&gt; Saivorn's naval advantage temporarily neutralized</code></pre>
+<p>The Force of Nature is a prompt, not a requirement. Use it only when it fits the fiction and creates genuine complications, at most once or twice per game.</p>
 </section>
 </section>
 <section id="adjudication-result--" class="level3">
-<h3 class="anchored" data-anchor-id="adjudication-result--">3.5 Adjudication Result (<code>-&gt;</code>)</h3>
-<p>The <code>-&gt;</code> line declares the adjudicated outcome — what actually happened, following from the leverage grade and the dice.</p>
+<h3 class="anchored" data-anchor-id="adjudication-result--">3.4 Adjudication Result (<code>-&gt;</code>)</h3>
+<p>The <code>-&gt;</code> line declares the adjudicated outcome: what actually happened, following from the leverage grade and the dice.</p>
 <pre><code>-&gt; Success
 -&gt; Partial success — review opens, but scope is disputed
 -&gt; Failure — Corenth does not respond
 -&gt; Success, and... Essaveth's garrison stands down unprompted
 -&gt; Failure, and... Caldrath learns of the attempt</code></pre>
-<p>The result should be Reasonable (proportionate to the fiction), Actionable (it leaves something for other factions to respond to), and Traceable (it points to earlier events). These are the OSG RAT criteria. In a group game, the referee applies them when adjudicating — record the outcome as given. When playing solo, check them with brief oracle queries before writing the outcome:</p>
-<pre><code>? RAT: Is this outcome actionable for other factions?
-- Yes → write a visible hook into the Report</code></pre>
+<p>The result should pass the RAT check: <strong>Reasonable</strong> (proportionate to the fiction), <strong>Actionable</strong> (leaves something for other factions to respond to), and <strong>Traceable</strong> (points to earlier events). If an outcome fails any of these, rewrite it before moving to consequences.</p>
 </section>
 <section id="consequences-and-board-state" class="level3">
-<h3 class="anchored" data-anchor-id="consequences-and-board-state">3.6 Consequences and Board State (<code>=&gt;</code>)</h3>
-<p>The <code>=&gt;</code> symbol records what changes in the world as a result of the adjudicated outcome. In OSG, this means faction positions, contested zones, clock progress, and anything other factions will now have to contend with.</p>
+<h3 class="anchored" data-anchor-id="consequences-and-board-state">3.5 Consequences and Board State (<code>=&gt;</code>)</h3>
+<p>The <code>=&gt;</code> symbol records what changes in the world as a result of the adjudicated outcome: faction positions, contested zones, clock progress, and anything other factions must now contend with.</p>
 <pre><code>=&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]
 =&gt; Caldrath's chancellor publicly accuses Meranto of bad faith
 =&gt; [Fac:Meranto | pos:diplomatically exposed in Corenth]</code></pre>
 <p>Chain multiple <code>=&gt;</code> lines for cascading effects. Every outcome should leave at least one visible hook for another faction.</p>
 </section>
 <section id="the-report-block" class="level3">
-<h3 class="anchored" data-anchor-id="the-report-block">3.7 The Report Block</h3>
-<p>At the end of each turn, the referee publishes a public Report. In solo play, write it yourself as the oracle-referee, summarizing outcomes and seeding hooks for the next turn.</p>
+<h3 class="anchored" data-anchor-id="the-report-block">3.6 The Report Block</h3>
+<p>At the end of each turn, the Referee publishes a public Report. Record it in a delimited block immediately after the turn’s adjudications:</p>
 <pre><code>
  Meranto's debt clause stalls Caldrath's army at the border.
     Saivorn's diplomatic overture is rebuffed — and Caldrath now
     knows. Essaveth has gone quiet. The Conclave has summoned
     representatives from all factions to the temple complex.
     Next turn: the question is who arrives first. </code></pre>
-<p>The `` delimiters separate the Report narrative from the notation log. The Report is public fiction; everything inside it is known to all factions.</p>
+<p>The `<code>delimiters separate the Report narrative from the notation log. The Report is public fiction; everything inside it is known to all factions. Private outcomes not in the Report are logged only in</code>=&gt;` consequence lines inside the relevant faction’s block.</p>
 </section>
 </section>
 <section id="optional-layers" class="level2">
@@ -698,34 +683,28 @@ d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
              | bon:"Emergency Recall" 1/1, "Debt Clause" 2/2]</code></pre>
 <p>Fields:</p>
 <ul>
-<li><code>obj:</code> — Faction’s objectives (from the Brief; does not change)</li>
-<li><code>pos:</code> — Current position on the board (updates each turn)</li>
-<li><code>bon:</code> — Spendable bonuses with remaining uses</li>
+<li><code>obj:</code> the faction’s objectives (from the Brief; does not change)</li>
+<li><code>pos:</code> the current position on the board (updates each turn)</li>
+<li><code>bon:</code> spendable bonuses with remaining uses</li>
 </ul>
-<p>Updating faction state:</p>
-<pre><code>[Fac:Caldrath | pos:army held at border]        — position update
-[Fac:Caldrath | pos:pass occupied]              — after successful action
-[Fac:Saivorn  | pos:diplomatically exposed]     — consequence of failure</code></pre>
-<p>You do not need to restate all fields on every update — show only what changed.</p>
+<p>Updating faction state: show only what changed:</p>
+<pre><code>[Fac:Caldrath | pos:army held at border]
+[Fac:Caldrath | pos:pass occupied]
+[Fac:Saivorn  | pos:diplomatically exposed]</code></pre>
 </section>
 <section id="spendable-bonuses-bon" class="level4">
 <h4 class="anchored" data-anchor-id="spendable-bonuses-bon">4.1.2 Spendable Bonuses (<code>[Bon:]</code>)</h4>
-<p>Bonuses are named, one-use (or limited-use) assets tied to a faction’s starting position. They are spent in the leverage argument to shift leverage from Weak to Strong for one action.</p>
 <pre><code>[Bon:"Debt Clause" 2/2]      — full, two uses remaining
 [Bon:"Debt Clause" 1/2]      — one use spent
 [Bon:"Debt Clause" 0/2]      — exhausted</code></pre>
-<p>A bonus should be contextually bounded — its narrative name indicates when it applies. <code>"Debt Clause"</code> applies to financial and legal arguments; it does not apply to a military engagement. A spent bonus cannot be recovered.</p>
+<p>A bonus should be contextually bounded: its narrative name indicates when it applies. A spent bonus cannot be recovered.</p>
 </section>
-<section id="rival-npa-tags-rival" class="level4">
-<h4 class="anchored" data-anchor-id="rival-npa-tags-rival">4.1.3 Rival / NPA Tags (<code>[Rival:]</code>)</h4>
-<p>For factions you do not control, track what is publicly known from Reports and what has been revealed through the referee’s rulings or, in solo play, oracle queries.</p>
-<pre><code>[Rival:Caldrath | obj:military dominance | pos:army at border
-               | behavior:aggressive; moves on Corenth if unopposed T3+]
-[Rival:Saivorn  | obj:secure port access | pos:coast
-               | behavior:opportunistic if Caldrath weakened]
-[Rival:Conclave | obj:Corenth autonomy   | pos:temple complex
-               | behavior:mediates; escalates if temple threatened]</code></pre>
-<p>The <code>behavior:</code> field is for solo play — it defines the NPA’s decision logic for oracle-driven action generation.</p>
+<section id="npa-tags-npa" class="level4">
+<h4 class="anchored" data-anchor-id="npa-tags-npa">4.1.3 NPA Tags (<code>[NPA:]</code>)</h4>
+<p>For Non-Player Actors controlled by the Referee, track objective, position, and behavior rule:</p>
+<pre><code>[NPA:Conclave | obj:Corenth remains neutral | pos:temple complex
+             | behavior:mediates; escalates if temple threatened]</code></pre>
+<p>NPA actions use <code>@</code> notation identical to player faction actions. The Referee adjudicates them the same way.</p>
 </section>
 <section id="locations-l" class="level4">
 <h4 class="anchored" data-anchor-id="locations-l">4.1.4 Locations (<code>[L:]</code>)</h4>
@@ -736,7 +715,7 @@ d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
 </section>
 <section id="objectives-obj" class="level4">
 <h4 class="anchored" data-anchor-id="objectives-obj">4.1.5 Objectives (<code>[Obj:]</code>)</h4>
-<p>Track your faction’s objectives from the Brief. Mark them at game end for the debrief.</p>
+<p>Track each faction’s objectives from the Brief. Mark them at game end for the debrief.</p>
 <pre><code>[Obj:Control Corenth debt leverage      | Open]
 [Obj:Prevent Caldrath military presence | Open]
 [Obj:Isolate Saivorn from Conclave      | Achieved T4]
@@ -744,7 +723,6 @@ d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
 </section>
 <section id="events-and-clocks-e-clock" class="level4">
 <h4 class="anchored" data-anchor-id="events-and-clocks-e-clock">4.1.6 Events and Clocks (<code>[E:]</code>, <code>Clock:</code>)</h4>
-<p>Use standard Lonelog clock notation for escalating threats and timed pressures.</p>
 <pre><code>[E:CaldhrathLiquidity | Clock: 1/3]   — Caldrath treasury under review
 [E:ConclaveSummit     | Clock: 0/1]   — imminent
 [E:EssavethResistance | Clock: 2/4]   — building</code></pre>
@@ -754,7 +732,7 @@ d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
 <h3 class="anchored" data-anchor-id="turn-zero-t0">4.2 Turn Zero (<code>[T0]</code>)</h3>
 <p>Turn Zero is the pre-game clarification session. Log world assumptions, faction setups, and any rulings made before Turn 1 here.</p>
 <pre><code>[T0]
-rule: Unopposed actions succeed; the referee still determines
+rule: Unopposed actions succeed; the Referee still determines
       how they land — every success reshapes the board
 rule: Talking is free — negotiation between factions costs no
       turn; only what you actually do costs your action
@@ -768,43 +746,24 @@ assumption: Meranto has no physical presence on the map —
 [Fac:Meranto | obj:control Corenth debt leverage
              | pos:agents everywhere, no map token
              | bon:"Emergency Recall" 1/1, "Debt Clause" 2/2]
-[Rival:Caldrath  | obj:military dominance of Corenth
-                 | pos:army at northern border
-                 | behavior:aggressive; moves on Corenth if unopposed by T3]
-[Rival:Saivorn   | obj:secure port access to Corenth
-                 | pos:coast, two deep-water ports
-                 | behavior:opportunistic if Caldrath weakened]
-[Rival:Essaveth  | obj:preserve pass autonomy
-                 | pos:northern passes, small garrison
-                 | behavior:defensive; seeks alliance if threatened]
-[Rival:Conclave  | obj:Corenth remains neutral
-                 | pos:temple complex, extraterritorial
-                 | behavior:mediates; escalates if temple threatened]</code></pre>
-</section>
-<section id="random-tables-and-oracle" class="level3">
-<h3 class="anchored" data-anchor-id="random-tables-and-oracle">4.3 Random Tables and Oracle</h3>
-<p>For solo play, use standard Lonelog oracle and table notation to generate NPA arguments, Force of Nature events, and adjudication inputs.</p>
-<pre><code>? What does Caldrath attempt this turn?
-tbl: NPAAction d6
-  1 Hold position
-  2 Apply diplomatic pressure
-  3 Military advance
-  4 Economic blockade
-  5 Alliance approach
-  6 Escalate — open aggression
-tbl: NPAAction d6 → 3
-- Military advance
-
-! Caldrath
-  act: [generated from table result]
-  ...</code></pre>
-<p>Inline table definitions make the log self-contained — readers see the full table and the result without needing external tools.</p>
+[NPA:Caldrath  | obj:military dominance of Corenth
+               | pos:army at northern border
+               | behavior:aggressive; moves on Corenth if unopposed by T3]
+[NPA:Saivorn   | obj:secure port access to Corenth
+               | pos:coast, two deep-water ports
+               | behavior:opportunistic if Caldrath weakened]
+[NPA:Essaveth  | obj:preserve pass autonomy
+               | pos:northern passes, small garrison
+               | behavior:defensive; seeks alliance if threatened]
+[NPA:Conclave  | obj:Corenth remains neutral
+               | pos:temple complex, extraterritorial
+               | behavior:mediates; escalates if temple threatened]</code></pre>
 </section>
 <section id="meta-notes" class="level3">
-<h3 class="anchored" data-anchor-id="meta-notes">4.4 Meta Notes</h3>
+<h3 class="anchored" data-anchor-id="meta-notes">4.3 Meta Notes</h3>
 <p>Step outside the fiction for rulings, design notes, and retrospective annotations.</p>
 <pre><code>(rule: NPA behavior tables rolled before each turn, results private
-       until logged as ! actions)
+       until logged as @ actions)
 (post: Turn 3 reconstructed from notes — dialogue is paraphrased)
 (note: Caldrath player absent Turn 2; NPA holding action used)</code></pre>
 </section>
@@ -813,14 +772,14 @@ tbl: NPAAction d6 → 3
 <h2 class="anchored" data-anchor-id="optional-structure">5. Optional Structure</h2>
 <section id="game-header" class="level3">
 <h3 class="anchored" data-anchor-id="game-header">5.1 Game Header</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> The Corentine Crisis</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span><span class="kw">:</span><span class="at"> Open Strategy Game</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hack</span><span class="kw">:</span><span class="at"> Factionlog</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">turns</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="fu">faction</span><span class="kw">:</span><span class="at"> House Meranto</span></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-05-01</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> The Corentine Crisis</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span><span class="kw">:</span><span class="at"> Open Strategy Game</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hack</span><span class="kw">:</span><span class="at"> Factionlog</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">turns</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">factions</span><span class="kw">:</span><span class="at"> Meranto, Caldrath, Saivorn, Essaveth, Conclave</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-05-01</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="session-header" class="level3">
 <h3 class="anchored" data-anchor-id="session-header">5.2 Session Header</h3>
@@ -829,8 +788,7 @@ tbl: NPAAction d6 → 3
 Date: 2026-05-01
 Turns: 1–2
 Recap: Turn Zero complete. Factions established.
-       Caldrath is already moving.
-Goals: Delay Caldrath; open a quiet channel to Essaveth.</code></pre>
+       Caldrath is already moving.</code></pre>
 </section>
 <section id="debrief" class="level3">
 <h3 class="anchored" data-anchor-id="debrief">5.3 Debrief</h3>
@@ -847,14 +805,16 @@ Meranto:  Debt Clause delayed Caldrath two turns. Conclave
 </section>
 <section id="complete-turn-example" class="level2">
 <h2 class="anchored" data-anchor-id="complete-turn-example">6. Complete Turn Example</h2>
-<p>A full two-faction turn from <em>The Corentine Crisis</em>, Turn 2.</p>
-<pre><code>@ Meranto
+<p>A full multi-faction turn from <em>The Corentine Crisis</em>, Turn 2.</p>
+<pre><code>[Turn:2]
+
+@ Meranto
   act: Approach Essaveth privately — offer to underwrite their
        garrison costs in exchange for pass access rights
   out: Establish a quiet alliance before Caldrath occupies the pass
   lev: Essaveth is under military pressure and has no defensive pact.
-       Meranto holds their small infrastructure debt. We can offer
-       immediate financial relief — something Caldrath cannot match.
+       Meranto holds their small infrastructure debt. Immediate
+       financial relief — something Caldrath cannot match.
        [Bon:"Debt Clause" 2/2 → 1/2]
 [Lev:Strong]
 d: 2d6 → 4,6  keep high → 6
@@ -862,9 +822,9 @@ d: 2d6 → 4,6  keep high → 6
    on Caldrath's supply line through the pass
 =&gt; [Fac:Essaveth | pos:quiet Meranto ally | Bon:IntelligenceFile 1/1]
 =&gt; [Fac:Meranto  | pos:pass access secured | bon:"Debt Clause" 1/2]
-=&gt; Essaveth's public posture remains neutral — the alliance is secret
+=&gt; Essaveth's public posture remains neutral — alliance is secret
 
-! Caldrath
+@ Caldrath
   act: Send an envoy to Essaveth demanding right of passage for
        the army, framed as a treaty obligation
   out: Secure legal cover for army movement through the pass
@@ -878,14 +838,12 @@ d: 2d6 → 2,5  keep high → 5
 =&gt; [Fac:Caldrath | pos:army delayed at border | Clock:PassNegotiation 1/3]
 =&gt; Caldrath's envoy returns empty-handed — publicly noted
 
-! Conclave (NPA)
-? Conclave action this turn — does the summit invitation stand?
-- Yes, but... → Invitation sent, but with conditions
+@ Conclave (NPA)
   act: Issue a formal invitation to all factions for a Corenth
        summit, citing the army movements as a threat to the
        neutral zone
   out: Establish itself as the legitimate mediating authority
-       before any faction can act unilaterally in Corenth
+       before any faction acts unilaterally in Corenth
   lev: Extraterritorial status; all factions have obligations
        under the old treaty; the neutral city gives the Conclave
        standing no other actor can claim
@@ -895,72 +853,102 @@ d: 2d6 → 3,5  keep high → 5
 =&gt; [E:ConclaveSummit | Clock: 1/1] — summit is imminent, Turn 3
 =&gt; Every faction must now decide: attend, refuse, or act before it
 
-Caldrath's envoy returns from Essaveth without an answer.
+ Caldrath's envoy returns from Essaveth without an answer.
     The Conclave has summoned all factions to Corenth.
     The summit will be held next turn. Essaveth has gone quiet.
     Meranto's agents were seen near the northern pass.
     The question now is who arrives in Corenth, and how. </code></pre>
 </section>
+<section id="solo-extension" class="level2">
+<h2 class="anchored" data-anchor-id="solo-extension">7. Solo Extension</h2>
+<p>When playing OSG solo (see Part IX of <em>Contested Ground</em> or the Solo OSG rules), the Referee role collapses into the player. Factionlog’s core notation works unchanged; every Autonomous Actor’s action is logged with <code>@</code> notation exactly like a player faction’s. Two additions support solo-specific mechanics.</p>
+<section id="oracle-queries" class="level3">
+<h3 class="anchored" data-anchor-id="oracle-queries">7.1 Oracle Queries (<code>?</code>)</h3>
+<p>Use the <code>?</code> symbol to record any query to a random table or oracle system used to generate an AA’s action or resolve uncertainty:</p>
+<pre><code>? What does Caldrath attempt this turn?
+- NPAAction d6 → 3: Military advance
+
+@ Caldrath
+  act: [generated from table result: advance on the pass]
+  ...</code></pre>
+<p>The oracle query is logged so the reasoning behind a generated action is visible when reviewing the record later.</p>
+</section>
+<section id="aa-action-tables-tbl" class="level3">
+<h3 class="anchored" data-anchor-id="aa-action-tables-tbl">7.2 AA Action Tables (<code>tbl:</code>)</h3>
+<p>Inline table definitions make the log self-contained:</p>
+<pre><code>tbl: CaldhrathAction d6
+  1 Hold position
+  2 Apply diplomatic pressure
+  3 Military advance
+  4 Economic blockade
+  5 Alliance approach
+  6 Escalate — open aggression
+tbl: CaldhrathAction d6 → 3
+- Military advance</code></pre>
+<p>Define each AA’s action table once at <code>[T0]</code> and reference it by name on subsequent turns.</p>
+</section>
+<section id="rival-tags-rival" class="level3">
+<h3 class="anchored" data-anchor-id="rival-tags-rival">7.3 Rival Tags (<code>[Rival:]</code>)</h3>
+<p>In solo play, use <code>[Rival:]</code> in place of <code>[NPA:]</code> to distinguish AA-driven factions from Referee-controlled NPAs in a hybrid game:</p>
+<pre><code>[Rival:Saivorn | obj:secure port access | pos:coast
+              | behavior:opportunistic if Caldrath weakened]</code></pre>
+</section>
+</section>
 <section id="best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="best-practices">7. Best Practices</h2>
-<p><strong>Do</strong> write the full three-part argument before grading leverage. The leverage grade follows from the argument — not the other way around.</p>
-<p><strong>Don’t</strong> write the leverage grade and then construct an argument to justify it. The argument is the game.</p>
-<p><strong>Do</strong> log <code>!</code> rival actions with the same argument structure as your own, even when reconstructed from the Report or oracle.</p>
-<p><strong>Don’t</strong> log rival actions as bare outcomes: <code>! Caldrath moves army.</code> The argument is what makes the log traceable.</p>
-<p><strong>Do</strong> let the <code>-&gt;</code> outcome be proportionate and leave a hook. Every result — success or failure — should give at least one other faction something to respond to.</p>
+<h2 class="anchored" data-anchor-id="best-practices">8. Best Practices</h2>
+<p><strong>Do</strong> write the full three-part argument before recording the leverage grade. The grade follows from the argument, not the other way around.</p>
+<p><strong>Don’t</strong> record a leverage grade and then construct an argument to justify it. The argument is what gets adjudicated.</p>
+<p><strong>Do</strong> log NPA and AA actions with the same <code>@</code> structure as player faction actions, including the full argument.</p>
+<p><strong>Don’t</strong> log faction actions as bare outcomes: <code>@ Caldrath moves army.</code> Without the argument, the log is not traceable.</p>
+<p><strong>Do</strong> let the <code>-&gt;</code> outcome be proportionate and leave a hook. Every result, success or failure, should give at least one other faction something to respond to.</p>
 <p><strong>Don’t</strong> write outcomes that close the fiction: <code>-&gt; Success. Caldrath is defeated.</code> OSG ends after a fixed number of turns, not when one faction is eliminated.</p>
 <p><strong>Do</strong> tick down <code>[Bon:]</code> tags at the moment of spend, inside the leverage argument where they appear.</p>
 <p><strong>Don’t</strong> track bonuses separately from the argument. The spend is part of the case for why the action should succeed.</p>
-<p><strong>Do</strong> write the <code>[Report:N]</code> block in the voice of the public record — what all factions know. Keep private outcomes out of it.</p>
-<p><strong>Don’t</strong> put private intelligence or secret alliance details in the Report. Log them in <code>=&gt;</code> consequences under your faction’s block, not in the public summary.</p>
+<p><strong>Do</strong> write the Report block in the voice of the public record: what all factions know. Keep private outcomes out of it.</p>
+<p><strong>Don’t</strong> put private intelligence or secret alliance details in the Report block. Log them in <code>=&gt;</code> consequence lines, not in the public summary.</p>
 </section>
 <section id="quick-reference" class="level2">
-<h2 class="anchored" data-anchor-id="quick-reference">8. Quick Reference</h2>
+<h2 class="anchored" data-anchor-id="quick-reference">9. Quick Reference</h2>
 <section id="core-symbols" class="level3">
 <h3 class="anchored" data-anchor-id="core-symbols">Core Symbols</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 7%">
-<col style="width: 54%">
-<col style="width: 37%">
+<col style="width: 53%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Symbol</th>
-<th>Meaning</th>
-<th>Example</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>@</code></td>
-<td>Your faction’s action (three-part argument)</td>
-<td><code>@ Meranto</code></td>
+<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;">Faction action (three-part argument)</td>
+<td style="text-align: left;"><code>@ Meranto</code></td>
 </tr>
 <tr class="even">
-<td><code>!</code></td>
-<td>Rival / NPA action</td>
-<td><code>! Caldrath</code></td>
+<td style="text-align: left;"><code>d:</code></td>
+<td style="text-align: left;">OSG dice roll (2d6 keep high/low)</td>
+<td style="text-align: left;"><code>d: 2d6 → 4,6  keep high → 6</code></td>
 </tr>
 <tr class="odd">
-<td><code>d:</code></td>
-<td>OSG dice roll (2d6 keep high/low)</td>
-<td><code>d: 2d6 → 4,6  keep high → 6</code></td>
+<td style="text-align: left;"><code>-&gt;</code></td>
+<td style="text-align: left;">Adjudicated outcome</td>
+<td style="text-align: left;"><code>-&gt; Partial success</code></td>
 </tr>
 <tr class="even">
-<td><code>-&gt;</code></td>
-<td>Adjudicated outcome</td>
-<td><code>-&gt; Partial success</code></td>
+<td style="text-align: left;"><code>=&gt;</code></td>
+<td style="text-align: left;">Board-state consequence</td>
+<td style="text-align: left;"><code>=&gt; [Fac:Caldrath \| pos:...]</code></td>
 </tr>
 <tr class="odd">
-<td><code>=&gt;</code></td>
-<td>Board-state consequence</td>
-<td><code>=&gt; [Fac:Caldrath | pos:...]</code></td>
-</tr>
-<tr class="even">
-<td><code>?</code></td>
-<td>Oracle query (solo, optional)</td>
-<td><code>? What does Saivorn attempt?</code></td>
+<td style="text-align: left;"><code>?</code></td>
+<td style="text-align: left;">Oracle query <em>(solo extension)</em></td>
+<td style="text-align: left;"><code>? What does Saivorn attempt?</code></td>
 </tr>
 </tbody>
 </table>
@@ -968,8 +956,8 @@ Caldrath's envoy returns from Essaveth without an answer.
 <section id="action-argument" class="level3">
 <h3 class="anchored" data-anchor-id="action-argument">Action Argument</h3>
 <pre><code>@ FactionName
-  act: What specifically are you doing?
-  out: What result do you want?
+  act: What specifically are they doing?
+  out: What result do they want?
   lev: Why is this likely to produce that outcome?
 [Lev:Strong] or [Lev:Weak]
 d: 2d6 → H,L  keep high/low → result
@@ -981,30 +969,30 @@ d: 2d6 → H,L  keep high/low → result
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Kept die</th>
-<th>Outcome</th>
+<th style="text-align: left;">Kept die</th>
+<th style="text-align: left;">Outcome</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>6</td>
-<td>Success, and… (something especially good may occur)</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Success, and… (something especially good may occur)</td>
 </tr>
 <tr class="even">
-<td>4–5</td>
-<td>Desired outcome occurs</td>
+<td style="text-align: left;">4–5</td>
+<td style="text-align: left;">Desired outcome occurs</td>
 </tr>
 <tr class="odd">
-<td>2–3</td>
-<td>Outcome worse than desired</td>
+<td style="text-align: left;">2–3</td>
+<td style="text-align: left;">Outcome worse than desired</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>Failure, and… (something especially bad may occur)</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Failure, and… (something especially bad may occur)</td>
 </tr>
 <tr class="odd">
-<td>Doubles</td>
-<td>Potential Force of Nature — query oracle</td>
+<td style="text-align: left;">Doubles</td>
+<td style="text-align: left;">Potential Force of Nature</td>
 </tr>
 </tbody>
 </table>
@@ -1015,94 +1003,100 @@ d: 2d6 → H,L  keep high/low → result
 <colgroup>
 <col style="width: 28%">
 <col style="width: 26%">
-<col style="width: 44%">
+<col style="width: 45%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tag</th>
-<th>Purpose</th>
-<th>Example</th>
+<th style="text-align: left;">Tag</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>[Fac:Name \| ...]</code></td>
-<td>Your faction state</td>
-<td><code>[Fac:Meranto \| pos:...]</code></td>
+<td style="text-align: left;"><code>[Fac:Name \| ...]</code></td>
+<td style="text-align: left;">Faction state</td>
+<td style="text-align: left;"><code>[Fac:Meranto \| pos:...]</code></td>
 </tr>
 <tr class="even">
-<td><code>[Rival:Name \| ...]</code></td>
-<td>Rival / NPA state</td>
-<td><code>[Rival:Caldrath \| behavior:...]</code></td>
+<td style="text-align: left;"><code>[NPA:Name \| ...]</code></td>
+<td style="text-align: left;">NPA state</td>
+<td style="text-align: left;"><code>[NPA:Conclave \| behavior:...]</code></td>
 </tr>
 <tr class="odd">
-<td><code>[Lev:Strong/Weak]</code></td>
-<td>Leverage grade</td>
-<td><code>[Lev:Strong]</code></td>
+<td style="text-align: left;"><code>[Rival:Name \| ...]</code></td>
+<td style="text-align: left;">AA state <em>(solo)</em></td>
+<td style="text-align: left;"><code>[Rival:Caldrath \| behavior:...]</code></td>
 </tr>
 <tr class="even">
-<td><code>[Bon:Name N/max]</code></td>
-<td>Spendable bonus</td>
-<td><code>[Bon:"Debt Clause" 1/2]</code></td>
+<td style="text-align: left;"><code>[Lev:Strong/Weak]</code></td>
+<td style="text-align: left;">Leverage grade</td>
+<td style="text-align: left;"><code>[Lev:Strong]</code></td>
 </tr>
 <tr class="odd">
-<td><code>[Obj:... \| state]</code></td>
-<td>Faction objective</td>
-<td><code>[Obj:Isolate Saivorn \| Achieved T4]</code></td>
+<td style="text-align: left;"><code>[Bon:Name N/max]</code></td>
+<td style="text-align: left;">Spendable bonus</td>
+<td style="text-align: left;"><code>[Bon:"Debt Clause" 1/2]</code></td>
 </tr>
 <tr class="even">
-<td><code>[L:Name \| ...]</code></td>
-<td>Location state</td>
-<td><code>[L:Corenth \| contested]</code></td>
+<td style="text-align: left;"><code>[Obj:... \| state]</code></td>
+<td style="text-align: left;">Faction objective</td>
+<td style="text-align: left;"><code>[Obj:Isolate Saivorn \| Achieved T4]</code></td>
 </tr>
 <tr class="odd">
-<td><code>[E:Name \| Clock: X/Y]</code></td>
-<td>Event / clock</td>
-<td><code>[E:ConclaveSummit \| Clock: 1/1]</code></td>
+<td style="text-align: left;"><code>[L:Name \| ...]</code></td>
+<td style="text-align: left;">Location state</td>
+<td style="text-align: left;"><code>[L:Corenth \| contested]</code></td>
 </tr>
 <tr class="even">
-<td><code>[Turn:N]</code></td>
-<td>Turn marker</td>
-<td><code>[Turn:3]</code></td>
+<td style="text-align: left;"><code>[E:Name \| Clock: X/Y]</code></td>
+<td style="text-align: left;">Event / clock</td>
+<td style="text-align: left;"><code>[E:ConclaveSummit \| Clock: 1/1]</code></td>
 </tr>
 <tr class="odd">
-<td><code>[T0]</code></td>
-<td>Turn Zero block</td>
-<td><code>[T0]</code></td>
+<td style="text-align: left;"><code>[Turn:N]</code></td>
+<td style="text-align: left;">Turn marker</td>
+<td style="text-align: left;"><code>[Turn:3]</code></td>
 </tr>
 <tr class="even">
-<td><code>[Report:N]</code></td>
-<td>Public report block</td>
-<td><code>[Report:2]</code></td>
+<td style="text-align: left;"><code>[T0]</code></td>
+<td style="text-align: left;">Turn Zero block</td>
+<td style="text-align: left;"><code>[T0]</code></td>
 </tr>
 <tr class="odd">
-<td><code>[Debrief]</code></td>
-<td>End-of-game assessment</td>
-<td><code>[Debrief]</code></td>
+<td style="text-align: left;"><code>[Debrief]</code></td>
+<td style="text-align: left;">End-of-game assessment</td>
+<td style="text-align: left;"><code>[Debrief]</code></td>
 </tr>
 </tbody>
 </table>
 </section>
 </section>
 <section id="faq" class="level2">
-<h2 class="anchored" data-anchor-id="faq">9. FAQ</h2>
-<p><strong>Q: Do I need to write the full three-part argument every turn?</strong> A: Yes, always — but compact form is fine for fast play. <code>act/out/lev</code> can each be a single line. What matters is that all three are present. The leverage line is what gets graded; without it, the roll has no context.</p>
-<p><strong>Q: What if I genuinely don’t know what leverage grade to give a rival’s action?</strong> A: In a group game, ask the referee — they grade it, you record it. When playing solo, use an oracle query: <code>? Is Caldrath's leverage Strong here?</code> Then commit to the answer and grade accordingly. The grade should follow from the fiction, not from what result you want.</p>
-<p><strong>Q: Can I use Factionlog for solo play?</strong> A: Yes. Replace the referee with an oracle: use <code>?</code> queries to grade leverage, generate rival arguments, and adjudicate outcomes. The <code>!</code> blocks capture NPA actions driven by behavior tables. The rest of the notation is unchanged.</p>
-<p><strong>Q: How do I handle a faction that drops out mid-game?</strong> A: Convert them to an NPA. Add a <code>behavior:</code> field to their <code>[Rival:]</code> tag and note the transition:</p>
-<pre><code>[Rival:Essaveth | pos:occupied | behavior:passive; holds position
-                | note: player absent from T4, NPA from T4]</code></pre>
-<p><strong>Q: What’s the difference between <code>[Rival:]</code> and <code>[Fac:]</code>?</strong> A: <code>[Fac:]</code> is your faction — the one whose action you submit with <code>@</code>. <code>[Rival:]</code> is everyone else. In a group game with a scribe, you might have multiple <code>[Fac:]</code> tags, one per player-controlled faction.</p>
-<p><strong>Q: Does Factionlog work with any OSG scenario?</strong> A: Yes. The notation is system-agnostic within the OSG framework — it assumes the three-part action structure, the 2d6 keep-high/low mechanic, and the turn/report cycle. Scenario-specific mechanics (spendable bonuses, NPAs, maps) are all optional layers.</p>
+<h2 class="anchored" data-anchor-id="faq">10. FAQ</h2>
+<p><strong>Q: Does every submitted action need to be logged in full?</strong> A: Yes, always, but compact form is fine for fast play. <code>act/out/lev</code> can each be a single line. What matters is that all three are present. The leverage line is what gets graded; without it, the adjudication has no record.</p>
+<p><strong>Q: How do I log an Unopposed action?</strong> A: Write the <code>@</code> block and the <code>=&gt;</code> consequence normally; omit the <code>[Lev:]</code> grade and <code>d:</code> roll. Mark the outcome as Unopposed if clarity requires it:</p>
+<pre><code>@ Meranto
+  act: Establish a courier network across the eastern provinces
+  out: Ensure private message delivery regardless of road conditions
+  lev: Existing agent network; no competing faction present
+-&gt; Unopposed — network established
+=&gt; [Fac:Meranto | pos:eastern courier network active]</code></pre>
+<p><strong>Q: How do I handle a faction that drops out mid-game?</strong> A: Convert them to an NPA. Add a <code>behavior:</code> field to their tag and note the transition:</p>
+<pre><code>[NPA:Essaveth | pos:occupied | behavior:passive; holds position
+             | note: player absent from T4, NPA from T4]</code></pre>
+<p><strong>Q: Can I use Factionlog for a game I’m running as Referee, not playing in?</strong> A: Yes. That is the primary use case. All <code>@</code> blocks log submitted actions as the Referee received them. The Referee’s own reasoning is recorded in the <code>[Lev:]</code> grade and <code>-&gt;</code> outcome lines.</p>
+<p><strong>Q: Does Factionlog work with any OSG scenario?</strong> A: Yes. The notation is system-agnostic within the OSG framework: it assumes the three-part action structure, the 2d6 keep-high/low mechanic, and the turn/report cycle. Scenario-specific mechanics (spendable bonuses, NPAs, maps) are all optional layers.</p>
 <p><strong>Q: How does Factionlog relate to Lonelog add-ons?</strong> A: Factionlog is a fork, not an add-on. It replaces the solo character-action model entirely. Lonelog add-ons (Combat, Dungeon Crawling, Resource Tracking) are not designed for faction-scale play and are not compatible with Factionlog without adaptation.</p>
 </section>
 <section id="credits-license" class="level2">
 <h2 class="anchored" data-anchor-id="credits-license">Credits &amp; License</h2>
 <p>© 2026 Roberto Bisceglie</p>
-<p>Factionlog is forked from Lonelog v1.3.0 by Roberto Bisceglie. It shares Lonelog’s core philosophy, tag system, and structural conventions, adapted for Open Strategy Game play.</p>
+<p>Factionlog is forked from Lonelog v1.4.0 by Roberto Bisceglie. It shares Lonelog’s core philosophy, tag system, and structural conventions, adapted for Open Strategy Game play.</p>
 <p>The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.</p>
 <p>Version History:</p>
 <ul>
+<li>v 0.2.0 Reframed as Referee session log; solo extension moved to §7</li>
 <li>v 0.1.0 Initial draft</li>
 </ul>
 <p>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. Session logs and play records created using this notation are your own work and are not subject to this license.</p>

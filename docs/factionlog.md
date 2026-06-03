@@ -6,6 +6,24 @@ version: 0.2.0
 license: CC BY-SA 4.0
 lang: en
 parent: Lonelog v1.4.0
+cover-logo: assets/logo.svg
+format:
+  html: {}
+  typst:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    fontsize: 11pt
+    tbl-colwidths: auto
+    template: ../_extensions/typst-template.typ
+    template-partials:
+      - ../_extensions/typst-show.typ
+  odt:
+    toc: true
+  epub:
+    toc: true
+  gfm:
+    toc: false
 ---
 
 ## 1. Introduction

@@ -4,25 +4,7 @@ subtitle: An Open Strategy Game System Reference
 author: Roberto Bisceglie
 license: CC BY-SA 4.0
 lang: en
-version: 1.0.0
-cover-logo: assets/logo.svg
-format:
-  html: {}
-  typst:
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    fontsize: 11pt
-    tbl-colwidths: auto
-    template: ../_extensions/typst-template.typ
-    template-partials:
-      - ../_extensions/typst-show.typ
-  odt:
-    toc: true
-  epub:
-    toc: true
-  gfm:
-    toc: false
+version: 1.0
 ---
 
 This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.
@@ -429,7 +411,151 @@ Actors submit questions privately or in a shared channel. The Referee publishes 
 - Is every private outcome accompanied by a traceable crumb in the public Report?
 - Is the Report written in news-roundup style, not adjudication explanation?
 
+## Part IX: Solo Mode
+
+You play one Actor. All other factions are **Autonomous Actors (AAs)**, driven by written behavior rules and random tables, not referee judgment. You are simultaneously the player and the referee. The core loop (declare an action, adjudicate it honestly, write a report, advance the world) remains intact.
+
+### Setup
+
+Follow the standard design workflow from Part VII, with these adjustments:
+
+1. Write a one-sentence **Problem Statement**
+2. Create **3–5 Actors** total (including yourself) with asymmetric leverage types
+3. Write a **Brief** for your Actor (two paired objectives + position)
+4. Write a **minimal AA Brief** for each other faction (see below)
+5. Sketch a **Map** with 3–5 named contested locations
+6. Assign yourself at least one named **Spendable Bonus**
+
+A game of 3 Actors (you + 2 AAs) over 6 turns is a solid first run.
+
+#### AA Briefs
+
+Each Autonomous Actor needs only four things:
+
+| Field             | Content                                                  |
+| :---------------- | :------------------------------------------------------- |
+| **Objective**     | One sentence: what this faction wants most               |
+| **Position**      | One specific asset or vulnerability that matters         |
+| **Leverage Type** | Military / Economic / Geographic / Informational         |
+| **Behavior Rule** | A standing instruction for how it acts (see table below) |
+
+**AA Behavior Rules (d6):** Roll once per AA at setup, or choose:
+
+| d6 | Behavior Rule                                                                                                           |
+| :- | :---------------------------------------------------------------------------------------------------------------------- |
+| 1  | *Consolidator*: acts to secure and hold what it already controls; only targets others if directly threatened           |
+| 2  | *Aggressor*: each turn acts toward its objective by the most direct available means; does not negotiate                |
+| 3  | *Opportunist*: targets whichever Actor is currently weakest or most exposed in the fiction                             |
+| 4  | *Balancer*: acts against whoever holds the most visible power or influence this turn                                   |
+| 5  | *Reactor*: does nothing until acted upon; responds to the last action that affected it                                 |
+| 6  | *Schemer*: alternates between one turn of visible action and one turn of consolidation (odd = act, even = consolidate) |
+
+### The Turn
+
+#### Step 1: Generate AA Actions
+
+Before writing your own action, determine what each AA does this turn. This order matters: **you commit to your action without knowing AA outcomes, just as in a standard OSG**.
+
+For each AA, roll **d6** on its **Action Table** (written at scenario creation; see below) and note the result. Do not adjudicate yet.
+
+#### Step 2: Declare Your Action
+
+Write your action in the standard format from Part III. Commit to it in writing before opening the AA results.
+
+#### Step 3: Adjudicate All Actions
+
+Open the AA results. Adjudicate AA actions first, then your own. Apply the dice mechanic from Part IV honestly. Apply the RAT check (Part IV) to every outcome before writing it.
+
+#### Step 4: Write the Report
+
+Write a brief, third-person, factual report covering every action's outcome. Style: news roundup. End with one open observation that no single faction owns.
+
+After writing each outcome, ask: *does this put something in front of me or an AA that changes the next turn?* If no: rewrite.
+
+### The AA Action Table
+
+Write this at scenario creation for each AA. It is a d6 table of 6 plausible actions consistent with that faction's objective, leverage type, and behavior rule. Actions should vary in target and method but stay within the faction's identity.
+
+**Example: "The Iron Compact"** *(objective: control the central city; leverage: military; behavior: Aggressor)*:
+
+| d6 | Action                                                          |
+| :- | :-------------------------------------------------------------- |
+| 1  | Advance a garrison unit toward the nearest contested zone       |
+| 2  | Issue a public ultimatum demanding another faction's withdrawal |
+| 3  | Blockade a supply route between two other Actors                |
+| 4  | Attempt to suborn a local official in the contested zone        |
+| 5  | Request formal recognition from a neutral party                 |
+| 6  | Consolidate current position; fortify and resupply              |
+
+**Veto rule:** if the rolled action is fictionally incoherent given the current game state (the location no longer exists, the target has already conceded, etc.), reroll once. If the reroll is also incoherent, apply the faction's behavior rule directly to generate an action from scratch.
+
+### Leverage Assessment
+
+The greatest risk in solo play is unconscious bias: grading your own leverage too generously. Apply this checklist before calling leverage Strong:
+
+- [ ] Is the resource or relationship **explicitly established** in prior fiction, not assumed?
+- [ ] Has a prior action **created the conditions** for this one to succeed?
+- [ ] Would a neutral reader of the report agree this faction has the advantage?
+
+If you answer No to any of these, call it **Weak**.
+
+### AA Diplomatic Signals *(Optional)*
+
+Since AAs cannot negotiate, this procedure partially replaces the social layer. Once per turn, **after reading AA action results but before writing the report**, roll d6 for each AA:
+
+| d6  | Signal                                                                                                      |
+| :-- | :---------------------------------------------------------------------------------------------------------- |
+| 1–2 | No signal                                                                                                   |
+| 3   | The AA's action this turn was implicitly directed *away* from you; write one crumb suggesting restraint    |
+| 4   | The AA's action this turn creates a condition you could exploit if you act toward it next turn              |
+| 5   | The AA has overextended; its position is now vulnerable in a specific way (you determine what)             |
+| 6   | The AA acts in a way that incidentally benefits you; write it into the report as an unintended consequence |
+
+This is not negotiation. It is the world signaling opportunities, the same way a good report seeds hooks for all Actors.
+
+### Turn Structure Summary
+
+```
+1. Roll AA Action Tables → note results, do not read yet
+2. Write your Action (Action / Outcome / Leverage)
+3. Open AA results
+4. Adjudicate AA actions (2d6, RAT check)
+5. Adjudicate your action (2d6, RAT check)
+6. Roll AA Diplomatic Signals (optional)
+7. Write the Report (third-person, factual, hook-seeded)
+8. Advance the turn counter
+```
+
+### Game Length
+
+| Turns | Feel                                                 |
+| :---- | :--------------------------------------------------- |
+| 4     | Sharp, fast: one strategic arc                      |
+| 6     | Standard: alliances form and break                  |
+| 8     | Full campaign: long-term objectives come into reach |
+
+The game ends at the stated turn count. No extensions.
+
+### The Debrief
+
+Solo play changes the debrief (Part VI) into a **written self-assessment**. After the final report, write:
+
+1. **Did you achieve your short-term objective?** Why or why not.
+2. **Did you achieve your long-term objective, or lay groundwork toward it?**
+3. **What turn surprised you most?** What produced the surprise: AA behavior, a Force of Nature, or your own action's consequences?
+4. **What would you design differently** in the scenario: the problem statement, an AA behavior rule, a leverage asymmetry?
+
+The debrief is also design feedback. A solo game that produced no surprises has AA tables that were too predictable. A game that felt incoherent has a problem statement that didn't generate distinct enough competing interests.
+
 ## Glossary
+
+**AA (Autonomous Actor)**: A faction driven by a Behavior Rule and a random Action Table in solo play, replacing an absent human player. Has a minimal Brief; does not negotiate.
+
+**AA Action Table**: A d6 table of six plausible actions written at scenario creation for each Autonomous Actor. Rolled at the start of each solo turn.
+
+**Behavior Rule**: A standing instruction governing how an Autonomous Actor acts each turn (Consolidator, Aggressor, Opportunist, Balancer, Reactor, Schemer).
+
+**Diplomatic Signal**: An optional solo procedure rolled once per turn per AA after adjudication. Signals opportunities, vulnerabilities, or unintended consequences without replacing negotiation.
 
 **Action**: The specific course of conduct an Actor pursues this turn. Submitted privately in the format Action / Outcome / Leverage. Narrower than a general claim about the world: it describes what you *do*.
 

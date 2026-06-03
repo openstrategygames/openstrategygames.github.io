@@ -1,32 +1,13 @@
 ---
-title: The Open Strategy Game Handbook
 author: Roberto Bisceglie
-version: 1.0.0
-license: CC BY-SA 4.0
+date: 2026-05-03
 lang: en
-cover-logo: assets/logo.svg
-format:
-  html: {}
-  typst:
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    fontsize: 11pt
-    tbl-colwidths: auto
-    template: ../_extensions/typst-template.typ
-    template-partials:
-      - ../_extensions/typst-show.typ
-  odt:
-    toc: true
-  epub:
-    toc: true
-  gfm:
-    toc: false
+license: CC BY-SA 4.0
+title: The Open Strategy Game Handbook
+version: 0.1
 ---
 
-# The Open Strategy Game Handbook
-
-## Introduction
+# Introduction
 
 Open Strategy Games sit between wargames and role-playing games, but they are not a blend in the casual sense.
 
@@ -52,11 +33,11 @@ The aim is to create a game in which strategy emerges from position, action, and
 
 An OSG works when players are free to attempt what makes sense, when the referee can answer those attempts consistently, and when every result leaves the world more changed and more contested than before.
 
-## Part I: Practice (How to Play and Run)
+# Part I: Practice (How to Play and Run)
 
-## Chapter 0: What Is an OSG
+# Chapter 0: What Is an OSG
 
-### Origins
+## Origins
 
 In 2021, two designers found themselves running the same kind of game under different names. Chris McDowall called his *Sunrise Expansion* a Matrix Game. Sam Doebler ran a similar game set in the fantasy kingdom of Landover. When they talked about using the term "open strategy games" to describe both, they were recognizing that something distinct had emerged from the wargaming tradition, something that needed a name that didn't require twenty minutes of disambiguation. "Matrix Game" confused people who thought of *The Matrix*. "OSG" said what the thing actually was. The term, the design framework, and the foundational examples that inform this handbook trace back to Chris McDowall (*Sunrise Expansion*, bastionland.com) and Sam Doebler (*Landover*).
 
@@ -64,7 +45,7 @@ The lineage runs deeper. Matrix Games were originated by American designer Chris
 
 *Sunrise Expansion* was the founding example. A corporate dispute in near-future space. Six factions with asymmetric leverage. Six turns. The name "open strategy game" appeared in the referee's notes before it appeared anywhere else, as a description of what this thing was that didn't quite fit existing categories.
 
-### How OSG Differs
+## How OSG Differs
 
 **From wargames.** Traditional wargames resolve conflict through rules systems: hex-and-counter mechanics, attack tables, dice modifiers by unit type. Outcomes are calculated, not argued. An OSG has no combat resolution system. A military campaign is adjudicated the same way as a diplomatic initiative: declare an action, provide leverage, let the referee assess. The map is a surface for argument, not a calculation space. There are no rules about zone of control, flanking bonuses, or supply lines; only the internal logic of the fiction.
 
@@ -72,7 +53,7 @@ The lineage runs deeper. Matrix Games were originated by American designer Chris
 
 What OSG shares with RPG is tactical infinity: you can attempt anything. What it shares with wargame is competitive factional stakes and a structured turn sequence. It lives in the overlap, recognizable to players of either form, identical to neither.
 
-### The Expectations Formula
+## The Expectations Formula
 
 *Sunrise Expansion* opened every game with this statement:
 
@@ -83,7 +64,7 @@ These two sentences encode the complete design philosophy. You should be trying 
 
 Play to win. Play to find out. Both at once, all game.
 
-### Vocabulary
+## Vocabulary
 
 The terms below appear throughout this handbook. Each has an equivalent in traditional Matrix Game literature; the OSG versions are used here throughout.
 
@@ -107,7 +88,7 @@ The terms below appear throughout this handbook. Each has an equivalent in tradi
 
 **Report.** The public document the Referee produces at the end of each Turn, summarizing outcomes and seeding hooks for the next round.
 
-### How a Session Feels
+## How a Session Feels
 
 You receive a Brief. It tells you who you are, what leverage you hold, and what you are trying to achieve. The problem is stated in a single sentence: a crisis that will clearly affect every faction at the table, but in different ways, for different reasons, with different stakes.
 
@@ -121,7 +102,7 @@ The game ends. You say whether you achieved your objectives. So does everyone el
 
 *Part I covers how the game is played: the turn structure, adjudication, reports, roles, and the debrief. Part II covers how it is designed: scenario construction, faction design, briefs, maps, and scaling. The chapters can be read in order or used as reference.*
 
-## Chapter 1: The Turn in Detail
+# Chapter 1: The Turn in Detail
 
 Every action an Actor submits follows the same three-part structure:
 
@@ -154,7 +135,7 @@ This example shows how leverage works: not a list of credentials, but a specific
 >
 > Leverage: Why is this action likely to produce that outcome? Ground it in established fiction: resources, relationships, position, prior actions.
 
-### Private Submission
+## Private Submission
 
 Actions are sent directly to the referee, not posted in the public channel.
 
@@ -166,7 +147,7 @@ There are several reasons for this:
 
 Private submission is not about deception for its own sake. It is about creating a space where players commit to their plans based on their best read of the situation, rather than optimizing reactively against what others have already announced.
 
-### The Single Action
+## The Single Action
 
 Each Actor submits one action per turn. One.
 
@@ -178,7 +159,7 @@ The temptation to squeeze two things into one Action is constant and should be r
 
 Variant: Some OSG implementations allow a leader action or secondary action per turn alongside the main faction action (see the BLOC variant in Appendix A). This increases complexity for both players and referee. It is not recommended for first games.
 
-### Talking Is a Free Action
+## Talking Is a Free Action
 
 Actors can communicate with each other freely, at any time, about anything. Negotiating an alliance does not cost your turn. Sharing intelligence does not cost your turn. Warning another faction that you intend to act against them does not cost your turn.
 
@@ -188,7 +169,7 @@ The limit is what you actually *do*. Talking about building a fleet is free. Bui
 
 *This principle is drawn directly from the Guiding Principles in Sam Doebler's OSG design writing, where it appears as a foundational rule of play.*
 
-### The Report Cycle
+## The Report Cycle
 
 A single turn runs as follows:
 
@@ -203,7 +184,7 @@ The Report is the heartbeat of the game. Between deadline and Report, the game i
 
 The quality of the Report determines whether the next turn is rich or thin. A good Report gives every Actor something to act on (see Chapter 3).
 
-### Timing
+## Timing
 
 For asynchronous play, the most common format for online OSGs, a 48-hour window from Report publication to action submission is a practical default. This gives players enough time to read the report, think through their position, negotiate with other Actors, and draft a considered action without the game losing momentum.
 
@@ -211,7 +192,7 @@ What happens when a player misses the deadline? The least disruptive option is a
 
 For in-person or live online play, turns run in real time. Actions may be submitted simultaneously with a brief deliberation window, or sequentially around the table. The single-action discipline and private submission rules still apply; the timing window simply compresses from days to minutes.
 
-## Chapter 2: Adjudication
+# Chapter 2: Adjudication
 
 In classic Matrix Game theory, adjudication happens publicly: all players hear the declared Action, argue for and against it, and the facilitator assesses probability based on the weight of arguments. This system has genuine value; it keeps everyone engaged, builds shared understanding of the fiction, and surfaces subject-matter expertise when the game is being used for analysis.
 
@@ -223,7 +204,7 @@ The OSG model favors what Chris McDowall called Benevolent Dictatorship: one ref
 
 The trade-off is real. Players trust the referee to be fair, and the referee must earn that trust by being consistent, explaining outcomes in the report, and never letting their own preferences about how the story should go influence adjudication of how a player's action was likely to succeed. The upside is a game that moves and a referee who can adjudicate creatively without getting talked out of interesting outcomes by the loudest voice at the table.
 
-### Leverage: Strong and Weak
+## Leverage: Strong and Weak
 
 When an Action faces opposition, from another Actor's action, from established fiction, from a hostile NPA, the referee grades the submitting Actor's leverage as **Strong** or **Weak** relative to that opposition.
 
@@ -239,7 +220,7 @@ Weak leverage means the Actor is attempting something plausible but without a st
 
 The referee is not scoring a debate. They are asking: given what is established in the fiction, does this Actor have enough of an advantage that I'd expect them to succeed more often than not? If yes, Strong. If not, Weak.
 
-### Unopposed Actions
+## Unopposed Actions
 
 Not all Actions face opposition. An Actor building a communication network in territory they control, with established infrastructure and no competing faction attempting to interfere, has an Unopposed action.
 
@@ -247,7 +228,7 @@ Unopposed does not mean free. It does not mean automatic success without consequ
 
 Every decision should leave a mark. A communication network successfully established is a fact that other Actors now have to contend with. The referee writes this into the report in a way that creates hooks: who notices, who is threatened, what becomes possible or impossible as a result. An Unopposed success is not an off-turn. It is a successful action that still reshapes the board.
 
-### The Dice Mechanic
+## The Dice Mechanic
 
 When an Action faces opposition, the referee rolls two six-sided dice.
 
@@ -261,7 +242,7 @@ This mechanic is deliberately simple. It preserves narrative bias, the action is
 
 The mechanic also resists the temptation to treat adjudication as arithmetic. A referee who reaches for a specific modifier for every factor in an action will produce inconsistent results because the factors resist exact commensuration. The qualitative assessment, strong or weak, requires judgment but rewards it.
 
-### Force of Nature
+## Force of Nature
 
 When both dice show the same number, the referee may introduce a Force of Nature: a chaotic event originating outside any player's influence that complicates the situation.
 
@@ -271,7 +252,7 @@ Good Forces of Nature are unpredictable but not arbitrary. They emerge from exis
 
 Use Forces of Nature sparingly. A world with chaotic external events every other turn becomes unmanageable. Once or twice per game, when the narrative supports it and the opportunity is genuinely interesting, is about right.
 
-### The RAT Checklist
+## The RAT Checklist
 
 Before writing any outcome, success or failure, the referee should check it against three criteria:
 
@@ -293,7 +274,7 @@ A worked example: Essaveth attempts to establish a secret communication channel 
 
 The outcome passes. Write it.
 
-### No Action Without Friction
+## No Action Without Friction
 
 The doctrine: every outcome, successful or not, leaves a mark on the world.
 
@@ -305,7 +286,7 @@ The practical implication: if you are about to write an outcome that is wholly p
 
 The same doctrine applies to failures. When a player's leverage is weak but their action is narratively compelling, bold, plausible, and rich with implication, the failure should be written with the same care as a success. A weak-leverage failure that produces three hooks is better for the game than a strong-leverage success that produces one. The referee's job in writing a failure is not to close a door; it is to open a different one. What did the attempt reveal? Who noticed? What is now in motion that wasn't before? A failure that answers those questions is friction. A failure that merely says "it didn't work" is a dead end.
 
-### Anti-Patterns
+## Anti-Patterns
 
 **Unactionable leverage.** A player submits leverage that is too vague, too circular, or too detached from the fiction to support adjudication. "We have superior technology" with no prior fictional grounding for what that technology is or does. "Our resources are vast" without specifying what resources are being deployed. This is not leverage; it is assertion. The referee should return the action and ask the player to ground their argument in established facts. Accepting vague leverage degrades the fiction for everyone.
 
@@ -313,7 +294,7 @@ The same doctrine applies to failures. When a player's leverage is weak but thei
 
 **Over-harsh adjudication.** The referee blocks rather than complicates. Instead of friction, hurdles. Instead of messy success, failure without a forward path. Over-harsh adjudication usually comes from the referee protecting their vision of how the story should go, or from an overcorrection after a period of being too lenient. Players who are repeatedly blocked with no way forward stop investing in the game. The fix is to replace "no" with "yes, but," not capitulating to player intent, but always leaving a door open somewhere.
 
-## Chapter 3: The Report
+# Chapter 3: The Report
 
 The Report does two things simultaneously: it chronicles what happened, and it re-seeds the game.
 
@@ -323,7 +304,7 @@ Re-seeding function: a Report that only records is a dead document. A Report tha
 
 These two functions are in tension. Chronicle demands completeness; re-seeding demands economy. Resolve the tension by keeping the Report brief and pointed, not by sacrificing either goal.
 
-### Style and Tone
+## Style and Tone
 
 Write the Report in the style of a news roundup. Brief, factual, third-person. Describe what happened, not why the referee decided it happened that way. Do not narrate your adjudication reasoning. Players see "The Conclave formally claimed ratification authority over any successor treaty and met with resistance from Caldrath's representatives, though the claim itself now stands as public record" in the report, not the adjudication reasoning behind it: "The Conclave's action had strong leverage due to their institutional authority, which I assessed as outweighing Caldrath's opposition, resulting in a 5 on the die."
 
@@ -341,7 +322,7 @@ Write short. Longer reports get skimmed. A report with eight short paragraphs, o
 >
 > The peninsula is watching Caldrath. Whatever they do next, they will do it visibly. ← closing observation; open thread not owned by any single Actor
 
-### Hook-Seeding
+## Hook-Seeding
 
 After each outcome, ask: what does this create for other players? Then write at least one thing they can act on.
 
@@ -349,7 +330,7 @@ The successful espionage operation notes not just the success, but also that a r
 
 Fill the Report with hooks the way you fill the initial Brief with problems. Even if players don't act on most of them, a dense Report gives every Actor at least one thing worth responding to.
 
-### Private Outcomes and Traceable Crumbs
+## Private Outcomes and Traceable Crumbs
 
 Some Actions have outcomes that should not be fully public. A covert operation that succeeds is reported privately to the Actor. A spy inserted into an enemy faction is not announced.
 
@@ -363,7 +344,7 @@ The crumb should be small enough not to give away the secret, but specific enoug
 
 When you are unsure what crumb to leave, default to a proper name and an observation. A person noticed. A meeting occurred. A shipment was delayed. These are events that could mean anything, until they mean something.
 
-### RAT Applied to Reports
+## RAT Applied to Reports
 
 All three RAT criteria apply when writing outcomes into the report.
 
@@ -377,11 +358,11 @@ The practical test: after writing any outcome, ask whether it puts something in 
 
 Traceability is the hardest criterion in reports. It requires the referee to remember what they have and haven't established, and to consciously build on prior details rather than inventing new ones. The discipline is worth developing: when the game ends and players reconstruct what happened, traceability is what makes the reconstruction satisfying.
 
-## Chapter 4: Roles Beyond Actors
+# Chapter 4: Roles Beyond Actors
 
 This chapter is for groups larger than eight players. If your game has five to eight Actors and no overflow, skip to Chapter 5.
 
-### The Overflow Problem
+## The Overflow Problem
 
 A game designed for six Actors has twelve people who want to play. The instinctive response, add more Actors, is usually the wrong one.
 
@@ -393,9 +374,9 @@ This chapter documents two solutions. The first is the **Consultant**: a named, 
 
 This chapter does not document a complete sub-role system. The Consultant and team Actor are the two mechanisms with sufficient source grounding to be treated as established practice. Other patterns that appear in OSG discussions, collective factions, voting blocs, are scenario-specific designs, not portable sub-roles, and are not documented here as such.
 
-### The Consultant
+## The Consultant
 
-#### Origin and Evidence
+### Origin and Evidence
 
 When Chris McDowall ran Sunrise Expansion, he created a participation role for players who were not assigned as Actors. Sam Doebler was one of them. His account is the only first-person description of the role in the OSG corpus:
 
@@ -405,7 +386,7 @@ Doebler's evaluation of the experience was direct: he was more invested than a p
 
 The Consultant role has not been extensively documented since. What follows elaborates the mechanic from that original description and from the design logic it implies.
 
-#### The Mechanic
+### The Mechanic
 
 A Consultant submits one question to the referee per turn. No action. No leverage. No intended outcome. Just the question.
 
@@ -415,7 +396,7 @@ The constraint is the mechanism. A Consultant who could ask unlimited questions 
 
 The referee answers at their discretion. They may answer fully, partially, or decline if answering would reveal another Actor's secrets or confer meaningful strategic advantage. A question that crosses into another Actor's private brief is not a Consultant question; it is an investigation, and investigations require an Action.
 
-#### What Consultants Cannot Do
+### What Consultants Cannot Do
 
 The boundary between Consultant and Actor must be maintained clearly:
 
@@ -426,7 +407,7 @@ The boundary between Consultant and Actor must be maintained clearly:
 
 The Consultant is a participation tier, not a reduced Actor. Blurring the line creates a hybrid role with the costs of both and the benefits of neither. A Consultant who begins informally advising an Actor on strategy is no longer a Consultant; they are a second player on a team Actor without the structure that makes team Actors work. If that is what the group wants, assign them as a team Actor instead.
 
-#### When to Use It
+### When to Use It
 
 **Overflow players who want light engagement.** Not every overflow player wants the full responsibility of an Actor role. The Consultant offers genuine participation without the strategic commitment and turn-by-turn pressure of playing a faction.
 
@@ -436,21 +417,21 @@ The Consultant is a participation tier, not a reduced Actor. Blurring the line c
 
 **Subject-matter experts.** In games with real-world grounding, historical scenarios, political simulations, a Consultant who knows the domain can improve the fiction's plausibility by asking questions that surface inconsistencies or underdeveloped details. Their expertise serves the game without requiring them to play a faction.
 
-#### Public vs. Private Questions
+### Public vs. Private Questions
 
 The default: Consultant questions go to the referee privately, and answers are delivered at the referee's discretion, publicly, if the answer is world-clarification that benefits all players; privately, if the answer is more sensitive.
 
 In streaming or convention contexts, making both questions and answers fully public can work well. The Consultant becomes a world-clarification mechanism for the whole table, surfacing information that players with strategic agendas might not think to ask for. The referee still retains discretion over what to answer; the public format simply means the exchange is visible rather than conducted in a side channel.
 
-### The Team Actor
+## The Team Actor
 
-#### The Mechanic
+### The Mechanic
 
 Two to three players share a single Actor. They deliberate among themselves and submit one Action per turn, speaking with one voice to the referee, the same as any solo Actor.
 
 The maximum is three. Beyond three players on a single Actor, the internal deliberation becomes a game in itself: the time spent reaching agreement exceeds the time players have to think about the game's broader situation, and the Action that emerges tends to be over-compromised or late. Two players is the most common and most workable configuration. Three is viable when the Actor role is complex or when one of the three is new to the format.
 
-#### What It Produces
+### What It Produces
 
 The deliberation between players moderates extreme positions. One player may read the current turn as an opportunity for an aggressive move; another may argue for patience. The negotiation between them tends to produce what Mouat calls "more mainstream" responses, not the outlier actions that collapse the fiction or overextend the faction beyond what its position can support, but the considered, plausible action that a real entity in that situation would most likely take.
 
@@ -458,13 +439,13 @@ This is not a bug. Outlier actions are among the most common ways that OSG ficti
 
 The pairing of experienced and new players is a specific application worth naming. A new player who joins a team Actor with someone who has played before learns what kinds of leverage arguments work, what the single-action discipline actually feels like in practice, and how to read the report for things worth responding to, all before they have to do any of it alone. The team structure is an on-ramp that produces better solo players next time.
 
-#### What It Does Not Solve
+### What It Does Not Solve
 
 The team Actor increases player count per Actor; it does not reduce Actor count or expand the Actor roster. It is a solution for distributing load and including overflow players who want full engagement, not for including participants beyond the scenario's designed Actor list.
 
 It also does not work well for Actors whose design depends on internal information asymmetry. An Actor whose brief contains a secret that one team member should hold and the other should not creates an untenable situation: either both players know the secret, which changes the dynamic, or one player is running a sub-deception within the team, which is unmanageable. Keep team Actors on roles where shared knowledge is appropriate. If a role has secrets that need to stay secret within the team, it should be played solo.
 
-#### When to Use It
+### When to Use It
 
 **Overflow players who want full Actor engagement.** Some overflow players do not want a reduced participation tier; they want to play the game fully. The team Actor gives them that without requiring the scenario to be redesigned.
 
@@ -472,7 +453,7 @@ It also does not work well for Actors whose design depends on internal informati
 
 **Availability uncertainty.** A team Actor can cover for an absent player more plausibly than a solo Actor's absence. If one team member misses a turn, the other can still submit an Action. The faction remains present in the fiction. This is a practical resilience argument for team Actors in longer async games where dropout is a real risk.
 
-### Scenario-Specific Participation
+## Scenario-Specific Participation
 
 The Consultant and team Actor are portable mechanisms. They work across scenarios because they do not depend on any specific fictional premise; a Consultant is a Consultant in a space opera or a succession crisis, and a team Actor functions the same way in both.
 
@@ -492,7 +473,7 @@ This is design work, not rule-following. The Dreaming Dragonslayer sketches are 
 
 > \[!NOTE\] Appendix G includes the Corentine Succession faction briefs. The scenario was designed for six Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.
 
-## Chapter 5: The Debrief
+# Chapter 5: The Debrief
 
 Self-assessment is built into the OSG structure. At game end, each player declares whether they achieved their objectives. But self-assessment without a shared conversation is private; it happens inside each player's head, and the table never finds out what anyone actually thought they were doing.
 
@@ -502,7 +483,7 @@ The debrief is also the most direct feedback mechanism the referee has for scena
 
 Run the debrief. Always.
 
-### The Referee's Closing Frame
+## The Referee's Closing Frame
 
 Before the debrief begins, ideally published with or just after the final turn's report, the referee should write a short closing frame: a brief in-fiction summary of the world as it now stands.
 
@@ -516,7 +497,7 @@ Two formats work well:
 
 Both are preferable to cutting directly from the last report to a discussion prompt. The frame signals: the game has ended, the fiction is complete, we are now going to talk about it.
 
-### Recommended Debrief Sequence
+## Recommended Debrief Sequence
 
 **1. In-role closing (1–2 minutes).** Each player says one or two sentences in the voice of their faction: "Essaveth ends here; smaller than we started, but still here. We got one guarantee written into the new treaty and lost the northern pass anyway. That's probably the best we could have done." This is brief. Its purpose is transition, giving players a moment to mark the end of the fiction before stepping out of it. Not a recap; not a speech. One or two sentences per faction, around the table.
 
@@ -528,7 +509,7 @@ Both are preferable to cutting directly from the last report to a discussion pro
 
 **5. Referee reflection.** The referee closes with what they learned about the scenario design. What did they not anticipate? What worked better than expected? What would they change about the problem statement, the faction design, the briefs? This is not a post-mortem apology; it is an honest accounting that models intellectual honesty for the group and invites players to contribute design observations of their own.
 
-### Handling Disagreement in Self-Assessment
+## Handling Disagreement in Self-Assessment
 
 The referee does not arbitrate self-assessment disputes. There is no official record that overrides a player's judgment about whether they achieved their own objectives.
 
@@ -536,7 +517,7 @@ This is by design. The self-assessment system works because it trusts players wi
 
 If a self-assessment claim seems clearly inconsistent with what happened in the game, a player claims success on an objective that they conspicuously never pursued, the table will say so in Step 3. That is the right mechanism.
 
-### The Debrief as Design Feedback Loop
+## The Debrief as Design Feedback Loop
 
 The most valuable function of the debrief is what it reveals about the scenario design.
 
@@ -546,7 +527,7 @@ Factions that were eliminated early reveal vulnerabilities in the starting posit
 
 The referee should take notes during the debrief. Not to produce a formal report, but to capture the observations that will inform the next game they run.
 
-### Timing
+## Timing
 
 For a six-turn game with five to six Actors, budget twenty to thirty minutes for the full debrief. The in-role closing and self-assessment reveal are fast; the table response and out-of-role reflection are where the time goes. Allow the conversation to run until it runs out of energy, then close with referee reflection.
 
@@ -554,7 +535,7 @@ For longer campaigns, ten or more turns, seven or more Actors, the debrief may r
 
 Do not run the debrief immediately after the final adjudication if the game has been long and players are tired. A brief break before the debrief produces better conversations.
 
-### Hard Cases
+## Hard Cases
 
 **Eliminated players.** When a faction is eliminated mid-game but continues participating, declaring disadvantages, acting as informal consultants, how do they self-assess?
 
@@ -570,9 +551,9 @@ Self-assessment should track intent and trajectory, not the original wording of 
 
 If this happens, the referee should name the ending clearly before the last turn begins. If players still want an additional turn after that, treat it as an epilogue: actions with no self-assessment stakes, no formal adjudication requirements, just fiction. The game proper has ended; the epilogue is optional collaborative storytelling. Make this distinction explicit before the extra turn begins, or the debrief will be confused about what was "in game" and what wasn't.
 
-## Part II: Design (How to Build an OSG)
+# Part II: Design (How to Build an OSG)
 
-## Chapter 6: Design Workflow Overview
+# Chapter 6: Design Workflow Overview
 
 Designing an OSG scenario involves seven steps, each producing something the next step requires:
 
@@ -586,7 +567,7 @@ Designing an OSG scenario involves seven steps, each producing something the nex
 
 Each step produces the material the next step needs. Problem defines the competitive space; Actors define who inhabits it; Briefs give each Actor their individual stake; Map gives the fiction a physical and relational surface; Bonuses differentiate factions beyond their narrative identity; NPAs populate the world with forces no player controls; Turn Zero surfaces assumptions before play begins.
 
-### What Each Step Produces
+## What Each Step Produces
 
 **Problem.** One sentence that names a crisis, implies competing interests, and refuses to point at a correct answer. Produces: the competitive space.
 
@@ -602,7 +583,7 @@ Each step produces the material the next step needs. Problem defines the competi
 
 **Turn Zero.** A pre-play clarification session where Actors ask world-building questions and the referee answers them. Produces: shared fictional assumptions before the first action.
 
-### The Most Common Skipped Step
+## The Most Common Skipped Step
 
 Designers most often skip from Problem to Briefs without fully resolving Actors first.
 
@@ -610,7 +591,7 @@ The result is undifferentiated factions: each Actor gets Objectives that could b
 
 The design minimum requires resolving Actors before writing Briefs. You cannot write a good Brief for a faction whose identity is not yet clear. The three-bullet exercise (what it is, what it wants, what makes it unlike others) is the test. If you cannot complete it distinctly for every faction, go back to Actor design.
 
-### The Design Minimum
+## The Design Minimum
 
 Problem + Actors + Briefs is enough to run a game.
 
@@ -620,7 +601,7 @@ The Map is strongly recommended but not strictly required; you can run a game wh
 
 The design minimum exists as a permission structure: don't let the absence of a perfectly designed map stop you from running a game. A handmade sketch or a verbal description of three locations is enough. Run it, learn from it, design more next time.
 
-### What Goes Wrong When Steps Are Skipped
+## What Goes Wrong When Steps Are Skipped
 
 **Skipping Problem (starting with Actors).** Factions are designed without a shared pressure point. Objectives don't interact. The game disperses into parallel solo campaigns rather than a contested shared narrative.
 
@@ -632,7 +613,7 @@ The design minimum exists as a permission structure: don't let the absence of a 
 
 Run the steps in order. Run Turn Zero. The design pays for itself by the second turn.
 
-## Chapter 7: Starting With the Problem
+# Chapter 7: Starting With the Problem
 
 Every OSG begins with a single sentence that describes the crisis the game will address. Not a scenario description. Not a list of objectives. Not a question. A statement of the problem the factions will spend the game attempting to resolve, exploit, or reshape.
 
@@ -646,7 +627,7 @@ From *The Corentine Succession*:
 
 Note the structure: a named event (the death) produces a named absence (no recognized authority) that threatens a named structure (the treaty framework). The problem is specific enough to anchor the fiction, open enough that no single response is predetermined. Someone might try to claim the Arbiter's role. Someone might use the vacuum to renegotiate old terms. Someone might race to secure military advantage before any new order is established. Someone might try to keep the old order alive through other means. The problem generates questions rather than answers.
 
-### What Makes a Problem Generative
+## What Makes a Problem Generative
 
 A generative problem has three structural properties:
 
@@ -656,7 +637,7 @@ A generative problem has three structural properties:
 
 **At least two Actors with opposing interests built in.** The problem should create inherent friction between at least two factions before anyone makes a single decision. Ideally it creates a cascade of competing interests: Actor A benefits if X; Actor B benefits if not-X; Actor C benefits if X but only under conditions that Actor A would oppose; and so on. The friction should emerge from the problem statement itself, not from the faction design that follows.
 
-### Scoping the Problem
+## Scoping the Problem
 
 A problem statement should be large enough that five to eight actors can have distinct, non-overlapping stakes, and small enough to fit in a single sentence.
 
@@ -666,7 +647,7 @@ If the problem statement seems too narrow, it is usually because it has been wri
 
 If the problem statement seems too broad, it is usually because it lacks a precipitating event. "The peninsula is experiencing political instability" gives players nothing to act on. The Corentine statement is better because it names a specific loss at a specific moment, now, that demands response.
 
-### What a Problem Statement Is Not
+## What a Problem Statement Is Not
 
 **Not a scenario description.** A scenario description tells the players what the world looks like. The problem statement tells them what just happened to disturb it. Keep them separate.
 
@@ -674,7 +655,7 @@ If the problem statement seems too broad, it is usually because it lacks a preci
 
 **Not a question.** "What will become of the peninsula's treaty framework?" is a topic, not a problem. The problem statement should be declarative, something happened, leaving the question implicit rather than stated.
 
-### Worked Example: The Corentine Succession
+## Worked Example: The Corentine Succession
 
 *The full campaign brief for this scenario, including all faction briefs and referee notes, is in Appendix G.*
 
@@ -686,7 +667,7 @@ The problem statement generates all five orientations without specifying any of 
 
 **What makes it work structurally:** it names the absence rather than the event. "Vethara has died" is an event. "The peninsula has no recognized authority to renew its treaties" is the structural consequence, the thing that makes every faction's position precarious. The event caused the absence; the absence is what the game is about.
 
-### The Three-Angles Test
+## The Three-Angles Test
 
 Before finalizing a problem statement, apply this test: can you argue for three different responses to the problem from three different fictional positions, none of which is obviously correct?
 
@@ -694,7 +675,7 @@ If the answer is no, the problem is either underdetermined (too vague to generat
 
 If the answer is yes, the problem is probably generative enough to run. Move to Actor design.
 
-## Chapter 8: Designing Actors
+# Chapter 8: Designing Actors
 
 The goal of Actor design is not to build a comprehensive profile of a faction. It is to isolate the three most important things a player needs to know to make interesting decisions as that faction. Everything else is background.
 
@@ -714,7 +695,7 @@ From *The Corentine Succession*, the Principality of Essaveth:
 
 These three bullets tell you: Essaveth has geographic leverage, its existence depends on the old order being respected, and its military strength has a hard time limit. Three sentences, one faction identity. A player picking this faction immediately knows what they have, what makes them vulnerable, and why the problem statement, the collapse of the treaty framework, is existentially threatening to them specifically.
 
-### Asymmetric Positions
+## Asymmetric Positions
 
 Factions should differ by the *type* of leverage they hold, not by their power level. Power parity is boring: everyone trying to do the same things better than everyone else. Leverage asymmetry creates a game where the six factions around the table are actually playing six different games that happen to interact.
 
@@ -730,7 +711,7 @@ The primary leverage types:
 
 A good Actor design gives each faction a clear primary leverage type and a secondary type that creates interesting tradeoffs. Caldrath has military leverage but needs Meranto's financial patience. House Meranto has economic leverage but no hard power. These asymmetries are what make alliances interesting: factions need each other because they are strong where others are weak.
 
-### The Specificity Principle
+## The Specificity Principle
 
 Vague positions make vague arguments. Specific positions make specific arguments.
 
@@ -740,7 +721,7 @@ Specificity does three things. It gives players something concrete to work with 
 
 When writing a position bullet, apply the specificity test: could two different players interpret this bullet in ways that would lead to different leverage arguments? If yes, it is too vague. Rewrite until the interpretation is unambiguous enough that a player and referee would agree on what it enables.
 
-### Typecasting Traps
+## Typecasting Traps
 
 Three Actor archetypes consistently produce flat, predictable play:
 
@@ -750,7 +731,7 @@ Three Actor archetypes consistently produce flat, predictable play:
 
 **The pure wildcard.** The faction whose brief amounts to "do whatever seems interesting." Produced by designers who want unpredictability and get disengaged players instead. A wildcard faction has no coherent objectives, so the player has nothing to self-assess at game end, and the faction's actions fail to accumulate into a coherent strategic arc. Fix: every faction needs objectives that actually conflict with at least two others. Wildcard behavior should emerge from specific, opposed interests, not from the absence of interests.
 
-### The 5–8 Actor Sweet Spot
+## The 5–8 Actor Sweet Spot
 
 Below five Actors, the game is too small for interesting alliance dynamics. There are not enough factions for multiple overlapping interests; alliances form quickly and stay fixed, and the game reduces to two or three sides fighting it out. The report is short, but so is the strategic depth.
 
@@ -760,7 +741,7 @@ Five to eight Actors gives the referee a workable adjudication and reporting loa
 
 For groups above eight players, use the Extras system (Chapter 4) to accommodate overflow without expanding the Actor count.
 
-### Worked Example: The Corentine Factions Annotated
+## Worked Example: The Corentine Factions Annotated
 
 *Full faction briefs in Appendix G.*
 
@@ -778,7 +759,7 @@ The five Corentine factions, read against the three-bullet framework:
 
 Five factions. Five different leverage types. No two with identical interests. The problem, the collapse of the old framework, forces all five to respond, but in different directions, for different reasons. That is good Actor design.
 
-## Chapter 9: Writing Briefs
+# Chapter 9: Writing Briefs
 
 The brief is the document each Actor receives before the game begins. It tells them who they are, what they are trying to achieve, and where they stand relative to other Actors.
 
@@ -786,7 +767,7 @@ A brief has two components: a **public brief** and a **private brief**. The publ
 
 The brief is not background reading. It is operational. Everything in it should be something the Actor will use.
 
-### The Two Fields: Objectives and Position
+## The Two Fields: Objectives and Position
 
 A brief contains two mandatory fields.
 
@@ -800,7 +781,7 @@ A position bullet that applies to every faction, "you have access to a degree of
 
 A blank template is in Appendix B.
 
-### Short/Long-Term Objective Pairing
+## Short/Long-Term Objective Pairing
 
 From *The Corentine Succession*, the Principality of Essaveth:
 
@@ -813,7 +794,7 @@ The design rationale for paired objectives: a single objective is either achieve
 
 Long-term objectives are sometimes marked explicitly: "Some objectives are based on a long-term view, and simply laying the groundwork for them to be achieved in future can be considered a success in itself." This note is worth including in every game brief. It prevents players from dismissing their long-term objective as unreachable and disengaging from it early. Laying groundwork is play, not failure.
 
-### The Pithy Objectives Test
+## The Pithy Objectives Test
 
 Add "!" to any objective and read it aloud.
 
@@ -827,7 +808,7 @@ That reads like a policy document. Nobody rallies to that. Nobody self-assesses 
 
 Objectives that fail the exclamation test are usually too abstract, too diffuse, or too hedged. The fix is almost always specificity: replace "existing institutional arrangements" with "the Conclave's ratification authority" and the objective becomes arguable, assessable, and worth fighting for.
 
-### Position Field: What to Include
+## Position Field: What to Include
 
 The position field describes only what is especially significant relative to other Actors. The guiding question is: what does this faction have or lack that would surprise someone who only knew the general situation?
 
@@ -852,7 +833,7 @@ From *The Corentine Succession*, the Conclave:
 
 Each bullet is specific and consequential. The first establishes the Conclave's informational leverage and names it as a strategic tool, not just a fact but a choice about what to reveal. The second describes a physical protection that has limits (the cost of attacking it, not immunity from attack). The third gives a vulnerability that creates dependency on another faction; the Conclave cannot act freely against Meranto.
 
-### DIME/PMESII: When to Use It
+## DIME/PMESII: When to Use It
 
 DIME (Diplomatic, Informational, Military, Economic) and PMESII (Political, Military, Economic, Social, Infrastructure, Informational) are frameworks from professional military analysis that describe the dimensions of power a faction might draw on.
 
@@ -862,7 +843,7 @@ Applied literally, they over-militarize and over-systematize OSG briefs. A posit
 
 Use DIME/PMESII as a checklist during design, then discard the framework before writing. The brief should read like intelligence, not like a form.
 
-### Worked Example: One Complete Brief
+## Worked Example: One Complete Brief
 
 *All five Corentine faction briefs are in Appendix G. The analysis below focuses on Saivorn.*
 
@@ -884,7 +865,7 @@ The peninsula's dominant commercial power. Controls both major ports. No standin
 
 *Annotation:* The first position bullet establishes Saivorn's geographic leverage and makes it immediately clear how it converts into action: "anyone who needs the sea needs us," not just the generic fact of port control. The second establishes the constraint that prevents Saivorn from simply buying security: the hired companies can defend, not project. The third is the brief's most important line, telling the player something that distinguishes them from what their public summary implies. Saivorn looks like a status-quo faction; privately, they have a reason to want change. That gap between public and private is where interesting play happens. The objectives are paired correctly: one is about surviving the crisis (short-term), one is about the world that comes after it (long-term).
 
-## Chapter 10: The Map and Components
+# Chapter 10: The Map and Components
 
 The map determines the scope of argument. What players can see, they will argue about. What isn't on the map does not exist in play, or rather, exists only as vague background that cannot be pointed at, contested over, or used as specific leverage.
 
@@ -892,7 +873,7 @@ This is not a flaw to work around; it is a design lever to use deliberately. The
 
 Map design therefore begins with a question: what should players be arguing about? The answer gives you your map.
 
-### Geographic vs. Schematic
+## Geographic vs. Schematic
 
 The choice between a geographic map and a schematic one is not technical; it is a design decision about the kind of arguments you want to produce.
 
@@ -906,7 +887,7 @@ A political simulation with no meaningful geography might benefit from a schemat
 
 Match the map type to the leverage types of your factions.
 
-### What Belongs on the Map
+## What Belongs on the Map
 
 Three categories belong on the map:
 
@@ -918,7 +899,7 @@ Three categories belong on the map:
 
 Do not put everything on the map. Unknown territory, unpopulated space, locations that are irrelevant to the problem, leave these off. Adding complexity to the map beyond what the game needs is not richness; it is noise that obscures the actual zones of conflict.
 
-### Minimum Viable Map
+## Minimum Viable Map
 
 A map with three to five locations and three to five connection lines between them is sufficient to run a game.
 
@@ -928,7 +909,7 @@ The Falklands example from military Matrix Game literature used a minimal map: A
 
 The minimum viable map should be readable at a glance by someone who has never seen it before. If it requires explanation before it can be used, it is too complex.
 
-### Physical Components
+## Physical Components
 
 Beyond the map, an OSG typically uses physical markers, tokens, faction assets, position indicators, to represent the state of the world visually.
 
@@ -942,7 +923,7 @@ Minimum component requirements:
 
 Components don't need to be elaborate. Colored index cards, poker chips, and sticky notes are sufficient. What matters is that the physical state of the map reflects the fictional state of the world accurately, and that players can read it without explanation.
 
-### Worked Example: The Corentine Peninsula Map
+## Worked Example: The Corentine Peninsula Map
 
 The Corentine map shows:
 
@@ -958,11 +939,11 @@ What the map enables: arguments about army movement (Caldrath), port access (Sai
 
 The Corentine map could be sketched on an index card in five minutes: a peninsula with a central city, a coastal republic to the south, a kingdom to the north, a small state in the passes between them, and a few named locations where the game's key arguments will be made.
 
-## Chapter 11: Spendable Bonuses and Special Abilities
+# Chapter 11: Spendable Bonuses and Special Abilities
 
 Spendable bonuses are optional. First-time referees should design the scenario without them and add bonuses on a second run once the core mechanics are familiar.
 
-### The Pattern
+## The Pattern
 
 Spendable bonuses are named, one-use assets tied to a faction's starting position that can be spent to strengthen their leverage in a specific action.
 
@@ -970,7 +951,7 @@ A bonus is not a permanent attribute. It is a resource that exists at the start 
 
 The design rationale: bonuses add another dimension of asymmetry beyond faction identity. Two factions might have similar leverage types but very different starting bonus structures, one begins with multiple high-impact one-use abilities, the other has fewer but more flexible ones. This creates distinct strategic styles even within similar leverage categories.
 
-### Naming and Framing
+## Naming and Framing
 
 The most important design decision for a bonus is what to call it.
 
@@ -980,7 +961,7 @@ Naming bonuses narratively produces better play in three ways: it anchors the bo
 
 When designing bonuses, start from the fiction: what specific resources, relationships, or capabilities does this faction have that aren't already captured in their position? Name those things, decide how often they can be spent, and you have your bonus list.
 
-### Permanent Traits vs. One-Use Bonuses
+## Permanent Traits vs. One-Use Bonuses
 
 A bonus is not the same as a trait.
 
@@ -992,7 +973,7 @@ Design the right tool for the right purpose: traits for characteristics that are
 
 Most briefs should contain both. The position field carries the traits (described as factual assertions about the faction's situation). The bonuses list carries the one-use assets.
 
-### Scoping Magnitude
+## Scoping Magnitude
 
 A bonus should shift leverage from weak to strong, not guarantee success regardless of other factors.
 
@@ -1006,7 +987,7 @@ Design guidelines:
 
 Multiple uses of the same bonus ("Io Dust (3x)" vs. "Io Dust (1x)") represent different scarcity. A bonus with three uses is a recurring strategic resource. A single-use bonus is a trump card. Design for the experience you want: games with many multi-use bonuses feel resource-rich; games with mostly single-use bonuses create tension around when to deploy them.
 
-### When Bonuses Unbalance Play
+## When Bonuses Unbalance Play
 
 Bonus imbalance, one faction having substantially more or higher-value bonuses than others, creates unfairness rather than interesting asymmetry.
 
@@ -1020,7 +1001,7 @@ Test at design time:
 
 If the answer to the last two questions is yes, redistribute or redesign. Bonuses should create interesting choices about when and how to deploy them, not front-load one faction's advantage.
 
-### Design Checklist
+## Design Checklist
 
 Before finalizing the bonus list for a scenario:
 
@@ -1031,13 +1012,13 @@ Before finalizing the bonus list for a scenario:
 -   [ ] No faction has more than twice the number of high-value bonuses as any other faction
 -   [ ] Multi-use vs. single-use allocations are consistent with the strategic style intended for each faction
 
-## Chapter 12: Non-Player Actors
+# Chapter 12: Non-Player Actors
 
 A Non-Player Actor (NPA) is a faction the referee controls rather than a player. It has a brief, submits actions each turn, and appears in the public report the same way any Actor does. From the table's perspective, an NPA is a faction with its own interests and behaviors. Only the referee knows it is referee-controlled.
 
 The distinction matters for two reasons. First, NPAs are operated by the same person who adjudicates all actions, the referee, which creates a conflict of interest risk. Second, NPAs cannot represent themselves in negotiations: they are silent parties who act but do not converse. These constraints shape how NPAs should be designed and used.
 
-### Why Add NPAs
+## Why Add NPAs
 
 NPAs represent forces that exist in the fiction but have no player controlling them. Common examples:
 
@@ -1047,7 +1028,7 @@ NPAs represent forces that exist in the fiction but have no player controlling t
 
 The test for whether a force should be an NPA: would a reasonable player, understanding the fiction, expect this entity to act on its own interests during the game? If yes, and if that entity matters enough to appear in the report, make it an NPA. If it's just background color that no player will ever argue against or with, leave it as mentioned world-building.
 
-### Referee-Controlled NPAs
+## Referee-Controlled NPAs
 
 The simplest NPA model: the referee simply plays the NPA in addition to their other duties. Each turn, the referee decides what the NPA does based on its brief and the current state of the fiction, and adjudicates it alongside the player-submitted actions.
 
@@ -1058,7 +1039,7 @@ Mitigations:
 -   Write the NPA's behavior clearly before the game begins, in terms specific enough that the NPA's likely action can be predicted given the game state. If the NPA is defined as "responds aggressively to any action that threatens established market structure," a player who reads the NPA brief can anticipate its behavior. The referee then adjudicates by following the defined behavior, not by exercising judgment.
 -   Be transparent about when you're playing the NPA if the group prefers it. Some games run NPAs as openly referee-controlled; others maintain the fiction. Either works; just decide before the game begins.
 
-### Random-Controlled NPAs
+## Random-Controlled NPAs
 
 An alternative model: the NPA's action each turn is determined by a random table or dice roll rather than referee judgment. Extras using the Collective format (Chapter 4) can also run an NPA, several Extras each propose an action, and one is randomly selected.
 
@@ -1068,7 +1049,7 @@ The trade-off: a randomly controlled NPA cannot respond intelligently to changin
 
 Use random control for NPAs that are chaotic, emergent, or mindless by nature. Use referee control for NPAs that are rational actors with coherent interests.
 
-### NPA Briefs
+## NPA Briefs
 
 NPA briefs should be simpler than player briefs. A minimal NPA brief contains:
 
@@ -1080,7 +1061,7 @@ More than this is usually over-design for a referee-controlled entity. The refer
 
 Optional additions: a behavior rule ("acts defensively unless directly threatened; escalates if attacked twice in succession") and a turn-limit rule ("exits the game if objectives are achieved by Turn 5"). Both can prevent the NPA from dominating the game by constraining its behavior.
 
-### When Not to Use NPAs
+## When Not to Use NPAs
 
 NPAs are not free. Each NPA adds to the referee's per-turn workload (one more action to adjudicate, one more faction to represent in the report), and adds complexity to the game state that players must track.
 
@@ -1092,7 +1073,7 @@ Do not use NPAs when:
 
 The strongest use case for NPAs is structural: when the fiction requires a force to exist but no player is available to play it, and when the referee can define its behavior clearly enough to run it without becoming its narrator.
 
-## Chapter 13: Turn Zero and Setup
+# Chapter 13: Turn Zero and Setup
 
 Turn Zero is a pre-game clarification session that occurs before Actors submit their first actions.
 
@@ -1100,7 +1081,7 @@ It is not a turn in the game's formal sense: no actions are adjudicated, no outc
 
 Turn Zero exists because every scenario brief, no matter how carefully written, leaves questions unanswered. Some of those questions are inconsequential. Others, if left unaddressed, will produce early-turn actions built on false assumptions, which the referee then has to adjudicate awkwardly, explain after the fact, or override. Turn Zero surfaces those questions before they become problems.
 
-### What Turn Zero Surfaces
+## What Turn Zero Surfaces
 
 Three categories of questions tend to emerge in Turn Zero:
 
@@ -1110,7 +1091,7 @@ Three categories of questions tend to emerge in Turn Zero:
 
 **Rules questions.** Questions about the action format, adjudication, and game structure. *Can I use my bonus ability before any actions have been taken? Can an ally submit an action on my behalf? What happens if two Actors submit exactly the same action?* These are mechanical rather than fictional; the answer comes from the rules described in this handbook rather than from the referee's creative judgment.
 
-### How to Run Turn Zero
+## How to Run Turn Zero
 
 Actors submit questions in a designated channel or by direct message to the referee. The referee answers each question and publishes a compiled Turn Zero FAQ visible to all players.
 
@@ -1120,7 +1101,7 @@ Turn Zero has a deadline, the same as a regular turn. Players have 48 hours (or 
 
 The referee does not have to answer every question. Some questions are best left ambiguous; the referee may decline to answer questions that would give away other Actors' private objectives, and may intentionally leave certain world-building details open for players to discover through actions. The refusal to answer is itself information: this is something you will need to find out in play.
 
-### What the Referee Prepares
+## What the Referee Prepares
 
 Before Turn Zero opens, the referee should prepare three things:
 
@@ -1130,7 +1111,7 @@ Before Turn Zero opens, the referee should prepare three things:
 
 **Answers to likely rule questions.** The most common rule questions for new players involve the action format (how specific does an action need to be?), leverage strength (what counts as strong?), and private submission (what stays private, what appears in the report?). Having clear answers drafted in advance prevents Turn Zero from becoming a rules tutorial that consumes the whole clarification window.
 
-#### Assigning Roles Before Turn Zero
+### Assigning Roles Before Turn Zero
 
 Mouat's practical guidance on matrix games includes one recommendation that sits upstream of Turn Zero entirely: **assign roles before players read the scenario, not after.** The sequence matters.
 
@@ -1149,7 +1130,7 @@ When assigning roles, consider:
 
 Typecasting is a recommendation, not a rule. In recurring groups where player preferences are known, it becomes intuitive. In one-shot games with unfamiliar players, the referee can ask players to name one or two factions that feel natural to them before assigning roles; this takes less than five minutes and substantially improves early-turn play quality.
 
-#### Turn Zero as a Calibration Run
+### Turn Zero as a Calibration Run
 
 Mouat also describes a second use of Turn Zero that is distinct from the question-and-answer session above: running one or two **example arguments** before the game clock starts, using two Actors who are in direct opposition.
 
@@ -1165,7 +1146,7 @@ This is particularly useful for:
 
 The calibration run is not mandatory and should not be treated as a second Turn Zero Q&A. Its purpose is to demonstrate, not to clarify further world assumptions. If a draft action reveals new world-assumption questions, those belong in the Turn Zero FAQ, not in the calibration feedback.
 
-### Common Question Categories
+## Common Question Categories
 
 Turn Zero questions generally fall into these categories:
 
@@ -1191,7 +1172,7 @@ Turn Zero questions generally fall into these categories:
 >
 > Can factions communicate privately with each other outside of their submitted actions? Yes. Talking is a free action. Negotiations, threats, offers, and intelligence-sharing happen between turns and cost nothing. What you do as a result of those conversations costs a turn.
 
-### What Not to Answer
+## What Not to Answer
 
 One category of question should always be declined in Turn Zero:
 
@@ -1199,7 +1180,7 @@ One category of question should always be declined in Turn Zero:
 
 The decline is itself a ruling: this information exists in the fiction, but you will need to pursue it through play. This is a feature, not a limitation.
 
-## Chapter 14: Scaling and Async Variants
+# Chapter 14: Scaling and Async Variants
 
 OSG is format-flexible. The core structure, one action per Actor per turn, referee adjudicates, public report, works across a significant range of player counts. The dynamics change with scale.
 
@@ -1213,7 +1194,7 @@ The challenge: with few Actors, the game can feel overdetermined. If three facti
 
 If you are running a game for twelve or more players, seriously consider running two parallel OSGs on the same scenario with a shared outcome, or designing a structure where the Extras' inputs directly feed into Actor decisions rather than being adjudicated independently.
 
-### Async Timing Structure
+## Async Timing Structure
 
 The async format, actions submitted over days rather than in a single session, is currently the most common way OSG is played online. Discord is the standard platform; the core channel structure is:
 
@@ -1234,7 +1215,7 @@ This structure maintains the private submission requirement while enabling the f
 
 Whatever the policy, enforce it consistently. Inconsistent deadline enforcement tells late players that the deadline doesn't matter, which creates a slow game for everyone.
 
-#### Player Dropout
+### Player Dropout
 
 Dropout is the most common structural failure in async OSG. A six-turn game that loses a player on Turn 3 has a hole in the fiction for the remaining turns, a faction that is nominally present but making no decisions, absorbing no consequences, and contributing nothing to the emerging narrative.
 
@@ -1250,7 +1231,7 @@ Three responses exist, in ascending order of intervention:
 
 State the dropout policy before Turn Zero, alongside the missed-deadline policy. Players should know in advance how the game will handle their absence if it becomes permanent. The policy removes ambiguity and reduces the social friction of enforcing it mid-game.
 
-#### Partial Information Asymmetry Over Time
+### Partial Information Asymmetry Over Time
 
 In live play, information asymmetry is fresh at every turn, players lack information because the Report has not yet been published, and once it is, the table reads it together. In async play, information asymmetry accumulates in a different way: **players fall out of sync with each other's knowledge states**, because they read and respond to Reports at different times, and because private referee communications arrive at different moments.
 
@@ -1262,7 +1243,7 @@ Three problems compound in long async games:
 
 **Loss of thread.** In a game running over several weeks, players forget what was established. Not their own brief, their brief is current, but the accumulated fiction of prior Reports. An Actor who was introduced in Turn 1 as a minor detail becomes a major player in Turn 6, but the player driving their rival has lost the thread of why the original detail mattered. The referee's mitigation is **the turn header**: each Report should begin with one or two sentences of standing-world context, a brief statement of where things are before this turn's events, before moving into the turn's outcomes. This is not a full recap; it is an orientation sentence that reactivates the accumulated fiction for players whose engagement has been intermittent.
 
-#### Managing Momentum
+### Managing Momentum
 
 A slow-turn game, one where the submission window is 72 hours rather than 48, or where the referee takes several days between Reports, does not simply run the same game more slowly. It runs a different game, with different failure modes.
 
@@ -1272,7 +1253,7 @@ The referee's primary tool for maintaining momentum is **not** shortening the su
 
 For campaigns longer than eight turns, consider a **turn rhythm audit** at the midpoint. Ask: how many players have been engaging in the public channel between submissions? How many are reading the Report and submitting without discussion? The answers tell you whether momentum is healthy. If more than half the table is submitting without engaging between turns, the game is at risk of becoming a solo experience for each player, parallel monologues rather than a contested shared narrative. The correct response is not more rules; it is direct outreach. Message the quiet players individually. Ask what they are planning. Remind them that talking is free.
 
-### Online vs. In-Person
+## Online vs. In-Person
 
 **In-person play.** Actions may be submitted on physical cards, verbally, or via a shared document. The referee adjudicates in sequence or simultaneously, then delivers the report verbally or in writing. The single-action discipline applies with the same force as in async play; the temptation to elaborate or revise submissions is higher in real-time face-to-face play and should be resisted.
 
@@ -1282,7 +1263,7 @@ The in-person format allows real-time argument between factions, negotiation dur
 
 Some online games use voice chat for negotiation alongside async action submission, maintaining the private, deliberate submission process while allowing real-time alliance-building between turns. This hybrid is worth considering for groups that find pure-text async negotiation too slow.
 
-### Genre Variants
+## Genre Variants
 
 OSG's argument-based adjudication makes it genre-portable. Changing the genre changes which argument types dominate, what counts as strong leverage, what fictional resources are relevant, what forces of nature are plausible. The core mechanics remain the same; the fictional vocabulary changes.
 
@@ -1298,7 +1279,7 @@ OSG's argument-based adjudication makes it genre-portable. Changing the genre ch
 
 **Supernatural.** The referee has maximum Force of Nature latitude. The world responds to the factions' actions through channels that are not fully predictable from the fiction's established rules. Strong leverage may be symbolic as well as material, the right ritual, the correct alignment of factors, the accumulated weight of narrative precedent. Forces of Nature are frequent and central to the game experience rather than occasional spice.
 
-### The BLOC Variant
+## The BLOC Variant
 
 The *Age of Discord* campaign (Appendix A) was run using BLOC, a variant that introduces three modifications to the baseline OSG system:
 
@@ -1310,15 +1291,15 @@ The crowdsourced disadvantage phase is the most significant departure. It shifts
 
 Recommended for: groups comfortable with the base system who want more player investment in adjudication, and campaigns long enough (eight or more turns) to justify the additional per-turn overhead.
 
-## Appendix A: Worked Example: *The Age of Discord*
+# Appendix A: Worked Example: *The Age of Discord*
 
-### About This Example
+## About This Example
 
 The following is drawn from a real play campaign called *The Age of Discord*, run asynchronously over Telegram and Google Docs with seven active players. It was played using **BLOC**, an OSG variant designed by the referee for this specific campaign. The original documents are in Italian; this appendix presents translated excerpts with referee commentary.
 
 Three turns are shown, Turn 1, Turn 5, and Turn 8, selected to illustrate early positioning, a mid-game crisis, and a late-game coalition action. Not every faction action from each turn is reproduced; the selection focuses on moments that best illustrate OSG principles in practice.
 
-### A Note on the Rules Variant
+## A Note on the Rules Variant
 
 BLOC differs from the baseline OSG system in three significant ways worth naming before you read the play:
 
@@ -1330,7 +1311,7 @@ BLOC differs from the baseline OSG system in three significant ways worth naming
 
 Both systems encode the same core principle: **action is certain, outcomes are variable**. The six-result table simply adds granularity that rewards close reading of the fiction.
 
-### The Setting
+## The Setting
 
 **Arcanastrum** is a fantasy continent where magic and ancient technologies coexist. The initial problem:
 
@@ -1338,7 +1319,7 @@ Both systems encode the same core principle: **action is certain, outcomes are v
 
 Note the problem statement's structure: it names the precipitating event (fall of the Dragon Domain), identifies the immediate power vacuum (Mount Argentum), establishes a surviving underdog (dragons in exile), and ends on a genuine open question. No faction is positioned as the answer. Seven players find their own.
 
-### Selected Factions
+## Selected Factions
 
 Four factions are foregrounded in these excerpts. Brief overviews:
 
@@ -1350,11 +1331,11 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 **Society of Ancient Technologies** Seekers of lost technological artifacts. Advantages: access to powerful pre-collapse technology, expert explorers who can reach remote sites quickly. Disadvantage: popular resentment, seen as exploiters of ancient ruins. Leader: Kara Arx, the Inventor.
 
-### Turn 1: Opening Moves
+## Turn 1: Opening Moves
 
 *The first turn establishes starting positions. Most actions face no direct opposition from other players; the challenge is the fictional world itself.*
 
-#### Dragons of the Hermit Mountains
+### Dragons of the Hermit Mountains
 
 **Action submitted:**
 
@@ -1366,7 +1347,7 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 > **\[Referee note\]** An unopposed action still fails. The disadvantages raised by other players, the internal fragmentation, were sufficient to cancel the advantages and leave only the neutral die in the pool. This is No Action Without Friction applied before the dice: the fiction already contains a reason things won't go smoothly. The failure isn't punishing ("no, and..."), it's simply a clean "no," which leaves the Dragons where they started but not worse off. The door to future alliance-building remains open.
 
-#### Necromancers of the Cursed Marshes
+### Necromancers of the Cursed Marshes
 
 **Action submitted:**
 
@@ -1386,7 +1367,7 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 > **\[Referee note\]** Two actions from one faction in the same turn, main action succeeds, leader action fails. This asymmetry is one of BLOC's most productive features: the leader action lets each faction pursue a secondary agenda, and failure on that secondary track often creates the friction that makes later turns interesting. Necrokar's failed soul-fragmentation will matter in Turn 6 when control over his undead armies becomes a plot point.
 
-#### Quorilans of the Floating City
+### Quorilans of the Floating City
 
 **Action submitted:**
 
@@ -1398,7 +1379,7 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 > **\[Referee note\]** This is a textbook *Yes, but...* in structure, even though it was resolved as a clean success at the dice level. The referee chose to add a consequence, increased suspicion, because letting a successful influence campaign pass without any friction would violate the "No Action Without Friction" principle. The consequence isn't a punishment; it's a hook. Other players now have a reason to act against the Quorilans cult in future turns. The RAT checklist: Reasonable (cult spreading via telepathy makes sense), Actionable (creates something other factions can target), Traceable (cells established this turn become relevant in Turns 3 and 4 when factions try to uproot them).
 
-#### Society of Ancient Technologies
+### Society of Ancient Technologies
 
 **Leader action:**
 
@@ -1410,15 +1391,15 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 > **\[Referee note\]** This is the first example of a *traceable crumb* planted in the public report. The Sphere of Technological Harmony is now a known object on the board, something to race for. The detail about the detection risk ("may have attracted attention") is a hook seeded for the Necromancers' player, an invitation to act on that in a later turn. When building reports, every success should leave something for other players to respond to.
 
-#### End-of-Turn Observation
+### End-of-Turn Observation
 
 Turn 1 results: three successes, three failures, one mixed. This ratio is typical of early turns and instructive: a first turn where everything succeeds produces a chaotic second turn where everyone is powerful and directionless. Failures establish constraints, create interpersonal tensions between factions, and give players something to work against.
 
-### Turn 5: The Dragon Extinction
+## Turn 5: The Dragon Extinction
 
 *By Turn 5 the board has transformed. The Necromancers have unleashed a pandemic on Arcanastrum (Turn 3). The Quorilans have secured a monopoly on the cure (Turn 4). The Dragons have been fighting a losing defensive war. This turn, three factions converge on the Dragons simultaneously.*
 
-#### Dragons of the Hermit Mountains
+### Dragons of the Hermit Mountains
 
 **Action submitted:**
 
@@ -1434,7 +1415,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 > **\[Referee note\]** Faction elimination is a structural event OSG can accommodate but rarely plans for explicitly. Xorghan's player chose a high-risk, high-reward action, the awakening ritual, at the exact moment three other factions converged on the same location. The failure is the narrative consequence of five turns of accumulated strategic isolation. The Dragons never recovered from Turn 1's failed alliance-building, and the internal fragmentation disadvantage compounded turn after turn. The lesson for design: factions with built-in structural disadvantages (fragmentation, isolation) need clearer paths to overcome them, otherwise elimination becomes probable rather than possible.
 
-#### Necromancers of the Cursed Marshes
+### Necromancers of the Cursed Marshes
 
 **Action submitted:**
 
@@ -1448,7 +1429,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 > **\[Referee note\]** The Yes, and... result here is not a windfall; it's a trap the referee builds into every major success. The Necromancers get everything they wanted and one thing they didn't: a fracture in their only significant alliance. This is the RAT principle applied to success: the outcome must be Actionable for other players. Spectral dragons are a threat for everyone to respond to. The alliance fracture is a hook specifically for the Blood Domain's player, who now faces a choice rather than a predetermined path.
 
-#### Society of Ancient Technologies
+### Society of Ancient Technologies
 
 **Leader action:**
 
@@ -1460,11 +1441,11 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 > **\[Referee note\]** A leader action that creates a sub-faction is a structural shift, not just a narrative one. The Society's player is establishing a long-term identity hedge: if the main faction falls, the Bastion survives. This is precisely the kind of lateral play OSG rewards, actions that aren't about winning directly but about building leverage for future turns. The referee's job here is to honour the player's intent while ensuring it costs something: increased threat perception from other factions is the friction attached to the success.
 
-### Turn 8: The Coalition Ritual
+## Turn 8: The Coalition Ritual
 
 *By Turn 8 the Quorilans have been eliminated (Turn 6). The Blood Domain has assassinated its own mind-controlled leader and defected from the Necromancers (Turn 7). Four factions now hold a shared secret: an ancient inscription on a Black Obelisk, discovered in Turn 6, describes a ritual capable of severing the connection between the Necromancers and their undead army. This turn, they attempt it.*
 
-#### Alliance of Four Factions
+### Alliance of Four Factions
 
 **Factions involved:** Legion of Relic Hunters, Society of Ancient Technologies (Bastion of the Known), Blood Domain of Tharok, Protectors of the Green Embrace.
 
@@ -1489,7 +1470,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 > **\[Referee note\]** A multi-faction coalition action is one of the rarest and most satisfying events in a long OSG campaign. Four turns of accumulated alliance-building culminated here, and the referee's job was to honour that without deflating it. The critical success was earned. The sacrifice of Kara Arx was a choice made at the table before the dice were rolled: the Society's player agreed to the narrative cost as the condition of a clean win. This is OSG at its most collaborative: the referee sets the price, the player decides to pay it. The cybernetic hybrid caveat is the friction attached to the victory; the Necromancers' player still has something to work with, and the war doesn't end anticlimactically.
 
-#### Necromancers of the Cursed Marshes
+### Necromancers of the Cursed Marshes
 
 **Leader action:**
 
@@ -1503,7 +1484,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 > **\[Referee note\]** The Lich's transformation is the referee's most important adjudication of the game: a defeated faction that doesn't actually die, but mutates into a new kind of threat. This is the "No Action Without Friction" doctrine applied not to a player action but to a faction's elimination. The coalition won, and that win is real, but it opens a new problem rather than closing the narrative. The RAT check: Is this Reasonable? (viral/digital Lich is internally consistent with the necrotech storyline that developed over six turns.) Actionable? (the surviving factions have a new thing to respond to.) Traceable? (every step, the pandemic in Turn 3, the cybernetic experiments in Turn 7, the digital virus research in Turn 8, leads to this.)
 
-### What This Game Shows
+## What This Game Shows
 
 **On problem design.** The opening problem ("who will emerge from this conflict?") is deliberately non-prescriptive. It doesn't say which faction is the protagonist or what victory looks like. Eleven turns later, the Necromancers were nearly the dominant power before being destroyed, the Dragons were eliminated entirely, and two factions renamed themselves to mark their transformation. None of this was planned. The problem statement created a pressure vessel; the players pressurized it.
 
@@ -1513,17 +1494,17 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 **On variants.** BLOC's six-result table and crowdsourced disadvantage system are departures from the baseline OSG rules described in this handbook. Both variants are worth considering for groups who want more gradation in outcomes, or for referees who want players more invested in evaluating each other's arguments. The crowdsourced disadvantage phase in particular shifted game culture: players became close readers of each other's actions, looking for fictional weaknesses rather than just pursuing their own plans.
 
-## Appendix B: Blank Briefing Template
+# Appendix B: Blank Briefing Template
 
 *Copy this template for each Actor. Complete the public brief first; write the private brief separately and deliver it only to the relevant player.*
 
-### PUBLIC BRIEF
+## PUBLIC BRIEF
 
 **Faction Name:**
 
 **Public Summary** *(1–2 sentences visible to all Actors):*
 
-### PRIVATE BRIEF
+## PRIVATE BRIEF
 
 **Objectives**
 
@@ -1548,7 +1529,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 |      |      |             |
 |      |      |             |
 
-### GENERAL BRIEF (all players receive this)
+## GENERAL BRIEF (all players receive this)
 
 **The Problem:**
 
@@ -1562,20 +1543,20 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 The goal of the game is to achieve your objectives.  
 The point of the game is to create a credible narrative.
 
-## Appendix C: Referee Checklist
+# Appendix C: Referee Checklist
 
 *Three sections: Pre-Game (scenario review), Mid-Game (per-turn referee checklist), Post-Game (debrief sequence).*
 
-### Pre-Game: Scenario Review
+## Pre-Game: Scenario Review
 
-#### Problem Statement
+### Problem Statement
 
 -   [ ] Is the problem stated in a single sentence?
 -   [ ] Does it name a precipitating event (something that just happened)?
 -   [ ] Can you argue for three or more distinct responses from different fictional positions?
 -   [ ] Does it avoid pointing at a single correct answer?
 
-#### Actors
+### Actors
 
 -   [ ] Are there 5–8 Actors (or have you planned for Extras to manage overflow)?
 -   [ ] Can you write three distinct bullets for each faction (what it is, what it wants, what makes it unlike others)?
@@ -1583,7 +1564,7 @@ The point of the game is to create a credible narrative.
 -   [ ] Does every faction have at least two objectives that conflict with at least two other factions?
 -   [ ] Have you avoided the pure-military, pure-diplomat, and pure-wildcard traps?
 
-#### Briefs
+### Briefs
 
 -   [ ] Does every Actor have two paired objectives (short-term + long-term)?
 -   [ ] Do the objectives pass the pithy test (add "!"; does it read like something a faction leader would actually say)?
@@ -1591,28 +1572,28 @@ The point of the game is to create a credible narrative.
 -   [ ] Have you avoided padding briefs with irrelevant background?
 -   [ ] Does every Actor have at least one named spendable bonus (if using bonuses)?
 
-#### Map and Components
+### Map and Components
 
 -   [ ] Does the map have 3–5 contested locations with clear faction starting positions?
 -   [ ] Is the map readable at a glance without explanation?
 -   [ ] Are all locations that will appear in action arguments named on the map?
 -   [ ] Are physical components moveable (tokens, markers) rather than static?
 
-#### Setup
+### Setup
 
 -   [ ] Have you prepared a world assumptions cheat-sheet for Turn Zero?
 -   [ ] Have you identified what questions you will intentionally decline to answer?
 
-### Mid-Game: Per-Turn Checklist
+## Mid-Game: Per-Turn Checklist
 
-#### Before Adjudicating
+### Before Adjudicating
 
 -   [ ] Have all Actors submitted their actions before the deadline?
 -   [ ] Is the action format complete (Action / Outcome / Leverage)?
 -   [ ] Is each action a single specific course of conduct (not two actions bundled)?
 -   [ ] Is the leverage grounded in established fiction, not just assertion?
 
-#### During Adjudication
+### During Adjudication
 
 -   [ ] For each action: is this Unopposed or does it face opposition?
 -   [ ] If opposed: is the Actor's leverage Strong or Weak relative to the opposition?
@@ -1620,14 +1601,14 @@ The point of the game is to create a credible narrative.
 -   [ ] Is every outcome, success and failure, leaving a mark on the world (No Action Without Friction)?
 -   [ ] Are you applying friction rather than hurdles?
 
-#### Writing the Report
+### Writing the Report
 
 -   [ ] Is the Report written in news-roundup style (brief, factual, third-person)?
 -   [ ] Does each outcome entry contain at least one hook for future action?
 -   [ ] For any private outcome: is there a traceable crumb in the public report?
 -   [ ] Is the Report short enough to read in under five minutes?
 
-### Post-Game: Debrief Sequence
+## Post-Game: Debrief Sequence
 
 -   [ ] Publish the referee's closing frame (state-of-world table or narrative epilogue)
 -   [ ] In-role closing: one or two sentences per faction from each player
@@ -1637,11 +1618,11 @@ The point of the game is to create a credible narrative.
 -   [ ] Referee reflection: what worked, what would change in scenario design
 -   [ ] Take notes on design feedback for future games
 
-## Appendix D: OSG Scenario Seeds
+# Appendix D: OSG Scenario Seeds
 
 *Six ready-to-run one-sentence problem statements, each with suggested Actor count, genre tag, and a design note.*
 
-### 1. The Last Supply Route
+## 1. The Last Supply Route
 
 **Genre:** War  
 **Suggested Actors:** 5–7  
@@ -1649,7 +1630,7 @@ The point of the game is to create a credible narrative.
 
 **Design note:** The post-war setting creates legal ambiguity; force is available but politically costly. No faction can simply take the crossing by military action without consequences that undermine their stated position. Design factions to represent the three armies plus at least two external powers with an interest in the crossing remaining disputed (regional traders, a river-state that claims sovereignty, a humanitarian organization with logistics infrastructure on the crossing). Strong leverage for military factions depends on established ceasefire status; violations are traceable and generate Force of Nature events.
 
-### 2. The Unwritten Constitution
+## 2. The Unwritten Constitution
 
 **Genre:** Politics  
 **Suggested Actors:** 5–6  
@@ -1657,7 +1638,7 @@ The point of the game is to create a credible narrative.
 
 **Design note:** The foreign observer deadline is the clock that makes the problem urgent. Without it, political maneuvering can go on indefinitely. Design the three claimants with genuinely different governing philosophies rather than different personal interests alone, so that the question of succession is also a question of what kind of city this will become. Include at least one Actor whose objective is not succession (a merchant class protecting commercial arrangements, a neighborhood organization protecting local autonomy) to ensure the problem generates more than a three-way race.
 
-### 3. The Artifacts
+## 3. The Artifacts
 
 **Genre:** Mythology  
 **Suggested Actors:** 5–8  
@@ -1665,7 +1646,7 @@ The point of the game is to create a credible narrative.
 
 **Design note:** Leverage in this scenario is symbolic and interpretive; what counts as "evidence" of divine will is what the fiction has established, not what is materially true. The referee should define two or three rules about how the mythological system works (what the artifacts do, what counts as a valid divine interpretation, what limits the factions' claims) in the Turn Zero FAQ before play begins. Forces of Nature are divine in nature; the referee has wide latitude. Design factions that disagree about which artifact is supreme and about what the artifacts are for: preservation, power, communication, liberation.
 
-### 4. The Reservoir
+## 4. The Reservoir
 
 **Genre:** Ecology  
 **Suggested Actors:** 5  
@@ -1673,7 +1654,7 @@ The point of the game is to create a credible narrative.
 
 **Design note:** This scenario has a literal resource constraint that is central to adjudication; there is a finite amount of water, and extraction by one faction reduces what is available to others. Design each community with a different relationship to the water (agricultural, industrial, urban residential, nomadic pastoral, ecological conservation) and different short/long-term needs. Strong leverage derives from established infrastructure, treaty precedent, and physical proximity. Forces of Nature are meteorological and agricultural: an unexpected storm, a crop failure, a contamination event.
 
-### 5. The Leaked Offer
+## 5. The Leaked Offer
 
 **Genre:** Corporate  
 **Suggested Actors:** 5–7  
@@ -1681,7 +1662,7 @@ The point of the game is to create a credible narrative.
 
 **Design note:** The three-turn window creates unusually high urgency; the game resolves quickly, which means early-turn decisions have disproportionate weight. Design factions to represent the target company (trying to control its own fate), the acquiring company (trying to close before the leak damages the deal), the primary competitor (trying to scuttle or outbid), a regulatory body (trying to evaluate the deal on its merits while managing political pressure), and at least one financial institution with interests in multiple outcomes. Informational leverage dominates: who knows what, and who can credibly claim what.
 
-### 6. The Curse
+## 6. The Curse
 
 **Genre:** Supernatural  
 **Suggested Actors:** 5–6  
@@ -1689,11 +1670,11 @@ The point of the game is to create a credible narrative.
 
 **Design note:** This scenario has a built-in escalating pressure: the curse gets worse each turn, which means inaction carries a cost that increases over time. Design the factions to have different relationships to the curse's origin; some caused it knowingly, some unknowingly, some were victims of others' decisions. The cooperation required for the cure should be genuinely difficult: the factions that need to cooperate have conflicting interests, unequal culpability, and asymmetric stakes in the outcome. The referee should define what "the curse worsening" means mechanically before Turn Zero; it should affect all factions but in different ways, creating shared urgency without erasing individual strategic differences.
 
-## Appendix E: Reference Card
+# Appendix E: Reference Card
 
 *Single-page reference for players and referees. Print and keep at the table.*
 
-### Action Format
+## Action Format
 
 Submit every action in this format:
 
@@ -1701,7 +1682,7 @@ Submit every action in this format:
 **Outcome:** What is your desired result?  
 **Leverage:** What makes this action possible, and the outcome probable?
 
-### Resolution
+## Resolution
 
 **If Unopposed:** The action proceeds as planned. The referee determines how it leaves a mark on the world.
 
@@ -1719,7 +1700,7 @@ Submit every action in this format:
 
 **Doubles:** Referee may insert a Force of Nature if something fits.
 
-### RAT Checklist
+## RAT Checklist
 
 Before writing any outcome, check:
 
@@ -1727,11 +1708,11 @@ Before writing any outcome, check:
 **Actionable:** Does it create hooks for future play?  
 **Traceable:** Can you point to earlier events that led to this?
 
-### No Action Without Friction
+## No Action Without Friction
 
 Every outcome, success or failure, leaves a mark on the world. Friction complicates an action; it does not block it.
 
-### Turn Sequence
+## Turn Sequence
 
 1.  Referee announces submission deadline
 2.  Actors submit Actions privately
@@ -1740,7 +1721,7 @@ Every outcome, success or failure, leaves a mark on the world. Friction complica
 5.  Actors have 48 hours to submit next Action
 6.  Repeat until game end
 
-### Game End
+## Game End
 
 **Each Actor self-assesses:** did you achieve each of your objectives, and why?
 
@@ -1748,7 +1729,7 @@ Self-assessment is your judgment. The referee does not arbitrate.
 
 Run the debrief. Always.
 
-## Appendix F: Glossary
+# Appendix F: Glossary
 
 *Terms used in this handbook, reconciled with traditional Matrix Game vocabulary where they differ. Traditional Matrix Game equivalents are noted in brackets.*
 
@@ -1843,13 +1824,13 @@ One full cycle of play: all Actors submit Actions, the Referee adjudicates, a Re
 
 A pre-game clarification session before the first formal Turn, during which Actors may ask the Referee clarifying questions about the world, the problem, and the rules. No actions are adjudicated in Turn Zero; it produces only a shared set of fictional and procedural assumptions that all players begin the game with.
 
-## Appendix G: Ready-to-Run Scenario: The Corentine Succession
+# Appendix G: Ready-to-Run Scenario: The Corentine Succession
 
 *A complete campaign brief for five players. Used as the worked example throughout this handbook. Run it as written, or treat it as a design model to adapt.*
 
 *Design notes for each faction appear in the relevant chapters: Ch. 7 (problem statement), Ch. 8 (faction design), Ch. 9 (briefs), Ch. 10 (map).*
 
-### General Brief
+## General Brief
 
 *Distributed to all players before Turn Zero.*
 
@@ -1877,11 +1858,11 @@ The game ends after six turns. Objectives are self-assessed at game end.
 
 The goal of the game is to achieve your objectives. The point of the game is to create a credible narrative.
 
-### Faction Briefs
+## Faction Briefs
 
 *Each Actor receives their brief privately. The public summary above is all other players know about your faction at game start.*
 
-#### The Republic of Saivorn
+### The Republic of Saivorn
 
 **Objectives**
 
@@ -1894,7 +1875,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 -   You have no standing army. Your security rests on hired companies and a small patrol fleet, sufficient to defend the harbours, insufficient to project power inland.
 -   The Arbiter's death is, privately, not unwelcome. Vethara's last treaty imposed tariff concessions on Saivorn that cost you considerably. You want a new order, not the old one restored.
 
-#### The Kingdom of Caldrath
+### The Kingdom of Caldrath
 
 **Objectives**
 
@@ -1907,7 +1888,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 -   Five years ago, Vethara publicly rebuked Caldrath over a border dispute with Essaveth and ruled against you. The rebuke was recorded in the Conclave's registers. It will be used against you.
 -   Your military expansion over the past decade was financed largely by loans from House Meranto. The debt is significant and the terms are not favourable.
 
-#### The Conclave
+### The Conclave
 
 **Objectives**
 
@@ -1920,7 +1901,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 -   Your temple complex in Corenth is extraterritorial. No faction can move against you there without the political cost of being seen to attack a sacred institution.
 -   You have no military force and are substantially in debt to House Meranto for a building programme that is not yet complete.
 
-#### The Principality of Essaveth
+### The Principality of Essaveth
 
 **Objectives**
 
@@ -1933,7 +1914,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 -   The Arbiter's last major treaty created your current borders. Without it, Caldrath has a historical claim on your northern province that predates Vethara's arbitration.
 -   Your garrison is small but well-positioned. You can hold your passes for weeks, not months. You need allies, and you need them before the army moves.
 
-#### House Meranto
+### House Meranto
 
 **Objectives**
 
@@ -1946,7 +1927,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 -   You have no army, no territory, and no political claim. What you have is the ability to trigger a debt crisis that would damage every other faction simultaneously, including yourself.
 -   Your agents are present in every major city on the peninsula. You often know things before the people those things concern know them.
 
-### Referee Notes
+## Referee Notes
 
 **On the problem statement.** The scenario's central absence, no recognized authority to renew the treaties, is more generative than a simple succession dispute because it creates different kinds of pressure on each faction. Caldrath wants to fill the absence with force. The Conclave wants to fill it with institutional authority. Saivorn wants to work around it commercially. Essaveth just needs it not to be fatal. House Meranto needs the crisis to resolve before the debts become unrecoverable. No two factions want the same thing from the same solution.
 
@@ -1956,7 +1937,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 
 **On scaling.** This scenario as written is designed for five players. For four players, fold House Meranto's economic leverage into Saivorn (make Saivorn both commercially dominant and the peninsula's primary creditor), which tightens Saivorn's internal tension between stability and the desire for a new order. For six players, add a sixth faction: a military order or mercenary company whose services all other factions will compete to secure, with objectives around maintaining institutional independence while taking the most advantageous contract.
 
-### Credits & License
+## Credits & License
 
 © 2026 Roberto Bisceglie
 

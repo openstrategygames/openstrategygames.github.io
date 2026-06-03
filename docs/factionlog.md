@@ -2,82 +2,50 @@
 title: Factionlog
 subtitle: A Standard Notation for Open Strategy Game Session Logging
 author: Roberto Bisceglie
-version: 0.1.0
+version: 0.2.0
 license: CC BY-SA 4.0
 lang: en
 parent: Lonelog v1.4.0
-cover-logo: assets/logo.svg
-format:
-  html: {}
-  typst:
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    fontsize: 11pt
-    tbl-colwidths: auto
-    template: ../_extensions/typst-template.typ
-    template-partials:
-      - ../_extensions/typst-show.typ
-  odt:
-    toc: true
-  epub:
-    toc: true
-  gfm:
-    toc: false
 ---
 
 ## 1. Introduction
 
 ### 1.1 Why Factionlog?
 
-If you've ever played an Open Strategy Game — as player, scribe, or solo
-referee — you know the problem. You submit your action. You roll dice. Three
-things happen you didn't predict. The world looks different from the Brief.
-And you're trying to record all of it without breaking the fiction or losing
-the argument that made your roll matter.
+The Referee's job doesn't end when the dice drop. Every adjudication needs to be recorded with enough structure to be traceable: what the faction argued, why their leverage was graded the way it was, what the dice produced, and what changed in the world as a result. The Report is the public face of this work. The session log is the working record behind it.
 
-Free-form journaling loses the mechanics. A dice log loses the leverage.
-A pure narrative loses the board state. Factionlog offers a different approach:
-a lightweight shorthand that captures the essential elements of OSG play —
-the three-part action argument, the adjudication, the public report, the
-changing positions of every faction — while leaving room for as much or as
-little narrative as you want.
+Free-form notes lose the mechanics. A raw dice log loses the leverage argument. A pure narrative loses the board state. Factionlog offers a different approach: a compact shorthand that captures the essential elements of OSG play (the three-part action argument, the leverage grade, the adjudication, and the consequences) in a format that is fast to write, easy to review, and legible to anyone who knows the system.
 
 ### 1.2 What Factionlog Does
 
-Whether you're running a live game as scribe, playing solo with an oracle
-as referee, or logging a multi-session campaign, this notation helps you:
+For live tables, asynchronous campaigns, and archived records, this notation helps you:
 
-- Record the full three-part action (act / out / lev) without slowing down
+- Record every faction's three-part action (act / out / lev) in a consistent structure
+- Document the leverage grade and dice result for every adjudicated action
 - Track faction positions, spendable bonuses, and board-state changes across turns
-- Log rival and NPA actions with the same argument structure as your own
-- Share your game log with other players who'll understand the format at a glance
-- Review past turns and trace how each outcome followed from established fiction
+- Write Reports that are grounded in and traceable to the session log
+- Share the complete game record with players who will understand the format at a glance
 
 The notation is designed to be:
 
-- **Compact** — the argument is structured, not verbose
-- **Traceable** — every outcome points back to earlier fiction
-- **Format-agnostic** — works in digital markdown or paper notebooks
-- **Fork-compatible** — shares Lonelog's tag system and symbol logic
+- **Compact**: the argument is structured, not verbose
+- **Traceable**: every outcome points back to the leverage argument that produced it
+- **Format-agnostic**: works in digital markdown or paper notebooks
+- **Extensible**: optional layers for persistent tracking and solo play
 
 ### 1.3 How to Use This Notation
 
-Think of this as a toolbox, not a rulebook. At its core are five elements
-that mirror the natural flow of OSG play:
+Five elements mirror the natural flow of OSG adjudication:
 
-- `@` for your faction's submitted action (three-part argument)
-- `!` for rival faction or NPA actions — the world acting without you
-- `d:` for the OSG dice mechanic (2d6, keep-high or keep-low)
+- `@` for each faction's submitted action (three-part argument)
+- `d:` for the dice mechanic (2d6, keep-high or keep-low)
 - `->` for the adjudicated outcome
 - `=>` for the consequence on the board state
+- The Report block for the public summary
 
-That's it. Everything else — faction tags, bonus tracking, report blocks,
-NPA oracles — is optional. Add it when it helps. Skip it when it doesn't.
+That's the core. Everything else (faction tags, bonus tracking, location markers, clocks) is optional. Add it when the game's complexity requires it.
 
-### 1.4 Quick Start: Your First Turn
-
-Never used notation before? Here's everything you need:
+### 1.4 Quick Start: One Turn
 
 ```
 @ Meranto
@@ -86,39 +54,30 @@ Never used notation before? Here's everything you need:
   lev: We hold all loan documentation; emergency clause has precedent
 [Lev:Strong]
 d: 2d6 → 5,3  keep high → 5
--> Partial success
+-> Partial success — review opens, but scope is disputed
 => Caldrath treasury enters review; army movement delayed one turn
 
-! Saivorn opens a diplomatic channel to Corenth
-  lev: No established presence; Corenth has reason to be cautious
-[Lev:Weak]
-d: 2d6 → 2,4  keep low → 2
--> Failure — Corenth does not respond publicly
+@ Caldrath
+  act: Deploy advance units to Essaveth's northern pass
+  out: Establish military presence before any treaty negotiation
+  lev: Largest army on the peninsula; units are one day's march away
+[Lev:Strong]
+d: 2d6 → 6,2  keep high → 6
+-> Success, and...
+=> [Fac:Caldrath | pos:pass occupied]
+=> Essaveth's border garrison stands down without resistance
 
- Meranto stalls Caldrath. Saivorn's overture is rebuffed.
-    The Conclave issues no statement. Essaveth watches. 
+ Meranto stalls Caldrath's army. Caldrath moves on Essaveth.
+    The Conclave issues no statement. The pass is occupied. 
 ```
 
-That's a full turn. Everything else in this document helps you handle
-complexity when you need it.
+That is a full turn. Everything else in this document handles complexity when you need it.
 
 ### 1.5 Factionlog and Lonelog
 
-Factionlog is a fork of Lonelog, a notation system for solo RPG session
-logging. Lonelog's core philosophy — separate mechanics from fiction, stay
-compact, scale from one-shots to long campaigns — carries directly into OSG
-play. The tag system, progress tracking, and formatting philosophy are shared
-DNA. The core symbols shift to reflect OSG's specific model: faction-scale
-play, turn structure, and the three-part argument at the heart of every action.
+Factionlog is a fork of Lonelog, a notation system for solo RPG session logging. Lonelog's core philosophy (separate mechanics from fiction, stay compact, scale from one-shots to campaigns) carries directly into OSG play. The tag system and formatting conventions are shared. The core symbols shift to reflect OSG's specific model: faction-scale play, simultaneous action submission, and the three-part argument that structures every action.
 
-If you know Lonelog, you'll feel at home. If you don't, this document is
-fully standalone.
-
-The fundamental design change from Lonelog is this: in solo RPG play, the
-world only speaks when asked (`?`). In OSG play, rival factions and NPAs
-act on their own interests every turn without being asked. The `!` symbol
-— borrowed from Partylog — captures this: the world pushing events into the
-fiction, not waiting for your oracle query.
+If you know Lonelog, you'll feel at home. If you don't, this document is fully standalone.
 
 ## 2. Digital vs. Analog Formats
 
@@ -131,7 +90,7 @@ In digital markdown files:
 - Sessions: Level 2 headings (`## Session 1`)
 - Turns: `[Turn:N]` markers within sessions
 - Core notation and tracking: inside code blocks
-- Narrative and reports: regular prose between code blocks
+- Report text: regular prose between code blocks
 
 > **Note:** Always wrap notation in code blocks when using digital markdown.
 > This prevents conflicts with Markdown syntax and ensures symbols like `=>`
@@ -153,9 +112,9 @@ In paper notebooks:
 ```markdown
 ## Session 1
 Date: 2026-05-01 | Turns: 1–2
-
 ```
 
+```
 [Turn:1]
 
 @ Meranto
@@ -166,8 +125,6 @@ Date: 2026-05-01 | Turns: 1–2
 d: 2d6 → 6,2  keep high → 6
 -> Success
 => [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]
-
-```
 ```
 
 **Analog:**
@@ -185,34 +142,26 @@ d: 2d6 → 6,2  keep high → 6
 => [Fac:Caldrath | pos:army held | Clock:LiquidityReview 1/3]
 ```
 
-Both formats use identical notation — only the wrapping differs.
+Both formats use identical notation; only the wrapping differs.
 
 ## 3. Core Notation
 
-This is the heart of the system. Five elements mirror the natural flow
-of OSG play: you argue your action, the world argues back, dice decide,
-and the board changes.
+This is the heart of the system. Five elements mirror the natural flow of OSG adjudication: the faction argues its action, the Referee grades leverage, dice decide, and the board changes.
 
-### 3.1 Your Faction's Action (`@`)
+### 3.1 Faction Actions (`@`)
 
-The `@` symbol represents your faction submitting its turn action.
-Every action in OSG follows the same three-part structure:
+The `@` symbol represents a faction submitting its turn action. Every action in OSG follows the same three-part structure:
 
 ```
 @ FactionName
-  act: What specifically are you doing?
-  out: What result do you want?
+  act: What specifically are they doing?
+  out: What result do they want?
   lev: Why is this action likely to produce that outcome?
 ```
 
-The three sub-lines are not optional decoration. They are the argument.
-`act` commits you to a specific course of conduct. `out` separates what
-you're doing from what you want — the referee adjudicates the outcome,
-not just the action. `lev` is the case for why your plan should work,
-grounded in established fiction: resources, relationships, positioning,
-prior actions.
+The three sub-lines are not optional decoration. They are the argument the Referee adjudicates. `act` commits the faction to a specific course of conduct. `out` separates what they are doing from what they want: the Referee adjudicates the outcome, not just the action. `lev` is the case for why the plan should work, grounded in established fiction: resources, relationships, positioning, prior actions.
 
-**Example — full argument:**
+**Example: full argument:**
 
 ```
 @ Meranto
@@ -226,7 +175,7 @@ prior actions.
        thirty days. We hold documentation for every transaction.
 ```
 
-**Example — compact (fast play):**
+**Example: compact (fast play):**
 
 ```
 @ Meranto
@@ -235,96 +184,26 @@ prior actions.
   lev: Full documentation; clause has precedent
 ```
 
-Both are valid. Use the level of detail your play requires.
+Both are valid. Use the level of detail the game requires.
 
 #### 3.1.1 Spendable Bonuses in the Argument
 
-If your action spends a named bonus asset, record the spend inside
-the leverage line using the `[Bon:]` tag:
+If an action spends a named bonus asset, record the spend inside the leverage line using the `[Bon:]` tag:
 
 ```
 @ Saivorn
   act: Rush naval assets to the Corenth harbour mouth
   out: Establish a naval blockade before Caldrath can resupply
-  lev: Two deep-water ports give us unmatched transit speed;
-       [Bon:HarbourRights 1/2 → 0/2] — we invoke our treaty
-       access to Corenth's outer anchorage
+  lev: Two deep-water ports give unmatched transit speed;
+       [Bon:HarbourRights 1/2 → 0/2] — treaty access to
+       Corenth's outer anchorage invoked
 ```
 
-The bonus tag ticks down at the point of use and is visible in
-the leverage argument, which is where it matters for adjudication.
+The bonus tag ticks down at the point of use, visible in the leverage argument where it matters for adjudication.
 
-### 3.2 Rival and NPA Actions (`!`)
+### 3.2 Leverage Grade (`[Lev:]`)
 
-The `!` symbol represents any faction acting whose action you did not
-submit — a rival player faction, a Non-Player Actor (NPA), or any
-force that acts on its own interests this turn.
-
-In group play, `!` logs the actions submitted by other players as they
-are revealed in the Report. In solo play, `!` events are generated by
-oracle query, random NPA behavior tables, or referee-authored logic.
-
-The three-part argument structure applies to `!` actions exactly
-as it does to `@` actions. This matters: the leverage argument is
-what the referee (or oracle) grades, and it should be visible in
-the log for every actor.
-
-```
-! Caldrath
-  act: Deploy advance units to Essaveth's northern pass
-  out: Establish military presence before any treaty negotiation
-  lev: Largest army on the peninsula; Essaveth has no defensive
-       pact; units are already at the border — one day's march
-[Lev:Strong]
-d: 2d6 → 6,2  keep high → 6
--> Success, and...
-=> [Fac:Caldrath | pos:pass occupied]
-=> [Fac:Essaveth | pos:under occupation | Clock:Resistance 0/4]
-=> Essaveth's border garrison stands down without resistance —
-   visible to all factions in the Report
-```
-
-#### 3.2.1 The `@` / `!` Distinction
-
-This is Factionlog's central design choice:
-
-- `@` is **your faction acting** — you chose this, you own it
-- `!` is **a rival or the world acting** — it acts on its own,
-  you respond to it
-
-In OSG, all factions submit actions privately and simultaneously.
-The distinction in the log reflects whose argument you are logging
-and whose you are reconstructing from the Report or oracle.
-
-#### 3.2.2 Solo Play: Emulating Rival Arguments
-
-When playing solo, you reconstruct rival arguments from the
-Report and NPA behavior rules. Use `?` (Lonelog oracle syntax)
-to generate what you don't know:
-
-```
-! Saivorn
-? What does Saivorn attempt this turn? (oracle: NPA behavior table)
-- tbl:NPAAction → "Opportunistic diplomacy"
-  act: Open a quiet channel to Corenth, bypassing Caldrath
-  out: Establish a private relationship before the army arrives
-  lev: Sea access gives Saivorn direct reach; Caldrath's
-       aggression gives Corenth reason to listen
-[Lev:Weak]  (no established presence in Corenth yet)
-d: 2d6 → 3,1  keep low → 1
--> Failure, and... Corenth alerts Caldrath to the approach
-=> [Fac:Saivorn | pos:diplomatically exposed]
-```
-
-The oracle determines the attempt; you record it with the same
-structure as any other action. What enters the log is always
-the full argument, regardless of how it was generated.
-
-### 3.3 Leverage Grade (`[Lev:]`)
-
-Before rolling, the referee (or you, as solo oracle-referee)
-grades the acting faction's leverage as **Strong** or **Weak**
-relative to any opposition.
+Before rolling, the Referee grades the acting faction's leverage as **Strong** or **Weak** relative to any opposition.
 
 Record the grade on its own line between the argument and the roll:
 
@@ -333,26 +212,15 @@ Record the grade on its own line between the argument and the roll:
 [Lev:Weak]
 ```
 
-**Strong** means the faction has enough established advantage —
-resources, relationships, positioning, prior actions — that you'd
-expect success more often than not.
+**Strong** means the faction has enough established advantage (resources, relationships, positioning, prior actions) that success is more likely than not.
 
-**Weak** means the attempt is plausible but without a strong basis
-for expecting success: thin resources, an entrenched opponent,
-no established presence in the relevant domain.
+**Weak** means the attempt is plausible but without a strong basis for expecting success: thin resources, an entrenched opponent, no established presence in the relevant domain.
 
-In a group game, the referee grades leverage — record the grade as given.
-When playing solo, use an oracle query if you are uncertain:
+The Referee is not scoring a debate. Strong or Weak is a qualitative judgment following from the leverage argument and the established fiction.
 
-```
-? Is my leverage Strong against Essaveth's pass claim?
-- Yes, but... → Strong, but traceability is thin
-```
+### 3.3 The Dice Mechanic (`d:`)
 
-### 3.4 The Dice Mechanic (`d:`)
-
-OSG uses 2d6: **keep the high die** for Strong leverage,
-**keep the low die** for Weak leverage.
+OSG uses 2d6: **keep the high die** for Strong leverage, **keep the low die** for Weak leverage.
 
 ```
 d: 2d6 → 5,3  keep high → 5   (Strong)
@@ -362,35 +230,28 @@ d: 2d6 → 5,3  keep low  → 3   (Weak)
 **Result interpretation:**
 
 | Kept die | Outcome                                                |
-| -------- | undefined---------------------------------------------------- |
+| :------- | :----------------------------------------------------- |
 | 6        | Success; something especially good may also occur      |
 | 4–5      | Desired outcome occurs                                 |
 | 2–3      | Action proceeds, but outcome is worse than desired     |
 | 1        | Worst outcome; something especially bad may also occur |
 
-#### 3.4.1 Force of Nature (Doubles)
+#### 3.3.1 Force of Nature (Doubles)
 
-When both dice show the same number, the referee may introduce
-a Force of Nature — a chaotic event outside any faction's control.
-In a group game, the referee narrates it directly. In solo play,
-generate it with an oracle query:
+When both dice show the same number, the Referee may introduce a Force of Nature: a chaotic event outside any faction's control. Record it on its own line:
 
 ```
 d: 2d6 → 3,3  DOUBLES
-? Force of Nature relevant to current fiction?
-- Yes → [E:HarborStorm | emerges]
+[FoN: harbour storm grounds all sea transit next turn]
 => All sea transit actions opposed next turn
-=> Saivorn's naval advantage is temporarily neutralized
+=> Saivorn's naval advantage temporarily neutralized
 ```
 
-The Force of Nature is a prompt, not a requirement. Use it when
-it fits the fiction and creates genuine new complications —
-sparingly, once or twice per game at most.
+The Force of Nature is a prompt, not a requirement. Use it only when it fits the fiction and creates genuine complications, at most once or twice per game.
 
-### 3.5 Adjudication Result (`->`)
+### 3.4 Adjudication Result (`->`)
 
-The `->` line declares the adjudicated outcome — what actually
-happened, following from the leverage grade and the dice.
+The `->` line declares the adjudicated outcome: what actually happened, following from the leverage grade and the dice.
 
 ```
 -> Success
@@ -400,24 +261,11 @@ happened, following from the leverage grade and the dice.
 -> Failure, and... Caldrath learns of the attempt
 ```
 
-The result should be Reasonable (proportionate to the fiction),
-Actionable (it leaves something for other factions to respond to),
-and Traceable (it points to earlier events). These are the OSG
-RAT criteria. In a group game, the referee applies them when adjudicating —
-record the outcome as given. When playing solo, check them with brief oracle
-queries before writing the outcome:
+The result should pass the RAT check: **Reasonable** (proportionate to the fiction), **Actionable** (leaves something for other factions to respond to), and **Traceable** (points to earlier events). If an outcome fails any of these, rewrite it before moving to consequences.
 
-```
-? RAT: Is this outcome actionable for other factions?
-- Yes → write a visible hook into the Report
-```
+### 3.5 Consequences and Board State (`=>`)
 
-### 3.6 Consequences and Board State (`=>`)
-
-The `=>` symbol records what changes in the world as a result of
-the adjudicated outcome. In OSG, this means faction positions,
-contested zones, clock progress, and anything other factions
-will now have to contend with.
+The `=>` symbol records what changes in the world as a result of the adjudicated outcome: faction positions, contested zones, clock progress, and anything other factions must now contend with.
 
 ```
 => [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]
@@ -425,14 +273,11 @@ will now have to contend with.
 => [Fac:Meranto | pos:diplomatically exposed in Corenth]
 ```
 
-Chain multiple `=>` lines for cascading effects. Every outcome
-should leave at least one visible hook for another faction.
+Chain multiple `=>` lines for cascading effects. Every outcome should leave at least one visible hook for another faction.
 
-### 3.7 The Report Block
+### 3.6 The Report Block
 
-At the end of each turn, the referee publishes a public Report.
-In solo play, write it yourself as the oracle-referee, summarizing
-outcomes and seeding hooks for the next turn.
+At the end of each turn, the Referee publishes a public Report. Record it in a delimited block immediately after the turn's adjudications:
 
 ```
 
@@ -443,9 +288,7 @@ outcomes and seeding hooks for the next turn.
     Next turn: the question is who arrives first. 
 ```
 
-The `` delimiters separate the Report narrative from the
-notation log. The Report is public fiction; everything inside
-it is known to all factions.
+The `` delimiters separate the Report narrative from the notation log. The Report is public fiction; everything inside it is known to all factions. Private outcomes not in the Report are logged only in `=>` consequence lines inside the relevant faction's block.
 
 ## 4. Optional Layers
 
@@ -453,8 +296,7 @@ it is known to all factions.
 
 #### 4.1.1 Faction Tags (`[Fac:]`)
 
-Track faction state across turns. Establish at `[T0]` and update
-as the board changes.
+Track faction state across turns. Establish at `[T0]` and update as the board changes.
 
 ```
 [Fac:Meranto | obj:control Corenth debt leverage
@@ -464,26 +306,19 @@ as the board changes.
 
 Fields:
 
-- `obj:` — Faction's objectives (from the Brief; does not change)
-- `pos:` — Current position on the board (updates each turn)
-- `bon:` — Spendable bonuses with remaining uses
+- `obj:` the faction's objectives (from the Brief; does not change)
+- `pos:` the current position on the board (updates each turn)
+- `bon:` spendable bonuses with remaining uses
 
-Updating faction state:
+Updating faction state: show only what changed:
 
 ```
-[Fac:Caldrath | pos:army held at border]        — position update
-[Fac:Caldrath | pos:pass occupied]              — after successful action
-[Fac:Saivorn  | pos:diplomatically exposed]     — consequence of failure
+[Fac:Caldrath | pos:army held at border]
+[Fac:Caldrath | pos:pass occupied]
+[Fac:Saivorn  | pos:diplomatically exposed]
 ```
-
-You do not need to restate all fields on every update — show only
-what changed.
 
 #### 4.1.2 Spendable Bonuses (`[Bon:]`)
-
-Bonuses are named, one-use (or limited-use) assets tied to a
-faction's starting position. They are spent in the leverage
-argument to shift leverage from Weak to Strong for one action.
 
 ```
 [Bon:"Debt Clause" 2/2]      — full, two uses remaining
@@ -491,28 +326,18 @@ argument to shift leverage from Weak to Strong for one action.
 [Bon:"Debt Clause" 0/2]      — exhausted
 ```
 
-A bonus should be contextually bounded — its narrative name
-indicates when it applies. `"Debt Clause"` applies to financial
-and legal arguments; it does not apply to a military engagement.
-A spent bonus cannot be recovered.
+A bonus should be contextually bounded: its narrative name indicates when it applies. A spent bonus cannot be recovered.
 
-#### 4.1.3 Rival / NPA Tags (`[Rival:]`)
+#### 4.1.3 NPA Tags (`[NPA:]`)
 
-For factions you do not control, track what is publicly known
-from Reports and what has been revealed through the referee's
-rulings or, in solo play, oracle queries.
+For Non-Player Actors controlled by the Referee, track objective, position, and behavior rule:
 
 ```
-[Rival:Caldrath | obj:military dominance | pos:army at border
-               | behavior:aggressive; moves on Corenth if unopposed T3+]
-[Rival:Saivorn  | obj:secure port access | pos:coast
-               | behavior:opportunistic if Caldrath weakened]
-[Rival:Conclave | obj:Corenth autonomy   | pos:temple complex
-               | behavior:mediates; escalates if temple threatened]
+[NPA:Conclave | obj:Corenth remains neutral | pos:temple complex
+             | behavior:mediates; escalates if temple threatened]
 ```
 
-The `behavior:` field is for solo play — it defines the NPA's
-decision logic for oracle-driven action generation.
+NPA actions use `@` notation identical to player faction actions. The Referee adjudicates them the same way.
 
 #### 4.1.4 Locations (`[L:]`)
 
@@ -526,8 +351,7 @@ Mark significant locations and their current control state.
 
 #### 4.1.5 Objectives (`[Obj:]`)
 
-Track your faction's objectives from the Brief. Mark them at
-game end for the debrief.
+Track each faction's objectives from the Brief. Mark them at game end for the debrief.
 
 ```
 [Obj:Control Corenth debt leverage      | Open]
@@ -538,9 +362,6 @@ game end for the debrief.
 
 #### 4.1.6 Events and Clocks (`[E:]`, `Clock:`)
 
-Use standard Lonelog clock notation for escalating threats and
-timed pressures.
-
 ```
 [E:CaldhrathLiquidity | Clock: 1/3]   — Caldrath treasury under review
 [E:ConclaveSummit     | Clock: 0/1]   — imminent
@@ -549,13 +370,11 @@ timed pressures.
 
 ### 4.2 Turn Zero (`[T0]`)
 
-Turn Zero is the pre-game clarification session. Log world
-assumptions, faction setups, and any rulings made before
-Turn 1 here.
+Turn Zero is the pre-game clarification session. Log world assumptions, faction setups, and any rulings made before Turn 1 here.
 
 ```
 [T0]
-rule: Unopposed actions succeed; the referee still determines
+rule: Unopposed actions succeed; the Referee still determines
       how they land — every success reshapes the board
 rule: Talking is free — negotiation between factions costs no
       turn; only what you actually do costs your action
@@ -569,54 +388,27 @@ assumption: Meranto has no physical presence on the map —
 [Fac:Meranto | obj:control Corenth debt leverage
              | pos:agents everywhere, no map token
              | bon:"Emergency Recall" 1/1, "Debt Clause" 2/2]
-[Rival:Caldrath  | obj:military dominance of Corenth
-                 | pos:army at northern border
-                 | behavior:aggressive; moves on Corenth if unopposed by T3]
-[Rival:Saivorn   | obj:secure port access to Corenth
-                 | pos:coast, two deep-water ports
-                 | behavior:opportunistic if Caldrath weakened]
-[Rival:Essaveth  | obj:preserve pass autonomy
-                 | pos:northern passes, small garrison
-                 | behavior:defensive; seeks alliance if threatened]
-[Rival:Conclave  | obj:Corenth remains neutral
-                 | pos:temple complex, extraterritorial
-                 | behavior:mediates; escalates if temple threatened]
+[NPA:Caldrath  | obj:military dominance of Corenth
+               | pos:army at northern border
+               | behavior:aggressive; moves on Corenth if unopposed by T3]
+[NPA:Saivorn   | obj:secure port access to Corenth
+               | pos:coast, two deep-water ports
+               | behavior:opportunistic if Caldrath weakened]
+[NPA:Essaveth  | obj:preserve pass autonomy
+               | pos:northern passes, small garrison
+               | behavior:defensive; seeks alliance if threatened]
+[NPA:Conclave  | obj:Corenth remains neutral
+               | pos:temple complex, extraterritorial
+               | behavior:mediates; escalates if temple threatened]
 ```
 
-### 4.3 Random Tables and Oracle
+### 4.3 Meta Notes
 
-For solo play, use standard Lonelog oracle and table notation
-to generate NPA arguments, Force of Nature events, and
-adjudication inputs.
-
-```
-? What does Caldrath attempt this turn?
-tbl: NPAAction d6
-  1 Hold position
-  2 Apply diplomatic pressure
-  3 Military advance
-  4 Economic blockade
-  5 Alliance approach
-  6 Escalate — open aggression
-tbl: NPAAction d6 → 3
-- Military advance
-
-! Caldrath
-  act: [generated from table result]
-  ...
-```
-
-Inline table definitions make the log self-contained — readers
-see the full table and the result without needing external tools.
-
-### 4.4 Meta Notes
-
-Step outside the fiction for rulings, design notes, and
-retrospective annotations.
+Step outside the fiction for rulings, design notes, and retrospective annotations.
 
 ```
 (rule: NPA behavior tables rolled before each turn, results private
-       until logged as ! actions)
+       until logged as @ actions)
 (post: Turn 3 reconstructed from notes — dialogue is paraphrased)
 (note: Caldrath player absent Turn 2; NPA holding action used)
 ```
@@ -631,7 +423,7 @@ title: The Corentine Crisis
 system: Open Strategy Game
 hack: Factionlog
 turns: 6
-faction: House Meranto
+factions: Meranto, Caldrath, Saivorn, Essaveth, Conclave
 date: 2026-05-01
 ---
 ```
@@ -646,7 +438,6 @@ Date: 2026-05-01
 Turns: 1–2
 Recap: Turn Zero complete. Factions established.
        Caldrath is already moving.
-Goals: Delay Caldrath; open a quiet channel to Essaveth.
 ```
 
 ### 5.3 Debrief
@@ -666,16 +457,18 @@ Meranto:  Debt Clause delayed Caldrath two turns. Conclave
 
 ## 6. Complete Turn Example
 
-A full two-faction turn from *The Corentine Crisis*, Turn 2.
+A full multi-faction turn from *The Corentine Crisis*, Turn 2.
 
 ```
+[Turn:2]
+
 @ Meranto
   act: Approach Essaveth privately — offer to underwrite their
        garrison costs in exchange for pass access rights
   out: Establish a quiet alliance before Caldrath occupies the pass
   lev: Essaveth is under military pressure and has no defensive pact.
-       Meranto holds their small infrastructure debt. We can offer
-       immediate financial relief — something Caldrath cannot match.
+       Meranto holds their small infrastructure debt. Immediate
+       financial relief — something Caldrath cannot match.
        [Bon:"Debt Clause" 2/2 → 1/2]
 [Lev:Strong]
 d: 2d6 → 4,6  keep high → 6
@@ -683,9 +476,9 @@ d: 2d6 → 4,6  keep high → 6
    on Caldrath's supply line through the pass
 => [Fac:Essaveth | pos:quiet Meranto ally | Bon:IntelligenceFile 1/1]
 => [Fac:Meranto  | pos:pass access secured | bon:"Debt Clause" 1/2]
-=> Essaveth's public posture remains neutral — the alliance is secret
+=> Essaveth's public posture remains neutral — alliance is secret
 
-! Caldrath
+@ Caldrath
   act: Send an envoy to Essaveth demanding right of passage for
        the army, framed as a treaty obligation
   out: Secure legal cover for army movement through the pass
@@ -699,14 +492,12 @@ d: 2d6 → 2,5  keep high → 5
 => [Fac:Caldrath | pos:army delayed at border | Clock:PassNegotiation 1/3]
 => Caldrath's envoy returns empty-handed — publicly noted
 
-! Conclave (NPA)
-? Conclave action this turn — does the summit invitation stand?
-- Yes, but... → Invitation sent, but with conditions
+@ Conclave (NPA)
   act: Issue a formal invitation to all factions for a Corenth
        summit, citing the army movements as a threat to the
        neutral zone
   out: Establish itself as the legitimate mediating authority
-       before any faction can act unilaterally in Corenth
+       before any faction acts unilaterally in Corenth
   lev: Extraterritorial status; all factions have obligations
        under the old treaty; the neutral city gives the Conclave
        standing no other actor can claim
@@ -716,67 +507,99 @@ d: 2d6 → 3,5  keep high → 5
 => [E:ConclaveSummit | Clock: 1/1] — summit is imminent, Turn 3
 => Every faction must now decide: attend, refuse, or act before it
 
-Caldrath's envoy returns from Essaveth without an answer.
+ Caldrath's envoy returns from Essaveth without an answer.
     The Conclave has summoned all factions to Corenth.
     The summit will be held next turn. Essaveth has gone quiet.
     Meranto's agents were seen near the northern pass.
     The question now is who arrives in Corenth, and how. 
 ```
 
-## 7. Best Practices
+## 7. Solo Extension
 
-**Do** write the full three-part argument before grading leverage.
-The leverage grade follows from the argument — not the other way around.
+When playing OSG solo (see Part IX of *Contested Ground* or the Solo OSG rules), the Referee role collapses into the player. Factionlog's core notation works unchanged; every Autonomous Actor's action is logged with `@` notation exactly like a player faction's. Two additions support solo-specific mechanics.
 
-**Don't** write the leverage grade and then construct an argument
-to justify it. The argument is the game.
+### 7.1 Oracle Queries (`?`)
 
-**Do** log `!` rival actions with the same argument structure as
-your own, even when reconstructed from the Report or oracle.
+Use the `?` symbol to record any query to a random table or oracle system used to generate an AA's action or resolve uncertainty:
 
-**Don't** log rival actions as bare outcomes: `! Caldrath moves army.`
-The argument is what makes the log traceable.
+```
+? What does Caldrath attempt this turn?
+- NPAAction d6 → 3: Military advance
 
-**Do** let the `->` outcome be proportionate and leave a hook.
-Every result — success or failure — should give at least one other
-faction something to respond to.
+@ Caldrath
+  act: [generated from table result: advance on the pass]
+  ...
+```
 
-**Don't** write outcomes that close the fiction: `-> Success.
-Caldrath is defeated.` OSG ends after a fixed number of turns,
-not when one faction is eliminated.
+The oracle query is logged so the reasoning behind a generated action is visible when reviewing the record later.
 
-**Do** tick down `[Bon:]` tags at the moment of spend, inside the
-leverage argument where they appear.
+### 7.2 AA Action Tables (`tbl:`)
 
-**Don't** track bonuses separately from the argument. The spend is
-part of the case for why the action should succeed.
+Inline table definitions make the log self-contained:
 
-**Do** write the `[Report:N]` block in the voice of the public
-record — what all factions know. Keep private outcomes out of it.
+```
+tbl: CaldhrathAction d6
+  1 Hold position
+  2 Apply diplomatic pressure
+  3 Military advance
+  4 Economic blockade
+  5 Alliance approach
+  6 Escalate — open aggression
+tbl: CaldhrathAction d6 → 3
+- Military advance
+```
 
-**Don't** put private intelligence or secret alliance details in
-the Report. Log them in `=>` consequences under your faction's
-block, not in the public summary.
+Define each AA's action table once at `[T0]` and reference it by name on subsequent turns.
 
-## 8. Quick Reference
+### 7.3 Rival Tags (`[Rival:]`)
+
+In solo play, use `[Rival:]` in place of `[NPA:]` to distinguish AA-driven factions from Referee-controlled NPAs in a hybrid game:
+
+```
+[Rival:Saivorn | obj:secure port access | pos:coast
+              | behavior:opportunistic if Caldrath weakened]
+```
+
+## 8. Best Practices
+
+**Do** write the full three-part argument before recording the leverage grade. The grade follows from the argument, not the other way around.
+
+**Don't** record a leverage grade and then construct an argument to justify it. The argument is what gets adjudicated.
+
+**Do** log NPA and AA actions with the same `@` structure as player faction actions, including the full argument.
+
+**Don't** log faction actions as bare outcomes: `@ Caldrath moves army.` Without the argument, the log is not traceable.
+
+**Do** let the `->` outcome be proportionate and leave a hook. Every result, success or failure, should give at least one other faction something to respond to.
+
+**Don't** write outcomes that close the fiction: `-> Success. Caldrath is defeated.` OSG ends after a fixed number of turns, not when one faction is eliminated.
+
+**Do** tick down `[Bon:]` tags at the moment of spend, inside the leverage argument where they appear.
+
+**Don't** track bonuses separately from the argument. The spend is part of the case for why the action should succeed.
+
+**Do** write the Report block in the voice of the public record: what all factions know. Keep private outcomes out of it.
+
+**Don't** put private intelligence or secret alliance details in the Report block. Log them in `=>` consequence lines, not in the public summary.
+
+## 9. Quick Reference
 
 ### Core Symbols
 
-| Symbol | Meaning                                     | Example                        |
-| ------ | ------------------------------------------- | ------------------------------ |
-| `@`    | Your faction's action (three-part argument) | `@ Meranto`                    |
-| `!`    | Rival / NPA action                          | `! Caldrath`                   |
+| Symbol | Meaning                                     | Example                         |
+| :----- | :------------------------------------------ | :------------------------------ |
+| `@`    | Faction action (three-part argument)        | `@ Meranto`                     |
 | `d:`   | OSG dice roll (2d6 keep high/low)           | `d: 2d6 → 4,6  keep high → 6`  |
-| `->`   | Adjudicated outcome                         | `-> Partial success`           |
-| `=>`   | Board-state consequence                     | `=> [Fac:Caldrath | pos:...]`  |
-| `?`    | Oracle query (solo, optional)               | `? What does Saivorn attempt?` |
+| `->`   | Adjudicated outcome                         | `-> Partial success`            |
+| `=>`   | Board-state consequence                     | `=> [Fac:Caldrath \| pos:...]`  |
+| `?`    | Oracle query *(solo extension)*             | `? What does Saivorn attempt?`  |
 
 ### Action Argument
 
 ```
 @ FactionName
-  act: What specifically are you doing?
-  out: What result do you want?
+  act: What specifically are they doing?
+  out: What result do they want?
   lev: Why is this likely to produce that outcome?
 [Lev:Strong] or [Lev:Weak]
 d: 2d6 → H,L  keep high/low → result
@@ -787,19 +610,20 @@ d: 2d6 → H,L  keep high/low → result
 ### Dice Results
 
 | Kept die | Outcome                                               |
-|----------|-------------------------------------------------------|
+| :------- | :---------------------------------------------------- |
 | 6        | Success, and... (something especially good may occur) |
 | 4–5      | Desired outcome occurs                                |
 | 2–3      | Outcome worse than desired                            |
 | 1        | Failure, and... (something especially bad may occur)  |
-| Doubles  | Potential Force of Nature — query oracle              |
+| Doubles  | Potential Force of Nature                             |
 
 ### Tags
 
 | Tag                      | Purpose                | Example                                |
-|--------------------------|------------------------|----------------------------------------|
-| `[Fac:Name \| ...]`      | Your faction state     | `[Fac:Meranto \| pos:...]`             |
-| `[Rival:Name \| ...]`    | Rival / NPA state      | `[Rival:Caldrath \| behavior:...]`     |
+| :----------------------- | :--------------------- | :------------------------------------- |
+| `[Fac:Name \| ...]`      | Faction state          | `[Fac:Meranto \| pos:...]`             |
+| `[NPA:Name \| ...]`      | NPA state              | `[NPA:Conclave \| behavior:...]`       |
+| `[Rival:Name \| ...]`    | AA state *(solo)*      | `[Rival:Caldrath \| behavior:...]`     |
 | `[Lev:Strong/Weak]`      | Leverage grade         | `[Lev:Strong]`                         |
 | `[Bon:Name N/max]`       | Spendable bonus        | `[Bon:"Debt Clause" 1/2]`              |
 | `[Obj:... \| state]`     | Faction objective      | `[Obj:Isolate Saivorn \| Achieved T4]` |
@@ -807,71 +631,53 @@ d: 2d6 → H,L  keep high/low → result
 | `[E:Name \| Clock: X/Y]` | Event / clock          | `[E:ConclaveSummit \| Clock: 1/1]`     |
 | `[Turn:N]`               | Turn marker            | `[Turn:3]`                             |
 | `[T0]`                   | Turn Zero block        | `[T0]`                                 |
-| `[Report:N]`             | Public report block    | `[Report:2]`                           |
 | `[Debrief]`              | End-of-game assessment | `[Debrief]`                            |
 
-## 9. FAQ
+## 10. FAQ
 
-**Q: Do I need to write the full three-part argument every turn?**
-A: Yes, always — but compact form is fine for fast play.
-`act/out/lev` can each be a single line. What matters is that all
-three are present. The leverage line is what gets graded; without
-it, the roll has no context.
+**Q: Does every submitted action need to be logged in full?**
+A: Yes, always, but compact form is fine for fast play. `act/out/lev` can each be a single line. What matters is that all three are present. The leverage line is what gets graded; without it, the adjudication has no record.
 
-**Q: What if I genuinely don't know what leverage grade to give
-a rival's action?**
-A: In a group game, ask the referee — they grade it, you record
-it. When playing solo, use an oracle query: `? Is Caldrath's
-leverage Strong here?` Then commit to the answer and grade
-accordingly. The grade should follow from the fiction, not from
-what result you want.
+**Q: How do I log an Unopposed action?**
+A: Write the `@` block and the `=>` consequence normally; omit the `[Lev:]` grade and `d:` roll. Mark the outcome as Unopposed if clarity requires it:
 
-**Q: Can I use Factionlog for solo play?**
-A: Yes. Replace the referee with an oracle: use `?` queries to grade
-leverage, generate rival arguments, and adjudicate outcomes. The `!`
-blocks capture NPA actions driven by behavior tables. The rest of the
-notation is unchanged.
+```
+@ Meranto
+  act: Establish a courier network across the eastern provinces
+  out: Ensure private message delivery regardless of road conditions
+  lev: Existing agent network; no competing faction present
+-> Unopposed — network established
+=> [Fac:Meranto | pos:eastern courier network active]
+```
 
 **Q: How do I handle a faction that drops out mid-game?**
-A: Convert them to an NPA. Add a `behavior:` field to their
-`[Rival:]` tag and note the transition:
+A: Convert them to an NPA. Add a `behavior:` field to their tag and note the transition:
 
 ```
-[Rival:Essaveth | pos:occupied | behavior:passive; holds position
-                | note: player absent from T4, NPA from T4]
+[NPA:Essaveth | pos:occupied | behavior:passive; holds position
+             | note: player absent from T4, NPA from T4]
 ```
 
-**Q: What's the difference between `[Rival:]` and `[Fac:]`?**
-A: `[Fac:]` is your faction — the one whose action you submit with
-`@`. `[Rival:]` is everyone else. In a group game with a scribe,
-you might have multiple `[Fac:]` tags, one per player-controlled
-faction.
+**Q: Can I use Factionlog for a game I'm running as Referee, not playing in?**
+A: Yes. That is the primary use case. All `@` blocks log submitted actions as the Referee received them. The Referee's own reasoning is recorded in the `[Lev:]` grade and `->` outcome lines.
 
 **Q: Does Factionlog work with any OSG scenario?**
-A: Yes. The notation is system-agnostic within the OSG framework —
-it assumes the three-part action structure, the 2d6 keep-high/low
-mechanic, and the turn/report cycle. Scenario-specific mechanics
-(spendable bonuses, NPAs, maps) are all optional layers.
+A: Yes. The notation is system-agnostic within the OSG framework: it assumes the three-part action structure, the 2d6 keep-high/low mechanic, and the turn/report cycle. Scenario-specific mechanics (spendable bonuses, NPAs, maps) are all optional layers.
 
 **Q: How does Factionlog relate to Lonelog add-ons?**
-A: Factionlog is a fork, not an add-on. It replaces the solo
-character-action model entirely. Lonelog add-ons (Combat, Dungeon
-Crawling, Resource Tracking) are not designed for faction-scale
-play and are not compatible with Factionlog without adaptation.
+A: Factionlog is a fork, not an add-on. It replaces the solo character-action model entirely. Lonelog add-ons (Combat, Dungeon Crawling, Resource Tracking) are not designed for faction-scale play and are not compatible with Factionlog without adaptation.
 
 ## Credits & License
 
 © 2026 Roberto Bisceglie
 
-Factionlog is forked from Lonelog v1.3.0 by Roberto Bisceglie. It shares Lonelog's core philosophy, tag system, and structural conventions, adapted for Open Strategy Game play.
+Factionlog is forked from Lonelog v1.4.0 by Roberto Bisceglie. It shares Lonelog's core philosophy, tag system, and structural conventions, adapted for Open Strategy Game play.
 
 The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.
 
 Version History:
 
+- v 0.2.0  Reframed as Referee session log; solo extension moved to §7
 - v 0.1.0  Initial draft
 
-This work is licensed under the Creative Commons
-Attribution-ShareAlike 4.0 International License.
-Session logs and play records created using this notation
-are your own work and are not subject to this license.
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. Session logs and play records created using this notation are your own work and are not subject to this license.

@@ -5,24 +5,6 @@ author: Roberto Bisceglie
 license: CC BY-SA 4.0
 lang: en
 version: 1.0
-cover-logo: assets/logo.svg
-format:
-  html: {}
-  typst:
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    fontsize: 11pt
-    tbl-colwidths: auto
-    template: ../_extensions/typst-template.typ
-    template-partials:
-      - ../_extensions/typst-show.typ
-  odt:
-    toc: true
-  epub:
-    toc: true
-  gfm:
-    toc: false
 ---
 
 This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.
@@ -71,6 +53,17 @@ When player count exceeds the Actor roster, Extras participate through one of th
 **Scenario-Specific Roles.** Some scenarios embed participation structures into the fiction itself (an electorate that votes, a mob whose actions are randomly selected, a council that deliberates). These are not portable; they must be designed for their specific scenario and explained to participants before play.
 
 ## Part III: The Turn
+
+```mermaid
+flowchart TD
+    Announce[1. Referee announces deadline] --> Submit[2. Actors submit Actions privately]
+    Submit --> Adjudicate[3. Referee adjudicates all Actions]
+    Adjudicate --> Publish[4. Referee publishes public Report]
+    Publish --> Deliberate[5. Factions negotiate & plan next Actions]
+    Deliberate --> CycleEnd{Is Game Over?}
+    CycleEnd -->|No| Announce
+    CycleEnd -->|Yes| End([Debrief & Self-Assessment])
+```
 
 ### Action Format
 
@@ -133,6 +126,29 @@ When an action faces opposition, roll **2d6**.
 | **4–5** | The desired outcome occurs                                 |
 | **2–3** | The action proceeds, but the outcome is worse than desired |
 | **1**   | Failure: something especially bad may also occur           |
+
+```mermaid
+flowchart TD
+    Start([Action Faces Opposition]) --> Assess{Assess Leverage}
+    Assess -->|Strong| KeepHigh[Roll 2d6, Keep Higher Die]
+    Assess -->|Weak| KeepLow[Roll 2d6, Keep Lower Die]
+    
+    KeepHigh --> Resolve{Check Result}
+    KeepLow --> Resolve
+    
+    Resolve -->|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
+    Resolve -->|4 or 5| Success[Success: Desired outcome occurs]
+    Resolve -->|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
+    Resolve -->|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+
+    SuccessExtra --> CheckRAT[Apply RAT Checklist]
+    Success --> CheckRAT
+    SuccessWithCost --> CheckRAT
+    FailureExtra --> CheckRAT
+    
+    CheckRAT --> ApplyFriction[Ensure outcome leaves a mark - No Action Without Friction]
+    ApplyFriction --> End([Outcome Adjudicated])
+```
 
 ### Unopposed Actions
 
@@ -213,6 +229,16 @@ Design proceeds in this order. Each step produces what the next step requires.
 | 5. **Bonuses**   | Spendable leverage asymmetry *(optional)*        |
 | 6. **NPAs**      | Referee-controlled faction pressure *(optional)* |
 | 7. **Turn Zero** | Shared fictional assumptions before Turn 1       |
+
+```mermaid
+flowchart LR
+    Step1[1. Problem<br><i>One-sentence crisis</i>] --> Step2[2. Actors<br><i>5-8 factions</i>]
+    Step2 --> Step3[3. Briefs<br><i>Objectives + Position</i>]
+    Step3 --> Step4[4. Map<br><i>Argued playing field</i>]
+    Step4 --> Step5[5. Bonuses<br><i>Leverage asymmetry (opt)</i>]
+    Step5 --> Step6[6. NPAs<br><i>Referee pressure (opt)</i>]
+    Step6 --> Step7[7. Turn Zero<br><i>Shared assumptions</i>]
+```
 
 **Design minimum: Problem + Actors + Briefs.** Map is strongly recommended. Bonuses and NPAs are optional.
 
@@ -542,6 +568,18 @@ This is not negotiation. It is the world signaling opportunities, the same way a
 6. Roll AA Diplomatic Signals (optional)
 7. Write the Report (third-person, factual, hook-seeded)
 8. Advance the turn counter
+```
+
+```mermaid
+flowchart TD
+    Step1[1. Roll Autonomous Actor Actions<br><i>Keep results hidden</i>] --> Step2[2. Write Your Action<br><i>Action / Outcome / Leverage</i>]
+    Step2 --> Step3[3. Open Autonomous Actor Actions]
+    Step3 --> Step4[4. Adjudicate Autonomous Actor Actions<br><i>2d6 + RAT check</i>]
+    Step4 --> Step5[5. Adjudicate Your Action<br><i>2d6 + RAT check</i>]
+    Step5 --> Step6[6. Roll Autonomous Actor Diplomatic Signals<br><i>Optional</i>]
+    Step6 --> Step7[7. Write the Report<br><i>Third-person, hook-seeded</i>]
+    Step7 --> Step8[8. Advance Turn Counter]
+    Step8 --> Step1
 ```
 
 ### Game Length

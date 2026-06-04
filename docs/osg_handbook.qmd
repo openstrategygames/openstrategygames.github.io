@@ -5,24 +5,6 @@ lang: en
 license: CC BY-SA 4.0
 title: The Open Strategy Game Handbook
 version: 0.1
-cover-logo: assets/logo.svg
-format:
-  html: {}
-  typst:
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    fontsize: 11pt
-    tbl-colwidths: auto
-    template: ../_extensions/typst-template.typ
-    template-partials:
-      - ../_extensions/typst-show.typ
-  odt:
-    toc: true
-  epub:
-    toc: true
-  gfm:
-    toc: false
 ---
 
 # Introduction
@@ -198,6 +180,17 @@ A single turn runs as follows:
 5.  Actors have a defined window to submit their next Action.
 6.  Repeat until the game ends.
 
+```mermaid
+flowchart TD
+    Announce[1. Referee announces deadline] --> Submit[2. Actors submit Actions privately]
+    Submit --> Adjudicate[3. Referee adjudicates all Actions]
+    Adjudicate --> Publish[4. Referee publishes public Report]
+    Publish --> Deliberate[5. Factions negotiate & plan next Actions]
+    Deliberate --> CycleEnd{Is Game Over?}
+    CycleEnd -->|No| Announce
+    CycleEnd -->|Yes| End([Debrief & Self-Assessment])
+```
+
 The Report is the heartbeat of the game. Between deadline and Report, the game is dark: players have committed their plans and can do nothing but wait. The Report breaks the silence: this is what happened, this is the world as it now stands, here is what you have to respond to.
 
 The quality of the Report determines whether the next turn is rich or thin. A good Report gives every Actor something to act on (see Chapter 3).
@@ -255,6 +248,29 @@ When an Action faces opposition, the referee rolls two six-sided dice.
 
 **4–6:** The desired outcome occurs. On a 6, something especially good for the Actor may also occur.  
 **1–3:** The action proceeds, but the outcome is worse than desired. On a 1, something especially bad may also occur.
+
+```mermaid
+flowchart TD
+    Start([Action Faces Opposition]) --> Assess{Assess Leverage}
+    Assess -->|Strong| KeepHigh[Roll 2d6, Keep Higher Die]
+    Assess -->|Weak| KeepLow[Roll 2d6, Keep Lower Die]
+    
+    KeepHigh --> Resolve{Check Result}
+    KeepLow --> Resolve
+    
+    Resolve -->|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
+    Resolve -->|4 or 5| Success[Success: Desired outcome occurs]
+    Resolve -->|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
+    Resolve -->|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+
+    SuccessExtra --> CheckRAT[Apply RAT Checklist]
+    Success --> CheckRAT
+    SuccessWithCost --> CheckRAT
+    FailureExtra --> CheckRAT
+    
+    CheckRAT --> ApplyFriction[Ensure outcome leaves a mark - No Action Without Friction]
+    ApplyFriction --> End([Outcome Adjudicated])
+```
 
 This mechanic is deliberately simple. It preserves narrative bias, the action is certain to proceed in some form, outcomes are variable, without the complexity of modifier stacking. A +2 modifier on a 2d6 system produces results that are technically more precise but require a probability table to interpret intuitively. Keep-high or keep-low is immediately comprehensible: strong leverage gives you a good shot, weak leverage gives you a poor one.
 
@@ -487,9 +503,9 @@ The design principle is this: if your scenario contains a fictional body whose b
 
 This is design work, not rule-following. The Dreaming Dragonslayer sketches are evidence that scenario-specific participation is established OSG practice, not invention. But the specific structures are not portable; they cannot be lifted from one scenario and applied to another without redesign. Any scenario-specific participation structure must be explained to participants before the game begins. Unlike Consultant and team Actor, which can be described in a sentence, bespoke structures require explicit procedure and player buy-in.
 
-> \[!NOTE\] This chapter documents one named portable sub-role (Consultant) and one Actor-level distribution mechanism (team Actor). Other patterns, collective factions controlled by random selection, voting blocs with formalized deliberation procedures, appear in some OSG discussions but are scenario-specific designs, not established portable sub-roles. They are not documented here as such.
+> [!NOTE] This chapter documents one named portable sub-role (Consultant) and one Actor-level distribution mechanism (team Actor). Other patterns, collective factions controlled by random selection, voting blocs with formalized deliberation procedures, appear in some OSG discussions but are scenario-specific designs, not established portable sub-roles. They are not documented here as such.
 
-> \[!NOTE\] Appendix G includes the Corentine Succession faction briefs. The scenario was designed for six Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.
+> [!NOTE] Appendix G includes the Corentine Succession faction briefs. The scenario was designed for six Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.
 
 # Chapter 5: The Debrief
 
@@ -582,6 +598,16 @@ Designing an OSG scenario involves seven steps, each producing something the nex
 5.  **Bonuses**: Assign spendable abilities tied to starting position (Chapter 11)
 6.  **NPAs**: Design any referee-controlled non-player actors (Chapter 12)
 7.  **Turn Zero**: Run pre-game clarification before the first turn (Chapter 13)
+
+```mermaid
+flowchart LR
+    Step1[1. Problem<br><i>One-sentence crisis</i>] --> Step2[2. Actors<br><i>5-8 factions</i>]
+    Step2 --> Step3[3. Briefs<br><i>Objectives + Position</i>]
+    Step3 --> Step4[4. Map<br><i>Argued playing field</i>]
+    Step4 --> Step5[5. Bonuses<br><i>Leverage asymmetry (opt)</i>]
+    Step5 --> Step6[6. NPAs<br><i>Referee pressure (opt)</i>]
+    Step6 --> Step7[7. Turn Zero<br><i>Shared assumptions</i>]
+```
 
 Each step produces the material the next step needs. Problem defines the competitive space; Actors define who inhabits it; Briefs give each Actor their individual stake; Map gives the fiction a physical and relational surface; Bonuses differentiate factions beyond their narrative identity; NPAs populate the world with forces no player controls; Turn Zero surfaces assumptions before play begins.
 
@@ -952,6 +978,28 @@ The Corentine map shows:
 -   **The Southern Coast**: merchant territory with no strong single power; where House Meranto's primary financial offices are located
 
 Connection lines show that Caldrath must pass through or around Essaveth to reach Corenth from the north. Saivorn has direct sea access to Corenth but no land route that avoids Essaveth's region. House Meranto has agents everywhere but no physical presence on the map that can be moved or threatened.
+
+```mermaid
+graph TD
+    classDef contested fill:#f96,stroke:#333,stroke-width:2px;
+    classDef faction fill:#9cf,stroke:#333,stroke-width:1px;
+    classDef offmap fill:#ddd,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+
+    Caldrath[Caldrath<br><i>Kingdom Heartland (North)</i>]:::faction
+    Essaveth[Essaveth<br><i>Principality / Passes</i>]:::faction
+    Corenth[Corenth<br><i>Central City (Arbiter's Seat)</i>]:::contested
+    Saivorn[Saivorn<br><i>Coast (Ports / South)</i>]:::faction
+    Meranto[House Meranto<br><i>Southern Coast (Off-Map)</i>]:::offmap
+
+    Caldrath -->|Northern Passes / Garrison Road| Essaveth
+    Essaveth -->|Passes Road| Corenth
+    Saivorn -->|Sea Lanes / Port Access| Corenth
+    Saivorn -.->|No Direct Land Route| Corenth
+    Meranto -.->|Financial Agents Everywhere| Corenth
+    Meranto -.->|Financial Agents Everywhere| Saivorn
+    Meranto -.->|Financial Agents Everywhere| Caldrath
+    Meranto -.->|Financial Agents Everywhere| Essaveth
+```
 
 What the map enables: arguments about army movement (Caldrath), port access (Saivorn), pass control (Essaveth), and who is physically present in Corenth when decisions are made. What it does not show: the interior geography of each polity, the locations of every minor noble or garrison, the exact route of every road. These details don't exist in the game; the map has correctly excluded them.
 

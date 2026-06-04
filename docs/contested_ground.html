@@ -372,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
   <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="contested_ground.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="contested_ground.odt"><i class="bi bi-file"></i>OpenOffice</a></li><li><a href="contested_ground.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="contested_ground-gfm.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -446,6 +446,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="part-iii-the-turn" class="level2">
 <h2 class="anchored" data-anchor-id="part-iii-the-turn">Part III: The Turn</h2>
+<pre class="mermaid"><code>flowchart TD
+    Announce[1. Referee announces deadline] --&gt; Submit[2. Actors submit Actions privately]
+    Submit --&gt; Adjudicate[3. Referee adjudicates all Actions]
+    Adjudicate --&gt; Publish[4. Referee publishes public Report]
+    Publish --&gt; Deliberate[5. Factions negotiate &amp; plan next Actions]
+    Deliberate --&gt; CycleEnd{Is Game Over?}
+    CycleEnd --&gt;|No| Announce
+    CycleEnd --&gt;|Yes| End([Debrief &amp; Self-Assessment])</code></pre>
 <section id="action-format" class="level3">
 <h3 class="anchored" data-anchor-id="action-format">Action Format</h3>
 <p>Every action follows this three-part structure, submitted privately to the Referee:</p>
@@ -532,6 +540,26 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<pre class="mermaid"><code>flowchart TD
+    Start([Action Faces Opposition]) --&gt; Assess{Assess Leverage}
+    Assess --&gt;|Strong| KeepHigh[Roll 2d6, Keep Higher Die]
+    Assess --&gt;|Weak| KeepLow[Roll 2d6, Keep Lower Die]
+    
+    KeepHigh --&gt; Resolve{Check Result}
+    KeepLow --&gt; Resolve
+    
+    Resolve --&gt;|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
+    Resolve --&gt;|4 or 5| Success[Success: Desired outcome occurs]
+    Resolve --&gt;|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
+    Resolve --&gt;|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+
+    SuccessExtra --&gt; CheckRAT[Apply RAT Checklist]
+    Success --&gt; CheckRAT
+    SuccessWithCost --&gt; CheckRAT
+    FailureExtra --&gt; CheckRAT
+    
+    CheckRAT --&gt; ApplyFriction[Ensure outcome leaves a mark - No Action Without Friction]
+    ApplyFriction --&gt; End([Outcome Adjudicated])</code></pre>
 </section>
 <section id="unopposed-actions" class="level3">
 <h3 class="anchored" data-anchor-id="unopposed-actions">Unopposed Actions</h3>
@@ -631,6 +659,13 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<pre class="mermaid"><code>flowchart LR
+    Step1[1. Problem&lt;br&gt;&lt;i&gt;One-sentence crisis&lt;/i&gt;] --&gt; Step2[2. Actors&lt;br&gt;&lt;i&gt;5-8 factions&lt;/i&gt;]
+    Step2 --&gt; Step3[3. Briefs&lt;br&gt;&lt;i&gt;Objectives + Position&lt;/i&gt;]
+    Step3 --&gt; Step4[4. Map&lt;br&gt;&lt;i&gt;Argued playing field&lt;/i&gt;]
+    Step4 --&gt; Step5[5. Bonuses&lt;br&gt;&lt;i&gt;Leverage asymmetry (opt)&lt;/i&gt;]
+    Step5 --&gt; Step6[6. NPAs&lt;br&gt;&lt;i&gt;Referee pressure (opt)&lt;/i&gt;]
+    Step6 --&gt; Step7[7. Turn Zero&lt;br&gt;&lt;i&gt;Shared assumptions&lt;/i&gt;]</code></pre>
 <p><strong>Design minimum: Problem + Actors + Briefs.</strong> Map is strongly recommended. Bonuses and NPAs are optional.</p>
 </section>
 <section id="the-problem-statement" class="level3">
@@ -1055,6 +1090,15 @@ ul.task-list li input[type="checkbox"] {
 6. Roll AA Diplomatic Signals (optional)
 7. Write the Report (third-person, factual, hook-seeded)
 8. Advance the turn counter</code></pre>
+<pre class="mermaid"><code>flowchart TD
+    Step1[1. Roll Autonomous Actor Actions&lt;br&gt;&lt;i&gt;Keep results hidden&lt;/i&gt;] --&gt; Step2[2. Write Your Action&lt;br&gt;&lt;i&gt;Action / Outcome / Leverage&lt;/i&gt;]
+    Step2 --&gt; Step3[3. Open Autonomous Actor Actions]
+    Step3 --&gt; Step4[4. Adjudicate Autonomous Actor Actions&lt;br&gt;&lt;i&gt;2d6 + RAT check&lt;/i&gt;]
+    Step4 --&gt; Step5[5. Adjudicate Your Action&lt;br&gt;&lt;i&gt;2d6 + RAT check&lt;/i&gt;]
+    Step5 --&gt; Step6[6. Roll Autonomous Actor Diplomatic Signals&lt;br&gt;&lt;i&gt;Optional&lt;/i&gt;]
+    Step6 --&gt; Step7[7. Write the Report&lt;br&gt;&lt;i&gt;Third-person, hook-seeded&lt;/i&gt;]
+    Step7 --&gt; Step8[8. Advance Turn Counter]
+    Step8 --&gt; Step1</code></pre>
 </section>
 <section id="game-length" class="level3">
 <h3 class="anchored" data-anchor-id="game-length">Game Length</h3>

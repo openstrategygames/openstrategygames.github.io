@@ -87,9 +87,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: [],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -392,7 +392,31 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1780531200000" data-listing-file-modified-sort="1780563423829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1828">
+<div class="thumbnail"><a href="../../docs/blog/posts/why-osg-needs-a-name.html" class="no-external">
 
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../docs/blog/posts/why-osg-needs-a-name.html" class="no-external">Why OSG needs a name</a>
+</h3>
+<div class="delink listing-description"><a href="../../docs/blog/posts/why-osg-needs-a-name.html" class="no-external">
+If “Open Strategy Game” were only a nicer label for something people were already doing, the term would not matter very much. It would be a convenience, maybe a bit of…
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../docs/blog/posts/why-osg-needs-a-name.html" class="no-external">
+<div class="listing-date">
+Jun 4, 2026
+</div>
+<div class="listing-author">
+zeruhur
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->

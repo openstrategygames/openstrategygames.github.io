@@ -538,7 +538,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="osg_handbook.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="osg_handbook.odt"><i class="bi bi-file"></i>OpenOffice</a></li><li><a href="osg_handbook.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="osg_handbook-gfm.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -705,6 +705,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Actors have a defined window to submit their next Action.</li>
 <li>Repeat until the game ends.</li>
 </ol>
+<pre class="mermaid"><code>flowchart TD
+    Announce[1. Referee announces deadline] --&gt; Submit[2. Actors submit Actions privately]
+    Submit --&gt; Adjudicate[3. Referee adjudicates all Actions]
+    Adjudicate --&gt; Publish[4. Referee publishes public Report]
+    Publish --&gt; Deliberate[5. Factions negotiate &amp; plan next Actions]
+    Deliberate --&gt; CycleEnd{Is Game Over?}
+    CycleEnd --&gt;|No| Announce
+    CycleEnd --&gt;|Yes| End([Debrief &amp; Self-Assessment])</code></pre>
 <p>The Report is the heartbeat of the game. Between deadline and Report, the game is dark: players have committed their plans and can do nothing but wait. The Report breaks the silence: this is what happened, this is the world as it now stands, here is what you have to respond to.</p>
 <p>The quality of the Report determines whether the next turn is rich or thin. A good Report gives every Actor something to act on (see Chapter 3).</p>
 </section>
@@ -751,6 +759,26 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>4–6:</strong> The desired outcome occurs. On a 6, something especially good for the Actor may also occur.<br>
 <strong>1–3:</strong> The action proceeds, but the outcome is worse than desired. On a 1, something especially bad may also occur.</p>
+<pre class="mermaid"><code>flowchart TD
+    Start([Action Faces Opposition]) --&gt; Assess{Assess Leverage}
+    Assess --&gt;|Strong| KeepHigh[Roll 2d6, Keep Higher Die]
+    Assess --&gt;|Weak| KeepLow[Roll 2d6, Keep Lower Die]
+    
+    KeepHigh --&gt; Resolve{Check Result}
+    KeepLow --&gt; Resolve
+    
+    Resolve --&gt;|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
+    Resolve --&gt;|4 or 5| Success[Success: Desired outcome occurs]
+    Resolve --&gt;|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
+    Resolve --&gt;|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+
+    SuccessExtra --&gt; CheckRAT[Apply RAT Checklist]
+    Success --&gt; CheckRAT
+    SuccessWithCost --&gt; CheckRAT
+    FailureExtra --&gt; CheckRAT
+    
+    CheckRAT --&gt; ApplyFriction[Ensure outcome leaves a mark - No Action Without Friction]
+    ApplyFriction --&gt; End([Outcome Adjudicated])</code></pre>
 <p>This mechanic is deliberately simple. It preserves narrative bias, the action is certain to proceed in some form, outcomes are variable, without the complexity of modifier stacking. A +2 modifier on a 2d6 system produces results that are technically more precise but require a probability table to interpret intuitively. Keep-high or keep-low is immediately comprehensible: strong leverage gives you a good shot, weak leverage gives you a poor one.</p>
 <p>The mechanic also resists the temptation to treat adjudication as arithmetic. A referee who reaches for a specific modifier for every factor in an action will produce inconsistent results because the factors resist exact commensuration. The qualitative assessment, strong or weak, requires judgment but rewards it.</p>
 </section>
@@ -1026,6 +1054,13 @@ Note
 <li><strong>NPAs</strong>: Design any referee-controlled non-player actors (Chapter 12)</li>
 <li><strong>Turn Zero</strong>: Run pre-game clarification before the first turn (Chapter 13)</li>
 </ol>
+<pre class="mermaid"><code>flowchart LR
+    Step1[1. Problem&lt;br&gt;&lt;i&gt;One-sentence crisis&lt;/i&gt;] --&gt; Step2[2. Actors&lt;br&gt;&lt;i&gt;5-8 factions&lt;/i&gt;]
+    Step2 --&gt; Step3[3. Briefs&lt;br&gt;&lt;i&gt;Objectives + Position&lt;/i&gt;]
+    Step3 --&gt; Step4[4. Map&lt;br&gt;&lt;i&gt;Argued playing field&lt;/i&gt;]
+    Step4 --&gt; Step5[5. Bonuses&lt;br&gt;&lt;i&gt;Leverage asymmetry (opt)&lt;/i&gt;]
+    Step5 --&gt; Step6[6. NPAs&lt;br&gt;&lt;i&gt;Referee pressure (opt)&lt;/i&gt;]
+    Step6 --&gt; Step7[7. Turn Zero&lt;br&gt;&lt;i&gt;Shared assumptions&lt;/i&gt;]</code></pre>
 <p>Each step produces the material the next step needs. Problem defines the competitive space; Actors define who inhabits it; Briefs give each Actor their individual stake; Map gives the fiction a physical and relational surface; Bonuses differentiate factions beyond their narrative identity; NPAs populate the world with forces no player controls; Turn Zero surfaces assumptions before play begins.</p>
 <section id="what-each-step-produces" class="level2">
 <h2 class="anchored" data-anchor-id="what-each-step-produces">What Each Step Produces</h2>
@@ -1311,6 +1346,25 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <li><strong>The Southern Coast</strong>: merchant territory with no strong single power; where House Meranto’s primary financial offices are located</li>
 </ul>
 <p>Connection lines show that Caldrath must pass through or around Essaveth to reach Corenth from the north. Saivorn has direct sea access to Corenth but no land route that avoids Essaveth’s region. House Meranto has agents everywhere but no physical presence on the map that can be moved or threatened.</p>
+<pre class="mermaid"><code>graph TD
+    classDef contested fill:#f96,stroke:#333,stroke-width:2px;
+    classDef faction fill:#9cf,stroke:#333,stroke-width:1px;
+    classDef offmap fill:#ddd,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5;
+
+    Caldrath[Caldrath&lt;br&gt;&lt;i&gt;Kingdom Heartland (North)&lt;/i&gt;]:::faction
+    Essaveth[Essaveth&lt;br&gt;&lt;i&gt;Principality / Passes&lt;/i&gt;]:::faction
+    Corenth[Corenth&lt;br&gt;&lt;i&gt;Central City (Arbiter's Seat)&lt;/i&gt;]:::contested
+    Saivorn[Saivorn&lt;br&gt;&lt;i&gt;Coast (Ports / South)&lt;/i&gt;]:::faction
+    Meranto[House Meranto&lt;br&gt;&lt;i&gt;Southern Coast (Off-Map)&lt;/i&gt;]:::offmap
+
+    Caldrath --&gt;|Northern Passes / Garrison Road| Essaveth
+    Essaveth --&gt;|Passes Road| Corenth
+    Saivorn --&gt;|Sea Lanes / Port Access| Corenth
+    Saivorn -.-&gt;|No Direct Land Route| Corenth
+    Meranto -.-&gt;|Financial Agents Everywhere| Corenth
+    Meranto -.-&gt;|Financial Agents Everywhere| Saivorn
+    Meranto -.-&gt;|Financial Agents Everywhere| Caldrath
+    Meranto -.-&gt;|Financial Agents Everywhere| Essaveth</code></pre>
 <p>What the map enables: arguments about army movement (Caldrath), port access (Saivorn), pass control (Essaveth), and who is physically present in Corenth when decisions are made. What it does not show: the interior geography of each polity, the locations of every minor noble or garrison, the exact route of every road. These details don’t exist in the game; the map has correctly excluded them.</p>
 <p>The Corentine map could be sketched on an index card in five minutes: a peninsula with a central city, a coastal republic to the south, a kingdom to the north, a small state in the passes between them, and a few named locations where the game’s key arguments will be made.</p>
 </section>

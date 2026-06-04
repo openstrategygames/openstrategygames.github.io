@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://openstrategygames.github.io/docs/blog/index.html</loc>
-    <lastmod>2026-06-03T19:54:42.007Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openstrategygames.github.io/docs/osg_handbook.html</loc>
-    <lastmod>2026-06-03T19:54:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openstrategygames.github.io/docs/factionlog.html</loc>
-    <lastmod>2026-06-03T19:54:42.007Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openstrategygames.github.io/index.html</loc>
-    <lastmod>2026-06-03T19:54:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://openstrategygames.github.io/docs/contested_ground.html</loc>
-    <lastmod>2026-06-03T19:54:42.007Z</lastmod>
+    <loc>https://openstrategygames.github.io/docs/resources.html</loc>
+    <lastmod>2026-06-04T08:57:03.830Z</lastmod>
   </url>
   <url>
     <loc>https://openstrategygames.github.io/docs/index.html</loc>
-    <lastmod>2026-06-03T19:54:42.007Z</lastmod>
+    <lastmod>2026-06-04T08:57:03.829Z</lastmod>
   </url>
   <url>
-    <loc>https://openstrategygames.github.io/docs/resources.html</loc>
-    <lastmod>2026-06-03T19:54:42.008Z</lastmod>
+    <loc>https://openstrategygames.github.io/docs/contested_ground.html</loc>
+    <lastmod>2026-06-04T08:57:03.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/blog/posts/why-osg-needs-a-name.html</loc>
+    <lastmod>2026-06-04T08:57:03.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/index.html</loc>
+    <lastmod>2026-06-04T08:57:03.830Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/blog/index.html</loc>
+    <lastmod>2026-06-04T08:57:03.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/factionlog.html</loc>
+    <lastmod>2026-06-04T08:57:03.829Z</lastmod>
+  </url>
+  <url>
+    <loc>https://openstrategygames.github.io/docs/osg_handbook.html</loc>
+    <lastmod>2026-06-04T08:57:03.829Z</lastmod>
   </url>
 </urlset>

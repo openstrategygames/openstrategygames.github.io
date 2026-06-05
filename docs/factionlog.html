@@ -456,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Five elements mirror the natural flow of OSG adjudication:</p>
 <ul>
 <li><code>@</code> for each faction’s submitted action (three-part argument)</li>
-<li><code>d:</code> for the dice mechanic (2d6, keep-high or keep-low)</li>
+<li><code>d:</code> for the dice mechanic (<code>2d6kh1</code> or <code>2d6kl1</code>)</li>
 <li><code>-&gt;</code> for the adjudicated outcome</li>
 <li><code>=&gt;</code> for the consequence on the board state</li>
 <li>The Report block for the public summary</li>
@@ -470,7 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   out: Delay Caldrath's army movement for thirty days
   lev: We hold all loan documentation; emergency clause has precedent
 [Lev:Strong]
-d: 2d6 → 5,3  keep high → 5
+d: 2d6kh1 [5, 3] = 5
 -&gt; Partial success — review opens, but scope is disputed
 =&gt; Caldrath treasury enters review; army movement delayed one turn
 
@@ -479,7 +479,7 @@ d: 2d6 → 5,3  keep high → 5
   out: Establish military presence before any treaty negotiation
   lev: Largest army on the peninsula; units are one day's march away
 [Lev:Strong]
-d: 2d6 → 6,2  keep high → 6
+d: 2d6kh1 [6, 2] = 6
 -&gt; Success, and...
 =&gt; [Fac:Caldrath | pos:pass occupied]
 =&gt; Essaveth's border garrison stands down without resistance
@@ -533,7 +533,7 @@ d: 2d6 → 6,2  keep high → 6
   out: Delay army movement thirty days
   lev: Emergency clause, full documentation, precedent established
 [Lev:Strong]
-d: 2d6 → 6,2  keep high → 6
+d: 2d6kh1 [6, 2] = 6
 -&gt; Success
 =&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]</code></pre>
 <p><strong>Analog:</strong></p>
@@ -544,7 +544,7 @@ d: 2d6 → 6,2  keep high → 6
   out: Delay army movement thirty days
   lev: Emergency clause, full documentation, precedent established
 [Lev:Strong]
-d: 2d6 → 6,2  keep high → 6
+d: 2d6kh1 [6, 2] = 6
 -&gt; Success
 =&gt; [Fac:Caldrath | pos:army held | Clock:LiquidityReview 1/3]</code></pre>
 <p>Both formats use identical notation; only the wrapping differs.</p>
@@ -601,9 +601,9 @@ d: 2d6 → 6,2  keep high → 6
 </section>
 <section id="the-dice-mechanic-d" class="level3">
 <h3 class="anchored" data-anchor-id="the-dice-mechanic-d">3.3 The Dice Mechanic (<code>d:</code>)</h3>
-<p>OSG uses 2d6: <strong>keep the high die</strong> for Strong leverage, <strong>keep the low die</strong> for Weak leverage.</p>
-<pre><code>d: 2d6 → 5,3  keep high → 5   (Strong)
-d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
+<p>OSG uses <code>2d6kh1</code> (keep highest die) for Strong leverage, <code>2d6kl1</code> (keep lowest die) for Weak leverage.</p>
+<pre><code>d: 2d6kh1 [5, 3] = 5   (Strong)
+d: 2d6kl1 [5, 3] = 3   (Weak)</code></pre>
 <p><strong>Result interpretation:</strong></p>
 <table class="caption-top table">
 <thead>
@@ -634,7 +634,7 @@ d: 2d6 → 5,3  keep low  → 3   (Weak)</code></pre>
 <section id="force-of-nature-doubles" class="level4">
 <h4 class="anchored" data-anchor-id="force-of-nature-doubles">3.3.1 Force of Nature (Doubles)</h4>
 <p>When both dice show the same number, the Referee may introduce a Force of Nature: a chaotic event outside any faction’s control. Record it on its own line:</p>
-<pre><code>d: 2d6 → 3,3  DOUBLES
+<pre><code>d: 2d6 [3, 3]  DOUBLES
 [FoN: harbour storm grounds all sea transit next turn]
 =&gt; All sea transit actions opposed next turn
 =&gt; Saivorn's naval advantage temporarily neutralized</code></pre>
@@ -817,7 +817,7 @@ Meranto:  Debt Clause delayed Caldrath two turns. Conclave
        financial relief — something Caldrath cannot match.
        [Bon:"Debt Clause" 2/2 → 1/2]
 [Lev:Strong]
-d: 2d6 → 4,6  keep high → 6
+d: 2d6kh1 [4, 6] = 6
 -&gt; Success, and... Essaveth accepts — and volunteers intelligence
    on Caldrath's supply line through the pass
 =&gt; [Fac:Essaveth | pos:quiet Meranto ally | Bon:IntelligenceFile 1/1]
@@ -832,7 +832,7 @@ d: 2d6 → 4,6  keep high → 6
        obligations from the old compact; the army is already visible
        at the border — implicit threat requires no elaboration
 [Lev:Strong]
-d: 2d6 → 2,5  keep high → 5
+d: 2d6kh1 [2, 5] = 5
 -&gt; Partial success — Essaveth stalls, citing the need for
    Conclave ratification before any troop movement
 =&gt; [Fac:Caldrath | pos:army delayed at border | Clock:PassNegotiation 1/3]
@@ -848,7 +848,7 @@ d: 2d6 → 2,5  keep high → 5
        under the old treaty; the neutral city gives the Conclave
        standing no other actor can claim
 [Lev:Strong]
-d: 2d6 → 3,5  keep high → 5
+d: 2d6kh1 [3, 5] = 5
 -&gt; Success — all factions receive the invitation
 =&gt; [E:ConclaveSummit | Clock: 1/1] — summit is imminent, Turn 3
 =&gt; Every faction must now decide: attend, refuse, or act before it
@@ -932,8 +932,8 @@ tbl: CaldhrathAction d6 → 3
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>d:</code></td>
-<td style="text-align: left;">OSG dice roll (2d6 keep high/low)</td>
-<td style="text-align: left;"><code>d: 2d6 → 4,6  keep high → 6</code></td>
+<td style="text-align: left;">OSG dice roll (2d6kh1/kl1)</td>
+<td style="text-align: left;"><code>d: 2d6kh1 [4, 6] = 6</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>-&gt;</code></td>
@@ -960,7 +960,7 @@ tbl: CaldhrathAction d6 → 3
   out: What result do they want?
   lev: Why is this likely to produce that outcome?
 [Lev:Strong] or [Lev:Weak]
-d: 2d6 → H,L  keep high/low → result
+d: 2d6kh1/kl1 [results] = kept
 -&gt; outcome
 =&gt; consequence</code></pre>
 </section>
@@ -1086,7 +1086,7 @@ d: 2d6 → H,L  keep high/low → result
 <pre><code>[NPA:Essaveth | pos:occupied | behavior:passive; holds position
              | note: player absent from T4, NPA from T4]</code></pre>
 <p><strong>Q: Can I use Factionlog for a game I’m running as Referee, not playing in?</strong> A: Yes. That is the primary use case. All <code>@</code> blocks log submitted actions as the Referee received them. The Referee’s own reasoning is recorded in the <code>[Lev:]</code> grade and <code>-&gt;</code> outcome lines.</p>
-<p><strong>Q: Does Factionlog work with any OSG scenario?</strong> A: Yes. The notation is system-agnostic within the OSG framework: it assumes the three-part action structure, the 2d6 keep-high/low mechanic, and the turn/report cycle. Scenario-specific mechanics (spendable bonuses, NPAs, maps) are all optional layers.</p>
+<p><strong>Q: Does Factionlog work with any OSG scenario?</strong> A: Yes. The notation is system-agnostic within the OSG framework: it assumes the three-part action structure, the <code>2d6kh1</code>/<code>2d6kl1</code> mechanic, and the turn/report cycle. Scenario-specific mechanics (spendable bonuses, NPAs, maps) are all optional layers.</p>
 <p><strong>Q: How does Factionlog relate to Lonelog add-ons?</strong> A: Factionlog is a fork, not an add-on. It replaces the solo character-action model entirely. Lonelog add-ons (Combat, Dungeon Crawling, Resource Tracking) are not designed for faction-scale play and are not compatible with Factionlog without adaptation.</p>
 </section>
 <section id="credits-license" class="level2">

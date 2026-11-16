@@ -7,7 +7,7 @@ lang: en
 version: 1.0
 ---
 
-This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.
+This document contains a generic, setting-neutral rules framework derived from the design principles documented in the [Open Strategy Game Handbook](osg_handbook.qmd). The Handbook explains the reasoning and gives worked examples; this document states the rules. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.
 
 ## Part I: Core Concepts
 
@@ -28,7 +28,7 @@ Play to win. Play to find out. Both at once.
 
 ### The Referee
 
-The Referee adjudicates all actions, writes the public Report each turn, and maintains the internal consistency of the fiction. The Referee is not a Game Master; they do not author a story or protect a narrative outcome. They adjudicate, report, and stay consistent.
+The Referee adjudicates all actions, writes the public Report each turn, and maintains the internal consistency of the fiction. The Referee is not a Game Master; they do not author a story or protect a narrative outcome. They adjudicate, report, and stay consistent. They explain rulings to each Actor in private feedback, never in the public Report, and never let a preference for how the story should go affect how likely an action is to succeed.
 
 The Referee operates by **Benevolent Dictatorship**: full authority, no public argument from other players before ruling. This keeps the game moving and protects interesting outcomes from being argued away by the loudest voice at the table.
 
@@ -97,6 +97,8 @@ Actions are sent directly to the Referee, not posted publicly. This prevents rea
 
 **Missed deadline:** Either a one-turn pass (the faction takes no action) or a Referee-authored holding action: something plausible and low-stakes that keeps the faction present in the Report. Declare the policy before the game begins.
 
+**Dropout:** If a player leaves for good, the Referee either runs the faction as an NPA (one objective, defensive behavior rule, no bonus spending; the default in the first half of the game) or retires it with a one-paragraph in-fiction exit that other Actors can act on (better in the second half). Declare this policy before the game begins too.
+
 **Live play:** The single-action discipline and private submission rules still apply; the timing window compresses from days to minutes.
 
 ## Part IV: Adjudication
@@ -125,7 +127,9 @@ When an action faces opposition, roll **2d6**.
 | **6**   | Success: something especially good may also occur          |
 | **4–5** | The desired outcome occurs                                 |
 | **2–3** | The action proceeds, but the outcome is worse than desired |
-| **1**   | Failure: something especially bad may also occur           |
+| **1**   | The outcome is worse than desired, and something especially bad may also occur |
+
+Strong leverage produces the desired outcome (4+) 75% of the time; Weak leverage 25% of the time.
 
 ```mermaid
 flowchart TD
@@ -139,7 +143,7 @@ flowchart TD
     Resolve -->|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
     Resolve -->|4 or 5| Success[Success: Desired outcome occurs]
     Resolve -->|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
-    Resolve -->|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+    Resolve -->|1| FailureExtra[Action proceeds, outcome worse than desired + potential extra complication]
 
     SuccessExtra --> CheckRAT[Apply RAT Checklist]
     Success --> CheckRAT
@@ -153,6 +157,30 @@ flowchart TD
 ### Unopposed Actions
 
 When no other faction is directly opposing the action and the fiction raises no inherent obstacle, the action is Unopposed: the Actor gets their desired outcome. Unopposed does not mean free. The Referee still determines how the outcome lands and writes it into the Report as a fact other Actors now have to contend with.
+
+### Actions in Conflict
+
+When two Actors' actions directly oppose each other, each is the other's opposition.
+
+1. Grade each action Strong or Weak against the other.
+2. Roll 2d6 for each and keep the high or low die as usual.
+3. If both outcomes can be true at once, both occur as rolled.
+4. If they cannot, the higher kept die prevails and is read normally. The other outcome is worse than desired, whatever its die showed; on a 1, something especially bad may also occur.
+5. On a tie, neither prevails: both outcomes are worse than desired. Write the standoff into the Report as friction for both.
+
+With three or more colliding actions, the highest kept die prevails; a tie at the top is a standoff among those tied, and everyone below gets an outcome worse than desired.
+
+Strong beats Weak about three times in four (77%, 11% ties). Equal grades prevail about equally often, with a standoff about one time in five.
+
+### Joint Actions
+
+Two or more Actors may pool their turns into one action.
+
+- **Each participant spends its action** for the turn.
+- **One submission.** The Leverage section names what each participant specifically contributes. A participant who contributes nothing specific has not joined; the Referee returns the submission.
+- **Private confirmation.** Each participant confirms to the Referee before the deadline. An Actor who does not confirm has not joined: the action proceeds without its contribution, leverage is regraded, and any action it submitted instead is adjudicated normally.
+- **One grade, one roll** on the combined leverage. Combined is not automatically Strong.
+- **Shared outcome.** The result and its friction land on every participant; the Referee may split consequences unevenly, traceable to what each contributed.
 
 ### Force of Nature
 
@@ -267,6 +295,8 @@ Factions differ by **leverage type**, not power level. Primary leverage types:
 - **Geographic**: territory, chokepoints, transit routes; static but often decisive
 - **Informational**: intelligence, secrets, communications; hard to assess from outside, enables surprise
 
+The list is not closed. A scenario may add its own types (legitimacy, diplomatic, symbolic); name them explicitly so players and Referee agree on what they cover.
+
 Give each faction a clear primary leverage type and a secondary type that creates tradeoffs.
 
 **Specificity principle:** Vague positions make vague arguments. "Has resources" is not a position. "Controls the only two deep-water ports" is a position. When writing a position bullet, ask: could two players interpret this in ways that lead to different leverage arguments? If yes, it's too vague.
@@ -289,36 +319,38 @@ Apply the **Pithy Objectives Test**: add "!" to any objective and read it aloud.
 
 **Public vs. Private.** Each Brief has a public component (what all Actors know about this faction) and a private component (what only this Actor knows: secret objectives, private assets, hidden intelligence).
 
-> **Brief Template**
->
-> *General Brief: distributed to all players*
->
-> **The Problem:** *(one sentence)*
-> **The World:** *(broad strokes, shared context)*
-> **The Actors:** *(one public sentence per faction)*
-> **Structure:** Each Actor submits one Action per turn in the format Action / Outcome / Leverage. The game ends after *(X)* turns. Objectives are self-assessed at game end.
-> **Expectations:** The goal of the game is to achieve your objectives. The point of the game is to create a credible narrative.
->
-> ---
-> *Private Brief: this Actor only*
->
-> **Faction Name:**
-> **Objectives:**
->
-> - Short-term:
-> - Long-term:
->
-> **Position:**
-> -
->
-> -
-> -
->
-> **Special Abilities** *(if using bonuses)*:
+::: {.callout-note title="Brief Template"}
+*General Brief: distributed to all players*
+
+**The Problem:** *(one sentence)*\
+**The World:** *(broad strokes, shared context)*\
+**The Actors:** *(one public sentence per faction)*\
+**Structure:** Each Actor submits one Action per turn in the format Action / Outcome / Leverage. The game ends after *(X)* turns. Objectives are self-assessed at game end. Some objectives are long-term: laying the groundwork for them counts as success.\
+**Expectations:** The goal of the game is to achieve your objectives. The point of the game is to create a credible narrative.
+
+---
+
+*Private Brief: this Actor only*
+
+**Faction Name:**
+
+**Objectives:**
+
+- Short-term:
+- Long-term:
+
+**Position:**
+
+-
+-
+-
+
+**Special Abilities** *(if using bonuses)*:
 
 | Name | Uses | Description |
 | ---- | ---- | ----------- |
 |      |      |             |
+:::
 
 ### The Map
 
@@ -349,6 +381,8 @@ Bonuses are named, one-use assets tied to a faction's starting position that can
 **Traits vs. Bonuses:** A **trait** is a persistent characteristic that strengthens leverage whenever contextually relevant and never diminishes (*"largest standing army on the peninsula"*). A **bonus** is spent: one-use, gone after deployment, creating strategic decisions about timing.
 
 **Scoping bonuses:** A bonus should shift leverage from weak to strong, not guarantee success regardless of other factors. It must be contextually bounded; the narrative name indicates its scope.
+
+**Spending a bonus:** Declare it in the Leverage section at submission. If the action is graded Weak, the bonus makes it Strong. If it is already Strong, a kept 4 or 5 becomes a 6 instead; a 1–3 is unchanged, and the bonus is spent anyway. In an action in conflict, the improved result counts as a 6.
 
 **Bonus design checklist:**
 
@@ -400,7 +434,7 @@ Actors submit questions privately or in a shared channel. The Referee publishes 
 - Assertive, confrontational players: factions with overt pressure leverage (military powers, creditors)
 - Collaborative, negotiation-oriented players: factions that multiply leverage through alliance (brokers, neutral parties)
 - Detail-oriented, systematic players: factions that accumulate positional advantage through information or procedure
-- Improvisational players: factions with deliberately underspecified briefs
+- Improvisational players: factions with clear objectives but deliberately open means (not pure wildcards)
 
 ## Part VIII: Referee Checklist
 
@@ -429,7 +463,7 @@ Actors submit questions privately or in a shared channel. The Referee publishes 
 
 **Map:**
 
-- Are there 3–5 contested zones with names?
+- Are there 3–5 named locations, at least one of them contested?
 - Are faction starting positions spread asymmetrically?
 - Is the map readable at a glance?
 
@@ -443,7 +477,8 @@ Actors submit questions privately or in a shared channel. The Referee publishes 
 
 **During adjudication:**
 
-- Is this action Unopposed or opposed?
+- Is this action Unopposed, opposed, or in conflict with another Actor's action?
+- For joint actions: has every participant confirmed privately?
 - If opposed: is leverage Strong or Weak?
 - Does each outcome pass the RAT check (Reasonable / Actionable / Traceable)?
 - Is every outcome leaving a mark on the world (No Action Without Friction)?
@@ -457,161 +492,11 @@ Actors submit questions privately or in a shared channel. The Referee publishes 
 
 ## Part IX: Solo Mode
 
-You play one Actor. All other factions are **Autonomous Actors (AAs)**, driven by written behavior rules and random tables, not referee judgment. You are simultaneously the player and the referee. The core loop (declare an action, adjudicate it honestly, write a report, advance the world) remains intact.
-
-### Setup
-
-Follow the standard design workflow from Part VII, with these adjustments:
-
-1. Write a one-sentence **Problem Statement**
-2. Create **3–5 Actors** total (including yourself) with asymmetric leverage types
-3. Write a **Brief** for your Actor (two paired objectives + position)
-4. Write a **minimal AA Brief** for each other faction (see below)
-5. Sketch a **Map** with 3–5 named contested locations
-6. Assign yourself at least one named **Spendable Bonus**
-
-A game of 3 Actors (you + 2 AAs) over 6 turns is a solid first run.
-
-#### AA Briefs
-
-Each Autonomous Actor needs only four things:
-
-| Field             | Content                                                  |
-| :---------------- | :------------------------------------------------------- |
-| **Objective**     | One sentence: what this faction wants most               |
-| **Position**      | One specific asset or vulnerability that matters         |
-| **Leverage Type** | Military / Economic / Geographic / Informational         |
-| **Behavior Rule** | A standing instruction for how it acts (see table below) |
-
-**AA Behavior Rules (d6):** Roll once per AA at setup, or choose:
-
-| d6 | Behavior Rule                                                                                                           |
-| :- | :---------------------------------------------------------------------------------------------------------------------- |
-| 1  | *Consolidator*: acts to secure and hold what it already controls; only targets others if directly threatened           |
-| 2  | *Aggressor*: each turn acts toward its objective by the most direct available means; does not negotiate                |
-| 3  | *Opportunist*: targets whichever Actor is currently weakest or most exposed in the fiction                             |
-| 4  | *Balancer*: acts against whoever holds the most visible power or influence this turn                                   |
-| 5  | *Reactor*: does nothing until acted upon; responds to the last action that affected it                                 |
-| 6  | *Schemer*: alternates between one turn of visible action and one turn of consolidation (odd = act, even = consolidate) |
-
-### The Turn
-
-#### Step 1: Generate AA Actions
-
-Before writing your own action, determine what each AA does this turn. This order matters: **you commit to your action without knowing AA outcomes, just as in a standard OSG**.
-
-For each AA, roll **d6** on its **Action Table** (written at scenario creation; see below) and note the result. Do not adjudicate yet.
-
-#### Step 2: Declare Your Action
-
-Write your action in the standard format from Part III. Commit to it in writing before opening the AA results.
-
-#### Step 3: Adjudicate All Actions
-
-Open the AA results. Adjudicate AA actions first, then your own. Apply the dice mechanic from Part IV honestly. Apply the RAT check (Part IV) to every outcome before writing it.
-
-#### Step 4: Write the Report
-
-Write a brief, third-person, factual report covering every action's outcome. Style: news roundup. End with one open observation that no single faction owns.
-
-After writing each outcome, ask: *does this put something in front of me or an AA that changes the next turn?* If no: rewrite.
-
-### The AA Action Table
-
-Write this at scenario creation for each AA. It is a d6 table of 6 plausible actions consistent with that faction's objective, leverage type, and behavior rule. Actions should vary in target and method but stay within the faction's identity.
-
-**Example: "The Iron Compact"** *(objective: control the central city; leverage: military; behavior: Aggressor)*:
-
-| d6 | Action                                                          |
-| :- | :-------------------------------------------------------------- |
-| 1  | Advance a garrison unit toward the nearest contested zone       |
-| 2  | Issue a public ultimatum demanding another faction's withdrawal |
-| 3  | Blockade a supply route between two other Actors                |
-| 4  | Attempt to suborn a local official in the contested zone        |
-| 5  | Request formal recognition from a neutral party                 |
-| 6  | Consolidate current position; fortify and resupply              |
-
-**Veto rule:** if the rolled action is fictionally incoherent given the current game state (the location no longer exists, the target has already conceded, etc.), reroll once. If the reroll is also incoherent, apply the faction's behavior rule directly to generate an action from scratch.
-
-### Leverage Assessment
-
-The greatest risk in solo play is unconscious bias: grading your own leverage too generously. Apply this checklist before calling leverage Strong:
-
-- [ ] Is the resource or relationship **explicitly established** in prior fiction, not assumed?
-- [ ] Has a prior action **created the conditions** for this one to succeed?
-- [ ] Would a neutral reader of the report agree this faction has the advantage?
-
-If you answer No to any of these, call it **Weak**.
-
-### AA Diplomatic Signals *(Optional)*
-
-Since AAs cannot negotiate, this procedure partially replaces the social layer. Once per turn, **after reading AA action results but before writing the report**, roll d6 for each AA:
-
-| d6  | Signal                                                                                                      |
-| :-- | :---------------------------------------------------------------------------------------------------------- |
-| 1–2 | No signal                                                                                                   |
-| 3   | The AA's action this turn was implicitly directed *away* from you; write one crumb suggesting restraint    |
-| 4   | The AA's action this turn creates a condition you could exploit if you act toward it next turn              |
-| 5   | The AA has overextended; its position is now vulnerable in a specific way (you determine what)             |
-| 6   | The AA acts in a way that incidentally benefits you; write it into the report as an unintended consequence |
-
-This is not negotiation. It is the world signaling opportunities, the same way a good report seeds hooks for all Actors.
-
-### Turn Structure Summary
-
-```
-1. Roll AA Action Tables → note results, do not read yet
-2. Write your Action (Action / Outcome / Leverage)
-3. Open AA results
-4. Adjudicate AA actions (2d6, RAT check)
-5. Adjudicate your action (2d6, RAT check)
-6. Roll AA Diplomatic Signals (optional)
-7. Write the Report (third-person, factual, hook-seeded)
-8. Advance the turn counter
-```
-
-```mermaid
-flowchart TD
-    Step1[1. Roll Autonomous Actor Actions<br><i>Keep results hidden</i>] --> Step2[2. Write Your Action<br><i>Action / Outcome / Leverage</i>]
-    Step2 --> Step3[3. Open Autonomous Actor Actions]
-    Step3 --> Step4[4. Adjudicate Autonomous Actor Actions<br><i>2d6 + RAT check</i>]
-    Step4 --> Step5[5. Adjudicate Your Action<br><i>2d6 + RAT check</i>]
-    Step5 --> Step6[6. Roll Autonomous Actor Diplomatic Signals<br><i>Optional</i>]
-    Step6 --> Step7[7. Write the Report<br><i>Third-person, hook-seeded</i>]
-    Step7 --> Step8[8. Advance Turn Counter]
-    Step8 --> Step1
-```
-
-### Game Length
-
-| Turns | Feel                                                 |
-| :---- | :--------------------------------------------------- |
-| 4     | Sharp, fast: one strategic arc                      |
-| 6     | Standard: alliances form and break                  |
-| 8     | Full campaign: long-term objectives come into reach |
-
-The game ends at the stated turn count. No extensions.
-
-### The Debrief
-
-Solo play changes the debrief (Part VI) into a **written self-assessment**. After the final report, write:
-
-1. **Did you achieve your short-term objective?** Why or why not.
-2. **Did you achieve your long-term objective, or lay groundwork toward it?**
-3. **What turn surprised you most?** What produced the surprise: AA behavior, a Force of Nature, or your own action's consequences?
-4. **What would you design differently** in the scenario: the problem statement, an AA behavior rule, a leverage asymmetry?
-
-The debrief is also design feedback. A solo game that produced no surprises has AA tables that were too predictable. A game that felt incoherent has a problem statement that didn't generate distinct enough competing interests.
+You can play an OSG alone: you run one Actor, every other faction is an Autonomous Actor driven by a brief, a behavior rule and an action table, and you act as your own Referee. The full rules, including the Oracle, negotiation with Autonomous Actors, Secrets and the Crisis Clock, are in [Contested Ground: Solo Mode](solo_mode.qmd).
 
 ## Glossary
 
-**AA (Autonomous Actor)**: A faction driven by a Behavior Rule and a random Action Table in solo play, replacing an absent human player. Has a minimal Brief; does not negotiate.
-
-**AA Action Table**: A d6 table of six plausible actions written at scenario creation for each Autonomous Actor. Rolled at the start of each solo turn.
-
-**Behavior Rule**: A standing instruction governing how an Autonomous Actor acts each turn (Consolidator, Aggressor, Opportunist, Balancer, Reactor, Schemer).
-
-**Diplomatic Signal**: An optional solo procedure rolled once per turn per AA after adjudication. Signals opportunities, vulnerabilities, or unintended consequences without replacing negotiation.
+**AA (Autonomous Actor)**: In solo play, a faction driven by a brief, a behavior rule and an action table instead of a player. See [Solo Mode](solo_mode.qmd).
 
 **Action**: The specific course of conduct an Actor pursues this turn. Submitted privately in the format Action / Outcome / Leverage. Narrower than a general claim about the world: it describes what you *do*.
 
@@ -625,11 +510,15 @@ The debrief is also design feedback. A solo game that produced no surprises has 
 
 **Consultant**: An Extras sub-role: one question to the Referee per turn, no action submitted.
 
+**Extras**: Overflow players beyond the Actor roster. Portable options: Consultant and Team Actor. Scenarios may also build their own participation structures into the fiction.
+
 **Force of Nature**: A chaotic external event the Referee may introduce when both dice show the same number. A prompt, not a requirement.
 
 **Friction**: The principle that every outcome leaves a mark. Complicates actions rather than blocking them. Opposed to Hurdles.
 
 **Hurdle**: An adjudication error: blocking an action outright rather than complicating it. Replace "no" with "yes, but."
+
+**Joint Action**: A single action submitted by two or more Actors, each spending its turn and confirming privately. One grade on combined leverage, one roll.
 
 **Leverage**: The reasons an action is likely to succeed: resources, relationships, positioning, established fiction. Graded as Strong or Weak relative to opposition.
 
@@ -651,11 +540,15 @@ The debrief is also design feedback. A solo game that produced no surprises has 
 
 **Team Actor**: An Extras sub-role in which 2–3 players share one Actor.
 
+**Traceable Crumb**: A small, specific public detail (a name, a meeting, a delayed shipment) planted in the Report for every private outcome, so a later revelation feels earned.
+
 **Trait**: A persistent leverage characteristic (e.g., "largest standing army"). Always available when contextually relevant; never diminished by use. Distinguished from a Bonus.
 
 **Turn**: One full play cycle: Actions submitted, adjudicated, Report published.
 
 **Turn Zero**: A pre-game Q\&A session before Turn 1. No actions; produces shared fictional and procedural assumptions.
+
+**Unopposed Action**: An action no faction opposes and the fiction raises no obstacle to. No roll: the desired outcome occurs, and the Referee decides how it lands.
 
 ## Credits & License
 

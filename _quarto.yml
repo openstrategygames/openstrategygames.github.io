@@ -21,7 +21,11 @@ website:
       - text: "Learn"
         href: docs/osg_handbook.html
       - text: "Play"
-        href: docs/contested_ground.html
+        menu:
+          - text: "Contested Ground"
+            href: docs/contested_ground.html
+          - text: "Solo Mode"
+            href: docs/solo_mode.html
       - text: "Log"
         href: docs/factionlog.html
       - text: "Resources"

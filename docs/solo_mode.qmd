@@ -1,0 +1,1278 @@
+---
+title: "Contested Ground: Solo Mode"
+subtitle: Playing an Open Strategy Game Alone
+author: Roberto Bisceglie
+license: CC BY-SA 4.0
+lang: en
+version: 1.0
+---
+
+This document is a complete rules set for playing an Open Strategy Game alone. It builds on [Contested Ground](contested_ground.qmd), but everything you need at the table is here. The [Open Strategy Game Handbook](osg_handbook.qmd) explains the reasoning behind the core rules; [Factionlog](factionlog.qmd) is a notation for keeping your game record.
+
+## Part I: Overview
+
+### What Solo Play Is
+
+You play one faction. Every other faction is an **Autonomous Actor (AA)**: a faction driven by a short brief, a behavior rule and a table of actions. You are also the Referee: you adjudicate every action, yours included, and write the Report.
+
+A group OSG runs on four things a single player does not have: rivals who make decisions, a social layer where deals are struck and broken, information you do not hold, and a Referee who answers questions you could not answer yourself. Solo Mode replaces each one.
+
+| A group game has...            | Solo Mode uses...                          |
+| :----------------------------- | :----------------------------------------- |
+| Other players                  | Autonomous Actors (Part IV)                |
+| Negotiation between turns      | Disposition and Offers (Part V)            |
+| Hidden briefs and covert play  | Secrets (Part VI)                          |
+| Pressure from rival players    | The Crisis Clock (Part VII)                |
+| A Referee who answers questions | The Oracle (Part III)                     |
+| A Referee who improvises       | Inspiration Tables (Part VIII)             |
+
+Everything else is unchanged: the Problem, the Brief, one action per turn, the Action / Outcome / Leverage format, the dice, the RAT check, No Action Without Friction, the Report and the Debrief.
+
+### Two Rules of Honesty
+
+Solo play works only if you do not cheat yourself. Two rules carry the weight:
+
+1. **Commit before you know.** You write your action before any AA acts. You never change it after.
+2. **When you do not know, ask.** If the fiction does not settle a question, do not decide it in your favor. Ask the Oracle.
+
+### What You Need
+
+- At least two six-sided dice
+- A scenario: a Problem, your Brief, and 2–4 AAs. Appendix A is ready to play; Appendix C generates new ones; Part IX tells you what a scenario needs.
+- A record of play: a notebook or a text file. Factionlog notation is recommended.
+- The Turn Sheet (Part XII)
+
+## Part II: The Core Rules in Brief
+
+These are the rules of [Contested Ground](contested_ground.qmd), condensed. They apply to you and to every AA alike.
+
+**The action.** Each faction takes exactly one action per turn, written as:
+
+> **Action:** What specifically is the faction doing?\
+> **Outcome:** What result does it want?\
+> **Leverage:** Why should this work? Ground it in established fiction: resources, relationships, position, prior actions.
+
+**Unopposed actions.** If nothing opposes the action and the fiction raises no obstacle, the desired outcome occurs. No roll. Decide how it lands and what mark it leaves.
+
+**Opposed actions.** Grade leverage **Strong** (the faction has the advantage) or **Weak** (plausible, but no strong basis). Roll 2d6.
+
+| Leverage | Keep               |
+| :------- | :----------------- |
+| Strong   | The **higher** die |
+| Weak     | The **lower** die  |
+
+| Result  | Outcome                                                                     |
+| :------ | :-------------------------------------------------------------------------- |
+| **6**   | Desired outcome occurs, and something especially good may also occur        |
+| **4–5** | Desired outcome occurs                                                      |
+| **2–3** | The action proceeds, but the outcome is worse than desired                  |
+| **1**   | Outcome worse than desired, and something especially bad may also occur     |
+
+Strong produces the desired outcome 75% of the time; Weak, 25%.
+
+**Actions in conflict.** When two actions oppose each other directly, grade and roll each. If both outcomes can be true, both occur as rolled. If not, the higher kept die prevails and the other outcome is worse than desired. A tie is a standoff: both worse than desired.
+
+**Joint actions.** Factions may pool their turns into one action. Each participant spends its action and names its specific contribution. One grade on the combined leverage, one roll; the outcome lands on all of them.
+
+**Bonuses.** A named, spendable asset. Declare it in the Leverage section. It raises Weak to Strong; on an action already Strong, it turns a kept 4–5 into a 6.
+
+**Force of Nature.** When both dice show the same number on an adjudication roll, you may introduce an event from outside any faction's control (Part VIII). Once or twice per game.
+
+**RAT.** Before writing any outcome, check: is it **Reasonable** (proportionate), **Actionable** (it leaves a hook for someone), **Traceable** (earlier fiction led here)?
+
+**No Action Without Friction.** Every outcome leaves a mark. A success with no complicating consequence is not finished: ask who notices, what it costs, what it opens up. Complicate; do not block.
+
+## Part III: The Oracle
+
+The Oracle answers any yes/no question about the world that the fiction has not settled: whether a mercenary company is for hire, whether a road is open, whether an AA accepts your offer.
+
+### Asking
+
+1. Phrase a yes/no question.
+2. Set the odds from the established fiction:
+
+| Odds         | Roll                         | Yes (4+) |
+| :----------- | :--------------------------- | :------- |
+| **Likely**   | 2d6, keep the higher         | 75%      |
+| **Even**     | 1d6                          | 50%      |
+| **Unlikely** | 2d6, keep the lower          | 25%      |
+
+3. Read the result:
+
+| Die | Answer       |
+| :-- | :----------- |
+| 6   | Yes, and...  |
+| 5   | Yes          |
+| 4   | Yes, but...  |
+| 3   | No, but...   |
+| 2   | No           |
+| 1   | No, and...   |
+
+"And" strengthens the answer; "but" softens it. Interpret it in the way that best fits the fiction, then write the answer down. It is now established fiction.
+
+### Oracle Discipline
+
+- **Choose odds before you roll.** If you cannot decide between two levels, take the one closer to Even.
+- **Ask once.** Do not ask the same question again unless the fiction has changed.
+- **Ask what you would ask a Referee.** The Oracle replaces a Referee's ruling, not your decisions. Never ask it what your own faction should do.
+- **Doubles mean nothing** on an Oracle roll. Force of Nature applies only to adjudication.
+
+### Open Questions
+
+For questions that are not yes/no, use these:
+
+- **Which faction?** Number the factions involved and roll.
+- **Which thread?** Keep a numbered list of open threads (unresolved hooks from past Reports). Roll for one.
+- **What kind of thing?** Use the Inspiration Tables (Part VIII) and interpret.
+
+### Grading Leverage
+
+Grading is the place where solo play goes wrong most easily: you will be tempted to call your own leverage Strong and your rivals' Weak. Before calling any faction's leverage Strong, check:
+
+- [ ] Is the resource or relationship **explicitly established** in prior fiction, not assumed?
+- [ ] Has a prior action **created the conditions** for this one?
+- [ ] Would a neutral reader of the Report agree this faction has the advantage?
+
+All three yes: Strong. Any clear no: Weak. If you genuinely cannot tell, ask the Oracle, *"Is the leverage Strong?"*, at Even odds. Apply the same checklist to every AA, above all to an AA acting against you.
+
+## Part IV: Autonomous Actors
+
+### The AA Brief
+
+Each AA has:
+
+| Field               | Content                                                                 |
+| :------------------ | :---------------------------------------------------------------------- |
+| **Objective**       | One sentence: what it wants most                                        |
+| **Position**        | One or two specific assets or vulnerabilities that matter               |
+| **Leverage Type**   | Military, Economic, Geographic, Informational, Legitimacy, Popular, or the scenario's own |
+| **Behavior Rule**   | How it chooses what to do (below)                                       |
+| **Disposition**     | Its attitude toward you (Part V)                                        |
+| **Action Table**    | Six actions it might take (below)                                       |
+| **Secret Table**    | Six things that might be true about it (Part VI)                        |
+| **Bonus** *(optional)* | One named bonus                                                      |
+
+### Behavior Rules
+
+Roll d6 for each AA at setup, or choose.
+
+| d6 | Behavior        | Rule                                                                                                   |
+| :- | :-------------- | :----------------------------------------------------------------------------------------------------- |
+| 1  | **Consolidator** | Secures what it holds. Acts against another faction only if that faction threatened it in the last Report. |
+| 2  | **Aggressor**    | Pushes toward its objective by the most direct means. Never holds two turns running.                  |
+| 3  | **Opportunist**  | Targets the faction lowest on the Standing list.                                                      |
+| 4  | **Balancer**     | Targets the faction highest on the Standing list.                                                     |
+| 5  | **Reactor**      | Holds until acted upon. Then targets the faction that last affected it.                               |
+| 6  | **Schemer**      | Acts on odd turns, holds on even turns. Keeps deals only while they serve it.                          |
+
+**Holding.** When its rule says an AA holds (a Reactor not acted upon last turn, a Schemer on an even turn, a Consolidator with nothing to defend), skip its table. It consolidates: an unopposed action that secures something it already has. Write it in the Report in one line.
+
+An AA never targets itself. If its rule points at itself, take the next faction down (Opportunist) or up (Balancer) the list.
+
+### Standing
+
+Behavior rules need to know who looks strong and who looks exposed. Keep a **Standing** list of every faction, yours included, from **Dominant** at the top to **Exposed** at the bottom.
+
+- Set it at setup from the Briefs.
+- Revise it at the end of every turn, from the Report: who gained visible power, who lost it, who overreached.
+- Judge by what a rival could see, not by what you privately know. A faction with a hidden weakness still looks strong until the weakness is public.
+- If two factions are too close to order, roll.
+
+### The Action Table
+
+Write a d6 table of six actions for each AA, consistent with its objective, leverage type and behavior rule. A balanced table:
+
+| d6 | Kind of action                                                        |
+| :- | :-------------------------------------------------------------------- |
+| 1–2 | Direct moves toward its objective                                    |
+| 3–4 | Moves against a **[target]**: pressure, obstruction, attack, investigation |
+| 5  | A positional move: secure an asset, build a relationship, prepare     |
+| 6  | Escalation: the boldest thing it would plausibly do                   |
+
+Each entry is a verb and an object, short enough to read at a glance: *"Blockade the coast road against [target]."*
+
+**Filling [target].** If the behavior rule names a target (Opportunist, Balancer, Reactor), use it. Otherwise the target is the faction most in the way of the AA's objective. Between equal candidates, an AA that is Hostile or Wary toward you picks you; one that is Open or Allied does not.
+
+**Writing the AA's action.** A table entry is a direction, not a finished action. Expand it into full Action / Outcome / Leverage, written as a competent player of that faction would write it, using its best established leverage. Play every AA to win. An AA played to lose is a game you have already won, and not worth playing.
+
+**Veto.** If the rolled entry makes no sense in the current fiction (the target is gone, the location destroyed) or breaks the AA's behavior rule (a Consolidator rolling an attack when no one threatened it), reroll once. If the reroll fails too, write an action from the behavior rule directly.
+
+**Bonuses.** An AA with a bonus spends it the first time it acts within the bonus's scope with Weak leverage, or in an action in conflict.
+
+### Adaptation
+
+AAs change as the game does. Rewrite **one** entry of an AA's Action Table, replacing the entry least relevant to the current fiction, when:
+
+- the AA's kept die is a **6** or a **1** on an adjudication roll;
+- its objective is achieved: it takes a new objective, the next step its leverage makes possible;
+- its objective becomes impossible: it takes a new objective consistent with its identity, and you roll a new behavior rule.
+
+### Elimination and New Powers
+
+A faction can be eliminated: destroyed, absorbed, or reduced to irrelevance. When an AA is eliminated, ask the Oracle at the start of the next turn: *"Does a new power rise to fill the gap?"* (Likely if what it held still matters.) On a yes, create a minimal AA: objective, position, leverage type, behavior rule, a six-entry table. Its disposition toward you starts at Wary.
+
+## Part V: Disposition and Offers
+
+Talking is free. In Solo Mode, talking happens through **Offers**, and the AAs' memory of how you have treated them is their **Disposition**.
+
+### Disposition
+
+Each AA has a disposition toward you on a five-step scale:
+
+**Hostile → Wary → Neutral → Open → Allied**
+
+Set the starting disposition from the Briefs: Wary if its objectives conflict with yours, Open if they align, Neutral otherwise. The scenario may set it directly.
+
+| Disposition | Offers          | Targeting                                     | Keeping deals |
+| :---------- | :-------------- | :-------------------------------------------- | :------------ |
+| **Hostile** | Refuses unless the deal serves its objective; then Unlikely | Picks you whenever its rule allows a choice | n/a |
+| **Wary**    | One step worse  | Picks you between equal candidates            | Even          |
+| **Neutral** | No change       | No preference                                 | Likely        |
+| **Open**    | One step better | Does not pick you between equal candidates    | Likely        |
+| **Allied**  | One step better; accepts without rolling if the deal serves its objective | Never targets you unless its rule forces it | Kept without a roll (Schemer: Likely) |
+
+**Moving disposition.** At the end of each turn, from the Report:
+
+- **+1** if you kept a deal with it, or your action clearly benefited it
+- **−1** if your action harmed it, even as a side effect, or it uncovered a covert action of yours aimed at it
+- **−2** if you broke a deal with it
+
+Apply each cause once per turn. Disposition never moves past Hostile or Allied.
+
+### Making an Offer
+
+At the start of each turn you may make one Offer to each AA.
+
+1. **State the deal.** What you give and what you ask. Be specific: "Essaveth will allow Meranto's agents through the passes; Meranto will delay Caldrath's next loan."
+2. **Set the odds.** Start at Even, then shift one step for each that applies:
+   - **Better:** the deal clearly advances its objective; its disposition is Open or Allied
+   - **Worse:** the deal costs it something its behavior rule protects, or helps its rival; its disposition is Wary
+
+   The odds run **Refused → Unlikely → Even → Likely → Accepted**. Past Likely, it accepts without rolling; past Unlikely, it refuses.
+3. **Ask the Oracle:** *"Does [AA] accept?"*
+
+| Answer       | Result                                                                                       |
+| :----------- | :------------------------------------------------------------------------------------------- |
+| Yes, and...  | Accepts, and adds something: information, extra help, or +1 disposition                       |
+| Yes          | Accepts                                                                                       |
+| Yes, but...  | Accepts on one added condition. Take it or walk away.                                         |
+| No, but...   | Refuses, but says what it would accept instead                                                |
+| No           | Refuses                                                                                       |
+| No, and...   | Refuses and takes offense (−1 disposition), or leaks the offer to a rival (a crumb in the Report) |
+
+### Deals
+
+Keep a **Deals** list: who, what, since which turn, until when.
+
+- **Obligations replace the table.** If a deal requires the AA to act this turn, that is its action; do not roll its table. If a deal requires it to refrain (not attack you, not close a route), table results that break the deal are rerolled.
+- **Deals can break.** When keeping a deal would cost the AA something real this turn, or every turn for a Schemer, ask: *"Does [AA] keep the deal?"* with odds from its disposition (table above). On a no, it breaks the deal, and its action this turn exploits the break. Strike the deal; the betrayal goes in the Report.
+- **Your side counts too.** If you break a deal, its disposition drops by 2 and the break goes in the Report.
+
+### Joint Actions with an AA
+
+An Offer can propose a joint action. If accepted, each turn the joint action runs ask: *"Does [AA] confirm?"* (Likely; Allied confirms without rolling). On a no, the joint action proceeds without its contribution, the leverage is regraded, and the AA rolls its own table as normal.
+
+### Signals
+
+AAs talk to you too. After adjudication, roll d6 for each AA:
+
+| d6  | Signal                                                                                                   |
+| :-- | :------------------------------------------------------------------------------------------------------- |
+| 1–2 | Silence                                                                                                  |
+| 3   | **Warning.** It warns you off something it cares about. Write the warning as a crumb in the Report.      |
+| 4   | **Offer.** It proposes a deal, drawn from its objective. Answer at your next Offer step. Refusing an Open or Allied AA costs −1 disposition. |
+| 5   | **Exposure.** It has overextended. Name the vulnerability in the Report.                                 |
+| 6   | **Windfall.** Its action this turn incidentally helps you. Write it as an unintended consequence.        |
+
+## Part VI: Secrets
+
+You wrote every brief, so in principle you know everything. Secrets fix this by keeping the truth undecided until play uncovers it.
+
+### Secret Tables
+
+Each AA has a **Secret Table**: six things that *might* be true about it. Only the entry rolled when the secret is uncovered becomes true; the other five never were. You know the possibilities, not the answer.
+
+Write a table for each AA at setup, or use the generic table for its leverage type below (Popular is in Appendix C).
+
+| d6 | Military                                              | Economic                                            | Geographic                                                  |
+| :- | :---------------------------------------------------- | :-------------------------------------------------- | :---------------------------------------------------------- |
+| 1  | Its troops are unpaid; their loyalty is for sale      | It is insolvent; its wealth is borrowed             | There is a second way around its position, and it knows     |
+| 2  | A senior commander answers to someone else            | It is secretly financing a rival                    | Its hold depends on a local who can be turned               |
+| 3  | Its supplies will run out sooner than anyone knows    | One creditor or client could ruin it                | The position is decaying: flood, disease, collapse          |
+| 4  | It has hidden a recent defeat                         | Its records conceal a crime                         | It has promised passage to someone                          |
+| 5  | It is preparing to strike an unexpected target        | It has already sold something it publicly holds     | Its territory hides a resource no one has counted           |
+| 6  | Half its strength exists only on paper                | It is quietly buying control of something central   | It plans to close the route at the worst moment for someone |
+
+| d6 | Informational                                         | Legitimacy                                                |
+| :- | :---------------------------------------------------- | :-------------------------------------------------------- |
+| 1  | It has a spy in your camp                             | Its authority rests on a contested or forged document     |
+| 2  | Its best source is feeding it lies                    | Its leadership is divided and close to splitting          |
+| 3  | It holds a document that would ruin a third faction   | It has promised recognition to two rivals                 |
+| 4  | It has been leaking to a rival                        | A scandal is waiting to break                             |
+| 5  | It knows one of your private Position facts           | Its own founding precedent supports a rival's claim       |
+| 6  | Its reputation rests on a lie                         | It will recognize whoever pays enough                     |
+
+### Uncovering Secrets
+
+Roll on an AA's Secret Table when:
+
+- **You investigate it and succeed.** On a 4–5, the secret is yours, privately. On a 6, roll twice and keep both, or keep one and gain a crumb on another faction. On a 2–3, it is a **rumor**: roll it, but it is unconfirmed until a second investigation or until it pays off in play.
+- **It rolls a 1** on any adjudication. The secret comes out publicly in the Report.
+- **A Signal reveals Exposure** and the vulnerability fits a secret better than a new invention.
+
+An uncovered secret is established fiction: it counts toward Strong leverage. Cross it off; reroll duplicates.
+
+### Your Own Secrets
+
+Your private Brief and your covert actions are secrets too.
+
+- **Covert actions.** Write the outcome privately and plant a crumb in the Report as usual. At the end of the turn, ask: *"Is it noticed?"* Unlikely; Even if any AA has Informational leverage or the action targeted an AA. On a yes, roll to see which interested AA notices: its disposition drops by 1, it now knows, and its next **[target]** is you.
+- **Investigated by an AA.** When an AA's action investigates you and succeeds, it learns one of your private Position facts or a past covert action of your choice. The AA may use it as leverage from then on.
+
+## Part VII: The Crisis Clock
+
+Rival players keep a group game under pressure. In Solo Mode, the Problem itself does.
+
+### The Clock
+
+The **Crisis Clock** is a track of boxes. Set its length to **the number of turns minus one**, unless the scenario fixes it: left alone, the crisis breaks before the last turn, and the final turn is played in its aftermath.
+
+Mark **three Escalations** on the track, roughly a third, two thirds, and the last box. The last is the **Breaking Point**.
+
+- **Advance one box** at the end of every turn.
+- **Advance one more** when an outcome's "something especially bad" or a Force of Nature makes the Problem worse.
+- **Push it back one box** when an action whose Outcome addresses the Problem itself, not a rival, rolls a 6.
+
+When the clock reaches an Escalation, it happens in that turn's Report, as a fact every faction must respond to.
+
+### Writing Escalations
+
+Each Escalation is a specific worsening of the Problem. A good Escalation:
+
+- follows from the Problem statement, visibly (Traceable);
+- hurts at least two factions, and in different ways;
+- opens at least one option that did not exist before.
+
+The **Breaking Point** is what happens if no one resolves the crisis: the default bad ending the Problem implies. It does not end the game. The remaining turn is played in the new world it creates, and that is often the most interesting turn of the game.
+
+*Example:* the Crisis Clock of the Corentine Succession is in Appendix A. Its Breaking Point is the lapse of the bilateral treaties.
+
+## Part VIII: Inspiration Tables
+
+Use these when a result calls for something you have not thought of. Roll, then interpret through the fiction. If the result does not fit, take the nearest entry that does.
+
+### Something Especially Good (on a 6)
+
+| d6 | The faction also...                                                         |
+| :- | :-------------------------------------------------------------------------- |
+| 1  | Gains an unexpected ally: a third party offers support                      |
+| 2  | Learns something: roll a Secret of a faction involved                       |
+| 3  | Establishes a fact that will support its next action in the same area       |
+| 4  | Weakens a rival: move the opposing faction down one place in Standing       |
+| 5  | Wins goodwill: one AA involved moves +1 disposition toward the actor        |
+| 6  | Eases the crisis locally: push the Crisis Clock back one box                |
+
+### Something Especially Bad (on a 1)
+
+| d6 | The faction also...                                                         |
+| :- | :-------------------------------------------------------------------------- |
+| 1  | Is exposed: a covert action or a private fact becomes public                |
+| 2  | Provokes backlash: one AA involved moves −1 disposition toward the actor    |
+| 3  | Loses an asset: a bonus, a holding, or a relationship                       |
+| 4  | Strengthens a rival: move the opposing faction up one place in Standing     |
+| 5  | Overreaches: the attempt creates a new vulnerability; add it to the Position |
+| 6  | Worsens the crisis: advance the Crisis Clock one box                        |
+
+When an AA is the actor, read entries 2 and 5 as disposition toward the faction it acted on, if that faction is you.
+
+### Friction
+
+Use when an outcome leaves no mark.
+
+| d6 | The outcome...                                                        |
+| :- | :-------------------------------------------------------------------- |
+| 1  | Was witnessed: name who saw it                                        |
+| 2  | Cost more than planned                                                |
+| 3  | Alarmed someone: the faction most affected now has a reason to act    |
+| 4  | Set a precedent others can invoke                                     |
+| 5  | Opened a door for someone else                                        |
+| 6  | Is incomplete: one piece remains, to be finished later                |
+
+### Force of Nature
+
+Use on doubles, when you choose to. Roll the source, then tie it to the most recent unresolved thread.
+
+| d6 | Source                                                         |
+| :- | :------------------------------------------------------------- |
+| 1  | Weather or terrain: a storm, a flood, a collapsed road         |
+| 2  | Disease, fire or disaster                                      |
+| 3  | Popular unrest: a crowd, a strike, a riot                      |
+| 4  | An outside power takes an interest                             |
+| 5  | An economic shock: a failed harvest, a collapsed price         |
+| 6  | The past returns: a dead person's letter, an old claim, a forgotten treaty |
+
+## Part IX: Setting Up
+
+To generate the whole scenario with dice instead, use Appendix C.
+
+1. **The Problem.** One sentence that names what has changed, implies competing interests, and points at no correct answer.
+2. **Your Actor.** A full Brief: a short-term and a long-term objective, three Position bullets, at least one named bonus.
+3. **The AAs.** Two to four, for three to five factions in total. Fewer than the 5–8 of a group game: you run every AA by hand. Give each an AA Brief, an Action Table and a Secret Table. Give each a different leverage type from yours and from each other's where you can.
+4. **The Map.** Three to five named locations, at least one contested.
+5. **The Crisis Clock.** Length, three Escalations, the Breaking Point.
+6. **Standing.** Order every faction from Dominant to Exposed.
+7. **Disposition.** Set each AA's starting disposition toward you.
+8. **Turn Zero.** Ask the Oracle up to five questions about the world that matter for your first move, and record the answers. Then write down one or two things you deliberately leave unsettled.
+
+A game of three factions (you and two AAs) over six turns is a solid first run. The lighter game in Appendix A is exactly that.
+
+| Turns | Feel                                                 |
+| :---- | :--------------------------------------------------- |
+| 4     | Sharp and fast: one strategic arc                    |
+| 6     | Standard: alliances form and break                   |
+| 8     | Full campaign: long-term objectives come into reach  |
+
+The game ends at the stated turn count. No extensions.
+
+## Part X: The Turn
+
+### 1. Take Stock
+
+Read the last Report. Check the Standing list, the Deals list, and the Crisis Clock.
+
+### 2. Talk
+
+Answer any Offer an AA made last turn. Make up to one Offer to each AA (Part V).
+
+### 3. Declare Your Action
+
+Write your action in full: Action / Outcome / Leverage. Declare any bonus you spend. From here on, it does not change.
+
+### 4. Generate AA Actions
+
+For each AA, in order:
+
+1. If a deal requires an action, that is its action. Check whether it keeps the deal if keeping it costs something.
+2. If its behavior rule says it holds, it consolidates.
+3. Otherwise, roll its Action Table, fill any **[target]**, and expand the entry into a full Action / Outcome / Leverage.
+
+### 5. Adjudicate
+
+1. Identify which actions are unopposed, opposed, in conflict, or joint.
+2. Grade leverage for every opposed action (Part III checklist; Oracle if unsure).
+3. Roll. Apply 6s and 1s with the Inspiration Tables. Consider a Force of Nature on doubles.
+4. Check every outcome against RAT and No Action Without Friction.
+5. Uncover Secrets where results call for it (Part VI).
+
+### 6. Signals and Notice
+
+Roll a Signal for each AA. For each covert action you took, ask whether it is noticed.
+
+### 7. Update
+
+- Disposition: apply the turn's changes.
+- Deals: add, strike, note breaks.
+- Adaptation: rewrite table entries where a 6, a 1, or an objective change calls for it.
+- Crisis Clock: advance it; if it hits an Escalation, it lands now.
+- Standing: reorder from what the Report shows.
+
+### 8. Write the Report
+
+Third person, news-roundup style, short.
+
+1. **Turn header:** one sentence on where things stand.
+2. **One paragraph per action:** the outcome as fact, its friction, at least one hook.
+3. **Crumbs** for every private outcome, yours and the AAs'.
+4. **The Clock:** one line if an Escalation landed.
+5. **Closing observation:** one open thread no single faction owns.
+
+Add new hooks to your thread list. After each paragraph, ask: *does this put something in front of me or an AA that changes the next turn?* If not, rewrite it.
+
+## Part XI: The Debrief
+
+After the final Report, write a closing frame: one line per faction on where it ends. Then:
+
+1. **Your objectives.** Did you achieve the short-term one? Did you achieve or lay groundwork for the long-term one? Why?
+2. **The AAs' objectives.** For each AA, did it get what it wanted? Answer from the fiction; if the fiction does not settle it, ask the Oracle at Even. Compare your result with theirs. That comparison is the closest Solo Mode comes to a winner.
+3. **The surprise.** Which turn surprised you most, and what produced it: an AA, the Clock, a Secret, or your own action's consequences?
+4. **The design.** What would you change: the Problem, an AA's behavior or table, the Clock?
+
+A solo game that produced no surprises had AA tables that were too predictable or a Clock that was too slow. A game that felt incoherent had a Problem that did not generate distinct competing interests.
+
+## Part XII: Turn Sheet
+
+```
+SOLO TURN
+1. Take stock: Report, Standing, Deals, Clock
+2. Talk: answer AA offers; one offer per AA
+3. Declare your action (Action / Outcome / Leverage, bonus)  [no changes after this]
+4. AA actions: deal obligation > hold > roll table, fill [target], expand
+5. Adjudicate: unopposed / opposed / conflict / joint; grade; roll;
+   6s and 1s on Inspiration Tables; doubles = Force of Nature?; RAT; friction; Secrets
+6. Signals (d6 per AA); notice checks for your covert actions
+7. Update: Disposition, Deals, Adaptation, Clock (+1), Standing
+8. Report: header, one paragraph per action, crumbs, clock, closing observation
+```
+
+| Oracle      | Roll            |   | Die | Answer      |
+| :---------- | :-------------- | - | :-- | :---------- |
+| Likely      | 2d6 keep higher |   | 6   | Yes, and... |
+| Even        | 1d6             |   | 5   | Yes         |
+| Unlikely    | 2d6 keep lower  |   | 4   | Yes, but... |
+|             |                 |   | 3   | No, but...  |
+|             |                 |   | 2   | No          |
+|             |                 |   | 1   | No, and...  |
+
+| Disposition | Offer odds | Keeps deals          |
+| :---------- | :--------- | :------------------- |
+| Hostile     | Refused (Unlikely if it serves its objective) | n/a |
+| Wary        | −1 step    | Even                 |
+| Neutral     | Even       | Likely               |
+| Open        | +1 step    | Likely               |
+| Allied      | +1 step; auto if it serves its objective | Automatic (Schemer: Likely) |
+
+Offer shifts: +1 if it advances the AA's objective; −1 if it costs what its rule protects or helps its rival.
+
+## Appendix A: The Corentine Succession (Solo)
+
+A ready-to-play scenario for Solo Mode. It is the worked example scenario from the [Open Strategy Game Handbook](osg_handbook.qmd), Appendix G, with everything Solo Mode needs. You can play any of the five factions; the other four are AAs.
+
+**Full game:** you and four AAs, six turns. Expect a long first turn.\
+**Lighter game:** Essaveth, Caldrath and House Meranto only, six turns. Saivorn and the Conclave remain in the world as background institutions: they exist and can be named in actions, but take no actions and have no disposition. This is the recommended first game, and the one used in Appendix B.
+
+### The Problem
+
+> *The death of Arbiter Vethara has left the Corentine Peninsula without a recognized authority to renew the bilateral treaties that have kept its five polities at peace for thirty years.*
+
+### The World
+
+Five polities have coexisted under bilateral treaties ratified by the Arbiter, a title held for thirty years by Vethara of Corenth. The Arbiter held no army and claimed no territory; her authority rested on personal standing, the Conclave's ratification, and everyone's interest in having someone to call when things went wrong. She died twelve days ago and named no successor. The treaties have no renewal mechanism that all parties recognize.
+
+### The Map
+
+| Location             | Notes                                                                                   |
+| :------------------- | :-------------------------------------------------------------------------------------- |
+| **Corenth**          | The central city, seat of the old Arbiter, site of the Conclave's extraterritorial temple. **Contested.** |
+| **The Northern Passes** | Essaveth's territory between Caldrath and Corenth. Caldrath's army is camped at their foot; Corenth is three days' march beyond them. |
+| **Caldrath**         | The kingdom's heartland, to the north.                                                  |
+| **Saivorn**          | The coastal republic to the south, with the peninsula's only two deep-water ports. Reaches Corenth by sea. |
+| **The Southern Coast** | Merchant country with no single power; House Meranto's offices are here, but its leverage is everywhere. |
+
+### Turn Zero: Established
+
+These answers are settled before play. Do not ask the Oracle about them.
+
+- The treaties remain in force until they lapse unrenewed at the end of Turn 4 (the Crisis Clock's Breaking Point). Any faction may try to hasten or delay the lapse through action.
+- Caldrath's historical claim on Essaveth's northern province is dormant until Caldrath formally declares it.
+- The Conclave's extraterritorial status in Corenth derives from the treaties. If they lapse, it becomes contested.
+- Two mercenary companies operate on the peninsula. Both are expensive and in contact with more than one faction. Hiring one does not buy exclusivity.
+
+**Left unsettled on purpose:** whether Vethara died naturally; what the unpublished treaty clauses say. Let play decide.
+
+### The Crisis Clock
+
+Four boxes. The treaty deadline fixes the Breaking Point at the end of Turn 4, so this scenario overrides the usual length: two turns are played after the treaties lapse.
+
+| Box | Escalation |
+| :-- | :--------- |
+| 2   | **Blood at the passes.** A Caldrath patrol and Essaveth's wardens clash at a gate tower; two men die. Each side names the other the aggressor. |
+| 3   | **Grain panic in Corenth.** Bread prices double in a week. The city guilds petition for "a protector", and do not say whose. |
+| 4   | **Breaking Point: the treaties lapse.** No renewal has been ratified. Every border, toll and debt guaranteed by the old order is now open to dispute, and the Conclave's temple is no longer clearly extraterritorial. |
+
+### Starting Standing
+
+Caldrath > House Meranto > Saivorn > The Conclave > Essaveth
+
+In the lighter game: Caldrath > House Meranto > Essaveth.
+
+### Starting Disposition
+
+Read across: how each AA (row) feels toward you, depending on which faction you play (column).
+
+| AA ↓ / You → | Saivorn | Caldrath | Conclave | Essaveth | Meranto |
+| :----------- | :------ | :------- | :------- | :------- | :------ |
+| **Saivorn**  |   n/a   | Wary     | Neutral  | Neutral  | Neutral |
+| **Caldrath** | Wary    |   n/a    | Neutral  | Hostile  | Wary    |
+| **Conclave** | Neutral | Wary     |   n/a    | Open     | Wary    |
+| **Essaveth** | Open    | Hostile  | Open     |   n/a    | Neutral |
+| **Meranto**  | Neutral | Neutral  | Neutral  | Neutral  |   n/a   |
+
+### The Republic of Saivorn
+
+*Public:* the peninsula's dominant commercial power; controls both major ports.
+
+**If you play Saivorn**
+
+- *Short-term:* Prevent any military action that closes the peninsula's sea lanes before a new framework is established.
+- *Long-term:* Secure a successor treaty that guarantees commercial freedom of movement regardless of who holds political authority.
+- *Position:*
+  - You control the only two deep-water ports on the peninsula. Any faction that needs to move goods or troops by sea needs your cooperation or your tolerance.
+  - You have no standing army. Hired companies and a small patrol fleet defend the harbours; they cannot project power inland.
+  - The Arbiter's death is, privately, not unwelcome. Her last treaty imposed tariff concessions that cost you considerably. You want a new order, not the old one restored.
+- *Bonus:* **The Harbour Writ (1x).** Open or close both ports to any cargo, at once and with full legal cover.
+
+**As an AA**
+
+| Field | |
+| :---- | :-- |
+| Objective | Keep the sea lanes open and get commercial freedom written into whatever comes next |
+| Position | Both deep-water ports; no army |
+| Leverage | Geographic (secondary: economic) |
+| Behavior | Opportunist |
+| Bonus | The Harbour Writ (1x) |
+
+| d6 | Action |
+| :- | :----- |
+| 1  | Draft a commercial-freedom charter and seek signatures for it |
+| 2  | Escort merchant convoys to Corenth under the patrol fleet |
+| 3  | Raise harbour dues on, or refuse berths to, [target] |
+| 4  | Offer [target]'s suppliers or creditors better terms, to pry them loose |
+| 5  | Hire a mercenary company to guard the harbours and the coast |
+| 6  | Close both ports to all military cargo until a new framework is agreed |
+
+| d6 | Secret (what might be true) |
+| :- | :-------------------------- |
+| 1  | A Saivorn merchant paid the Arbiter's physician in her last month |
+| 2  | One of the two deep-water ports is silting up and will close within a year |
+| 3  | The hired companies are owed three months' pay and are talking to Caldrath |
+| 4  | Saivorn owes Meranto far more than its published credits show |
+| 5  | Saivorn has been running arms to Essaveth in grain ships |
+| 6  | The patrol fleet sails half-crewed |
+
+### The Kingdom of Caldrath
+
+*Public:* the strongest military force on the peninsula; has wanted more for a long time.
+
+**If you play Caldrath**
+
+- *Short-term:* Establish a military presence in Corenth before any other faction does.
+- *Long-term:* Have the King of Caldrath recognized, by the Conclave or by sufficient consensus, as the new Arbiter or equivalent authority.
+- *Position:*
+  - You have the largest standing army on the peninsula, camped at the foot of the northern passes. Through the passes, Corenth is three days' march away. Everyone knows this.
+  - Five years ago, Vethara publicly rebuked Caldrath over a border dispute with Essaveth and ruled against you. The rebuke is in the Conclave's registers. It will be used against you.
+  - Your military expansion was financed largely by loans from House Meranto. The debt is significant and the terms are not favourable.
+- *Bonus:* **The Old Muster Rolls (1x).** Call up the reserve levies: a second army, for one campaign.
+
+**As an AA**
+
+| Field | |
+| :---- | :-- |
+| Objective | Put troops in Corenth first, then have the King recognized as Arbiter |
+| Position | The largest army, at the foot of the passes; deep in debt to Meranto |
+| Leverage | Military (secondary: geographic) |
+| Behavior | Aggressor |
+| Bonus | The Old Muster Rolls (1x) |
+
+| d6 | Action |
+| :- | :----- |
+| 1  | March a column through the northern passes toward Corenth |
+| 2  | Petition the Conclave to recognize the King as interim Arbiter |
+| 3  | Demand right of passage from [target], backed by the army |
+| 4  | Seize a depot, toll post or road held by [target] |
+| 5  | Hire one of the two mercenary companies |
+| 6  | Formally declare the claim on Essaveth's northern province |
+
+| d6 | Secret (what might be true) |
+| :- | :-------------------------- |
+| 1  | The King is ill, and his heir opposes the campaign |
+| 2  | The army's pay is three months in arrears |
+| 3  | A Meranto agent sits on the King's war council |
+| 4  | Part of the historical claim on Essaveth rests on a forged charter |
+| 5  | The King has secretly offered Saivorn a share of Corenth's tolls |
+| 6  | Caldrath's scouts have found a goat road around the passes |
+
+### The Conclave
+
+*Public:* the religious body that ratified all the Arbiter's treaties; holds the originals.
+
+**If you play the Conclave**
+
+- *Short-term:* Be formally recognized as the body that must ratify any new treaty framework or successor arrangement before it takes effect.
+- *Long-term:* Establish permanent Conclave oversight of whoever holds the Arbiter's role, however they are chosen.
+- *Position:*
+  - You hold the original copies of all bilateral treaties, including clauses never made public. What is written there, and what you choose to reveal or withhold, is leverage.
+  - Your temple complex in Corenth is extraterritorial. No faction can move against you there without the political cost of attacking a sacred institution.
+  - You have no military force and are substantially in debt to House Meranto for a building programme not yet complete.
+- *Bonus:* **The Sealed Archive (1x).** Produce an original treaty document whose authenticity no one can credibly dispute.
+
+**As an AA**
+
+| Field | |
+| :---- | :-- |
+| Objective | Make Conclave ratification the price of any legitimate settlement |
+| Position | The treaty originals and an extraterritorial temple; no army; in debt to Meranto |
+| Leverage | Legitimacy (secondary: informational) |
+| Behavior | Balancer |
+| Bonus | The Sealed Archive (1x) |
+
+| d6 | Action |
+| :- | :----- |
+| 1  | Proclaim from the temple that no settlement is valid without Conclave ratification |
+| 2  | Convene a summit of all factions in Corenth, under the temple's protection |
+| 3  | Publish an unpublished treaty clause that embarrasses [target] |
+| 4  | Refuse to receive [target]'s envoys and denounce its conduct from the temple steps |
+| 5  | Seek a moratorium on its building-programme debt |
+| 6  | Name an interim Arbiter of its own choosing |
+
+| d6 | Secret (what might be true) |
+| :- | :-------------------------- |
+| 1  | An unpublished clause grants Caldrath the northern province after thirty years, and the term has passed |
+| 2  | Vethara named a successor in a sealed letter the Conclave is hiding |
+| 3  | The Conclave is split: its Elder favors a settlement under Caldrath |
+| 4  | Money borrowed for the building programme was diverted |
+| 5  | The Conclave has privately promised ratification to two different factions |
+| 6  | One of the original treaties was never signed |
+
+### The Principality of Essaveth
+
+*Public:* a small border state whose existence was guaranteed by Vethara's last major treaty.
+
+**If you play Essaveth**
+
+- *Short-term:* Secure a written guarantee of territorial integrity from at least two other factions before Caldrath's army moves.
+- *Long-term:* Have Essaveth's borders explicitly named and protected in whatever successor treaty emerges.
+- *Position:*
+  - Your principality sits at the peninsula's crossroads. Caldrath's army cannot reach Corenth from the north without passing through or around your territory. This is your primary leverage and your primary vulnerability.
+  - The Arbiter's last major treaty created your current borders. Without it, Caldrath has a historical claim on your northern province that predates Vethara's arbitration.
+  - Your garrison is small but well positioned. You can hold your passes for weeks, not months. You need allies, and you need them before the army moves.
+- *Bonus:* **The Pass Wardens (2x).** Essaveth's hereditary gate-keepers: men who know every ledge and sally port. Scope: any action fought or enforced in the passes.
+
+**As an AA**
+
+| Field | |
+| :---- | :-- |
+| Objective | Get its borders guaranteed in writing, by as many factions as possible |
+| Position | The northern passes, holdable for weeks; a dormant Caldrath claim on its northern province |
+| Leverage | Geographic (secondary: diplomatic) |
+| Behavior | Consolidator |
+| Bonus | The Pass Wardens (2x) |
+
+| d6 | Action |
+| :- | :----- |
+| 1  | Seek a written border guarantee from the faction most likely to give one |
+| 2  | Petition the Conclave to register its borders in the treaty archive |
+| 3  | Close the passes to [target]'s traffic |
+| 4  | Expose [target]'s designs on Essaveth to the other factions |
+| 5  | Fortify the passes and call up the reserves |
+| 6  | Offer transit rights through the passes to whichever faction will guarantee its borders |
+
+| d6 | Secret (what might be true) |
+| :- | :-------------------------- |
+| 1  | The Prince is secretly negotiating a personal title from Caldrath |
+| 2  | The garrison's stores will last ten days, not weeks |
+| 3  | The northern province would welcome Caldrath |
+| 4  | Essaveth's new fortifications were built on Meranto credit it cannot repay |
+| 5  | Essaveth knows of a goat road around the passes and has told no one |
+| 6  | Vethara left the Prince a private letter of guarantee the Conclave never countersigned |
+
+### House Meranto
+
+*Public:* a banking consortium with significant debts owed by every other faction.
+
+**If you play House Meranto**
+
+- *Short-term:* Restructure or call in debts from at least two factions to improve your position before a new political order is settled.
+- *Long-term:* Have financial obligations explicitly protected, and the Meranto family's status as creditors formally recognised, in whatever treaty framework emerges.
+- *Position:*
+  - You hold substantial debt from Caldrath, significant trade credits from Saivorn, and the Conclave's building programme. Every other faction owes you something.
+  - You have no army, no territory, and no political claim. You can trigger a debt crisis that would damage every faction at once, including yourself.
+  - Your agents are present in every major city. You often know things before the people they concern.
+- *Bonus:* **The Debt Clause (2x).** The emergency clause in Meranto's lending agreements: freeze a debtor's discretionary spending for thirty days.
+
+**As an AA**
+
+| Field | |
+| :---- | :-- |
+| Objective | Turn two factions' debts into leverage before the new order is settled |
+| Position | Everyone's creditor; agents everywhere; no army or territory |
+| Leverage | Economic (secondary: informational) |
+| Behavior | Schemer |
+| Bonus | The Debt Clause (2x) |
+
+| d6 | Action |
+| :- | :----- |
+| 1  | Call in part of [target]'s debt, with a deadline |
+| 2  | Offer [target] restructured terms in exchange for a concession |
+| 3  | Buy up [target]'s outstanding paper from smaller creditors |
+| 4  | Sell what its agents know about [target] to that faction's rival |
+| 5  | Move its reserves beyond the peninsula's reach |
+| 6  | Freeze all new credit to the peninsula until creditors are protected |
+
+| d6 | Secret (what might be true) |
+| :- | :-------------------------- |
+| 1  | Meranto is overextended: if two debtors default, the House fails |
+| 2  | Meranto financed both sides of the last border war |
+| 3  | The head of the House was Vethara's confidant and holds her private papers |
+| 4  | Meranto has already sold Caldrath's debt to a foreign power |
+| 5  | A Meranto clerk has been feeding the Conclave false records |
+| 6  | Meranto plans to buy the Southern Coast's charters outright once the treaties lapse |
+
+## Appendix B: A Worked Turn
+
+The lighter game: you play **Essaveth**; Caldrath and House Meranto are AAs. Turn 1, logged in [Factionlog](factionlog.qmd) notation, with commentary.
+
+### Setup
+
+```
+Turn 0
+
+[Fac:Essaveth
+  | obj:two written guarantees before the army moves
+  | obj:+borders named in the successor treaty
+  | pos:the northern passes; the garrison holds for weeks
+]
+[Bon:Essaveth|Pass Wardens 2]
+[Rival:Caldrath|obj:troops in Corenth, then the King as Arbiter
+  |lev:military|behavior:Aggressor|disp:Hostile]
+[Rival:Meranto|obj:turn two factions' debts into leverage
+  |lev:economic|behavior:Schemer|disp:Neutral]
+[Clock:Crisis 0/4]
+[Standing:Board|order:Caldrath, Meranto, Essaveth]
+```
+
+### 1. Take Stock
+
+The army sits at the foot of the passes. Essaveth needs two guarantees and has none. Caldrath is Hostile and will not take an offer. Meranto is Neutral and wants leverage over debtors; Caldrath is its largest debtor.
+
+### 2. Talk
+
+```
+Turn 1
+
+Essaveth offers Meranto: our passes open to its agents and couriers;
+  Meranto delays Caldrath's next war-loan payment by a month
+? Does Meranto accept? (Likely)
+d: 2d6kh1[2,4]=4 -> Yes, but...
+=> Essaveth's toll revenue must clear through Meranto houses
+   for the duration
+[Deal:Essaveth/Meranto|agents' passage|Caldrath loan delayed
+  |tolls through Meranto|status:active|since Turn 1]
+```
+
+*Odds:* Even to start; one step better because a delayed loan gives Meranto leverage over Caldrath, which serves its objective. Neutral disposition adds nothing. *Yes, but:* Meranto adds a condition. Essaveth accepts it: the tolls are small, and a creditor with an interest in Essaveth's survival is worth having.
+
+### 3. Declare
+
+```
+@(Essaveth)
+  act: Close the northern passes to all armed movement and post
+       the Pass Wardens at every gate
+  out: Caldrath's army cannot cross this turn without fighting
+       its way through
+  lev: The passes are ours (Position); the garrison can hold for
+       weeks; the Wardens know every ledge and sally port
+       [Bon:Essaveth|Pass Wardens-1]
+```
+
+Written and fixed before either AA acts.
+
+### 4. AA Actions
+
+```
+tbl: Caldrath Action d6=3 -> Demand right of passage from Essaveth
+
+@(Caldrath)
+  act: Send a herald to the gate towers demanding right of passage
+       for the army, with the army drawn up in sight of the walls
+  out: Essaveth opens the passes; the army is through by the turn's end
+  lev: The largest army on the peninsula, a day from the gates;
+       Essaveth's garrison is small and everyone knows it
+
+(note: Meranto acts on its deal with Essaveth instead of rolling)
+
+@(Meranto)
+  act: Inform Caldrath's treasury that the next war-loan payment is
+       deferred pending a review of the House's exposure
+  out: Caldrath's campaign chest runs a month short
+  lev: Meranto holds the loan and its terms
+```
+
+*Caldrath:* Aggressor, so it acts. The [target] is the faction most in its way: Essaveth, which it would pick anyway as a Hostile AA. It is written as a competent Caldrath player would write it: the strongest version, using the army it actually has.\
+*Meranto:* Schemer, odd turn, so it acts, but its deal obligation replaces the table roll. Keeping the deal costs it nothing yet, so no check.
+
+### 5. Adjudicate
+
+```
+(note: Essaveth and Caldrath are in conflict)
+
+@(Essaveth)
+d: Strong +[Pass Wardens] 2d6kh1[3,5]=5 -> Success
+(ruling: Pass Wardens on Strong leverage: the 5 counts as a 6)
+
+@(Caldrath)
+d: Strong 2d6kh1[4,4]=4 -> Success
+
+d: Conflict Essaveth 6 vs Caldrath 4 -> Essaveth prevails
+=> The gates stay shut; the herald is turned away at the first tower
+=> Caldrath's outcome is worse than desired: the army does not cross
+tbl: Especially Good d6=4 -> Weakens a rival
+=> The army stood in sight of the walls and did nothing; every
+   court on the peninsula hears of it by week's end
+(note: doubles on Caldrath's roll; no Force of Nature fits yet, declined)
+
+@(Meranto)
+d: Unopposed -> Success
+=> Caldrath's treasury receives the deferral notice
+=> Caldrath's chancellor knows who is squeezing the war chest
+```
+
+*Grades:* both sides pass the checklist. Essaveth's control of the passes is in its Position; Caldrath's army is in its Position and in sight. Strong against Strong. The Pass Wardens turn Essaveth's 5 into a 6, and the higher kept die prevails.\
+*Doubles:* the rules allow a Force of Nature, but no thread is ready to carry one. Saving it costs nothing.\
+*Friction on Meranto's unopposed success:* the deferral works, but Caldrath now has a reason to look at Meranto. That is the hook.
+
+### 6. Signals and Notice
+
+```
+tbl: Caldrath Signal d6=3 -> Warning
+=> The herald's parting words: "The King does not ask twice."
+tbl: Meranto Signal d6=5 -> Exposure
+=> Meranto's couriers in the passes are now visible to Caldrath's scouts
+```
+
+Essaveth took no covert action, so there is no notice check. The deal with Meranto is private: it goes in the log, and a crumb goes in the Report.
+
+### 7. Update
+
+```
+[Rival:Meranto|disp:Neutral>Open]
+(note: Essaveth kept its side of the deal)
+[Clock:Crisis+1]
+[Standing:Board|order:Meranto, Caldrath, Essaveth]
+[Thread:The herald's warning|Open]
+[Thread:Meranto's couriers in the passes|Open]
+```
+
+Caldrath stays Hostile: it was harmed, but it is already at the floor. No AA rolled a 6 or a 1, so no table changes. Essaveth won the exchange but stays last in Standing: a small state that shut a gate is still a small state, and the Opportunist rules of a fuller game would still find it.
+
+### 8. The Report
+
+```
+\---
+Twelve days after the Arbiter's death, the peninsula waits on
+the northern passes.
+
+Essaveth closed its gates to armed movement on the 13th. A
+Caldrath herald demanding passage was turned away at the first
+tower while the army stood drawn up below the walls. The army
+has not moved. The herald's last words are being repeated in
+every market on the peninsula: "The King does not ask twice."
+
+Caldrath's treasury has received notice from House Meranto
+deferring the next payment on its war loans. The chancellor
+has made no public reply.
+
+Merchants report unfamiliar couriers using the gate towers'
+stables, paid in Meranto silver.
+
+A shut gate has stopped an army once. Everyone is now asking
+how long it can do it again.
+---\
+```
+
+The couriers are the crumb for the private deal. The herald's words, the chancellor's silence and the stables are hooks for next turn: Caldrath has a reason to turn on Meranto, Meranto's Exposure gives it a target, and the Crisis Clock will reach its first Escalation, *blood at the passes*, at the end of Turn 2.
+
+## Appendix C: Scenario Generator
+
+Build a new solo scenario in about half an hour. The tables are genre-neutral: read every entry through the setting you have in mind, whether that is fantasy kingdoms, Renaissance city-states, a colonial frontier, a mining colony or a boardroom.
+
+**Reading d66:** roll two dice, one after the other. The first is the tens, the second the units: a 3 then a 5 is 35.
+
+When a result does not fit, reroll it or bend it. When two results seem to contradict each other, look twice before rerolling: the gap between them is often where the scenario is.
+
+### Procedure
+
+1. **The Problem:** roll an Event, an Absence and a Stake; write one sentence.
+2. **Factions:** for each of three to five factions, roll an Archetype, a secondary leverage, a Stance, a Vulnerability and a Tie.
+3. **Briefs:** turn each faction's rolls into objectives and a Position. One becomes yours; the rest become AAs.
+4. **AA tables:** give each AA the generic Action Table and Secret Table for its leverage type, then customize at least two entries of each.
+5. **The Crisis Clock:** two Escalations and a Breaking Point.
+6. **The Map:** the seat of the absence, plus a location for each faction and one or two more.
+7. **Check it.**
+
+### 1. The Problem
+
+**The Event: what just happened (d66)**
+
+| d66 | Death and succession | d66 | Collapse and failure |
+| :-- | :------------------- | :-- | :------------------- |
+| 11 | The ruler dies with no named heir | 21 | The largest bank defaults |
+| 12 | The founder dies, leaving a will that satisfies no one | 22 | The treasury runs dry |
+| 13 | The heir is proved illegitimate | 23 | The army mutinies over pay |
+| 14 | Two heirs are proclaimed on the same day | 24 | The governing council deadlocks and dissolves |
+| 15 | The ruler abdicates | 25 | The great work fails: the dam, the wall, the canal |
+| 16 | The guarantor of the peace is assassinated | 26 | The protecting power withdraws |
+
+| d66 | Discovery and arrival | d66 | Violence |
+| :-- | :-------------------- | :-- | :------- |
+| 31 | A rich resource is found under contested ground | 41 | A massacre no faction admits to |
+| 32 | A new route opens that bypasses the old one | 42 | A coup half-succeeds in the capital |
+| 33 | A foreign envoy arrives with an offer for whoever can sign | 43 | A border skirmish kills someone who mattered |
+| 34 | Refugees arrive in numbers no one can absorb | 44 | Raiders take the main road |
+| 35 | A new technique makes an old monopoly worthless | 45 | A fortress changes hands overnight |
+| 36 | A lost claimant returns, with proof | 46 | A ceasefire breaks, and both sides deny firing first |
+
+| d66 | Disaster | d66 | Rupture |
+| :-- | :------- | :-- | :------ |
+| 51 | Plague | 61 | A treaty expires and cannot be renewed as written |
+| 52 | The harvest fails | 62 | A leaked document proves a long-standing lie |
+| 53 | A flood moves the river that marked the border | 63 | The dominant faith splits over a doctrine |
+| 54 | Fire destroys the archive of deeds and treaties | 64 | A province declares independence |
+| 55 | A storm wrecks the only port | 65 | An election result is disputed |
+| 56 | The water source begins to fail | 66 | A charter or monopoly is revoked |
+
+**The Absence: what is now missing (d66)**
+
+| d66 | Authority | d66 | Law and record |
+| :-- | :-------- | :-- | :------------- |
+| 11 | A recognized ruler | 21 | A court whose rulings bind |
+| 12 | An arbiter every faction accepts | 22 | An agreed record of who owns what |
+| 13 | A council that can still decide | 23 | A treaty that holds the borders |
+| 14 | A single voice to speak for the region abroad | 24 | A law that covers the new situation |
+| 15 | A commander the army obeys | 25 | An accepted count of votes or claims |
+| 16 | Anyone entitled to summon the assembly | 26 | A precedent everyone recognizes |
+
+| d66 | Security | d66 | Wealth |
+| :-- | :------- | :-- | :----- |
+| 31 | A force that keeps the roads safe | 41 | A currency everyone accepts |
+| 32 | A ceasefire anyone trusts | 42 | Credit, for anyone |
+| 33 | The protection of a greater power | 43 | A buyer for the region's main export |
+| 34 | A garrison in the contested place | 44 | The funds to pay what is owed |
+| 35 | Neutral ground where enemies can meet | 45 | An agreed share of the tolls and revenues |
+| 36 | A common enemy to keep rivals in line | 46 | A single market |
+
+| d66 | Resources and routes | d66 | Belief and legitimacy |
+| :-- | :------------------- | :-- | :-------------------- |
+| 51 | Enough water or grain for everyone | 61 | An official faith |
+| 52 | Safe passage through the only route | 62 | A ruler blessed by tradition |
+| 53 | An agreed claim on the new resource | 63 | A story about the past that everyone believes |
+| 54 | Control of the only port | 64 | The consent of the governed |
+| 55 | The supply everyone depends on | 65 | A symbol that confers the right to rule: a crown, a seal, a relic |
+| 56 | Working infrastructure: the bridge, the canal, the line | 66 | A founding promise that still holds |
+
+**The Stake: what happens if no one resolves it (d6).** This is the Breaking Point of the Crisis Clock.
+
+| d6 | Breaking Point |
+| :- | :------------- |
+| 1 | Open war breaks out |
+| 2 | The old order lapses for good: the treaty, the charter, the mandate |
+| 3 | An outside power steps in and imposes its own settlement |
+| 4 | The contested resource runs out or is ruined |
+| 5 | The people rise and take matters into their own hands |
+| 6 | The region splits apart |
+
+**Writing the sentence.** Name the event, the place, and the absence:
+
+> *[The Event] has left [the region] without [the Absence].*
+
+Make every part specific: a named ruler, a named river, a named treaty. Leave the Stake out of the sentence; it belongs to the Clock. Then apply the **Three-Angles Test**: can you argue for three different responses from three different positions, none obviously right? If not, reroll the Absence.
+
+### 2. Factions
+
+Roll three to five factions. One will be yours.
+
+**Archetype (d66).** The first die is the faction's **primary leverage**.
+
+| d66 | Military | d66 | Economic | d66 | Geographic |
+| :-- | :------- | :-- | :------- | :-- | :--------- |
+| 11 | A standing army under an ambitious commander | 21 | A banking house | 31 | A small state holding the pass |
+| 12 | A mercenary company | 22 | A merchant league | 32 | A port city |
+| 13 | A border garrison | 23 | A craft guild | 33 | A river toll lord |
+| 14 | A fleet | 24 | A chartered trading company | 34 | A frontier settlement |
+| 15 | A militant religious order | 25 | A great landowning family | 35 | The holders of the mine or the well |
+| 16 | A warlord's household | 26 | A smuggling ring | 36 | A fortress town at the crossroads |
+
+| d66 | Informational | d66 | Legitimacy | d66 | Popular |
+| :-- | :------------ | :-- | :--------- | :-- | :------ |
+| 41 | A spy network | 51 | A priesthood | 61 | A workers' league |
+| 42 | A press or broadsheet | 52 | A high court | 62 | A peasant movement |
+| 43 | A university or archive | 53 | A dynasty in exile | 63 | A city crowd and its tribune |
+| 44 | The courier service | 54 | An ancient assembly | 64 | A refugee community |
+| 45 | A diplomatic corps without a state | 55 | An electoral college | 65 | A reform movement |
+| 46 | A secret society | 56 | The late ruler's household | 66 | A sect of the faithful |
+
+**Popular** leverage is numbers: crowds, strikes, votes, labor. Slow to direct, hard to stop, and dangerous to whoever it turns against.
+
+**Asymmetry.** If a faction rolls the same primary leverage as one already in the game, reroll the first die once. Two factions can share a type, but then they must use it differently.
+
+**Secondary leverage (d6).** 1 Military, 2 Economic, 3 Geographic, 4 Informational, 5 Legitimacy, 6 Popular. Reroll if it matches the primary.
+
+**Stance: how the Problem touches it (d6).** The Stance gives the faction its objectives and a suggested behavior rule.
+
+| d6 | Stance | Short-term objective | Long-term objective | Behavior |
+| :- | :----- | :------------------- | :------------------ | :------- |
+| 1 | **Claimant**: wants to fill the absence | Seize the seat of the absence, or be first to act as what is missing | Be recognized as what is missing | Aggressor |
+| 2 | **Guardian**: wants the old order back, with itself at the center | Be acknowledged as indispensable to any settlement | Restore what is missing under its own oversight | Balancer |
+| 3 | **Threatened**: may not survive the change | Win guarantees from two factions before the first Escalation | Have its survival written into the new order | Consolidator |
+| 4 | **Opportunist**: the change frees it | Use the crisis to throw off its worst burden | Make the new order better for it than the old | Opportunist |
+| 5 | **Creditor**: everyone owes it something | Turn two factions' obligations into leverage before the order is settled | Have its claims protected in whatever comes next | Schemer |
+| 6 | **Outsider**: was never part of the old order | Win a seat where the settlement will be decided | Be part of the new order on equal terms | Reactor |
+
+A scenario needs at least one **Claimant** and one **Threatened**. If none came up, change the stance of the faction that fits best.
+
+**Vulnerability (d6).**
+
+| d6 | Vulnerability |
+| :- | :------------ |
+| 1 | In debt to another faction |
+| 2 | Divided at the top |
+| 3 | On a deadline: its strength lasts weeks, not months |
+| 4 | Compromised by a public past: a rebuke, a defeat, a scandal |
+| 5 | Dependent on a route or supply another faction controls |
+| 6 | Has no force of its own |
+
+**Tie (d6).** Roll once for each faction, with a random other faction.
+
+| d6 | This faction... |
+| :- | :-------------- |
+| 1 | Owes the other |
+| 2 | Is owed by the other |
+| 3 | Has an old grievance against the other |
+| 4 | Has a secret understanding with the other |
+| 5 | Wants the same thing as the other |
+| 6 | Shares an enemy with the other |
+
+### 3. Briefs
+
+Turn the rolls into sentences. Make each specific: replace "the seat of the absence" with the named place, "its worst burden" with the named tariff or treaty.
+
+- **Objectives:** the Stance templates, made specific. Apply the Pithy Test: add "!" and read it aloud. It should sound like something a faction leader would shout.
+- **Position:** three bullets. One asset from the Archetype and its leverage, one Vulnerability, one Tie. Ask of each: could two people read this bullet and argue different things from it? If so, make it more specific.
+- **Bonus:** one named, scoped bonus for your faction; optionally one per AA.
+- **Your faction:** pick one, or roll. Everyone else becomes an AA: objective (the short-term one), position (the asset and the vulnerability), leverage, behavior rule (the Stance's suggestion, or roll), starting disposition (Wary if its objectives conflict with yours, Open if they align, Neutral otherwise).
+
+### 4. Generic AA Action Tables
+
+Start each AA with the table for its primary leverage. Then rewrite at least two entries to name real places, assets and rivals from the scenario.
+
+| d6 | Military | Economic | Geographic |
+| :- | :------- | :------- | :--------- |
+| 1 | Move forces to take or hold the contested place | Buy what its objective needs: votes, land, loyalty | Assert control of its ground: tolls, permits, patrols |
+| 2 | Show force to back its claim: a march, a review, a patrol | Fund a faction whose success serves its objective | Grant passage to a faction that serves its objective |
+| 3 | Demand concessions from [target] under threat of force | Call in debts from, or raise prices on, [target] | Close its route or territory to [target] |
+| 4 | Strike [target]'s exposed asset: a depot, an escort, an outpost | Buy up or cut off [target]'s supplies or credit | Raise the price of passage for [target] |
+| 5 | Recruit, hire or resupply | Move its money to safety | Fortify, survey or settle its ground |
+| 6 | Open hostilities against [target] | Freeze credit or trade across the region | Cut the route entirely until its terms are met |
+
+| d6 | Informational | Legitimacy | Popular |
+| :- | :------------ | :--------- | :------ |
+| 1 | Spread its version of the crisis | Proclaim the rule by which the crisis must be settled | Rally in the streets for its demand |
+| 2 | Trade a secret to a faction that serves its objective | Recognize or endorse a faction that serves its objective | Lend its numbers to a faction that serves its objective |
+| 3 | Investigate [target] (on a success, roll its Secret Table) | Withhold recognition from [target], and denounce it | Strike, boycott or picket [target] |
+| 4 | Leak something damaging about [target] | Produce a precedent, document or ruling against [target] | Occupy or wreck [target]'s property |
+| 5 | Plant agents, or protect its own sources | Convene a council, summit or hearing | Organize: choose leaders, raise a fund, recruit |
+| 6 | Publish a revelation that changes the crisis | Name a successor, deliver a verdict, or cast someone out | Rise: a general strike or open revolt |
+
+**Secret Tables.** Use the generic tables in Part VI. For Popular factions:
+
+| d6 | Popular |
+| :- | :------ |
+| 1 | Its leaders are paid by another faction |
+| 2 | It is far smaller than it looks |
+| 3 | A splinter wants violence and is arming |
+| 4 | Its central grievance rests on a falsehood |
+| 5 | One of its leaders is an informer |
+| 6 | It is about to split over the crisis |
+
+Rewrite at least two entries of each AA's Secret Table to connect it to another faction: a debt, a hidden understanding, a shared lie. Secrets that tie factions together are the ones that change a game when they surface.
+
+### 5. The Crisis Clock
+
+Length: the number of turns minus one. The Breaking Point is the Stake. Roll two Escalations (reroll a duplicate), mark them at about one third and two thirds of the track, and make each one specific to the Problem.
+
+| d6 | Escalation |
+| :- | :--------- |
+| 1 | **Blood:** the first deaths that can be blamed on someone |
+| 2 | **Shortage:** prices spike; something everyone needs runs short |
+| 3 | **Outside interest:** an envoy, a fleet or an army appears at the edge of the map |
+| 4 | **Defection:** someone important inside one faction changes sides |
+| 5 | **Public anger:** crowds gather and demand that someone act |
+| 6 | **Deadline:** a date is set after which something becomes final |
+
+Check each Escalation: does it hurt at least two factions, differently? Does it open an option that did not exist before?
+
+### 6. The Map
+
+Start with the **seat of the absence**: the place where what is missing used to live (the capital, the court, the dam, the temple). It is contested. Give each faction a home location. Then roll one or two more locations, so the map has three to five places in all.
+
+| d6 | Location |
+| :- | :------- |
+| 1 | A crossing: a pass, a bridge, a ford |
+| 2 | A harbour or station |
+| 3 | A source: a mine, a well, rich fields |
+| 4 | A stronghold |
+| 5 | A market or exchange |
+| 6 | A shrine, archive or court |
+
+Draw the connections. Ask which faction must pass through another's ground to reach the contested place. That route is where the first conflict will happen.
+
+### 7. Check It
+
+- [ ] The Problem is one sentence and passes the Three-Angles Test.
+- [ ] There is at least one Claimant and one Threatened faction.
+- [ ] Each faction's objectives conflict with at least one AA's, and yours conflict with at least two.
+- [ ] No two factions use the same leverage the same way.
+- [ ] Every Position bullet is specific enough to argue from.
+- [ ] Every AA has at least two customized Action Table entries and two customized Secret Table entries.
+- [ ] Each Escalation hurts at least two factions differently.
+
+### Example
+
+**Rolls:** Event 53 (a flood moves the border river), Absence 23 (a treaty that holds the borders), Stake 1 (open war).
+
+> *The spring flood that moved the Varn into its old bed has left the Three Valleys without a treaty that holds their borders.*
+
+Three factions:
+
+| Archetype | Leverage | Stance | Vulnerability | Tie |
+| :-------- | :------- | :----- | :------------ | :-- |
+| 33 River toll lord, the House of Esk | Geographic / Economic | Threatened | 5 Its toll stations depend on the river's course | 2 Is owed by the garrison |
+| 13 Border garrison of Harrow Ford | Military / Legitimacy | Claimant | 3 Its supplies last weeks, not months | 1 Owes the toll lord |
+| 52 The Valley Court | Legitimacy / Informational | Guardian | 6 Has no force of its own | 4 Secret understanding with the garrison |
+
+- **The House of Esk** (Threatened). Short-term: *"Get the Court and the garrison to swear our stations stand, before the first blood is spilled!"* Long-term: *"Write the toll rights into whatever treaty redraws the Varn!"* Its toll stations are now on the wrong bank.
+- **Harrow Ford** (Claimant). Short-term: *"Plant the garrison's banner on the new bank first!"* Long-term: *"Make the garrison commander the warden of the Three Valleys!"* It owes Esk for a winter's grain, and its stores will not last the summer.
+- **The Valley Court** (Guardian). Short-term: *"No new border is lawful until the Court rules on it!"* Long-term: *"Put the Court's survey above every claim in the valleys!"* It has no force of its own, and it has quietly promised the garrison commander a favorable ruling.
+
+The conflicts are already there. The garrison needs Esk's grain and wants Esk's ground. The Court's secret promise to the garrison betrays the river lord who believes the Court will protect him. Escalations, rolled: 1 **Blood** (a toll keeper drowned at the new ford) and 3 **Outside interest** (the duke downstream sends surveyors). The Breaking Point is **open war** between the valleys.
+
+## Glossary
+
+**AA (Autonomous Actor)**: A faction run by its brief, behavior rule and tables instead of a player.
+
+**Action Table**: Six actions an AA might take, rolled on d6 each turn it acts.
+
+**Behavior Rule**: How an AA chooses what to do and whom to target: Consolidator, Aggressor, Opportunist, Balancer, Reactor, Schemer.
+
+**Crisis Clock**: A track that advances each turn as the Problem worsens, with three Escalations ending in a Breaking Point.
+
+**Deal**: An agreement with an AA, struck through an Offer. Its obligations replace the AA's table roll; it may break.
+
+**Disposition**: An AA's attitude toward you: Hostile, Wary, Neutral, Open, Allied. Sets offer odds, targeting and deal-keeping.
+
+**Escalation**: A specific worsening of the Problem, triggered when the Crisis Clock reaches its box.
+
+**Holding**: An AA's turn of consolidation when its behavior rule says it does not act.
+
+**Offer**: A deal you propose to an AA, answered by the Oracle.
+
+**Oracle**: A yes/no question answered with dice: Likely keeps the higher of 2d6, Even rolls 1d6, Unlikely keeps the lower.
+
+**Rumor**: A Secret rolled on a partial investigation result; unconfirmed until verified or until it pays off.
+
+**Secret Table**: Six things that might be true about an AA. Only the one rolled when uncovered becomes true.
+
+**Signal**: An AA's unprompted communication, rolled after adjudication: warning, offer, exposure or windfall.
+
+**Stance**: In the Scenario Generator, how the Problem touches a faction: Claimant, Guardian, Threatened, Opportunist, Creditor or Outsider. It sets the faction's objectives.
+
+**Standing**: A ranking of every faction from Dominant to Exposed, revised each turn, used by AA behavior rules.
+
+**Thread**: An unresolved hook from a past Report, kept on a numbered list.
+
+## Credits & License
+
+© 2026 Roberto Bisceglie
+
+The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.
+
+This work is licensed under Creative Commons Attribution-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/

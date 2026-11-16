@@ -4,7 +4,7 @@ date: 2026-05-03
 lang: en
 license: CC BY-SA 4.0
 title: The Open Strategy Game Handbook
-version: 0.1
+version: 1.0
 ---
 
 # Introduction
@@ -125,15 +125,15 @@ This format does four things:
 
 This example shows how leverage works: not a list of credentials, but a specific argument for why this action is likely to produce this outcome given this fictional context. More on leverage in Chapter 2.
 
-> Action template
->
-> Actor: (your faction) Turn: (turn number)
->
-> Action: What specifically are you doing?
->
-> Outcome: What result do you want from this action?
->
-> Leverage: Why is this action likely to produce that outcome? Ground it in established fiction: resources, relationships, position, prior actions.
+::: {.callout-note title="Action template"}
+**Actor:** *(your faction)* **Turn:** *(turn number)*
+
+**Action:** What specifically are you doing?
+
+**Outcome:** What result do you want from this action?
+
+**Leverage:** Why is this action likely to produce that outcome? Ground it in established fiction: resources, relationships, position, prior actions.
+:::
 
 ## Private Submission
 
@@ -213,7 +213,7 @@ When players publicly argue the merits of each other's actions before adjudicati
 
 The OSG model favors what Chris McDowall called Benevolent Dictatorship: one referee, full authority, no public argument. The referee reads the submitted Action, assesses it against the established fiction, and rules.
 
-The trade-off is real. Players trust the referee to be fair, and the referee must earn that trust by being consistent, explaining outcomes in the report, and never letting their own preferences about how the story should go influence adjudication of how a player's action was likely to succeed. The upside is a game that moves and a referee who can adjudicate creatively without getting talked out of interesting outcomes by the loudest voice at the table.
+The trade-off is real. Players trust the referee to be fair, and the referee must earn that trust by being consistent, explaining outcomes to each Actor in private feedback, and never letting their own preferences about how the story should go influence adjudication of how a player's action was likely to succeed. The upside is a game that moves and a referee who can adjudicate creatively without getting talked out of interesting outcomes by the loudest voice at the table.
 
 ## Leverage: Strong and Weak
 
@@ -249,6 +249,8 @@ When an Action faces opposition, the referee rolls two six-sided dice.
 **4–6:** The desired outcome occurs. On a 6, something especially good for the Actor may also occur.  
 **1–3:** The action proceeds, but the outcome is worse than desired. On a 1, something especially bad may also occur.
 
+In numbers: Strong leverage produces the desired outcome 75% of the time, Weak leverage 25% of the time. A 6 comes up on about 31% of Strong rolls and 3% of Weak ones; a 1 on about 3% of Strong rolls and 31% of Weak ones. Doubles (a possible Force of Nature) come up on one roll in six regardless of leverage.
+
 ```mermaid
 flowchart TD
     Start([Action Faces Opposition]) --> Assess{Assess Leverage}
@@ -261,7 +263,7 @@ flowchart TD
     Resolve -->|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
     Resolve -->|4 or 5| Success[Success: Desired outcome occurs]
     Resolve -->|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
-    Resolve -->|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+    Resolve -->|1| FailureExtra[Action proceeds, outcome worse than desired + potential extra complication]
 
     SuccessExtra --> CheckRAT[Apply RAT Checklist]
     Success --> CheckRAT
@@ -275,6 +277,34 @@ flowchart TD
 This mechanic is deliberately simple. It preserves narrative bias, the action is certain to proceed in some form, outcomes are variable, without the complexity of modifier stacking. A +2 modifier on a 2d6 system produces results that are technically more precise but require a probability table to interpret intuitively. Keep-high or keep-low is immediately comprehensible: strong leverage gives you a good shot, weak leverage gives you a poor one.
 
 The mechanic also resists the temptation to treat adjudication as arithmetic. A referee who reaches for a specific modifier for every factor in an action will produce inconsistent results because the factors resist exact commensuration. The qualitative assessment, strong or weak, requires judgment but rewards it.
+
+## Actions in Conflict
+
+Sometimes two Actors' actions oppose each other directly: Caldrath marches on the northern passes in the same turn Essaveth closes them. Both actions are opposed, and each is the other's opposition. Adjudicate both with the same mechanic, then compare.
+
+1.  Grade each action's leverage Strong or Weak against the other action.
+2.  Roll 2d6 for each and keep the high or low die as usual.
+3.  If both outcomes can be true at once, both occur as rolled.
+4.  If they cannot, the higher kept die prevails. That action's result is read normally. The other action's outcome is worse than desired, whatever its die showed; on a 1, something especially bad may also occur.
+5.  On a tie, neither prevails. Both outcomes are worse than desired: a standoff. Write friction into the report for both sides.
+
+When three or more actions collide, compare all kept dice. The highest prevails; a tie at the top is a standoff among the tied Actors, and everyone below it gets an outcome worse than desired.
+
+The comparison adds a step but no new mechanic, and it keeps the grades meaningful. Strong leverage beats Weak about three times in four (77%, with 11% ties); two Actors with equal grades prevail about equally often, with a standoff a little over one time in five. A standoff is not a null result. Two factions that pushed against each other and both came away short is a fact the report should make visible, and other Actors will want to exploit it.
+
+Doubles on either roll may still prompt a Force of Nature.
+
+## Joint Actions
+
+Two or more Actors may pool their turns into a single action: a coalition assault, a joint treaty proposal, a ritual that needs several hands.
+
+-   **Each participant spends its action.** No participant submits a separate action that turn.
+-   **One submission, specific contributions.** The joint action uses the standard format. The Leverage section names what each participant brings: a resource, a position, a relationship the action actually needs. A participant who contributes nothing specific has not joined; the referee returns the submission.
+-   **Each participant confirms privately.** Every participant sends its own confirmation to the referee before the deadline. Talking is free and so is lying: an Actor who agreed to join but does not confirm has not joined. The joint action proceeds without that contribution, its leverage is regraded, and the absent Actor's own action, if it submitted one, is adjudicated normally. The betrayal is a fact the report can show.
+-   **One grade, one roll.** The referee grades the combined leverage once and rolls once. Combined leverage is not automatically Strong; three weak contributions can still add up to Weak.
+-   **Shared outcome, shared friction.** The outcome lands on every participant. The referee may distribute its consequences unevenly, as long as each participant's share is traceable to what it contributed.
+
+Joint actions are powerful because they cost several Actors their whole turn. That cost is the balance: a coalition that spends three actions on one goal has left three other fronts uncovered.
 
 ## Force of Nature
 
@@ -296,9 +326,11 @@ Before writing any outcome, success or failure, the referee should check it agai
 
 **Traceable.** Can you point to earlier events in the fiction that led to this outcome? Does the result feel like a consequence of decisions already made, rather than something that came from nowhere? If a Senator turns out to be a traitor, was his name at least mentioned in a prior report? Traceability keeps the game's causality coherent and rewards players who have been paying attention.
 
-> RAT: quick check
->
-> Reasonable: proportionate to the action and the fiction? Actionable: does it leave at least one hook for another Actor? Traceable: can you point to an earlier event that led here?
+::: {.callout-tip title="RAT: quick check"}
+**Reasonable:** proportionate to the action and the fiction?\
+**Actionable:** does it leave at least one hook for another Actor?\
+**Traceable:** can you point to an earlier event that led here?
+:::
 
 A worked example: Essaveth attempts to establish a secret communication channel to Saivorn, bypassing Caldrath's intelligence network.
 
@@ -346,15 +378,15 @@ The referee's reasoning belongs in private feedback to the Actor, not in the pub
 
 Write short. Longer reports get skimmed. A report with eight short paragraphs, one per Action, with a brief observation at the end, is better than a three-page narrative recap that buries the hooks.
 
-> Example report: Turn 3, The Corentine Succession
->
-> The Conclave formally claimed ratification authority over any successor treaty at a public session in Corenth on the 12th. Caldrath's representatives objected and withdrew. The claim stands as public record regardless. ← outcome stated as fact; no adjudication reasoning
->
-> House Meranto's debt review notice against Caldrath's treasury has entered its second week. Caldrath has not responded publicly. Three Meranto agents were observed near the northern garrison road on the 14th. ← private outcome partially surfaced as a traceable crumb; the agents are now a public fact
->
-> Essaveth closed the northern passes to unsanctioned military movement late on the 13th. A small Caldrath advance unit turned back without incident. The passes remain open to commercial traffic. ← outcome with friction; Caldrath did not get what it wanted, but the door is not closed
->
-> The peninsula is watching Caldrath. Whatever they do next, they will do it visibly. ← closing observation; open thread not owned by any single Actor
+::: {.callout-note title="Example report: Turn 3, The Corentine Succession"}
+The Conclave formally claimed ratification authority over any successor treaty at a public session in Corenth on the 12th. Caldrath's representatives objected and withdrew. The claim stands as public record regardless. *← outcome stated as fact; no adjudication reasoning*
+
+House Meranto's debt review notice against Caldrath's treasury has entered its second week. Caldrath has not responded publicly. Three Meranto agents were observed near the northern garrison road on the 14th. *← private outcome partially surfaced as a traceable crumb; the agents are now a public fact*
+
+Essaveth closed the northern passes to unsanctioned military movement late on the 13th. A small Caldrath advance unit turned back without incident. The passes remain open to commercial traffic. *← outcome with friction; Caldrath did not get what it wanted, but the door is not closed*
+
+The peninsula is watching Caldrath. Whatever they do next, they will do it visibly. *← closing observation; open thread not owned by any single Actor*
+:::
 
 ## Hook-Seeding
 
@@ -394,7 +426,7 @@ Traceability is the hardest criterion in reports. It requires the referee to rem
 
 # Chapter 4: Roles Beyond Actors
 
-This chapter is for groups larger than eight players. If your game has five to eight Actors and no overflow, skip to Chapter 5.
+This chapter is for groups with more players than the scenario has Actors. If every player has a faction, skip to Chapter 5.
 
 ## The Overflow Problem
 
@@ -505,7 +537,7 @@ This is design work, not rule-following. The Dreaming Dragonslayer sketches are 
 
 > [!NOTE] This chapter documents one named portable sub-role (Consultant) and one Actor-level distribution mechanism (team Actor). Other patterns, collective factions controlled by random selection, voting blocs with formalized deliberation procedures, appear in some OSG discussions but are scenario-specific designs, not established portable sub-roles. They are not documented here as such.
 
-> [!NOTE] Appendix G includes the Corentine Succession faction briefs. The scenario was designed for six Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.
+> [!NOTE] Appendix G includes the Corentine Succession faction briefs. The scenario was designed for five Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.
 
 # Chapter 5: The Debrief
 
@@ -731,7 +763,7 @@ A useful discipline: before writing anything else, draft three bullets that capt
 
 If you cannot write these three bullets clearly and distinctly, you do not yet know the faction well enough to design its brief. Go back and think harder about what makes it specific.
 
-From *The Corentine Succession*, the Principality of Essaveth:
+The finished Position field should carry the same three answers. From *The Corentine Succession*, the Principality of Essaveth's position:
 
 > -   Your principality sits at the peninsula's geographic crossroads. Caldrath's army cannot reach Corenth from the north without passing through or around your territory.
 > -   The Arbiter's last major treaty created your current borders. Without it, Caldrath has a historical claim on your northern province that predates Vethara's arbitration.
@@ -752,6 +784,8 @@ The primary leverage types:
 **Geographic.** Control of territory, chokepoints, or transit routes. Static but often decisive; whoever controls the northern passes controls what moves between Caldrath and Corenth.
 
 **Informational.** Intelligence, secrets, communications infrastructure, propaganda capability. Hard to assess from outside, creates uncertainty, enables surprise.
+
+The list is a starting point, not a closed set. Scenarios regularly add their own: *legitimacy* (the authority to recognize or refuse, as the Conclave holds), *diplomatic* (being the party everyone needs neutral), *symbolic* (precedent, faith, prophecy). Name the type explicitly when you add one, so players and referee agree on what it covers.
 
 A good Actor design gives each faction a clear primary leverage type and a secondary type that creates interesting tradeoffs. Caldrath has military leverage but needs Meranto's financial patience. House Meranto has economic leverage but no hard power. These asymmetries are what make alliances interesting: factions need each other because they are strong where others are weak.
 
@@ -791,17 +825,17 @@ For groups above eight players, use the Extras system (Chapter 4) to accommodate
 
 The five Corentine factions, read against the three-bullet framework:
 
-**Republic of Saivorn.** *Is:* the peninsula's commercial hegemon, with no army. *Wants:* trade routes stable, no single power dominating. *Unlike others:* the only faction that benefits from a new order rather than the old one restored; the Arbiter's last treaty cost them. Primary leverage: economic (controls both ports) + informational (commercial networks across the peninsula).
+**Republic of Saivorn.** *Is:* the peninsula's commercial hegemon, with no army. *Wants:* trade routes stable, no single power dominating. *Unlike others:* the only faction that benefits from a new order rather than the old one restored; the Arbiter's last treaty cost them. Primary leverage: geographic (controls both deep-water ports) + economic (the trade that flows through them).
 
-**Kingdom of Caldrath.** *Is:* the strongest military force, with a legitimacy deficit. *Wants:* fill the power vacuum, be recognized as the new authority. *Unlike others:* the only faction that can impose a settlement by force, but doing so would delegitimize any settlement it imposes. Primary leverage: military (largest army, positioned near Corenth) + geographic (controls the northern approaches).
+**Kingdom of Caldrath.** *Is:* the strongest military force, with a legitimacy deficit. *Wants:* fill the power vacuum, be recognized as the new authority. *Unlike others:* the only faction that can impose a settlement by force, but doing so would delegitimize any settlement it imposes. Primary leverage: military (largest army, camped at the foot of the northern passes) + geographic (controls the northern approaches).
 
-**The Conclave.** *Is:* the body that ratified everything, now holding the original documents. *Wants:* ensure no successor order marginalizes them; ideally institutionalize their ratification authority permanently. *Unlike others:* the only faction whose leverage is entirely legitimacy; they cannot act, but they can refuse to recognize. Primary leverage: informational (holds the treaty originals, including unpublished clauses) + institutional (ratification authority).
+**The Conclave.** *Is:* the body that ratified everything, now holding the original documents. *Wants:* ensure no successor order marginalizes them; ideally institutionalize their ratification authority permanently. *Unlike others:* the only faction whose leverage is entirely legitimacy; they cannot act, but they can refuse to recognize. Primary leverage: legitimacy (ratification authority) + informational (holds the treaty originals, including unpublished clauses).
 
 **Principality of Essaveth.** *Is:* a small state whose existence is guaranteed by the old order. *Wants:* survive whatever comes next with its borders intact. *Unlike others:* the only faction for whom the problem statement is existential, not a crisis to exploit but a threat to outlast. Primary leverage: geographic (controls the passes Caldrath needs) + diplomatic (everyone needs Essaveth to stay neutral).
 
 **House Meranto.** *Is:* the banking consortium that financed everyone. *Wants:* its debts honoured, its status protected in any successor framework. *Unlike others:* the only faction with leverage over every other Actor simultaneously, and the only one that cannot use it without also hurting itself. Primary leverage: economic (holds Caldrath's debt, Saivorn's credits, the Conclave's loan) + informational (agents in every major city).
 
-Five factions. Five different leverage types. No two with identical interests. The problem, the collapse of the old framework, forces all five to respond, but in different directions, for different reasons. That is good Actor design.
+Five factions. Five different primary-plus-secondary leverage combinations. Where two share a type, they use it differently: Saivorn and Essaveth are both geographic, but one controls the sea and the other the land route; Saivorn and Meranto both have economic weight, but one moves goods and the other holds paper. No two with identical interests. The problem, the collapse of the old framework, forces all five to respond, but in different directions, for different reasons. That is good Actor design.
 
 # Chapter 9: Writing Briefs
 
@@ -973,11 +1007,11 @@ The Corentine map shows:
 
 -   **Corenth**: the central city, political seat of the old Arbiter, location of the Conclave's extraterritorial temple complex; the primary contested zone
 -   **Saivorn**: the republic's home territory, on the coast, with its two deep-water ports
--   **Caldrath**: the kingdom's heartland, to the north, currently garrisoning an army one day's march from Corenth
+-   **Caldrath**: the kingdom's heartland, to the north; its army is camped at the foot of the northern passes, three days' march from Corenth once through them
 -   **Essaveth**: the small principality, positioned between Caldrath and Corenth, controlling the northern passes
 -   **The Southern Coast**: merchant territory with no strong single power; where House Meranto's primary financial offices are located
 
-Connection lines show that Caldrath must pass through or around Essaveth to reach Corenth from the north. Saivorn has direct sea access to Corenth but no land route that avoids Essaveth's region. House Meranto has agents everywhere but no physical presence on the map that can be moved or threatened.
+Connection lines show that Caldrath must pass through or around Essaveth to reach Corenth from the north. Saivorn reaches Corenth by sea; the coast road is too poor to move anything that matters, so its goods, and any troops it hires, travel by ship. House Meranto keeps its offices on the Southern Coast, but its leverage is not located there: its agents are everywhere, and seizing a counting house does not cancel a debt. It is drawn off-map for that reason.
 
 ```mermaid
 graph TD
@@ -994,7 +1028,6 @@ graph TD
     Caldrath -->|Northern Passes / Garrison Road| Essaveth
     Essaveth -->|Passes Road| Corenth
     Saivorn -->|Sea Lanes / Port Access| Corenth
-    Saivorn -.->|No Direct Land Route| Corenth
     Meranto -.->|Financial Agents Everywhere| Corenth
     Meranto -.->|Financial Agents Everywhere| Saivorn
     Meranto -.->|Financial Agents Everywhere| Caldrath
@@ -1033,7 +1066,7 @@ A bonus is not the same as a trait.
 
 A **trait** is a persistent characteristic that strengthens leverage whenever it is contextually relevant. "Largest standing army on the peninsula" (Caldrath) is a trait; it applies to any action that involves military force or the credible threat of it, and it does not diminish with use. The referee considers it when grading leverage strength.
 
-A **bonus** is spent. "Emergency fuel reserve (1x)" can be used once to ensure a transit action succeeds at a critical moment. After that, it is gone, regardless of how the game continues.
+A **bonus** is spent. "Emergency fuel reserve (1x)" can be used once to strengthen a transit action at a critical moment. After that, it is gone, regardless of how the game continues.
 
 Design the right tool for the right purpose: traits for characteristics that are definitionally part of the faction's identity (they are always a military force, they always have the communications infrastructure), bonuses for specific assets that might be deployed strategically (the contract with the Belt refinery, the intelligence file they've been saving).
 
@@ -1050,6 +1083,12 @@ Design guidelines:
 -   A bonus should change the leverage grade for one action, not override the referee's assessment entirely
 -   A bonus should be contextually bounded; it applies in specific situations, not universally
 -   The narrative name of the bonus should indicate its scope ("Martian Water Rights (1x)" applies to water access disputes, not to military engagements on Earth)
+
+### Spending a Bonus on Strong Leverage
+
+Declare a bonus in the Leverage section when you submit the action. If the referee grades the action Weak, the bonus raises it to Strong. If the action is already Strong, the bonus instead improves the result: a kept 4 or 5 becomes a 6, so the desired outcome occurs and something especially good may also occur. A result of 1–3 is unchanged; the bonus is spent anyway. In an action in conflict, the improved result counts as a 6 for the comparison.
+
+This keeps the bonus a decision about timing rather than a guaranteed win: it never adds dice, never rescues a bad roll, and is worth most when spent on an action that is already well supported.
 
 Multiple uses of the same bonus ("Io Dust (3x)" vs. "Io Dust (1x)") represent different scarcity. A bonus with three uses is a recurring strategic resource. A single-use bonus is a trump card. Design for the experience you want: games with many multi-use bonuses feel resource-rich; games with mostly single-use bonuses create tension around when to deploy them.
 
@@ -1080,7 +1119,7 @@ Before finalizing the bonus list for a scenario:
 
 # Chapter 12: Non-Player Actors
 
-A Non-Player Actor (NPA) is a faction the referee controls rather than a player. It has a brief, submits actions each turn, and appears in the public report the same way any Actor does. From the table's perspective, an NPA is a faction with its own interests and behaviors. Only the referee knows it is referee-controlled.
+A Non-Player Actor (NPA) is a faction the referee controls rather than a player. It has a brief, submits actions each turn, and appears in the public report the same way any Actor does. From the table's perspective, an NPA is a faction with its own interests and behaviors. Players need not know it is referee-controlled (see below for running NPAs openly).
 
 The distinction matters for two reasons. First, NPAs are operated by the same person who adjudicates all actions, the referee, which creates a conflict of interest risk. Second, NPAs cannot represent themselves in negotiations: they are silent parties who act but do not converse. These constraints shape how NPAs should be designed and used.
 
@@ -1107,7 +1146,7 @@ Mitigations:
 
 ## Random-Controlled NPAs
 
-An alternative model: the NPA's action each turn is determined by a random table or dice roll rather than referee judgment. Extras using the Collective format (Chapter 4) can also run an NPA, several Extras each propose an action, and one is randomly selected.
+An alternative model: the NPA's action each turn is determined by a random table or dice roll rather than referee judgment. Overflow players can also run an NPA through a scenario-specific structure (Chapter 4): several Extras each propose an action, and one is randomly selected.
 
 Random control removes the referee bias risk entirely. It also produces genuinely unpredictable behavior, which models some NPA types better than deliberate referee choice: mob behavior, chaotic environmental forces, entities whose decision-making logic is opaque to rational analysis.
 
@@ -1192,7 +1231,7 @@ When assigning roles, consider:
 -   **Assertive, confrontational players** tend to do well with factions that benefit from overt pressure: military powers, creditors calling in debts, factions with early-game leverage that deteriorates if unused
 -   **Collaborative, negotiation-oriented players** tend to do well with factions that benefit from coalition-building: neutral brokers, factions whose leverage multiplies through alliance
 -   **Detail-oriented, systematic players** tend to do well with factions that accumulate positional advantage over time: factions whose strength comes from information, procedure, or bureaucratic legitimacy
--   **Improvisational players** tend to do well with wildcard factions whose brief is deliberately underspecified
+-   **Improvisational players** tend to do well with factions whose objectives are clear but whose means are deliberately open: few fixed assets, many possible routes (not the pure wildcard of Chapter 8, which has no objectives to anchor it)
 
 Typecasting is a recommendation, not a rule. In recurring groups where player preferences are known, it becomes intuitive. In one-shot games with unfamiliar players, the referee can ask players to name one or two factions that feel natural to them before assigning roles; this takes less than five minutes and substantially improves early-turn play quality.
 
@@ -1222,21 +1261,21 @@ Turn Zero questions generally fall into these categories:
 
 **NPC relationships.** "Is Faction X aligned with Y, or are they independent?" This often touches on private information the referee should not reveal; the answer may be "you'd need to investigate to find out."
 
-**Rules edge cases.** "If my action and another Actor's action both target the same location, do they happen simultaneously or does one go first?" The referee adjudicates all actions for a turn simultaneously, so the answer is usually that both happen and the referee determines the interaction.
+**Rules edge cases.** "If my action and another Actor's action both target the same location, do they happen simultaneously or does one go first?" The referee adjudicates all actions for a turn simultaneously. If both actions can succeed together, both happen; if they cannot, they are resolved as Actions in Conflict (Chapter 2).
 
-> Example: Turn Zero FAQ, The Corentine Succession
->
-> The following was distributed to all players before Turn 1.
->
-> Are the bilateral treaties currently void, or do they remain in force pending formal challenge? They remain technically in force. No faction has yet made a formal challenge. They will lapse automatically if not renewed within sixty days of the Arbiter's death, which means they expire at the end of Turn 4. Any faction may attempt to accelerate or delay that lapse through action.
->
-> Does Caldrath's historical claim on Essaveth's northern province revive automatically, or does it require a formal declaration? It requires a formal declaration. Until Caldrath makes one publicly, the claim is dormant. Other factions do not need to treat it as active unless Caldrath acts.
->
-> Is the Conclave's extraterritorial status in Corenth still in effect? Yes. It derives from the treaties, which are still technically in force. If the treaties lapse without renewal, the extraterritorial status becomes contested. The Conclave is aware of this.
->
-> Are mercenary companies available for hire, and at what cost? Two companies are currently operating on the peninsula. Both are expensive. Both are known to be in contact with more than one faction. Hiring one does not guarantee exclusivity.
->
-> Can factions communicate privately with each other outside of their submitted actions? Yes. Talking is a free action. Negotiations, threats, offers, and intelligence-sharing happen between turns and cost nothing. What you do as a result of those conversations costs a turn.
+::: {.callout-note title="Example: Turn Zero FAQ, The Corentine Succession"}
+*The following was distributed to all players before Turn 1.*
+
+**Are the bilateral treaties currently void, or do they remain in force pending formal challenge?** They remain technically in force. No faction has yet made a formal challenge. They will lapse automatically if not renewed within sixty days of the Arbiter's death, which means they expire at the end of Turn 4. Any faction may attempt to accelerate or delay that lapse through action.
+
+**Does Caldrath's historical claim on Essaveth's northern province revive automatically, or does it require a formal declaration?** It requires a formal declaration. Until Caldrath makes one publicly, the claim is dormant. Other factions do not need to treat it as active unless Caldrath acts.
+
+**Is the Conclave's extraterritorial status in Corenth still in effect?** Yes. It derives from the treaties, which are still technically in force. If the treaties lapse without renewal, the extraterritorial status becomes contested. The Conclave is aware of this.
+
+**Are mercenary companies available for hire, and at what cost?** Two companies are currently operating on the peninsula. Both are expensive. Both are known to be in contact with more than one faction. Hiring one does not guarantee exclusivity.
+
+**Can factions communicate privately with each other outside of their submitted actions?** Yes. Talking is a free action. Negotiations, threats, offers, and intelligence-sharing happen between turns and cost nothing. What you do as a result of those conversations costs a turn.
+:::
 
 ## What Not to Answer
 
@@ -1250,13 +1289,13 @@ The decline is itself a ruling: this information exists in the fiction, but you 
 
 OSG is format-flexible. The core structure, one action per Actor per turn, referee adjudicates, public report, works across a significant range of player counts. The dynamics change with scale.
 
-**3–5 Actors: tight economy.** Every faction matters more. With fewer players, each Actor's decisions have greater narrative weight; there are no background factions to absorb the consequences of inaction. Alliances form faster, often by Turn 2, and once formed tend to be stickier. Reports are short. The referee workload is light. This format is ideal for first games, for time-constrained sessions, and for scenarios with a tight, well-defined problem.
+**3–4 Actors: tight economy.** Below the sweet spot described in Chapter 8: you trade alliance depth for speed. Every faction matters more. With fewer players, each Actor's decisions have greater narrative weight; there are no background factions to absorb the consequences of inaction. Alliances form faster, often by Turn 2, and once formed tend to be stickier. Reports are short. The referee workload is light. This format suits a referee's first game, time-constrained sessions, and scenarios with a tight, well-defined problem.
 
 The challenge: with few Actors, the game can feel overdetermined. If three factions naturally align against two, the game resolves quickly with limited strategic maneuvering. Scenario design for small player counts should build in intra-alliance tension, reasons why the natural coalition members can't simply agree on everything.
 
 **5–8 Actors: optimal range.** The sweet spot described in Chapter 8. Enough factions for shifting alliances, enough complexity for interesting reports, manageable workload for the referee. Most scenarios in this handbook are designed for this range.
 
-**8–12 Actors: expanded play.** Use the Extras system (Chapter 4) to manage player count beyond eight without expanding the Actor count. Beyond eight Actors, referee workload roughly doubles, not just in adjudication time but in report writing, where representing eight or more factions' outcomes in a readable, hook-seeded document takes significant effort. Use Democratic Blocs to share the Actor role, or Consultants to give overflow players meaningful participation without expanding the adjudication burden.
+**9–12 players: expanded play.** Use the Extras system (Chapter 4) to manage player count beyond eight without expanding the Actor count. Beyond eight Actors, referee workload roughly doubles, not just in adjudication time but in report writing, where representing eight or more factions' outcomes in a readable, hook-seeded document takes significant effort. Use team Actors to share an Actor role, or Consultants to give overflow players meaningful participation without expanding the adjudication burden.
 
 If you are running a game for twelve or more players, seriously consider running two parallel OSGs on the same scenario with a shared outcome, or designing a structure where the Extras' inputs directly feed into Actor decisions rather than being adjudicated independently.
 
@@ -1347,11 +1386,12 @@ OSG's argument-based adjudication makes it genre-portable. Changing the genre ch
 
 ## The BLOC Variant
 
-The *Age of Discord* campaign (Appendix A) was run using BLOC, a variant that introduces three modifications to the baseline OSG system:
+The *Age of Discord* campaign (Appendix A) was run using BLOC, a variant that introduces four modifications to the baseline OSG system:
 
 -   **Crowdsourced disadvantages.** After private action submission, a public summary is shared. Other players then have three days to declare counter-arguments against that action, which are factored into resolution alongside the submitter's leverage.
 -   **Dice pool instead of 2d6 keep.** One neutral die plus dice for advantages and disadvantages (which cancel each other). Keep the highest die if advantages remain; keep the lowest if disadvantages remain.
 -   **Six-result table.** *No, and... / No / No, but... / Yes, but... / Yes / Yes, and...*
+-   **Leader action.** Each faction may submit a second, smaller action carried out by its named leader, resolved separately from the main action.
 
 The crowdsourced disadvantage phase is the most significant departure. It shifts player culture: players become active readers of each other's actions, looking for fictional weaknesses and plausible counter-arguments rather than just pursuing their own plans. This produces more richly contested adjudication but slows the turn cycle and increases the referee's workload substantially.
 
@@ -1411,7 +1451,7 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 > The dragons return to the Hermit Mountains without new alliances. The hermits, perhaps fearful or sceptical, refuse to share information. The already fragile unity among the draconic factions frays further, feeding internal tensions. Their sacred aura proves less influential than expected.
 
-> **\[Referee note\]** An unopposed action still fails. The disadvantages raised by other players, the internal fragmentation, were sufficient to cancel the advantages and leave only the neutral die in the pool. This is No Action Without Friction applied before the dice: the fiction already contains a reason things won't go smoothly. The failure isn't punishing ("no, and..."), it's simply a clean "no," which leaves the Dragons where they started but not worse off. The door to future alliance-building remains open.
+> **\[Referee note\]** No other faction acted against the Dragons this turn, and the action still fails. In BLOC, the disadvantages other players raise count as opposition: the internal fragmentation, already established in the Dragons' own brief, cancelled their advantages and left only the neutral die in the pool. The fiction itself was the opponent. The result is a "No, and...": the alliance fails *and* the fragmentation deepens. That second clause is friction, not punishment; it turns a stated weakness into a visible, worsening problem other players can see and exploit, while leaving the door to future alliance-building open.
 
 ### Necromancers of the Cursed Marshes
 
@@ -1455,7 +1495,7 @@ Four factions are foregrounded in these excerpts. Brief overviews:
 
 > Aramon the Grey locates the approximate position of the Sphere, marking it on a detailed map. However, the magic used in the search may have attracted the attention of other factions, including the Necromancers. The Council prepares more concrete expeditions.
 
-> **\[Referee note\]** This is the first example of a *traceable crumb* planted in the public report. The Sphere of Technological Harmony is now a known object on the board, something to race for. The detail about the detection risk ("may have attracted attention") is a hook seeded for the Necromancers' player, an invitation to act on that in a later turn. When building reports, every success should leave something for other players to respond to.
+> **\[Referee note\]** This is a hook seeded through a public success. The Sphere of Technological Harmony is now a known object on the board, something to race for. The detail about the detection risk ("may have attracted attention") is a hook seeded for the Necromancers' player, an invitation to act on that in a later turn. When building reports, every success should leave something for other players to respond to.
 
 ### End-of-Turn Observation
 
@@ -1534,7 +1574,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 > **The Necromancers have lost their magic. But their cybernetic hybrids endure.**
 
-> **\[Referee note\]** A multi-faction coalition action is one of the rarest and most satisfying events in a long OSG campaign. Four turns of accumulated alliance-building culminated here, and the referee's job was to honour that without deflating it. The critical success was earned. The sacrifice of Kara Arx was a choice made at the table before the dice were rolled: the Society's player agreed to the narrative cost as the condition of a clean win. This is OSG at its most collaborative: the referee sets the price, the player decides to pay it. The cybernetic hybrid caveat is the friction attached to the victory; the Necromancers' player still has something to work with, and the war doesn't end anticlimactically.
+> **\[Referee note\]** A multi-faction coalition action is one of the rarest and most satisfying events in a long OSG campaign. Four turns of accumulated alliance-building culminated here, and the referee's job was to honour that without deflating it. The critical success was earned. The sacrifice of Kara Arx was a choice made at the table before the dice were rolled: the Society's player agreed to the narrative cost as the condition of a clean win. This is OSG at its most collaborative: the referee sets the price, the player decides to pay it. The cybernetic hybrid caveat is the friction attached to the victory; the Necromancers' player still has something to work with, and the war doesn't end anticlimactically. (In the core rules this would be a Joint Action, Chapter 2: each faction spends its turn, the combined leverage is graded once, and one roll decides.)
 
 ### Necromancers of the Cursed Marshes
 
@@ -1554,7 +1594,7 @@ Turn 1 results: three successes, three failures, one mixed. This ratio is typica
 
 **On problem design.** The opening problem ("who will emerge from this conflict?") is deliberately non-prescriptive. It doesn't say which faction is the protagonist or what victory looks like. Eleven turns later, the Necromancers were nearly the dominant power before being destroyed, the Dragons were eliminated entirely, and two factions renamed themselves to mark their transformation. None of this was planned. The problem statement created a pressure vessel; the players pressurized it.
 
-**On faction asymmetry.** The seven factions that played were genuinely structurally different. The Quorilans won through cult influence and commercial monopoly, not military power. The Society won through knowledge accumulation and sacrifice. The Blood Domain survived by betraying its own leader. None of these paths were available to all factions equally, and that asymmetry is why the game produced a narrative rather than a race to the highest score.
+**On faction asymmetry.** The seven factions that played were genuinely structurally different. The Quorilans rose through cult influence and a commercial monopoly on the cure, not military power, before their elimination in Turn 6. The Society won through knowledge accumulation and sacrifice. The Blood Domain survived by betraying its own leader. None of these paths were available to all factions equally, and that asymmetry is why the game produced a narrative rather than a race to the highest score.
 
 **On long arc vs. short arc.** This game ran eleven turns, significantly longer than the six-turn format recommended in the core rules. The longer arc allowed for a full dramatic structure: establishment (Turns 1–2), escalation (Turns 3–5), coalition (Turns 6–7), climax (Turn 8), denouement (Turns 9–11). At six turns, most of this game would have ended at the Necromancers' near-victory. The additional turns revealed what the factions did with a transformed world, which turned out to be the more interesting question.
 
@@ -1627,7 +1667,7 @@ The point of the game is to create a credible narrative.
 -   [ ] Are there 5–8 Actors (or have you planned for Extras to manage overflow)?
 -   [ ] Can you write three distinct bullets for each faction (what it is, what it wants, what makes it unlike others)?
 -   [ ] Do the Actors have different leverage types, not just different power levels?
--   [ ] Does every faction have at least two objectives that conflict with at least two other factions?
+-   [ ] Does every faction have objectives that conflict with at least two other factions?
 -   [ ] Have you avoided the pure-military, pure-diplomat, and pure-wildcard traps?
 
 ### Briefs
@@ -1640,7 +1680,7 @@ The point of the game is to create a credible narrative.
 
 ### Map and Components
 
--   [ ] Does the map have 3–5 contested locations with clear faction starting positions?
+-   [ ] Does the map have 3–5 named locations, at least one of them contested, with clear faction starting positions?
 -   [ ] Is the map readable at a glance without explanation?
 -   [ ] Are all locations that will appear in action arguments named on the map?
 -   [ ] Are physical components moveable (tokens, markers) rather than static?
@@ -1766,6 +1806,12 @@ Submit every action in this format:
 
 **Doubles:** Referee may insert a Force of Nature if something fits.
 
+**Actions in conflict:** Each side rolls. If both outcomes cannot happen, the higher kept die prevails and the other outcome is worse than desired. A tie is a standoff: both worse than desired.
+
+**Joint action:** Each participant spends its action and confirms privately. One grade on combined leverage, one roll.
+
+**Bonus on Strong leverage:** A kept 4–5 becomes a 6.
+
 ## RAT Checklist
 
 Before writing any outcome, check:
@@ -1807,7 +1853,7 @@ The specific course of conduct an Actor pursues this turn, submitted privately t
 **Actor**  
 *\[Traditional MG: Player / Faction\]*
 
-A faction controlled by a single player. "Actor" foregrounds the role-play dimension of the game; you are inhabiting a faction's perspective and interests, not simply moving pieces. In large games, multiple players may control a single Actor through the Democratic Bloc format (see Extras).
+A faction controlled by a single player. "Actor" foregrounds the role-play dimension of the game; you are inhabiting a faction's perspective and interests, not simply moving pieces. In large games, two or three players may share a single Actor (see Team Actor).
 
 **Benevolent Dictatorship**
 
@@ -1825,7 +1871,7 @@ An Extras sub-role in which a non-Actor player may ask the referee one clarifyin
 **Extras**  
 *\[Traditional MG: Observer / Consultant\]*
 
-A participation tier for players who are not controlling an Actor. OSG extends the traditional Consultant role into three distinct sub-roles: Consultant (one question per turn), Collective/Horde (random chaotic action selection), and Democratic Bloc (deliberative voting on a single shared action). Extras participate in the debrief alongside Actors.
+Overflow players beyond a scenario's Actor roster. OSG documents two portable options: the Consultant (one question per turn) and the Team Actor (two or three players sharing one Actor). Scenarios may also build their own participation structures into the fiction, such as an electorate that votes or a mob whose actions are drawn at random; these are not portable (Chapter 4). Extras participate in the debrief alongside Actors.
 
 **Force of Nature**  
 *\[Traditional MG: External Event\]*
@@ -1836,6 +1882,10 @@ A chaotic event introduced by the referee when both dice show the same number, r
 
 The principle that every outcome, successful or not, leaves a mark on the world. Friction is the referee's tool for ensuring that Unopposed actions are not free passes: even an action that succeeds entirely as planned has consequences that complicate the Actor's position or create hooks for others. Distinguished from Hurdles (which block actions); friction complicates rather than prevents.
 
+**Joint Action**
+
+A single action submitted by two or more Actors, each spending its turn and confirming privately to the referee. The combined leverage is graded once and one roll decides it (Chapter 2).
+
 **Hurdle**
 
 A referee adjudication error: blocking an action ("you can't do that") or requiring preparatory actions before the declared action is allowed ("you can only do this after you've first done X and Y"). OSG prefers Friction over Hurdles.
@@ -1843,7 +1893,7 @@ A referee adjudication error: blocking an action ("you can't do that") or requir
 **Leverage**  
 *\[Traditional MG: "Three Reasons Why" / Modifier\]*
 
-The reasons an Action is likely to succeed: resources, relationships, positioning, established fiction. In traditional Matrix Games, Leverage is often formalized as "three reasons why" the action will succeed, with a +1 modifier per reason. OSG simplifies to a qualitative assessment: is the Actor's leverage Strong or Weak relative to the opposition? This removes the impression of precision without improving actual adjudication accuracy and reduces box-ticking behavior.
+The reasons an Action is likely to succeed: resources, relationships, positioning, established fiction. In traditional Matrix Games, Leverage is often formalized as "three reasons why" the action will succeed, with a +1 modifier per reason. OSG simplifies to a qualitative assessment: is the Actor's leverage Strong or Weak relative to the opposition? Counted modifiers give an impression of precision that does not make adjudication more accurate, and they encourage box-ticking; the qualitative grade avoids both.
 
 **Non-Player Actor (NPA)**  
 *\[Traditional MG: NPC Faction / External Actor\]*
@@ -1881,6 +1931,10 @@ The public document the Referee produces at the end of each Turn, summarizing al
 *\[Traditional MG: Debrief / After-Action Review\]*
 
 The post-game conversation in which Actors reveal their Objectives, self-assess whether they achieved them, and discuss what happened and why. The OSG term, coined by Sam Doebler, captures the shift from formal evaluation to social conversation. The structure is described in Chapter 5; it is not optional.
+
+**Team Actor**
+
+Two or three players sharing a single Actor, deliberating internally and submitting one Action per turn. Not suitable for roles whose brief holds secrets that must stay secret within the team (Chapter 4).
 
 **Turn**
 
@@ -1950,7 +2004,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 
 **Position**
 
--   You have the largest standing army on the peninsula and it is currently garrisoned one day's march from Corenth. Everyone knows this.
+-   You have the largest standing army on the peninsula, camped at the foot of the northern passes. Through the passes, Corenth is three days' march away. Everyone knows this.
 -   Five years ago, Vethara publicly rebuked Caldrath over a border dispute with Essaveth and ruled against you. The rebuke was recorded in the Conclave's registers. It will be used against you.
 -   Your military expansion over the past decade was financed largely by loans from House Meranto. The debt is significant and the terms are not favourable.
 
@@ -1997,7 +2051,7 @@ The goal of the game is to achieve your objectives. The point of the game is to 
 
 **On the problem statement.** The scenario's central absence, no recognized authority to renew the treaties, is more generative than a simple succession dispute because it creates different kinds of pressure on each faction. Caldrath wants to fill the absence with force. The Conclave wants to fill it with institutional authority. Saivorn wants to work around it commercially. Essaveth just needs it not to be fatal. House Meranto needs the crisis to resolve before the debts become unrecoverable. No two factions want the same thing from the same solution.
 
-**On map design.** Sketch the peninsula with five locations: Corenth (central, contested), Saivorn's coast (south, with ports), Caldrath's heartland (north), Essaveth's passes (between Caldrath and Corenth), and the southern merchant coast (House Meranto's base of operations). Add connection lines showing that Caldrath must pass through or around Essaveth to reach Corenth, and that Saivorn has sea access to Corenth but no direct land route. That is enough to run the game.
+**On map design.** Sketch the peninsula with five locations: Corenth (central, contested), Saivorn's coast (south, with ports), Caldrath's heartland (north), Essaveth's passes (between Caldrath and Corenth), and the southern merchant coast (House Meranto's base of operations). Add connection lines showing that Caldrath must pass through or around Essaveth to reach Corenth, and that Saivorn reaches Corenth by sea, with no land route worth using. That is enough to run the game.
 
 **On Turn Zero.** Expect questions about: whether the treaties are immediately void or remain in force pending formal challenge; whether Caldrath's historical claim on Essaveth requires a declaration or revives automatically; whether hired mercenaries are available and at what cost; whether the Conclave's extraterritorial status applies to its agents outside the temple. Answer these before Turn 1. Decline questions about other Actors' private intentions.
 

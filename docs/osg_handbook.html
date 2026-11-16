@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -38,18 +41,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../docs/assets/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f6c01fde8906d65facae5dd47b986891.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8fc9db7139d8dc2e4952ab5c2b2a0ec3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -84,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -107,6 +111,7 @@ ul.task-list li input[type="checkbox"] {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -136,13 +141,19 @@ ul.task-list li input[type="checkbox"] {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -236,6 +247,7 @@ ul.task-list li input[type="checkbox"] {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -250,15 +262,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Open Strategy Games</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -267,10 +278,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="../docs/osg_handbook.html" aria-current="page"> 
 <span class="menu-text">Learn</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../docs/contested_ground.html"> 
-<span class="menu-text">Play</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-play" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Play</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-play">    
+        <li>
+    <a class="dropdown-item" href="../docs/contested_ground.html">
+ <span class="dropdown-text">Contested Ground</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/solo_mode.html">
+ <span class="dropdown-text">Solo Mode</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../docs/factionlog.html"> 
 <span class="menu-text">Log</span></a>
@@ -293,8 +315,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -303,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -330,6 +353,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#leverage-strong-and-weak" id="toc-leverage-strong-and-weak" class="nav-link" data-scroll-target="#leverage-strong-and-weak">Leverage: Strong and Weak</a></li>
   <li><a href="#unopposed-actions" id="toc-unopposed-actions" class="nav-link" data-scroll-target="#unopposed-actions">Unopposed Actions</a></li>
   <li><a href="#the-dice-mechanic" id="toc-the-dice-mechanic" class="nav-link" data-scroll-target="#the-dice-mechanic">The Dice Mechanic</a></li>
+  <li><a href="#actions-in-conflict" id="toc-actions-in-conflict" class="nav-link" data-scroll-target="#actions-in-conflict">Actions in Conflict</a></li>
+  <li><a href="#joint-actions" id="toc-joint-actions" class="nav-link" data-scroll-target="#joint-actions">Joint Actions</a></li>
   <li><a href="#force-of-nature" id="toc-force-of-nature" class="nav-link" data-scroll-target="#force-of-nature">Force of Nature</a></li>
   <li><a href="#the-rat-checklist" id="toc-the-rat-checklist" class="nav-link" data-scroll-target="#the-rat-checklist">The RAT Checklist</a></li>
   <li><a href="#no-action-without-friction" id="toc-no-action-without-friction" class="nav-link" data-scroll-target="#no-action-without-friction">No Action Without Friction</a></li>
@@ -417,7 +442,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-pattern" id="toc-the-pattern" class="nav-link" data-scroll-target="#the-pattern">The Pattern</a></li>
   <li><a href="#naming-and-framing" id="toc-naming-and-framing" class="nav-link" data-scroll-target="#naming-and-framing">Naming and Framing</a></li>
   <li><a href="#permanent-traits-vs.-one-use-bonuses" id="toc-permanent-traits-vs.-one-use-bonuses" class="nav-link" data-scroll-target="#permanent-traits-vs.-one-use-bonuses">Permanent Traits vs.&nbsp;One-Use Bonuses</a></li>
-  <li><a href="#scoping-magnitude" id="toc-scoping-magnitude" class="nav-link" data-scroll-target="#scoping-magnitude">Scoping Magnitude</a></li>
+  <li><a href="#scoping-magnitude" id="toc-scoping-magnitude" class="nav-link" data-scroll-target="#scoping-magnitude">Scoping Magnitude</a>
+  <ul class="collapse">
+  <li><a href="#spending-a-bonus-on-strong-leverage" id="toc-spending-a-bonus-on-strong-leverage" class="nav-link" data-scroll-target="#spending-a-bonus-on-strong-leverage">Spending a Bonus on Strong Leverage</a></li>
+  </ul></li>
   <li><a href="#when-bonuses-unbalance-play" id="toc-when-bonuses-unbalance-play" class="nav-link" data-scroll-target="#when-bonuses-unbalance-play">When Bonuses Unbalance Play</a></li>
   <li><a href="#design-checklist" id="toc-design-checklist" class="nav-link" data-scroll-target="#design-checklist">Design Checklist</a></li>
   </ul></li>
@@ -541,7 +569,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -661,13 +689,22 @@ ul.task-list li input[type="checkbox"] {
 <strong>Leverage:</strong> Caldrath’s military expansion over the past decade was financed by Meranto loans. The emergency clause exists, has precedent, and their treasury minister knows invoking it freezes discretionary spending for thirty days. We hold documentation for every transaction.</p>
 </blockquote>
 <p>This example shows how leverage works: not a list of credentials, but a specific argument for why this action is likely to produce this outcome given this fictional context. More on leverage in Chapter 2.</p>
-<blockquote class="blockquote">
-<p>Action template</p>
-<p>Actor: (your faction) Turn: (turn number)</p>
-<p>Action: What specifically are you doing?</p>
-<p>Outcome: What result do you want from this action?</p>
-<p>Leverage: Why is this action likely to produce that outcome? Ground it in established fiction: resources, relationships, position, prior actions.</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Action template
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Actor:</strong> <em>(your faction)</em> <strong>Turn:</strong> <em>(turn number)</em></p>
+<p><strong>Action:</strong> What specifically are you doing?</p>
+<p><strong>Outcome:</strong> What result do you want from this action?</p>
+<p><strong>Leverage:</strong> Why is this action likely to produce that outcome? Ground it in established fiction: resources, relationships, position, prior actions.</p>
+</div>
+</div>
 <section id="private-submission" class="level2">
 <h2 class="anchored" data-anchor-id="private-submission">Private Submission</h2>
 <p>Actions are sent directly to the referee, not posted in the public channel.</p>
@@ -729,7 +766,7 @@ ul.task-list li input[type="checkbox"] {
 <p>For recreational OSG, especially in asynchronous formats, it is rarely the right choice.</p>
 <p>When players publicly argue the merits of each other’s actions before adjudication, two things happen. First, it creates a meta-game in which the socially dominant players win more arguments regardless of fictional merit. Second, it slows the game to a crawl. In an async game with six players across multiple timezones, a public argument phase before every action would mean turns measured in weeks rather than days.</p>
 <p>The OSG model favors what Chris McDowall called Benevolent Dictatorship: one referee, full authority, no public argument. The referee reads the submitted Action, assesses it against the established fiction, and rules.</p>
-<p>The trade-off is real. Players trust the referee to be fair, and the referee must earn that trust by being consistent, explaining outcomes in the report, and never letting their own preferences about how the story should go influence adjudication of how a player’s action was likely to succeed. The upside is a game that moves and a referee who can adjudicate creatively without getting talked out of interesting outcomes by the loudest voice at the table.</p>
+<p>The trade-off is real. Players trust the referee to be fair, and the referee must earn that trust by being consistent, explaining outcomes to each Actor in private feedback, and never letting their own preferences about how the story should go influence adjudication of how a player’s action was likely to succeed. The upside is a game that moves and a referee who can adjudicate creatively without getting talked out of interesting outcomes by the loudest voice at the table.</p>
 <section id="leverage-strong-and-weak" class="level2">
 <h2 class="anchored" data-anchor-id="leverage-strong-and-weak">Leverage: Strong and Weak</h2>
 <p>When an Action faces opposition, from another Actor’s action, from established fiction, from a hostile NPA, the referee grades the submitting Actor’s leverage as <strong>Strong</strong> or <strong>Weak</strong> relative to that opposition.</p>
@@ -759,6 +796,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>4–6:</strong> The desired outcome occurs. On a 6, something especially good for the Actor may also occur.<br>
 <strong>1–3:</strong> The action proceeds, but the outcome is worse than desired. On a 1, something especially bad may also occur.</p>
+<p>In numbers: Strong leverage produces the desired outcome 75% of the time, Weak leverage 25% of the time. A 6 comes up on about 31% of Strong rolls and 3% of Weak ones; a 1 on about 3% of Strong rolls and 31% of Weak ones. Doubles (a possible Force of Nature) come up on one roll in six regardless of leverage.</p>
 <pre class="mermaid"><code>flowchart TD
     Start([Action Faces Opposition]) --&gt; Assess{Assess Leverage}
     Assess --&gt;|Strong| KeepHigh[Roll 2d6, Keep Higher Die]
@@ -770,7 +808,7 @@ ul.task-list li input[type="checkbox"] {
     Resolve --&gt;|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
     Resolve --&gt;|4 or 5| Success[Success: Desired outcome occurs]
     Resolve --&gt;|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
-    Resolve --&gt;|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+    Resolve --&gt;|1| FailureExtra[Action proceeds, outcome worse than desired + potential extra complication]
 
     SuccessExtra --&gt; CheckRAT[Apply RAT Checklist]
     Success --&gt; CheckRAT
@@ -781,6 +819,32 @@ ul.task-list li input[type="checkbox"] {
     ApplyFriction --&gt; End([Outcome Adjudicated])</code></pre>
 <p>This mechanic is deliberately simple. It preserves narrative bias, the action is certain to proceed in some form, outcomes are variable, without the complexity of modifier stacking. A +2 modifier on a 2d6 system produces results that are technically more precise but require a probability table to interpret intuitively. Keep-high or keep-low is immediately comprehensible: strong leverage gives you a good shot, weak leverage gives you a poor one.</p>
 <p>The mechanic also resists the temptation to treat adjudication as arithmetic. A referee who reaches for a specific modifier for every factor in an action will produce inconsistent results because the factors resist exact commensuration. The qualitative assessment, strong or weak, requires judgment but rewards it.</p>
+</section>
+<section id="actions-in-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="actions-in-conflict">Actions in Conflict</h2>
+<p>Sometimes two Actors’ actions oppose each other directly: Caldrath marches on the northern passes in the same turn Essaveth closes them. Both actions are opposed, and each is the other’s opposition. Adjudicate both with the same mechanic, then compare.</p>
+<ol type="1">
+<li>Grade each action’s leverage Strong or Weak against the other action.</li>
+<li>Roll 2d6 for each and keep the high or low die as usual.</li>
+<li>If both outcomes can be true at once, both occur as rolled.</li>
+<li>If they cannot, the higher kept die prevails. That action’s result is read normally. The other action’s outcome is worse than desired, whatever its die showed; on a 1, something especially bad may also occur.</li>
+<li>On a tie, neither prevails. Both outcomes are worse than desired: a standoff. Write friction into the report for both sides.</li>
+</ol>
+<p>When three or more actions collide, compare all kept dice. The highest prevails; a tie at the top is a standoff among the tied Actors, and everyone below it gets an outcome worse than desired.</p>
+<p>The comparison adds a step but no new mechanic, and it keeps the grades meaningful. Strong leverage beats Weak about three times in four (77%, with 11% ties); two Actors with equal grades prevail about equally often, with a standoff a little over one time in five. A standoff is not a null result. Two factions that pushed against each other and both came away short is a fact the report should make visible, and other Actors will want to exploit it.</p>
+<p>Doubles on either roll may still prompt a Force of Nature.</p>
+</section>
+<section id="joint-actions" class="level2">
+<h2 class="anchored" data-anchor-id="joint-actions">Joint Actions</h2>
+<p>Two or more Actors may pool their turns into a single action: a coalition assault, a joint treaty proposal, a ritual that needs several hands.</p>
+<ul>
+<li><strong>Each participant spends its action.</strong> No participant submits a separate action that turn.</li>
+<li><strong>One submission, specific contributions.</strong> The joint action uses the standard format. The Leverage section names what each participant brings: a resource, a position, a relationship the action actually needs. A participant who contributes nothing specific has not joined; the referee returns the submission.</li>
+<li><strong>Each participant confirms privately.</strong> Every participant sends its own confirmation to the referee before the deadline. Talking is free and so is lying: an Actor who agreed to join but does not confirm has not joined. The joint action proceeds without that contribution, its leverage is regraded, and the absent Actor’s own action, if it submitted one, is adjudicated normally. The betrayal is a fact the report can show.</li>
+<li><strong>One grade, one roll.</strong> The referee grades the combined leverage once and rolls once. Combined leverage is not automatically Strong; three weak contributions can still add up to Weak.</li>
+<li><strong>Shared outcome, shared friction.</strong> The outcome lands on every participant. The referee may distribute its consequences unevenly, as long as each participant’s share is traceable to what it contributed.</li>
+</ul>
+<p>Joint actions are powerful because they cost several Actors their whole turn. That cost is the balance: a coalition that spends three actions on one goal has left three other fronts uncovered.</p>
 </section>
 <section id="force-of-nature" class="level2">
 <h2 class="anchored" data-anchor-id="force-of-nature">Force of Nature</h2>
@@ -795,10 +859,21 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Reasonable.</strong> Is this outcome proportionate and fair? Does it feel like something that would actually happen given what the fiction has established? An outcome that punishes an Actor far beyond what the action warrants, or rewards them far beyond what the leverage supports, fails this test.</p>
 <p><strong>Actionable.</strong> Does this outcome create hooks for future play? Does it leave something for other Actors to respond to, an opportunity to exploit, a problem to address? An outcome that is narratively satisfying but leaves the table directionless has failed this test. Every success should put something in front of other players; every failure should open a door even as it closes another.</p>
 <p><strong>Traceable.</strong> Can you point to earlier events in the fiction that led to this outcome? Does the result feel like a consequence of decisions already made, rather than something that came from nowhere? If a Senator turns out to be a traitor, was his name at least mentioned in a prior report? Traceability keeps the game’s causality coherent and rewards players who have been paying attention.</p>
-<blockquote class="blockquote">
-<p>RAT: quick check</p>
-<p>Reasonable: proportionate to the action and the fiction? Actionable: does it leave at least one hook for another Actor? Traceable: can you point to an earlier event that led here?</p>
-</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>RAT: quick check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Reasonable:</strong> proportionate to the action and the fiction?<br>
+<strong>Actionable:</strong> does it leave at least one hook for another Actor?<br>
+<strong>Traceable:</strong> can you point to an earlier event that led here?</p>
+</div>
+</div>
 <p>A worked example: Essaveth attempts to establish a secret communication channel to Saivorn, bypassing Caldrath’s intelligence network.</p>
 <ul>
 <li><em>Reasonable:</em> Essaveth has established diplomatic contacts with Saivorn through the old treaty framework and plausible motivation to seek a commercial partner who isn’t a military threat. A secret channel is not implausible. ✓</li>
@@ -833,13 +908,22 @@ ul.task-list li input[type="checkbox"] {
 <p>Write the Report in the style of a news roundup. Brief, factual, third-person. Describe what happened, not why the referee decided it happened that way. Do not narrate your adjudication reasoning. Players see “The Conclave formally claimed ratification authority over any successor treaty and met with resistance from Caldrath’s representatives, though the claim itself now stands as public record” in the report, not the adjudication reasoning behind it: “The Conclave’s action had strong leverage due to their institutional authority, which I assessed as outweighing Caldrath’s opposition, resulting in a 5 on the die.”</p>
 <p>The referee’s reasoning belongs in private feedback to the Actor, not in the public record. The public record is the world as it exists, not an explanation of how it came to be.</p>
 <p>Write short. Longer reports get skimmed. A report with eight short paragraphs, one per Action, with a brief observation at the end, is better than a three-page narrative recap that buries the hooks.</p>
-<blockquote class="blockquote">
-<p>Example report: Turn 3, The Corentine Succession</p>
-<p>The Conclave formally claimed ratification authority over any successor treaty at a public session in Corenth on the 12th. Caldrath’s representatives objected and withdrew. The claim stands as public record regardless. ← outcome stated as fact; no adjudication reasoning</p>
-<p>House Meranto’s debt review notice against Caldrath’s treasury has entered its second week. Caldrath has not responded publicly. Three Meranto agents were observed near the northern garrison road on the 14th. ← private outcome partially surfaced as a traceable crumb; the agents are now a public fact</p>
-<p>Essaveth closed the northern passes to unsanctioned military movement late on the 13th. A small Caldrath advance unit turned back without incident. The passes remain open to commercial traffic. ← outcome with friction; Caldrath did not get what it wanted, but the door is not closed</p>
-<p>The peninsula is watching Caldrath. Whatever they do next, they will do it visibly. ← closing observation; open thread not owned by any single Actor</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example report: Turn 3, The Corentine Succession
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Conclave formally claimed ratification authority over any successor treaty at a public session in Corenth on the 12th. Caldrath’s representatives objected and withdrew. The claim stands as public record regardless. <em>← outcome stated as fact; no adjudication reasoning</em></p>
+<p>House Meranto’s debt review notice against Caldrath’s treasury has entered its second week. Caldrath has not responded publicly. Three Meranto agents were observed near the northern garrison road on the 14th. <em>← private outcome partially surfaced as a traceable crumb; the agents are now a public fact</em></p>
+<p>Essaveth closed the northern passes to unsanctioned military movement late on the 13th. A small Caldrath advance unit turned back without incident. The passes remain open to commercial traffic. <em>← outcome with friction; Caldrath did not get what it wanted, but the door is not closed</em></p>
+<p>The peninsula is watching Caldrath. Whatever they do next, they will do it visibly. <em>← closing observation; open thread not owned by any single Actor</em></p>
+</div>
+</div>
 </section>
 <section id="hook-seeding" class="level2">
 <h2 class="anchored" data-anchor-id="hook-seeding">Hook-Seeding</h2>
@@ -870,7 +954,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="chapter-4-roles-beyond-actors" class="level1">
 <h1>Chapter 4: Roles Beyond Actors</h1>
-<p>This chapter is for groups larger than eight players. If your game has five to eight Actors and no overflow, skip to Chapter 5.</p>
+<p>This chapter is for groups with more players than the scenario has Actors. If every player has a faction, skip to Chapter 5.</p>
 <section id="the-overflow-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-overflow-problem">The Overflow Problem</h2>
 <p>A game designed for six Actors has twelve people who want to play. The instinctive response, add more Actors, is usually the wrong one.</p>
@@ -981,7 +1065,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Appendix G includes the Corentine Succession faction briefs. The scenario was designed for six Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.</p>
+<p>Appendix G includes the Corentine Succession faction briefs. The scenario was designed for five Actors with no overflow roles. For a larger group, the Republic of Saivorn could be split into a team Actor, or one or two Consultants added, without modification to the core design.</p>
 </div>
 </div>
 </section>
@@ -1149,7 +1233,7 @@ Note
 <li>What makes it unlike any other faction in this game</li>
 </ol>
 <p>If you cannot write these three bullets clearly and distinctly, you do not yet know the faction well enough to design its brief. Go back and think harder about what makes it specific.</p>
-<p>From <em>The Corentine Succession</em>, the Principality of Essaveth:</p>
+<p>The finished Position field should carry the same three answers. From <em>The Corentine Succession</em>, the Principality of Essaveth’s position:</p>
 <blockquote class="blockquote">
 <ul>
 <li>Your principality sits at the peninsula’s geographic crossroads. Caldrath’s army cannot reach Corenth from the north without passing through or around your territory.</li>
@@ -1166,6 +1250,7 @@ Note
 <p><strong>Economic.</strong> Financial resources, market control, trade relationships. Slower to act than military, harder to counter, creates dependencies that are difficult to dissolve.</p>
 <p><strong>Geographic.</strong> Control of territory, chokepoints, or transit routes. Static but often decisive; whoever controls the northern passes controls what moves between Caldrath and Corenth.</p>
 <p><strong>Informational.</strong> Intelligence, secrets, communications infrastructure, propaganda capability. Hard to assess from outside, creates uncertainty, enables surprise.</p>
+<p>The list is a starting point, not a closed set. Scenarios regularly add their own: <em>legitimacy</em> (the authority to recognize or refuse, as the Conclave holds), <em>diplomatic</em> (being the party everyone needs neutral), <em>symbolic</em> (precedent, faith, prophecy). Name the type explicitly when you add one, so players and referee agree on what it covers.</p>
 <p>A good Actor design gives each faction a clear primary leverage type and a secondary type that creates interesting tradeoffs. Caldrath has military leverage but needs Meranto’s financial patience. House Meranto has economic leverage but no hard power. These asymmetries are what make alliances interesting: factions need each other because they are strong where others are weak.</p>
 </section>
 <section id="the-specificity-principle" class="level2">
@@ -1193,12 +1278,12 @@ Note
 <h2 class="anchored" data-anchor-id="worked-example-the-corentine-factions-annotated">Worked Example: The Corentine Factions Annotated</h2>
 <p><em>Full faction briefs in Appendix G.</em></p>
 <p>The five Corentine factions, read against the three-bullet framework:</p>
-<p><strong>Republic of Saivorn.</strong> <em>Is:</em> the peninsula’s commercial hegemon, with no army. <em>Wants:</em> trade routes stable, no single power dominating. <em>Unlike others:</em> the only faction that benefits from a new order rather than the old one restored; the Arbiter’s last treaty cost them. Primary leverage: economic (controls both ports) + informational (commercial networks across the peninsula).</p>
-<p><strong>Kingdom of Caldrath.</strong> <em>Is:</em> the strongest military force, with a legitimacy deficit. <em>Wants:</em> fill the power vacuum, be recognized as the new authority. <em>Unlike others:</em> the only faction that can impose a settlement by force, but doing so would delegitimize any settlement it imposes. Primary leverage: military (largest army, positioned near Corenth) + geographic (controls the northern approaches).</p>
-<p><strong>The Conclave.</strong> <em>Is:</em> the body that ratified everything, now holding the original documents. <em>Wants:</em> ensure no successor order marginalizes them; ideally institutionalize their ratification authority permanently. <em>Unlike others:</em> the only faction whose leverage is entirely legitimacy; they cannot act, but they can refuse to recognize. Primary leverage: informational (holds the treaty originals, including unpublished clauses) + institutional (ratification authority).</p>
+<p><strong>Republic of Saivorn.</strong> <em>Is:</em> the peninsula’s commercial hegemon, with no army. <em>Wants:</em> trade routes stable, no single power dominating. <em>Unlike others:</em> the only faction that benefits from a new order rather than the old one restored; the Arbiter’s last treaty cost them. Primary leverage: geographic (controls both deep-water ports) + economic (the trade that flows through them).</p>
+<p><strong>Kingdom of Caldrath.</strong> <em>Is:</em> the strongest military force, with a legitimacy deficit. <em>Wants:</em> fill the power vacuum, be recognized as the new authority. <em>Unlike others:</em> the only faction that can impose a settlement by force, but doing so would delegitimize any settlement it imposes. Primary leverage: military (largest army, camped at the foot of the northern passes) + geographic (controls the northern approaches).</p>
+<p><strong>The Conclave.</strong> <em>Is:</em> the body that ratified everything, now holding the original documents. <em>Wants:</em> ensure no successor order marginalizes them; ideally institutionalize their ratification authority permanently. <em>Unlike others:</em> the only faction whose leverage is entirely legitimacy; they cannot act, but they can refuse to recognize. Primary leverage: legitimacy (ratification authority) + informational (holds the treaty originals, including unpublished clauses).</p>
 <p><strong>Principality of Essaveth.</strong> <em>Is:</em> a small state whose existence is guaranteed by the old order. <em>Wants:</em> survive whatever comes next with its borders intact. <em>Unlike others:</em> the only faction for whom the problem statement is existential, not a crisis to exploit but a threat to outlast. Primary leverage: geographic (controls the passes Caldrath needs) + diplomatic (everyone needs Essaveth to stay neutral).</p>
 <p><strong>House Meranto.</strong> <em>Is:</em> the banking consortium that financed everyone. <em>Wants:</em> its debts honoured, its status protected in any successor framework. <em>Unlike others:</em> the only faction with leverage over every other Actor simultaneously, and the only one that cannot use it without also hurting itself. Primary leverage: economic (holds Caldrath’s debt, Saivorn’s credits, the Conclave’s loan) + informational (agents in every major city).</p>
-<p>Five factions. Five different leverage types. No two with identical interests. The problem, the collapse of the old framework, forces all five to respond, but in different directions, for different reasons. That is good Actor design.</p>
+<p>Five factions. Five different primary-plus-secondary leverage combinations. Where two share a type, they use it differently: Saivorn and Essaveth are both geographic, but one controls the sea and the other the land route; Saivorn and Meranto both have economic weight, but one moves goods and the other holds paper. No two with identical interests. The problem, the collapse of the old framework, forces all five to respond, but in different directions, for different reasons. That is good Actor design.</p>
 </section>
 </section>
 <section id="chapter-9-writing-briefs" class="level1">
@@ -1341,11 +1426,11 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <ul>
 <li><strong>Corenth</strong>: the central city, political seat of the old Arbiter, location of the Conclave’s extraterritorial temple complex; the primary contested zone</li>
 <li><strong>Saivorn</strong>: the republic’s home territory, on the coast, with its two deep-water ports</li>
-<li><strong>Caldrath</strong>: the kingdom’s heartland, to the north, currently garrisoning an army one day’s march from Corenth</li>
+<li><strong>Caldrath</strong>: the kingdom’s heartland, to the north; its army is camped at the foot of the northern passes, three days’ march from Corenth once through them</li>
 <li><strong>Essaveth</strong>: the small principality, positioned between Caldrath and Corenth, controlling the northern passes</li>
 <li><strong>The Southern Coast</strong>: merchant territory with no strong single power; where House Meranto’s primary financial offices are located</li>
 </ul>
-<p>Connection lines show that Caldrath must pass through or around Essaveth to reach Corenth from the north. Saivorn has direct sea access to Corenth but no land route that avoids Essaveth’s region. House Meranto has agents everywhere but no physical presence on the map that can be moved or threatened.</p>
+<p>Connection lines show that Caldrath must pass through or around Essaveth to reach Corenth from the north. Saivorn reaches Corenth by sea; the coast road is too poor to move anything that matters, so its goods, and any troops it hires, travel by ship. House Meranto keeps its offices on the Southern Coast, but its leverage is not located there: its agents are everywhere, and seizing a counting house does not cancel a debt. It is drawn off-map for that reason.</p>
 <pre class="mermaid"><code>graph TD
     classDef contested fill:#f96,stroke:#333,stroke-width:2px;
     classDef faction fill:#9cf,stroke:#333,stroke-width:1px;
@@ -1360,7 +1445,6 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
     Caldrath --&gt;|Northern Passes / Garrison Road| Essaveth
     Essaveth --&gt;|Passes Road| Corenth
     Saivorn --&gt;|Sea Lanes / Port Access| Corenth
-    Saivorn -.-&gt;|No Direct Land Route| Corenth
     Meranto -.-&gt;|Financial Agents Everywhere| Corenth
     Meranto -.-&gt;|Financial Agents Everywhere| Saivorn
     Meranto -.-&gt;|Financial Agents Everywhere| Caldrath
@@ -1389,7 +1473,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <h2 class="anchored" data-anchor-id="permanent-traits-vs.-one-use-bonuses">Permanent Traits vs.&nbsp;One-Use Bonuses</h2>
 <p>A bonus is not the same as a trait.</p>
 <p>A <strong>trait</strong> is a persistent characteristic that strengthens leverage whenever it is contextually relevant. “Largest standing army on the peninsula” (Caldrath) is a trait; it applies to any action that involves military force or the credible threat of it, and it does not diminish with use. The referee considers it when grading leverage strength.</p>
-<p>A <strong>bonus</strong> is spent. “Emergency fuel reserve (1x)” can be used once to ensure a transit action succeeds at a critical moment. After that, it is gone, regardless of how the game continues.</p>
+<p>A <strong>bonus</strong> is spent. “Emergency fuel reserve (1x)” can be used once to strengthen a transit action at a critical moment. After that, it is gone, regardless of how the game continues.</p>
 <p>Design the right tool for the right purpose: traits for characteristics that are definitionally part of the faction’s identity (they are always a military force, they always have the communications infrastructure), bonuses for specific assets that might be deployed strategically (the contract with the Belt refinery, the intelligence file they’ve been saving).</p>
 <p>Most briefs should contain both. The position field carries the traits (described as factual assertions about the faction’s situation). The bonuses list carries the one-use assets.</p>
 </section>
@@ -1403,7 +1487,12 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <li>A bonus should be contextually bounded; it applies in specific situations, not universally</li>
 <li>The narrative name of the bonus should indicate its scope (“Martian Water Rights (1x)” applies to water access disputes, not to military engagements on Earth)</li>
 </ul>
+<section id="spending-a-bonus-on-strong-leverage" class="level3">
+<h3 class="anchored" data-anchor-id="spending-a-bonus-on-strong-leverage">Spending a Bonus on Strong Leverage</h3>
+<p>Declare a bonus in the Leverage section when you submit the action. If the referee grades the action Weak, the bonus raises it to Strong. If the action is already Strong, the bonus instead improves the result: a kept 4 or 5 becomes a 6, so the desired outcome occurs and something especially good may also occur. A result of 1–3 is unchanged; the bonus is spent anyway. In an action in conflict, the improved result counts as a 6 for the comparison.</p>
+<p>This keeps the bonus a decision about timing rather than a guaranteed win: it never adds dice, never rescues a bad roll, and is worth most when spent on an action that is already well supported.</p>
 <p>Multiple uses of the same bonus (“Io Dust (3x)” vs.&nbsp;“Io Dust (1x)”) represent different scarcity. A bonus with three uses is a recurring strategic resource. A single-use bonus is a trump card. Design for the experience you want: games with many multi-use bonuses feel resource-rich; games with mostly single-use bonuses create tension around when to deploy them.</p>
+</section>
 </section>
 <section id="when-bonuses-unbalance-play" class="level2">
 <h2 class="anchored" data-anchor-id="when-bonuses-unbalance-play">When Bonuses Unbalance Play</h2>
@@ -1432,7 +1521,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 </section>
 <section id="chapter-12-non-player-actors" class="level1">
 <h1>Chapter 12: Non-Player Actors</h1>
-<p>A Non-Player Actor (NPA) is a faction the referee controls rather than a player. It has a brief, submits actions each turn, and appears in the public report the same way any Actor does. From the table’s perspective, an NPA is a faction with its own interests and behaviors. Only the referee knows it is referee-controlled.</p>
+<p>A Non-Player Actor (NPA) is a faction the referee controls rather than a player. It has a brief, submits actions each turn, and appears in the public report the same way any Actor does. From the table’s perspective, an NPA is a faction with its own interests and behaviors. Players need not know it is referee-controlled (see below for running NPAs openly).</p>
 <p>The distinction matters for two reasons. First, NPAs are operated by the same person who adjudicates all actions, the referee, which creates a conflict of interest risk. Second, NPAs cannot represent themselves in negotiations: they are silent parties who act but do not converse. These constraints shape how NPAs should be designed and used.</p>
 <section id="why-add-npas" class="level2">
 <h2 class="anchored" data-anchor-id="why-add-npas">Why Add NPAs</h2>
@@ -1456,7 +1545,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 </section>
 <section id="random-controlled-npas" class="level2">
 <h2 class="anchored" data-anchor-id="random-controlled-npas">Random-Controlled NPAs</h2>
-<p>An alternative model: the NPA’s action each turn is determined by a random table or dice roll rather than referee judgment. Extras using the Collective format (Chapter 4) can also run an NPA, several Extras each propose an action, and one is randomly selected.</p>
+<p>An alternative model: the NPA’s action each turn is determined by a random table or dice roll rather than referee judgment. Overflow players can also run an NPA through a scenario-specific structure (Chapter 4): several Extras each propose an action, and one is randomly selected.</p>
 <p>Random control removes the referee bias risk entirely. It also produces genuinely unpredictable behavior, which models some NPA types better than deliberate referee choice: mob behavior, chaotic environmental forces, entities whose decision-making logic is opaque to rational analysis.</p>
 <p>The trade-off: a randomly controlled NPA cannot respond intelligently to changing game state. If the table is applying specific pressure on the NPA, a random-controlled NPA may produce a response that is technically within its behavior range but contextually incoherent. The referee may need to veto random results that are narratively absurd.</p>
 <p>Use random control for NPAs that are chaotic, emergent, or mindless by nature. Use referee control for NPAs that are rational actors with coherent interests.</p>
@@ -1520,7 +1609,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <li><strong>Assertive, confrontational players</strong> tend to do well with factions that benefit from overt pressure: military powers, creditors calling in debts, factions with early-game leverage that deteriorates if unused</li>
 <li><strong>Collaborative, negotiation-oriented players</strong> tend to do well with factions that benefit from coalition-building: neutral brokers, factions whose leverage multiplies through alliance</li>
 <li><strong>Detail-oriented, systematic players</strong> tend to do well with factions that accumulate positional advantage over time: factions whose strength comes from information, procedure, or bureaucratic legitimacy</li>
-<li><strong>Improvisational players</strong> tend to do well with wildcard factions whose brief is deliberately underspecified</li>
+<li><strong>Improvisational players</strong> tend to do well with factions whose objectives are clear but whose means are deliberately open: few fixed assets, many possible routes (not the pure wildcard of Chapter 8, which has no objectives to anchor it)</li>
 </ul>
 <p>Typecasting is a recommendation, not a rule. In recurring groups where player preferences are known, it becomes intuitive. In one-shot games with unfamiliar players, the referee can ask players to name one or two factions that feel natural to them before assigning roles; this takes less than five minutes and substantially improves early-turn play quality.</p>
 </section>
@@ -1544,16 +1633,25 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <p><strong>Resource access.</strong> “Can I buy/hire/contract X?” Usually answered by the referee’s default rule: if it isn’t specified as extraordinary in the brief, assume access at roughly the level one would expect for a faction of this type.</p>
 <p><strong>Travel and logistics.</strong> “How long does it take to get from X to Y?” The map should answer this, but often players want confirmation that their reading of the map is correct.</p>
 <p><strong>NPC relationships.</strong> “Is Faction X aligned with Y, or are they independent?” This often touches on private information the referee should not reveal; the answer may be “you’d need to investigate to find out.”</p>
-<p><strong>Rules edge cases.</strong> “If my action and another Actor’s action both target the same location, do they happen simultaneously or does one go first?” The referee adjudicates all actions for a turn simultaneously, so the answer is usually that both happen and the referee determines the interaction.</p>
-<blockquote class="blockquote">
-<p>Example: Turn Zero FAQ, The Corentine Succession</p>
-<p>The following was distributed to all players before Turn 1.</p>
-<p>Are the bilateral treaties currently void, or do they remain in force pending formal challenge? They remain technically in force. No faction has yet made a formal challenge. They will lapse automatically if not renewed within sixty days of the Arbiter’s death, which means they expire at the end of Turn 4. Any faction may attempt to accelerate or delay that lapse through action.</p>
-<p>Does Caldrath’s historical claim on Essaveth’s northern province revive automatically, or does it require a formal declaration? It requires a formal declaration. Until Caldrath makes one publicly, the claim is dormant. Other factions do not need to treat it as active unless Caldrath acts.</p>
-<p>Is the Conclave’s extraterritorial status in Corenth still in effect? Yes. It derives from the treaties, which are still technically in force. If the treaties lapse without renewal, the extraterritorial status becomes contested. The Conclave is aware of this.</p>
-<p>Are mercenary companies available for hire, and at what cost? Two companies are currently operating on the peninsula. Both are expensive. Both are known to be in contact with more than one faction. Hiring one does not guarantee exclusivity.</p>
-<p>Can factions communicate privately with each other outside of their submitted actions? Yes. Talking is a free action. Negotiations, threats, offers, and intelligence-sharing happen between turns and cost nothing. What you do as a result of those conversations costs a turn.</p>
-</blockquote>
+<p><strong>Rules edge cases.</strong> “If my action and another Actor’s action both target the same location, do they happen simultaneously or does one go first?” The referee adjudicates all actions for a turn simultaneously. If both actions can succeed together, both happen; if they cannot, they are resolved as Actions in Conflict (Chapter 2).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Example: Turn Zero FAQ, The Corentine Succession
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>The following was distributed to all players before Turn 1.</em></p>
+<p><strong>Are the bilateral treaties currently void, or do they remain in force pending formal challenge?</strong> They remain technically in force. No faction has yet made a formal challenge. They will lapse automatically if not renewed within sixty days of the Arbiter’s death, which means they expire at the end of Turn 4. Any faction may attempt to accelerate or delay that lapse through action.</p>
+<p><strong>Does Caldrath’s historical claim on Essaveth’s northern province revive automatically, or does it require a formal declaration?</strong> It requires a formal declaration. Until Caldrath makes one publicly, the claim is dormant. Other factions do not need to treat it as active unless Caldrath acts.</p>
+<p><strong>Is the Conclave’s extraterritorial status in Corenth still in effect?</strong> Yes. It derives from the treaties, which are still technically in force. If the treaties lapse without renewal, the extraterritorial status becomes contested. The Conclave is aware of this.</p>
+<p><strong>Are mercenary companies available for hire, and at what cost?</strong> Two companies are currently operating on the peninsula. Both are expensive. Both are known to be in contact with more than one faction. Hiring one does not guarantee exclusivity.</p>
+<p><strong>Can factions communicate privately with each other outside of their submitted actions?</strong> Yes. Talking is a free action. Negotiations, threats, offers, and intelligence-sharing happen between turns and cost nothing. What you do as a result of those conversations costs a turn.</p>
+</div>
+</div>
 </section>
 <section id="what-not-to-answer" class="level2">
 <h2 class="anchored" data-anchor-id="what-not-to-answer">What Not to Answer</h2>
@@ -1565,10 +1663,10 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <section id="chapter-14-scaling-and-async-variants" class="level1">
 <h1>Chapter 14: Scaling and Async Variants</h1>
 <p>OSG is format-flexible. The core structure, one action per Actor per turn, referee adjudicates, public report, works across a significant range of player counts. The dynamics change with scale.</p>
-<p><strong>3–5 Actors: tight economy.</strong> Every faction matters more. With fewer players, each Actor’s decisions have greater narrative weight; there are no background factions to absorb the consequences of inaction. Alliances form faster, often by Turn 2, and once formed tend to be stickier. Reports are short. The referee workload is light. This format is ideal for first games, for time-constrained sessions, and for scenarios with a tight, well-defined problem.</p>
+<p><strong>3–4 Actors: tight economy.</strong> Below the sweet spot described in Chapter 8: you trade alliance depth for speed. Every faction matters more. With fewer players, each Actor’s decisions have greater narrative weight; there are no background factions to absorb the consequences of inaction. Alliances form faster, often by Turn 2, and once formed tend to be stickier. Reports are short. The referee workload is light. This format suits a referee’s first game, time-constrained sessions, and scenarios with a tight, well-defined problem.</p>
 <p>The challenge: with few Actors, the game can feel overdetermined. If three factions naturally align against two, the game resolves quickly with limited strategic maneuvering. Scenario design for small player counts should build in intra-alliance tension, reasons why the natural coalition members can’t simply agree on everything.</p>
 <p><strong>5–8 Actors: optimal range.</strong> The sweet spot described in Chapter 8. Enough factions for shifting alliances, enough complexity for interesting reports, manageable workload for the referee. Most scenarios in this handbook are designed for this range.</p>
-<p><strong>8–12 Actors: expanded play.</strong> Use the Extras system (Chapter 4) to manage player count beyond eight without expanding the Actor count. Beyond eight Actors, referee workload roughly doubles, not just in adjudication time but in report writing, where representing eight or more factions’ outcomes in a readable, hook-seeded document takes significant effort. Use Democratic Blocs to share the Actor role, or Consultants to give overflow players meaningful participation without expanding the adjudication burden.</p>
+<p><strong>9–12 players: expanded play.</strong> Use the Extras system (Chapter 4) to manage player count beyond eight without expanding the Actor count. Beyond eight Actors, referee workload roughly doubles, not just in adjudication time but in report writing, where representing eight or more factions’ outcomes in a readable, hook-seeded document takes significant effort. Use team Actors to share an Actor role, or Consultants to give overflow players meaningful participation without expanding the adjudication burden.</p>
 <p>If you are running a game for twelve or more players, seriously consider running two parallel OSGs on the same scenario with a shared outcome, or designing a structure where the Extras’ inputs directly feed into Actor decisions rather than being adjudicated independently.</p>
 <section id="async-timing-structure" class="level2">
 <h2 class="anchored" data-anchor-id="async-timing-structure">Async Timing Structure</h2>
@@ -1633,11 +1731,12 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 </section>
 <section id="the-bloc-variant" class="level2">
 <h2 class="anchored" data-anchor-id="the-bloc-variant">The BLOC Variant</h2>
-<p>The <em>Age of Discord</em> campaign (Appendix A) was run using BLOC, a variant that introduces three modifications to the baseline OSG system:</p>
+<p>The <em>Age of Discord</em> campaign (Appendix A) was run using BLOC, a variant that introduces four modifications to the baseline OSG system:</p>
 <ul>
 <li><strong>Crowdsourced disadvantages.</strong> After private action submission, a public summary is shared. Other players then have three days to declare counter-arguments against that action, which are factored into resolution alongside the submitter’s leverage.</li>
 <li><strong>Dice pool instead of 2d6 keep.</strong> One neutral die plus dice for advantages and disadvantages (which cancel each other). Keep the highest die if advantages remain; keep the lowest if disadvantages remain.</li>
 <li><strong>Six-result table.</strong> <em>No, and… / No / No, but… / Yes, but… / Yes / Yes, and…</em></li>
+<li><strong>Leader action.</strong> Each faction may submit a second, smaller action carried out by its named leader, resolved separately from the main action.</li>
 </ul>
 <p>The crowdsourced disadvantage phase is the most significant departure. It shifts player culture: players become active readers of each other’s actions, looking for fictional weaknesses and plausible counter-arguments rather than just pursuing their own plans. This produces more richly contested adjudication but slows the turn cycle and increases the referee’s workload substantially.</p>
 <p>Recommended for: groups comfortable with the base system who want more player investment in adjudication, and campaigns long enough (eight or more turns) to justify the additional per-turn overhead.</p>
@@ -1688,7 +1787,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <p>The dragons return to the Hermit Mountains without new alliances. The hermits, perhaps fearful or sceptical, refuse to share information. The already fragile unity among the draconic factions frays further, feeding internal tensions. Their sacred aura proves less influential than expected.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>[Referee note]</strong> An unopposed action still fails. The disadvantages raised by other players, the internal fragmentation, were sufficient to cancel the advantages and leave only the neutral die in the pool. This is No Action Without Friction applied before the dice: the fiction already contains a reason things won’t go smoothly. The failure isn’t punishing (“no, and…”), it’s simply a clean “no,” which leaves the Dragons where they started but not worse off. The door to future alliance-building remains open.</p>
+<p><strong>[Referee note]</strong> No other faction acted against the Dragons this turn, and the action still fails. In BLOC, the disadvantages other players raise count as opposition: the internal fragmentation, already established in the Dragons’ own brief, cancelled their advantages and left only the neutral die in the pool. The fiction itself was the opponent. The result is a “No, and…”: the alliance fails <em>and</em> the fragmentation deepens. That second clause is friction, not punishment; it turns a stated weakness into a visible, worsening problem other players can see and exploit, while leaving the door to future alliance-building open.</p>
 </blockquote>
 </section>
 <section id="necromancers-of-the-cursed-marshes" class="level3">
@@ -1738,7 +1837,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <p>Aramon the Grey locates the approximate position of the Sphere, marking it on a detailed map. However, the magic used in the search may have attracted the attention of other factions, including the Necromancers. The Council prepares more concrete expeditions.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>[Referee note]</strong> This is the first example of a <em>traceable crumb</em> planted in the public report. The Sphere of Technological Harmony is now a known object on the board, something to race for. The detail about the detection risk (“may have attracted attention”) is a hook seeded for the Necromancers’ player, an invitation to act on that in a later turn. When building reports, every success should leave something for other players to respond to.</p>
+<p><strong>[Referee note]</strong> This is a hook seeded through a public success. The Sphere of Technological Harmony is now a known object on the board, something to race for. The detail about the detection risk (“may have attracted attention”) is a hook seeded for the Necromancers’ player, an invitation to act on that in a later turn. When building reports, every success should leave something for other players to respond to.</p>
 </blockquote>
 </section>
 <section id="end-of-turn-observation" class="level3">
@@ -1831,7 +1930,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <p><strong>The Necromancers have lost their magic. But their cybernetic hybrids endure.</strong></p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>[Referee note]</strong> A multi-faction coalition action is one of the rarest and most satisfying events in a long OSG campaign. Four turns of accumulated alliance-building culminated here, and the referee’s job was to honour that without deflating it. The critical success was earned. The sacrifice of Kara Arx was a choice made at the table before the dice were rolled: the Society’s player agreed to the narrative cost as the condition of a clean win. This is OSG at its most collaborative: the referee sets the price, the player decides to pay it. The cybernetic hybrid caveat is the friction attached to the victory; the Necromancers’ player still has something to work with, and the war doesn’t end anticlimactically.</p>
+<p><strong>[Referee note]</strong> A multi-faction coalition action is one of the rarest and most satisfying events in a long OSG campaign. Four turns of accumulated alliance-building culminated here, and the referee’s job was to honour that without deflating it. The critical success was earned. The sacrifice of Kara Arx was a choice made at the table before the dice were rolled: the Society’s player agreed to the narrative cost as the condition of a clean win. This is OSG at its most collaborative: the referee sets the price, the player decides to pay it. The cybernetic hybrid caveat is the friction attached to the victory; the Necromancers’ player still has something to work with, and the war doesn’t end anticlimactically. (In the core rules this would be a Joint Action, Chapter 2: each faction spends its turn, the combined leverage is graded once, and one roll decides.)</p>
 </blockquote>
 </section>
 <section id="necromancers-of-the-cursed-marshes-2" class="level3">
@@ -1855,7 +1954,7 @@ The peninsula’s dominant commercial power. Controls both major ports. No stand
 <section id="what-this-game-shows" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-game-shows">What This Game Shows</h2>
 <p><strong>On problem design.</strong> The opening problem (“who will emerge from this conflict?”) is deliberately non-prescriptive. It doesn’t say which faction is the protagonist or what victory looks like. Eleven turns later, the Necromancers were nearly the dominant power before being destroyed, the Dragons were eliminated entirely, and two factions renamed themselves to mark their transformation. None of this was planned. The problem statement created a pressure vessel; the players pressurized it.</p>
-<p><strong>On faction asymmetry.</strong> The seven factions that played were genuinely structurally different. The Quorilans won through cult influence and commercial monopoly, not military power. The Society won through knowledge accumulation and sacrifice. The Blood Domain survived by betraying its own leader. None of these paths were available to all factions equally, and that asymmetry is why the game produced a narrative rather than a race to the highest score.</p>
+<p><strong>On faction asymmetry.</strong> The seven factions that played were genuinely structurally different. The Quorilans rose through cult influence and a commercial monopoly on the cure, not military power, before their elimination in Turn 6. The Society won through knowledge accumulation and sacrifice. The Blood Domain survived by betraying its own leader. None of these paths were available to all factions equally, and that asymmetry is why the game produced a narrative rather than a race to the highest score.</p>
 <p><strong>On long arc vs.&nbsp;short arc.</strong> This game ran eleven turns, significantly longer than the six-turn format recommended in the core rules. The longer arc allowed for a full dramatic structure: establishment (Turns 1–2), escalation (Turns 3–5), coalition (Turns 6–7), climax (Turn 8), denouement (Turns 9–11). At six turns, most of this game would have ended at the Necromancers’ near-victory. The additional turns revealed what the factions did with a transformed world, which turned out to be the more interesting question.</p>
 <p><strong>On variants.</strong> BLOC’s six-result table and crowdsourced disadvantage system are departures from the baseline OSG rules described in this handbook. Both variants are worth considering for groups who want more gradation in outcomes, or for referees who want players more invested in evaluating each other’s arguments. The crowdsourced disadvantage phase in particular shifted game culture: players became close readers of each other’s actions, looking for fictional weaknesses rather than just pursuing their own plans.</p>
 </section>
@@ -1935,7 +2034,7 @@ The point of the game is to create a credible narrative.</p>
 <li><label><input type="checkbox">Are there 5–8 Actors (or have you planned for Extras to manage overflow)?</label></li>
 <li><label><input type="checkbox">Can you write three distinct bullets for each faction (what it is, what it wants, what makes it unlike others)?</label></li>
 <li><label><input type="checkbox">Do the Actors have different leverage types, not just different power levels?</label></li>
-<li><label><input type="checkbox">Does every faction have at least two objectives that conflict with at least two other factions?</label></li>
+<li><label><input type="checkbox">Does every faction have objectives that conflict with at least two other factions?</label></li>
 <li><label><input type="checkbox">Have you avoided the pure-military, pure-diplomat, and pure-wildcard traps?</label></li>
 </ul>
 </section>
@@ -1952,7 +2051,7 @@ The point of the game is to create a credible narrative.</p>
 <section id="map-and-components" class="level3">
 <h3 class="anchored" data-anchor-id="map-and-components">Map and Components</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Does the map have 3–5 contested locations with clear faction starting positions?</label></li>
+<li><label><input type="checkbox">Does the map have 3–5 named locations, at least one of them contested, with clear faction starting positions?</label></li>
 <li><label><input type="checkbox">Is the map readable at a glance without explanation?</label></li>
 <li><label><input type="checkbox">Are all locations that will appear in action arguments named on the map?</label></li>
 <li><label><input type="checkbox">Are physical components moveable (tokens, markers) rather than static?</label></li>
@@ -2111,6 +2210,9 @@ The point of the game is to create a credible narrative.</p>
 </tbody>
 </table>
 <p><strong>Doubles:</strong> Referee may insert a Force of Nature if something fits.</p>
+<p><strong>Actions in conflict:</strong> Each side rolls. If both outcomes cannot happen, the higher kept die prevails and the other outcome is worse than desired. A tie is a standoff: both worse than desired.</p>
+<p><strong>Joint action:</strong> Each participant spends its action and confirms privately. One grade on combined leverage, one roll.</p>
+<p><strong>Bonus on Strong leverage:</strong> A kept 4–5 becomes a 6.</p>
 </section>
 <section id="rat-checklist" class="level2">
 <h2 class="anchored" data-anchor-id="rat-checklist">RAT Checklist</h2>
@@ -2149,7 +2251,7 @@ The point of the game is to create a credible narrative.</p>
 <p>The specific course of conduct an Actor pursues this turn, submitted privately to the referee in the format Action / Outcome / Leverage. “Action” is narrower than the traditional “Argument”: an Action describes what you do, not a general claim about the state of the world. The shift removes the rhetorical-debate framing and emphasizes procedural commitment; you are not arguing that something is true, you are declaring what you will do.</p>
 <p><strong>Actor</strong><br>
 <em>[Traditional MG: Player / Faction]</em></p>
-<p>A faction controlled by a single player. “Actor” foregrounds the role-play dimension of the game; you are inhabiting a faction’s perspective and interests, not simply moving pieces. In large games, multiple players may control a single Actor through the Democratic Bloc format (see Extras).</p>
+<p>A faction controlled by a single player. “Actor” foregrounds the role-play dimension of the game; you are inhabiting a faction’s perspective and interests, not simply moving pieces. In large games, two or three players may share a single Actor (see Team Actor).</p>
 <p><strong>Benevolent Dictatorship</strong></p>
 <p>A referee adjudication model in which the referee assesses and resolves all actions without public argument from other players. The standard adjudication model for OSG, as opposed to the traditional Matrix Game format in which all players publicly argue the merits of each action before resolution. Named for the trust it places in the referee and the authority it grants them.</p>
 <p><strong>Brief</strong><br>
@@ -2159,17 +2261,19 @@ The point of the game is to create a credible narrative.</p>
 <p>An Extras sub-role in which a non-Actor player may ask the referee one clarifying question per turn. No action submitted; participation through inquiry only. Useful for overflow players, subject-matter experts, or reluctant participants. See also: Extras.</p>
 <p><strong>Extras</strong><br>
 <em>[Traditional MG: Observer / Consultant]</em></p>
-<p>A participation tier for players who are not controlling an Actor. OSG extends the traditional Consultant role into three distinct sub-roles: Consultant (one question per turn), Collective/Horde (random chaotic action selection), and Democratic Bloc (deliberative voting on a single shared action). Extras participate in the debrief alongside Actors.</p>
+<p>Overflow players beyond a scenario’s Actor roster. OSG documents two portable options: the Consultant (one question per turn) and the Team Actor (two or three players sharing one Actor). Scenarios may also build their own participation structures into the fiction, such as an electorate that votes or a mob whose actions are drawn at random; these are not portable (Chapter 4). Extras participate in the debrief alongside Actors.</p>
 <p><strong>Force of Nature</strong><br>
 <em>[Traditional MG: External Event]</em></p>
 <p>A chaotic event introduced by the referee when both dice show the same number, representing a disruption originating outside any player’s influence. In OSG, Force of Nature is mechanically linked to doubles; the referee may invoke it if the narrative context makes it fitting, and may ignore the doubles if nothing suitable arises. Good Forces of Nature are unpredictable but traceable; they emerge from threads already present in the fiction.</p>
 <p><strong>Friction</strong></p>
 <p>The principle that every outcome, successful or not, leaves a mark on the world. Friction is the referee’s tool for ensuring that Unopposed actions are not free passes: even an action that succeeds entirely as planned has consequences that complicate the Actor’s position or create hooks for others. Distinguished from Hurdles (which block actions); friction complicates rather than prevents.</p>
+<p><strong>Joint Action</strong></p>
+<p>A single action submitted by two or more Actors, each spending its turn and confirming privately to the referee. The combined leverage is graded once and one roll decides it (Chapter 2).</p>
 <p><strong>Hurdle</strong></p>
 <p>A referee adjudication error: blocking an action (“you can’t do that”) or requiring preparatory actions before the declared action is allowed (“you can only do this after you’ve first done X and Y”). OSG prefers Friction over Hurdles.</p>
 <p><strong>Leverage</strong><br>
 <em>[Traditional MG: “Three Reasons Why” / Modifier]</em></p>
-<p>The reasons an Action is likely to succeed: resources, relationships, positioning, established fiction. In traditional Matrix Games, Leverage is often formalized as “three reasons why” the action will succeed, with a +1 modifier per reason. OSG simplifies to a qualitative assessment: is the Actor’s leverage Strong or Weak relative to the opposition? This removes the impression of precision without improving actual adjudication accuracy and reduces box-ticking behavior.</p>
+<p>The reasons an Action is likely to succeed: resources, relationships, positioning, established fiction. In traditional Matrix Games, Leverage is often formalized as “three reasons why” the action will succeed, with a +1 modifier per reason. OSG simplifies to a qualitative assessment: is the Actor’s leverage Strong or Weak relative to the opposition? Counted modifiers give an impression of precision that does not make adjudication more accurate, and they encourage box-ticking; the qualitative grade avoids both.</p>
 <p><strong>Non-Player Actor (NPA)</strong><br>
 <em>[Traditional MG: NPC Faction / External Actor]</em></p>
 <p>A faction the referee controls rather than a player. NPAs have briefs, submit actions, and appear in reports. May be referee-controlled (referee decides NPA behavior based on its brief) or random-controlled (behavior determined by dice or Extras-style random selection). Used to represent forces that exist in the fiction but have no player available to control them.</p>
@@ -2191,6 +2295,8 @@ The point of the game is to create a credible narrative.</p>
 <p><strong>Talk-Back Party</strong><br>
 <em>[Traditional MG: Debrief / After-Action Review]</em></p>
 <p>The post-game conversation in which Actors reveal their Objectives, self-assess whether they achieved them, and discuss what happened and why. The OSG term, coined by Sam Doebler, captures the shift from formal evaluation to social conversation. The structure is described in Chapter 5; it is not optional.</p>
+<p><strong>Team Actor</strong></p>
+<p>Two or three players sharing a single Actor, deliberating internally and submitting one Action per turn. Not suitable for roles whose brief holds secrets that must stay secret within the team (Chapter 4).</p>
 <p><strong>Turn</strong></p>
 <p>One full cycle of play: all Actors submit Actions, the Referee adjudicates, a Report is published. The number of turns is fixed before the game begins; the game ends when the final Turn’s Report is published. In <em>Sunrise Expansion</em>, turns represent several weeks of in-fiction time.</p>
 <p><strong>Turn Zero</strong></p>
@@ -2248,7 +2354,7 @@ The point of the game is to create a credible narrative.</p>
 </ul>
 <p><strong>Position</strong></p>
 <ul>
-<li>You have the largest standing army on the peninsula and it is currently garrisoned one day’s march from Corenth. Everyone knows this.</li>
+<li>You have the largest standing army on the peninsula, camped at the foot of the northern passes. Through the passes, Corenth is three days’ march away. Everyone knows this.</li>
 <li>Five years ago, Vethara publicly rebuked Caldrath over a border dispute with Essaveth and ruled against you. The rebuke was recorded in the Conclave’s registers. It will be used against you.</li>
 <li>Your military expansion over the past decade was financed largely by loans from House Meranto. The debt is significant and the terms are not favourable.</li>
 </ul>
@@ -2299,7 +2405,7 @@ The point of the game is to create a credible narrative.</p>
 <section id="referee-notes" class="level2">
 <h2 class="anchored" data-anchor-id="referee-notes">Referee Notes</h2>
 <p><strong>On the problem statement.</strong> The scenario’s central absence, no recognized authority to renew the treaties, is more generative than a simple succession dispute because it creates different kinds of pressure on each faction. Caldrath wants to fill the absence with force. The Conclave wants to fill it with institutional authority. Saivorn wants to work around it commercially. Essaveth just needs it not to be fatal. House Meranto needs the crisis to resolve before the debts become unrecoverable. No two factions want the same thing from the same solution.</p>
-<p><strong>On map design.</strong> Sketch the peninsula with five locations: Corenth (central, contested), Saivorn’s coast (south, with ports), Caldrath’s heartland (north), Essaveth’s passes (between Caldrath and Corenth), and the southern merchant coast (House Meranto’s base of operations). Add connection lines showing that Caldrath must pass through or around Essaveth to reach Corenth, and that Saivorn has sea access to Corenth but no direct land route. That is enough to run the game.</p>
+<p><strong>On map design.</strong> Sketch the peninsula with five locations: Corenth (central, contested), Saivorn’s coast (south, with ports), Caldrath’s heartland (north), Essaveth’s passes (between Caldrath and Corenth), and the southern merchant coast (House Meranto’s base of operations). Add connection lines showing that Caldrath must pass through or around Essaveth to reach Corenth, and that Saivorn reaches Corenth by sea, with no land route worth using. That is enough to run the game.</p>
 <p><strong>On Turn Zero.</strong> Expect questions about: whether the treaties are immediately void or remain in force pending formal challenge; whether Caldrath’s historical claim on Essaveth requires a declaration or revives automatically; whether hired mercenaries are available and at what cost; whether the Conclave’s extraterritorial status applies to its agents outside the temple. Answer these before Turn 1. Decline questions about other Actors’ private intentions.</p>
 <p><strong>On scaling.</strong> This scenario as written is designed for five players. For four players, fold House Meranto’s economic leverage into Saivorn (make Saivorn both commercially dominant and the peninsula’s primary creditor), which tightens Saivorn’s internal tension between stability and the desire for a new order. For six players, add a sixth faction: a military order or mercenary company whose services all other factions will compete to secure, with objectives around maintaining institutional independence while taking the most advantageous contract.</p>
 </section>
@@ -2336,15 +2442,50 @@ document.addEventListener("DOMContentLoaded", function () {
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -2423,7 +2564,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -2432,8 +2574,69 @@ document.addEventListener("DOMContentLoaded", function () {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -2447,6 +2650,7 @@ document.addEventListener("DOMContentLoaded", function () {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -2609,44 +2813,54 @@ document.addEventListener("DOMContentLoaded", function () {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -2744,6 +2958,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

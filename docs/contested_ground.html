@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,18 +40,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="../docs/assets/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f6c01fde8906d65facae5dd47b986891.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8fc9db7139d8dc2e4952ab5c2b2a0ec3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -83,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -106,6 +110,7 @@ ul.task-list li input[type="checkbox"] {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -135,13 +140,19 @@ ul.task-list li input[type="checkbox"] {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -235,6 +246,7 @@ ul.task-list li input[type="checkbox"] {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -249,15 +261,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Open Strategy Games</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -266,10 +277,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../docs/osg_handbook.html"> 
 <span class="menu-text">Learn</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../docs/contested_ground.html" aria-current="page"> 
-<span class="menu-text">Play</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-play" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Play</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-play">    
+        <li>
+    <a class="dropdown-item" href="../docs/contested_ground.html">
+ <span class="dropdown-text">Contested Ground</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/solo_mode.html">
+ <span class="dropdown-text">Solo Mode</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../docs/factionlog.html"> 
 <span class="menu-text">Log</span></a>
@@ -292,8 +314,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -302,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -329,6 +352,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-core-assessment" id="toc-the-core-assessment" class="nav-link" data-scroll-target="#the-core-assessment">The Core Assessment</a></li>
   <li><a href="#the-dice-mechanic" id="toc-the-dice-mechanic" class="nav-link" data-scroll-target="#the-dice-mechanic">The Dice Mechanic</a></li>
   <li><a href="#unopposed-actions" id="toc-unopposed-actions" class="nav-link" data-scroll-target="#unopposed-actions">Unopposed Actions</a></li>
+  <li><a href="#actions-in-conflict" id="toc-actions-in-conflict" class="nav-link" data-scroll-target="#actions-in-conflict">Actions in Conflict</a></li>
+  <li><a href="#joint-actions" id="toc-joint-actions" class="nav-link" data-scroll-target="#joint-actions">Joint Actions</a></li>
   <li><a href="#force-of-nature" id="toc-force-of-nature" class="nav-link" data-scroll-target="#force-of-nature">Force of Nature</a></li>
   <li><a href="#the-rat-checklist" id="toc-the-rat-checklist" class="nav-link" data-scroll-target="#the-rat-checklist">The RAT Checklist</a></li>
   <li><a href="#no-action-without-friction" id="toc-no-action-without-friction" class="nav-link" data-scroll-target="#no-action-without-friction">No Action Without Friction</a></li>
@@ -358,24 +383,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#pre-game-scenario-review" id="toc-pre-game-scenario-review" class="nav-link" data-scroll-target="#pre-game-scenario-review">Pre-Game Scenario Review</a></li>
   <li><a href="#per-turn-adjudication-checklist" id="toc-per-turn-adjudication-checklist" class="nav-link" data-scroll-target="#per-turn-adjudication-checklist">Per-Turn Adjudication Checklist</a></li>
   </ul></li>
-  <li><a href="#part-ix-solo-mode" id="toc-part-ix-solo-mode" class="nav-link" data-scroll-target="#part-ix-solo-mode">Part IX: Solo Mode</a>
-  <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#the-turn" id="toc-the-turn" class="nav-link" data-scroll-target="#the-turn">The Turn</a></li>
-  <li><a href="#the-aa-action-table" id="toc-the-aa-action-table" class="nav-link" data-scroll-target="#the-aa-action-table">The AA Action Table</a></li>
-  <li><a href="#leverage-assessment" id="toc-leverage-assessment" class="nav-link" data-scroll-target="#leverage-assessment">Leverage Assessment</a></li>
-  <li><a href="#aa-diplomatic-signals-optional" id="toc-aa-diplomatic-signals-optional" class="nav-link" data-scroll-target="#aa-diplomatic-signals-optional">AA Diplomatic Signals <em>(Optional)</em></a></li>
-  <li><a href="#turn-structure-summary" id="toc-turn-structure-summary" class="nav-link" data-scroll-target="#turn-structure-summary">Turn Structure Summary</a></li>
-  <li><a href="#game-length" id="toc-game-length" class="nav-link" data-scroll-target="#game-length">Game Length</a></li>
-  <li><a href="#the-debrief" id="toc-the-debrief" class="nav-link" data-scroll-target="#the-debrief">The Debrief</a></li>
-  </ul></li>
+  <li><a href="#part-ix-solo-mode" id="toc-part-ix-solo-mode" class="nav-link" data-scroll-target="#part-ix-solo-mode">Part IX: Solo Mode</a></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
   <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -404,7 +419,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This document contains a generic, setting-neutral rules framework derived from the design principles documented in the Open Strategy Game Handbook. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.</p>
+<p>This document contains a generic, setting-neutral rules framework derived from the design principles documented in the <a href="../docs/osg_handbook.html">Open Strategy Game Handbook</a>. The Handbook explains the reasoning and gives worked examples; this document states the rules. It can be used as written, adapted, or built upon to create published OSG scenarios and variants.</p>
 <section id="part-i-core-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="part-i-core-concepts">Part I: Core Concepts</h2>
 <section id="what-this-game-is" class="level3">
@@ -423,7 +438,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="part-ii-roles">Part II: Roles</h2>
 <section id="the-referee" class="level3">
 <h3 class="anchored" data-anchor-id="the-referee">The Referee</h3>
-<p>The Referee adjudicates all actions, writes the public Report each turn, and maintains the internal consistency of the fiction. The Referee is not a Game Master; they do not author a story or protect a narrative outcome. They adjudicate, report, and stay consistent.</p>
+<p>The Referee adjudicates all actions, writes the public Report each turn, and maintains the internal consistency of the fiction. The Referee is not a Game Master; they do not author a story or protect a narrative outcome. They adjudicate, report, and stay consistent. They explain rulings to each Actor in private feedback, never in the public Report, and never let a preference for how the story should go affect how likely an action is to succeed.</p>
 <p>The Referee operates by <strong>Benevolent Dictatorship</strong>: full authority, no public argument from other players before ruling. This keeps the game moving and protects interesting outcomes from being argued away by the loudest voice at the table.</p>
 </section>
 <section id="actors" class="level3">
@@ -481,6 +496,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="timing">Timing</h3>
 <p><strong>Asynchronous play:</strong> 48-hour submission window from Report publication is a practical default.</p>
 <p><strong>Missed deadline:</strong> Either a one-turn pass (the faction takes no action) or a Referee-authored holding action: something plausible and low-stakes that keeps the faction present in the Report. Declare the policy before the game begins.</p>
+<p><strong>Dropout:</strong> If a player leaves for good, the Referee either runs the faction as an NPA (one objective, defensive behavior rule, no bonus spending; the default in the first half of the game) or retires it with a one-paragraph in-fiction exit that other Actors can act on (better in the second half). Declare this policy before the game begins too.</p>
 <p><strong>Live play:</strong> The single-action discipline and private submission rules still apply; the timing window compresses from days to minutes.</p>
 </section>
 </section>
@@ -515,6 +531,10 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 89%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Result</th>
@@ -536,10 +556,11 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: left;"><strong>1</strong></td>
-<td style="text-align: left;">Failure: something especially bad may also occur</td>
+<td style="text-align: left;">The outcome is worse than desired, and something especially bad may also occur</td>
 </tr>
 </tbody>
 </table>
+<p>Strong leverage produces the desired outcome (4+) 75% of the time; Weak leverage 25% of the time.</p>
 <pre class="mermaid"><code>flowchart TD
     Start([Action Faces Opposition]) --&gt; Assess{Assess Leverage}
     Assess --&gt;|Strong| KeepHigh[Roll 2d6, Keep Higher Die]
@@ -551,7 +572,7 @@ ul.task-list li input[type="checkbox"] {
     Resolve --&gt;|6| SuccessExtra[Success: Desired outcome occurs + potential bonus benefit]
     Resolve --&gt;|4 or 5| Success[Success: Desired outcome occurs]
     Resolve --&gt;|2 or 3| SuccessWithCost[Action proceeds, but outcome is worse than desired]
-    Resolve --&gt;|1| FailureExtra[Failure: Outcome fails + potential extra complication]
+    Resolve --&gt;|1| FailureExtra[Action proceeds, outcome worse than desired + potential extra complication]
 
     SuccessExtra --&gt; CheckRAT[Apply RAT Checklist]
     Success --&gt; CheckRAT
@@ -564,6 +585,30 @@ ul.task-list li input[type="checkbox"] {
 <section id="unopposed-actions" class="level3">
 <h3 class="anchored" data-anchor-id="unopposed-actions">Unopposed Actions</h3>
 <p>When no other faction is directly opposing the action and the fiction raises no inherent obstacle, the action is Unopposed: the Actor gets their desired outcome. Unopposed does not mean free. The Referee still determines how the outcome lands and writes it into the Report as a fact other Actors now have to contend with.</p>
+</section>
+<section id="actions-in-conflict" class="level3">
+<h3 class="anchored" data-anchor-id="actions-in-conflict">Actions in Conflict</h3>
+<p>When two Actors’ actions directly oppose each other, each is the other’s opposition.</p>
+<ol type="1">
+<li>Grade each action Strong or Weak against the other.</li>
+<li>Roll 2d6 for each and keep the high or low die as usual.</li>
+<li>If both outcomes can be true at once, both occur as rolled.</li>
+<li>If they cannot, the higher kept die prevails and is read normally. The other outcome is worse than desired, whatever its die showed; on a 1, something especially bad may also occur.</li>
+<li>On a tie, neither prevails: both outcomes are worse than desired. Write the standoff into the Report as friction for both.</li>
+</ol>
+<p>With three or more colliding actions, the highest kept die prevails; a tie at the top is a standoff among those tied, and everyone below gets an outcome worse than desired.</p>
+<p>Strong beats Weak about three times in four (77%, 11% ties). Equal grades prevail about equally often, with a standoff about one time in five.</p>
+</section>
+<section id="joint-actions" class="level3">
+<h3 class="anchored" data-anchor-id="joint-actions">Joint Actions</h3>
+<p>Two or more Actors may pool their turns into one action.</p>
+<ul>
+<li><strong>Each participant spends its action</strong> for the turn.</li>
+<li><strong>One submission.</strong> The Leverage section names what each participant specifically contributes. A participant who contributes nothing specific has not joined; the Referee returns the submission.</li>
+<li><strong>Private confirmation.</strong> Each participant confirms to the Referee before the deadline. An Actor who does not confirm has not joined: the action proceeds without its contribution, leverage is regraded, and any action it submitted instead is adjudicated normally.</li>
+<li><strong>One grade, one roll</strong> on the combined leverage. Combined is not automatically Strong.</li>
+<li><strong>Shared outcome.</strong> The result and its friction land on every participant; the Referee may split consequences unevenly, traceable to what each contributed.</li>
+</ul>
 </section>
 <section id="force-of-nature" class="level3">
 <h3 class="anchored" data-anchor-id="force-of-nature">Force of Nature</h3>
@@ -690,6 +735,7 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Geographic</strong>: territory, chokepoints, transit routes; static but often decisive</li>
 <li><strong>Informational</strong>: intelligence, secrets, communications; hard to assess from outside, enables surprise</li>
 </ul>
+<p>The list is not closed. A scenario may add its own types (legitimacy, diplomatic, symbolic); name them explicitly so players and Referee agree on what they cover.</p>
 <p>Give each faction a clear primary leverage type and a secondary type that creates tradeoffs.</p>
 <p><strong>Specificity principle:</strong> Vague positions make vague arguments. “Has resources” is not a position. “Controls the only two deep-water ports” is a position. When writing a position bullet, ask: could two players interpret this in ways that lead to different leverage arguments? If yes, it’s too vague.</p>
 <p><strong>Typecasting traps to avoid:</strong></p>
@@ -706,35 +752,37 @@ ul.task-list li input[type="checkbox"] {
 <p>Apply the <strong>Pithy Objectives Test</strong>: add “!” to any objective and read it aloud. If it reads like something a faction leader would say with conviction, it passes. If it reads like a policy document, it fails: rewrite with more specificity.</p>
 <p><strong>Position.</strong> What is especially significant about this faction relative to others. Not an inventory; only what matters for play. Include specific assets, specific vulnerabilities, key relationships, and geographic or positional constraints. Exclude things true of every faction and background information that doesn’t affect play decisions.</p>
 <p><strong>Public vs.&nbsp;Private.</strong> Each Brief has a public component (what all Actors know about this faction) and a private component (what only this Actor knows: secret objectives, private assets, hidden intelligence).</p>
-<blockquote class="blockquote">
-<p><strong>Brief Template</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Brief Template
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><em>General Brief: distributed to all players</em></p>
-<p><strong>The Problem:</strong> <em>(one sentence)</em> <strong>The World:</strong> <em>(broad strokes, shared context)</em> <strong>The Actors:</strong> <em>(one public sentence per faction)</em> <strong>Structure:</strong> Each Actor submits one Action per turn in the format Action / Outcome / Leverage. The game ends after <em>(X)</em> turns. Objectives are self-assessed at game end. <strong>Expectations:</strong> The goal of the game is to achieve your objectives. The point of the game is to create a credible narrative.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><em>Private Brief: this Actor only</em></td>
-</tr>
-<tr class="even">
-<td><strong>Faction Name:</strong> <strong>Objectives:</strong></td>
-</tr>
-<tr class="odd">
-<td>- Short-term: - Long-term:</td>
-</tr>
-<tr class="even">
-<td><strong>Position:</strong></td>
-</tr>
-</tbody>
-</table>
+<p><strong>The Problem:</strong> <em>(one sentence)</em><br>
+<strong>The World:</strong> <em>(broad strokes, shared context)</em><br>
+<strong>The Actors:</strong> <em>(one public sentence per faction)</em><br>
+<strong>Structure:</strong> Each Actor submits one Action per turn in the format Action / Outcome / Leverage. The game ends after <em>(X)</em> turns. Objectives are self-assessed at game end. Some objectives are long-term: laying the groundwork for them counts as success.<br>
+<strong>Expectations:</strong> The goal of the game is to achieve your objectives. The point of the game is to create a credible narrative.</p>
+<hr>
+<p><em>Private Brief: this Actor only</em></p>
+<p><strong>Faction Name:</strong></p>
+<p><strong>Objectives:</strong></p>
 <ul>
+<li>Short-term:</li>
+<li>Long-term:</li>
+</ul>
+<p><strong>Position:</strong></p>
+<ul>
+<li></li>
 <li></li>
 <li></li>
 </ul>
 <p><strong>Special Abilities</strong> <em>(if using bonuses)</em>:</p>
-</blockquote>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -751,6 +799,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 </section>
 <section id="the-map" class="level3">
 <h3 class="anchored" data-anchor-id="the-map">The Map</h3>
@@ -776,6 +826,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Name bonuses narratively</strong>, not mechanically. <em>Io Dust ×3</em> is better than <em>Military Advantage Token ×3</em>. A narrative name implies a context: when and how it can be used, which makes adjudication cleaner.</p>
 <p><strong>Traits vs.&nbsp;Bonuses:</strong> A <strong>trait</strong> is a persistent characteristic that strengthens leverage whenever contextually relevant and never diminishes (<em>“largest standing army on the peninsula”</em>). A <strong>bonus</strong> is spent: one-use, gone after deployment, creating strategic decisions about timing.</p>
 <p><strong>Scoping bonuses:</strong> A bonus should shift leverage from weak to strong, not guarantee success regardless of other factors. It must be contextually bounded; the narrative name indicates its scope.</p>
+<p><strong>Spending a bonus:</strong> Declare it in the Leverage section at submission. If the action is graded Weak, the bonus makes it Strong. If it is already Strong, a kept 4 or 5 becomes a 6 instead; a 1–3 is unchanged, and the bonus is spent anyway. In an action in conflict, the improved result counts as a 6.</p>
 <p><strong>Bonus design checklist:</strong></p>
 <ul>
 <li>Every faction has at least one named bonus</li>
@@ -821,7 +872,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Assertive, confrontational players: factions with overt pressure leverage (military powers, creditors)</li>
 <li>Collaborative, negotiation-oriented players: factions that multiply leverage through alliance (brokers, neutral parties)</li>
 <li>Detail-oriented, systematic players: factions that accumulate positional advantage through information or procedure</li>
-<li>Improvisational players: factions with deliberately underspecified briefs</li>
+<li>Improvisational players: factions with clear objectives but deliberately open means (not pure wildcards)</li>
 </ul>
 </section>
 </section>
@@ -852,7 +903,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Map:</strong></p>
 <ul>
-<li>Are there 3–5 contested zones with names?</li>
+<li>Are there 3–5 named locations, at least one of them contested?</li>
 <li>Are faction starting positions spread asymmetrically?</li>
 <li>Is the map readable at a glance?</li>
 </ul>
@@ -867,7 +918,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>During adjudication:</strong></p>
 <ul>
-<li>Is this action Unopposed or opposed?</li>
+<li>Is this action Unopposed, opposed, or in conflict with another Actor’s action?</li>
+<li>For joint actions: has every participant confirmed privately?</li>
 <li>If opposed: is leverage Strong or Weak?</li>
 <li>Does each outcome pass the RAT check (Reasonable / Actionable / Traceable)?</li>
 <li>Is every outcome leaving a mark on the world (No Action Without Friction)?</li>
@@ -883,276 +935,22 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="part-ix-solo-mode" class="level2">
 <h2 class="anchored" data-anchor-id="part-ix-solo-mode">Part IX: Solo Mode</h2>
-<p>You play one Actor. All other factions are <strong>Autonomous Actors (AAs)</strong>, driven by written behavior rules and random tables, not referee judgment. You are simultaneously the player and the referee. The core loop (declare an action, adjudicate it honestly, write a report, advance the world) remains intact.</p>
-<section id="setup" class="level3">
-<h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<p>Follow the standard design workflow from Part VII, with these adjustments:</p>
-<ol type="1">
-<li>Write a one-sentence <strong>Problem Statement</strong></li>
-<li>Create <strong>3–5 Actors</strong> total (including yourself) with asymmetric leverage types</li>
-<li>Write a <strong>Brief</strong> for your Actor (two paired objectives + position)</li>
-<li>Write a <strong>minimal AA Brief</strong> for each other faction (see below)</li>
-<li>Sketch a <strong>Map</strong> with 3–5 named contested locations</li>
-<li>Assign yourself at least one named <strong>Spendable Bonus</strong></li>
-</ol>
-<p>A game of 3 Actors (you + 2 AAs) over 6 turns is a solid first run.</p>
-<section id="aa-briefs" class="level4">
-<h4 class="anchored" data-anchor-id="aa-briefs">AA Briefs</h4>
-<p>Each Autonomous Actor needs only four things:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 76%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Field</th>
-<th style="text-align: left;">Content</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Objective</strong></td>
-<td style="text-align: left;">One sentence: what this faction wants most</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Position</strong></td>
-<td style="text-align: left;">One specific asset or vulnerability that matters</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Leverage Type</strong></td>
-<td style="text-align: left;">Military / Economic / Geographic / Informational</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Behavior Rule</strong></td>
-<td style="text-align: left;">A standing instruction for how it acts (see table below)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>AA Behavior Rules (d6):</strong> Roll once per AA at setup, or choose:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 1%">
-<col style="width: 98%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">d6</th>
-<th style="text-align: left;">Behavior Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"><em>Consolidator</em>: acts to secure and hold what it already controls; only targets others if directly threatened</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;"><em>Aggressor</em>: each turn acts toward its objective by the most direct available means; does not negotiate</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;"><em>Opportunist</em>: targets whichever Actor is currently weakest or most exposed in the fiction</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;"><em>Balancer</em>: acts against whoever holds the most visible power or influence this turn</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;"><em>Reactor</em>: does nothing until acted upon; responds to the last action that affected it</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;"><em>Schemer</em>: alternates between one turn of visible action and one turn of consolidation (odd = act, even = consolidate)</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="the-turn" class="level3">
-<h3 class="anchored" data-anchor-id="the-turn">The Turn</h3>
-<section id="step-1-generate-aa-actions" class="level4">
-<h4 class="anchored" data-anchor-id="step-1-generate-aa-actions">Step 1: Generate AA Actions</h4>
-<p>Before writing your own action, determine what each AA does this turn. This order matters: <strong>you commit to your action without knowing AA outcomes, just as in a standard OSG</strong>.</p>
-<p>For each AA, roll <strong>d6</strong> on its <strong>Action Table</strong> (written at scenario creation; see below) and note the result. Do not adjudicate yet.</p>
-</section>
-<section id="step-2-declare-your-action" class="level4">
-<h4 class="anchored" data-anchor-id="step-2-declare-your-action">Step 2: Declare Your Action</h4>
-<p>Write your action in the standard format from Part III. Commit to it in writing before opening the AA results.</p>
-</section>
-<section id="step-3-adjudicate-all-actions" class="level4">
-<h4 class="anchored" data-anchor-id="step-3-adjudicate-all-actions">Step 3: Adjudicate All Actions</h4>
-<p>Open the AA results. Adjudicate AA actions first, then your own. Apply the dice mechanic from Part IV honestly. Apply the RAT check (Part IV) to every outcome before writing it.</p>
-</section>
-<section id="step-4-write-the-report" class="level4">
-<h4 class="anchored" data-anchor-id="step-4-write-the-report">Step 4: Write the Report</h4>
-<p>Write a brief, third-person, factual report covering every action’s outcome. Style: news roundup. End with one open observation that no single faction owns.</p>
-<p>After writing each outcome, ask: <em>does this put something in front of me or an AA that changes the next turn?</em> If no: rewrite.</p>
-</section>
-</section>
-<section id="the-aa-action-table" class="level3">
-<h3 class="anchored" data-anchor-id="the-aa-action-table">The AA Action Table</h3>
-<p>Write this at scenario creation for each AA. It is a d6 table of 6 plausible actions consistent with that faction’s objective, leverage type, and behavior rule. Actions should vary in target and method but stay within the faction’s identity.</p>
-<p><strong>Example: “The Iron Compact”</strong> <em>(objective: control the central city; leverage: military; behavior: Aggressor)</em>:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">d6</th>
-<th style="text-align: left;">Action</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Advance a garrison unit toward the nearest contested zone</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Issue a public ultimatum demanding another faction’s withdrawal</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">Blockade a supply route between two other Actors</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Attempt to suborn a local official in the contested zone</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">Request formal recognition from a neutral party</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">Consolidate current position; fortify and resupply</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Veto rule:</strong> if the rolled action is fictionally incoherent given the current game state (the location no longer exists, the target has already conceded, etc.), reroll once. If the reroll is also incoherent, apply the faction’s behavior rule directly to generate an action from scratch.</p>
-</section>
-<section id="leverage-assessment" class="level3">
-<h3 class="anchored" data-anchor-id="leverage-assessment">Leverage Assessment</h3>
-<p>The greatest risk in solo play is unconscious bias: grading your own leverage too generously. Apply this checklist before calling leverage Strong:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Is the resource or relationship <strong>explicitly established</strong> in prior fiction, not assumed?</label></li>
-<li><label><input type="checkbox">Has a prior action <strong>created the conditions</strong> for this one to succeed?</label></li>
-<li><label><input type="checkbox">Would a neutral reader of the report agree this faction has the advantage?</label></li>
-</ul>
-<p>If you answer No to any of these, call it <strong>Weak</strong>.</p>
-</section>
-<section id="aa-diplomatic-signals-optional" class="level3">
-<h3 class="anchored" data-anchor-id="aa-diplomatic-signals-optional">AA Diplomatic Signals <em>(Optional)</em></h3>
-<p>Since AAs cannot negotiate, this procedure partially replaces the social layer. Once per turn, <strong>after reading AA action results but before writing the report</strong>, roll d6 for each AA:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 97%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">d6</th>
-<th style="text-align: left;">Signal</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1–2</td>
-<td style="text-align: left;">No signal</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;">The AA’s action this turn was implicitly directed <em>away</em> from you; write one crumb suggesting restraint</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">The AA’s action this turn creates a condition you could exploit if you act toward it next turn</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;">The AA has overextended; its position is now vulnerable in a specific way (you determine what)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">The AA acts in a way that incidentally benefits you; write it into the report as an unintended consequence</td>
-</tr>
-</tbody>
-</table>
-<p>This is not negotiation. It is the world signaling opportunities, the same way a good report seeds hooks for all Actors.</p>
-</section>
-<section id="turn-structure-summary" class="level3">
-<h3 class="anchored" data-anchor-id="turn-structure-summary">Turn Structure Summary</h3>
-<pre><code>1. Roll AA Action Tables → note results, do not read yet
-2. Write your Action (Action / Outcome / Leverage)
-3. Open AA results
-4. Adjudicate AA actions (2d6, RAT check)
-5. Adjudicate your action (2d6, RAT check)
-6. Roll AA Diplomatic Signals (optional)
-7. Write the Report (third-person, factual, hook-seeded)
-8. Advance the turn counter</code></pre>
-<pre class="mermaid"><code>flowchart TD
-    Step1[1. Roll Autonomous Actor Actions&lt;br&gt;&lt;i&gt;Keep results hidden&lt;/i&gt;] --&gt; Step2[2. Write Your Action&lt;br&gt;&lt;i&gt;Action / Outcome / Leverage&lt;/i&gt;]
-    Step2 --&gt; Step3[3. Open Autonomous Actor Actions]
-    Step3 --&gt; Step4[4. Adjudicate Autonomous Actor Actions&lt;br&gt;&lt;i&gt;2d6 + RAT check&lt;/i&gt;]
-    Step4 --&gt; Step5[5. Adjudicate Your Action&lt;br&gt;&lt;i&gt;2d6 + RAT check&lt;/i&gt;]
-    Step5 --&gt; Step6[6. Roll Autonomous Actor Diplomatic Signals&lt;br&gt;&lt;i&gt;Optional&lt;/i&gt;]
-    Step6 --&gt; Step7[7. Write the Report&lt;br&gt;&lt;i&gt;Third-person, hook-seeded&lt;/i&gt;]
-    Step7 --&gt; Step8[8. Advance Turn Counter]
-    Step8 --&gt; Step1</code></pre>
-</section>
-<section id="game-length" class="level3">
-<h3 class="anchored" data-anchor-id="game-length">Game Length</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Turns</th>
-<th style="text-align: left;">Feel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;">Sharp, fast: one strategic arc</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">Standard: alliances form and break</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">Full campaign: long-term objectives come into reach</td>
-</tr>
-</tbody>
-</table>
-<p>The game ends at the stated turn count. No extensions.</p>
-</section>
-<section id="the-debrief" class="level3">
-<h3 class="anchored" data-anchor-id="the-debrief">The Debrief</h3>
-<p>Solo play changes the debrief (Part VI) into a <strong>written self-assessment</strong>. After the final report, write:</p>
-<ol type="1">
-<li><strong>Did you achieve your short-term objective?</strong> Why or why not.</li>
-<li><strong>Did you achieve your long-term objective, or lay groundwork toward it?</strong></li>
-<li><strong>What turn surprised you most?</strong> What produced the surprise: AA behavior, a Force of Nature, or your own action’s consequences?</li>
-<li><strong>What would you design differently</strong> in the scenario: the problem statement, an AA behavior rule, a leverage asymmetry?</li>
-</ol>
-<p>The debrief is also design feedback. A solo game that produced no surprises has AA tables that were too predictable. A game that felt incoherent has a problem statement that didn’t generate distinct enough competing interests.</p>
-</section>
+<p>You can play an OSG alone: you run one Actor, every other faction is an Autonomous Actor driven by a brief, a behavior rule and an action table, and you act as your own Referee. The full rules, including the Oracle, negotiation with Autonomous Actors, Secrets and the Crisis Clock, are in <a href="../docs/solo_mode.html">Contested Ground: Solo Mode</a>.</p>
 </section>
 <section id="glossary" class="level2">
 <h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
-<p><strong>AA (Autonomous Actor)</strong>: A faction driven by a Behavior Rule and a random Action Table in solo play, replacing an absent human player. Has a minimal Brief; does not negotiate.</p>
-<p><strong>AA Action Table</strong>: A d6 table of six plausible actions written at scenario creation for each Autonomous Actor. Rolled at the start of each solo turn.</p>
-<p><strong>Behavior Rule</strong>: A standing instruction governing how an Autonomous Actor acts each turn (Consolidator, Aggressor, Opportunist, Balancer, Reactor, Schemer).</p>
-<p><strong>Diplomatic Signal</strong>: An optional solo procedure rolled once per turn per AA after adjudication. Signals opportunities, vulnerabilities, or unintended consequences without replacing negotiation.</p>
+<p><strong>AA (Autonomous Actor)</strong>: In solo play, a faction driven by a brief, a behavior rule and an action table instead of a player. See <a href="../docs/solo_mode.html">Solo Mode</a>.</p>
 <p><strong>Action</strong>: The specific course of conduct an Actor pursues this turn. Submitted privately in the format Action / Outcome / Leverage. Narrower than a general claim about the world: it describes what you <em>do</em>.</p>
 <p><strong>Actor</strong>: A faction controlled by a single player (or team, via Team Actor). Equivalent to “Player/Faction” in traditional Matrix Game literature; Actor foregrounds the role-play dimension.</p>
 <p><strong>Benevolent Dictatorship</strong>: The OSG adjudication model: one Referee, full authority, no public argument before ruling.</p>
 <p><strong>Bonus</strong>: A named, spendable one-use asset tied to a faction’s starting position. Spent to shift leverage from weak to strong in a specific action. Distinguished from a Trait (persistent, never diminishes).</p>
 <p><strong>Brief</strong>: The document each Actor receives before the game: public information (shared with all) and private information (this Actor only). Contains Objectives and Position.</p>
 <p><strong>Consultant</strong>: An Extras sub-role: one question to the Referee per turn, no action submitted.</p>
+<p><strong>Extras</strong>: Overflow players beyond the Actor roster. Portable options: Consultant and Team Actor. Scenarios may also build their own participation structures into the fiction.</p>
 <p><strong>Force of Nature</strong>: A chaotic external event the Referee may introduce when both dice show the same number. A prompt, not a requirement.</p>
 <p><strong>Friction</strong>: The principle that every outcome leaves a mark. Complicates actions rather than blocking them. Opposed to Hurdles.</p>
 <p><strong>Hurdle</strong>: An adjudication error: blocking an action outright rather than complicating it. Replace “no” with “yes, but.”</p>
+<p><strong>Joint Action</strong>: A single action submitted by two or more Actors, each spending its turn and confirming privately. One grade on combined leverage, one roll.</p>
 <p><strong>Leverage</strong>: The reasons an action is likely to succeed: resources, relationships, positioning, established fiction. Graded as Strong or Weak relative to opposition.</p>
 <p><strong>NPA (Non-Player Actor)</strong>: A faction the Referee controls. Has a Brief, acts each turn, appears in Reports.</p>
 <p><strong>Objectives</strong>: What an Actor is trying to accomplish. Two paired objectives per Actor: short-term and long-term. Self-assessed at game end.</p>
@@ -1163,9 +961,11 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Report</strong>: The public document the Referee produces at the end of each turn: outcomes chronicled, hooks seeded.</p>
 <p><strong>Talk-Back / Debrief</strong>: The post-game conversation in which Actors reveal Objectives, self-assess, and reconstruct what happened. Not optional.</p>
 <p><strong>Team Actor</strong>: An Extras sub-role in which 2–3 players share one Actor.</p>
+<p><strong>Traceable Crumb</strong>: A small, specific public detail (a name, a meeting, a delayed shipment) planted in the Report for every private outcome, so a later revelation feels earned.</p>
 <p><strong>Trait</strong>: A persistent leverage characteristic (e.g., “largest standing army”). Always available when contextually relevant; never diminished by use. Distinguished from a Bonus.</p>
 <p><strong>Turn</strong>: One full play cycle: Actions submitted, adjudicated, Report published.</p>
 <p><strong>Turn Zero</strong>: A pre-game Q&amp;A session before Turn 1. No actions; produces shared fictional and procedural assumptions.</p>
+<p><strong>Unopposed Action</strong>: An action no faction opposes and the fiction raises no obstacle to. No roll: the desired outcome occurs, and the Referee decides how it lands.</p>
 </section>
 <section id="credits-license" class="level2">
 <h2 class="anchored" data-anchor-id="credits-license">Credits &amp; License</h2>
@@ -1199,15 +999,50 @@ document.addEventListener("DOMContentLoaded", function () {
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1286,7 +1121,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1295,8 +1131,69 @@ document.addEventListener("DOMContentLoaded", function () {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1310,6 +1207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1472,44 +1370,54 @@ document.addEventListener("DOMContentLoaded", function () {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1607,6 +1515,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">

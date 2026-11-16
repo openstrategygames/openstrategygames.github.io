@@ -1,0 +1,4080 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Roberto Bisceglie">
+
+<title>Contested Ground: Solo Mode – Open Strategy Games</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../docs/assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8fc9db7139d8dc2e4952ab5c2b2a0ec3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&amp;family=Montserrat:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Open Strategy Games</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/osg_handbook.html"> 
+<span class="menu-text">Learn</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-play" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Play</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-play">    
+        <li>
+    <a class="dropdown-item" href="../docs/contested_ground.html">
+ <span class="dropdown-text">Contested Ground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/solo_mode.html">
+ <span class="dropdown-text">Solo Mode</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/factionlog.html"> 
+<span class="menu-text">Log</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../docs/blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/openstrategygames/openstrategygames.github.io"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-i-overview" id="toc-part-i-overview" class="nav-link active" data-scroll-target="#part-i-overview">Part I: Overview</a>
+  <ul class="collapse">
+  <li><a href="#what-solo-play-is" id="toc-what-solo-play-is" class="nav-link" data-scroll-target="#what-solo-play-is">What Solo Play Is</a></li>
+  <li><a href="#two-rules-of-honesty" id="toc-two-rules-of-honesty" class="nav-link" data-scroll-target="#two-rules-of-honesty">Two Rules of Honesty</a></li>
+  <li><a href="#what-you-need" id="toc-what-you-need" class="nav-link" data-scroll-target="#what-you-need">What You Need</a></li>
+  </ul></li>
+  <li><a href="#part-ii-the-core-rules-in-brief" id="toc-part-ii-the-core-rules-in-brief" class="nav-link" data-scroll-target="#part-ii-the-core-rules-in-brief">Part II: The Core Rules in Brief</a></li>
+  <li><a href="#part-iii-the-oracle" id="toc-part-iii-the-oracle" class="nav-link" data-scroll-target="#part-iii-the-oracle">Part III: The Oracle</a>
+  <ul class="collapse">
+  <li><a href="#asking" id="toc-asking" class="nav-link" data-scroll-target="#asking">Asking</a></li>
+  <li><a href="#oracle-discipline" id="toc-oracle-discipline" class="nav-link" data-scroll-target="#oracle-discipline">Oracle Discipline</a></li>
+  <li><a href="#open-questions" id="toc-open-questions" class="nav-link" data-scroll-target="#open-questions">Open Questions</a></li>
+  <li><a href="#grading-leverage" id="toc-grading-leverage" class="nav-link" data-scroll-target="#grading-leverage">Grading Leverage</a></li>
+  </ul></li>
+  <li><a href="#part-iv-autonomous-actors" id="toc-part-iv-autonomous-actors" class="nav-link" data-scroll-target="#part-iv-autonomous-actors">Part IV: Autonomous Actors</a>
+  <ul class="collapse">
+  <li><a href="#the-aa-brief" id="toc-the-aa-brief" class="nav-link" data-scroll-target="#the-aa-brief">The AA Brief</a></li>
+  <li><a href="#behavior-rules" id="toc-behavior-rules" class="nav-link" data-scroll-target="#behavior-rules">Behavior Rules</a></li>
+  <li><a href="#standing" id="toc-standing" class="nav-link" data-scroll-target="#standing">Standing</a></li>
+  <li><a href="#the-action-table" id="toc-the-action-table" class="nav-link" data-scroll-target="#the-action-table">The Action Table</a></li>
+  <li><a href="#adaptation" id="toc-adaptation" class="nav-link" data-scroll-target="#adaptation">Adaptation</a></li>
+  <li><a href="#elimination-and-new-powers" id="toc-elimination-and-new-powers" class="nav-link" data-scroll-target="#elimination-and-new-powers">Elimination and New Powers</a></li>
+  </ul></li>
+  <li><a href="#part-v-disposition-and-offers" id="toc-part-v-disposition-and-offers" class="nav-link" data-scroll-target="#part-v-disposition-and-offers">Part V: Disposition and Offers</a>
+  <ul class="collapse">
+  <li><a href="#disposition" id="toc-disposition" class="nav-link" data-scroll-target="#disposition">Disposition</a></li>
+  <li><a href="#making-an-offer" id="toc-making-an-offer" class="nav-link" data-scroll-target="#making-an-offer">Making an Offer</a></li>
+  <li><a href="#deals" id="toc-deals" class="nav-link" data-scroll-target="#deals">Deals</a></li>
+  <li><a href="#joint-actions-with-an-aa" id="toc-joint-actions-with-an-aa" class="nav-link" data-scroll-target="#joint-actions-with-an-aa">Joint Actions with an AA</a></li>
+  <li><a href="#signals" id="toc-signals" class="nav-link" data-scroll-target="#signals">Signals</a></li>
+  </ul></li>
+  <li><a href="#part-vi-secrets" id="toc-part-vi-secrets" class="nav-link" data-scroll-target="#part-vi-secrets">Part VI: Secrets</a>
+  <ul class="collapse">
+  <li><a href="#secret-tables" id="toc-secret-tables" class="nav-link" data-scroll-target="#secret-tables">Secret Tables</a></li>
+  <li><a href="#uncovering-secrets" id="toc-uncovering-secrets" class="nav-link" data-scroll-target="#uncovering-secrets">Uncovering Secrets</a></li>
+  <li><a href="#your-own-secrets" id="toc-your-own-secrets" class="nav-link" data-scroll-target="#your-own-secrets">Your Own Secrets</a></li>
+  </ul></li>
+  <li><a href="#part-vii-the-crisis-clock" id="toc-part-vii-the-crisis-clock" class="nav-link" data-scroll-target="#part-vii-the-crisis-clock">Part VII: The Crisis Clock</a>
+  <ul class="collapse">
+  <li><a href="#the-clock" id="toc-the-clock" class="nav-link" data-scroll-target="#the-clock">The Clock</a></li>
+  <li><a href="#writing-escalations" id="toc-writing-escalations" class="nav-link" data-scroll-target="#writing-escalations">Writing Escalations</a></li>
+  </ul></li>
+  <li><a href="#part-viii-inspiration-tables" id="toc-part-viii-inspiration-tables" class="nav-link" data-scroll-target="#part-viii-inspiration-tables">Part VIII: Inspiration Tables</a>
+  <ul class="collapse">
+  <li><a href="#something-especially-good-on-a-6" id="toc-something-especially-good-on-a-6" class="nav-link" data-scroll-target="#something-especially-good-on-a-6">Something Especially Good (on a 6)</a></li>
+  <li><a href="#something-especially-bad-on-a-1" id="toc-something-especially-bad-on-a-1" class="nav-link" data-scroll-target="#something-especially-bad-on-a-1">Something Especially Bad (on a 1)</a></li>
+  <li><a href="#friction" id="toc-friction" class="nav-link" data-scroll-target="#friction">Friction</a></li>
+  <li><a href="#force-of-nature" id="toc-force-of-nature" class="nav-link" data-scroll-target="#force-of-nature">Force of Nature</a></li>
+  </ul></li>
+  <li><a href="#part-ix-setting-up" id="toc-part-ix-setting-up" class="nav-link" data-scroll-target="#part-ix-setting-up">Part IX: Setting Up</a></li>
+  <li><a href="#part-x-the-turn" id="toc-part-x-the-turn" class="nav-link" data-scroll-target="#part-x-the-turn">Part X: The Turn</a>
+  <ul class="collapse">
+  <li><a href="#take-stock" id="toc-take-stock" class="nav-link" data-scroll-target="#take-stock">1. Take Stock</a></li>
+  <li><a href="#talk" id="toc-talk" class="nav-link" data-scroll-target="#talk">2. Talk</a></li>
+  <li><a href="#declare-your-action" id="toc-declare-your-action" class="nav-link" data-scroll-target="#declare-your-action">3. Declare Your Action</a></li>
+  <li><a href="#generate-aa-actions" id="toc-generate-aa-actions" class="nav-link" data-scroll-target="#generate-aa-actions">4. Generate AA Actions</a></li>
+  <li><a href="#adjudicate" id="toc-adjudicate" class="nav-link" data-scroll-target="#adjudicate">5. Adjudicate</a></li>
+  <li><a href="#signals-and-notice" id="toc-signals-and-notice" class="nav-link" data-scroll-target="#signals-and-notice">6. Signals and Notice</a></li>
+  <li><a href="#update" id="toc-update" class="nav-link" data-scroll-target="#update">7. Update</a></li>
+  <li><a href="#write-the-report" id="toc-write-the-report" class="nav-link" data-scroll-target="#write-the-report">8. Write the Report</a></li>
+  </ul></li>
+  <li><a href="#part-xi-the-debrief" id="toc-part-xi-the-debrief" class="nav-link" data-scroll-target="#part-xi-the-debrief">Part XI: The Debrief</a></li>
+  <li><a href="#part-xii-turn-sheet" id="toc-part-xii-turn-sheet" class="nav-link" data-scroll-target="#part-xii-turn-sheet">Part XII: Turn Sheet</a></li>
+  <li><a href="#appendix-a-the-corentine-succession-solo" id="toc-appendix-a-the-corentine-succession-solo" class="nav-link" data-scroll-target="#appendix-a-the-corentine-succession-solo">Appendix A: The Corentine Succession (Solo)</a>
+  <ul class="collapse">
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem">The Problem</a></li>
+  <li><a href="#the-world" id="toc-the-world" class="nav-link" data-scroll-target="#the-world">The World</a></li>
+  <li><a href="#the-map" id="toc-the-map" class="nav-link" data-scroll-target="#the-map">The Map</a></li>
+  <li><a href="#turn-zero-established" id="toc-turn-zero-established" class="nav-link" data-scroll-target="#turn-zero-established">Turn Zero: Established</a></li>
+  <li><a href="#the-crisis-clock" id="toc-the-crisis-clock" class="nav-link" data-scroll-target="#the-crisis-clock">The Crisis Clock</a></li>
+  <li><a href="#starting-standing" id="toc-starting-standing" class="nav-link" data-scroll-target="#starting-standing">Starting Standing</a></li>
+  <li><a href="#starting-disposition" id="toc-starting-disposition" class="nav-link" data-scroll-target="#starting-disposition">Starting Disposition</a></li>
+  <li><a href="#the-republic-of-saivorn" id="toc-the-republic-of-saivorn" class="nav-link" data-scroll-target="#the-republic-of-saivorn">The Republic of Saivorn</a></li>
+  <li><a href="#the-kingdom-of-caldrath" id="toc-the-kingdom-of-caldrath" class="nav-link" data-scroll-target="#the-kingdom-of-caldrath">The Kingdom of Caldrath</a></li>
+  <li><a href="#the-conclave" id="toc-the-conclave" class="nav-link" data-scroll-target="#the-conclave">The Conclave</a></li>
+  <li><a href="#the-principality-of-essaveth" id="toc-the-principality-of-essaveth" class="nav-link" data-scroll-target="#the-principality-of-essaveth">The Principality of Essaveth</a></li>
+  <li><a href="#house-meranto" id="toc-house-meranto" class="nav-link" data-scroll-target="#house-meranto">House Meranto</a></li>
+  </ul></li>
+  <li><a href="#appendix-b-a-worked-turn" id="toc-appendix-b-a-worked-turn" class="nav-link" data-scroll-target="#appendix-b-a-worked-turn">Appendix B: A Worked Turn</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#take-stock-1" id="toc-take-stock-1" class="nav-link" data-scroll-target="#take-stock-1">1. Take Stock</a></li>
+  <li><a href="#talk-1" id="toc-talk-1" class="nav-link" data-scroll-target="#talk-1">2. Talk</a></li>
+  <li><a href="#declare" id="toc-declare" class="nav-link" data-scroll-target="#declare">3. Declare</a></li>
+  <li><a href="#aa-actions" id="toc-aa-actions" class="nav-link" data-scroll-target="#aa-actions">4. AA Actions</a></li>
+  <li><a href="#adjudicate-1" id="toc-adjudicate-1" class="nav-link" data-scroll-target="#adjudicate-1">5. Adjudicate</a></li>
+  <li><a href="#signals-and-notice-1" id="toc-signals-and-notice-1" class="nav-link" data-scroll-target="#signals-and-notice-1">6. Signals and Notice</a></li>
+  <li><a href="#update-1" id="toc-update-1" class="nav-link" data-scroll-target="#update-1">7. Update</a></li>
+  <li><a href="#the-report" id="toc-the-report" class="nav-link" data-scroll-target="#the-report">8. The Report</a></li>
+  </ul></li>
+  <li><a href="#appendix-c-scenario-generator" id="toc-appendix-c-scenario-generator" class="nav-link" data-scroll-target="#appendix-c-scenario-generator">Appendix C: Scenario Generator</a>
+  <ul class="collapse">
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
+  <li><a href="#the-problem-1" id="toc-the-problem-1" class="nav-link" data-scroll-target="#the-problem-1">1. The Problem</a></li>
+  <li><a href="#factions" id="toc-factions" class="nav-link" data-scroll-target="#factions">2. Factions</a></li>
+  <li><a href="#briefs" id="toc-briefs" class="nav-link" data-scroll-target="#briefs">3. Briefs</a></li>
+  <li><a href="#generic-aa-action-tables" id="toc-generic-aa-action-tables" class="nav-link" data-scroll-target="#generic-aa-action-tables">4. Generic AA Action Tables</a></li>
+  <li><a href="#the-crisis-clock-1" id="toc-the-crisis-clock-1" class="nav-link" data-scroll-target="#the-crisis-clock-1">5. The Crisis Clock</a></li>
+  <li><a href="#the-map-1" id="toc-the-map-1" class="nav-link" data-scroll-target="#the-map-1">6. The Map</a></li>
+  <li><a href="#check-it" id="toc-check-it" class="nav-link" data-scroll-target="#check-it">7. Check It</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
+  <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Contested Ground: Solo Mode</h1>
+<p class="subtitle lead">Playing an Open Strategy Game Alone</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Roberto Bisceglie </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This document is a complete rules set for playing an Open Strategy Game alone. It builds on <a href="../docs/contested_ground.html">Contested Ground</a>, but everything you need at the table is here. The <a href="../docs/osg_handbook.html">Open Strategy Game Handbook</a> explains the reasoning behind the core rules; <a href="../docs/factionlog.html">Factionlog</a> is a notation for keeping your game record.</p>
+<section id="part-i-overview" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-overview">Part I: Overview</h2>
+<section id="what-solo-play-is" class="level3">
+<h3 class="anchored" data-anchor-id="what-solo-play-is">What Solo Play Is</h3>
+<p>You play one faction. Every other faction is an <strong>Autonomous Actor (AA)</strong>: a faction driven by a short brief, a behavior rule and a table of actions. You are also the Referee: you adjudicate every action, yours included, and write the Report.</p>
+<p>A group OSG runs on four things a single player does not have: rivals who make decisions, a social layer where deals are struck and broken, information you do not hold, and a Referee who answers questions you could not answer yourself. Solo Mode replaces each one.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">A group game has…</th>
+<th style="text-align: left;">Solo Mode uses…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Other players</td>
+<td style="text-align: left;">Autonomous Actors (Part IV)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Negotiation between turns</td>
+<td style="text-align: left;">Disposition and Offers (Part V)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hidden briefs and covert play</td>
+<td style="text-align: left;">Secrets (Part VI)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pressure from rival players</td>
+<td style="text-align: left;">The Crisis Clock (Part VII)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A Referee who answers questions</td>
+<td style="text-align: left;">The Oracle (Part III)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A Referee who improvises</td>
+<td style="text-align: left;">Inspiration Tables (Part VIII)</td>
+</tr>
+</tbody>
+</table>
+<p>Everything else is unchanged: the Problem, the Brief, one action per turn, the Action / Outcome / Leverage format, the dice, the RAT check, No Action Without Friction, the Report and the Debrief.</p>
+</section>
+<section id="two-rules-of-honesty" class="level3">
+<h3 class="anchored" data-anchor-id="two-rules-of-honesty">Two Rules of Honesty</h3>
+<p>Solo play works only if you do not cheat yourself. Two rules carry the weight:</p>
+<ol type="1">
+<li><strong>Commit before you know.</strong> You write your action before any AA acts. You never change it after.</li>
+<li><strong>When you do not know, ask.</strong> If the fiction does not settle a question, do not decide it in your favor. Ask the Oracle.</li>
+</ol>
+</section>
+<section id="what-you-need" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-need">What You Need</h3>
+<ul>
+<li>At least two six-sided dice</li>
+<li>A scenario: a Problem, your Brief, and 2–4 AAs. Appendix A is ready to play; Appendix C generates new ones; Part IX tells you what a scenario needs.</li>
+<li>A record of play: a notebook or a text file. Factionlog notation is recommended.</li>
+<li>The Turn Sheet (Part XII)</li>
+</ul>
+</section>
+</section>
+<section id="part-ii-the-core-rules-in-brief" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-the-core-rules-in-brief">Part II: The Core Rules in Brief</h2>
+<p>These are the rules of <a href="../docs/contested_ground.html">Contested Ground</a>, condensed. They apply to you and to every AA alike.</p>
+<p><strong>The action.</strong> Each faction takes exactly one action per turn, written as:</p>
+<blockquote class="blockquote">
+<p><strong>Action:</strong> What specifically is the faction doing?<br>
+<strong>Outcome:</strong> What result does it want?<br>
+<strong>Leverage:</strong> Why should this work? Ground it in established fiction: resources, relationships, position, prior actions.</p>
+</blockquote>
+<p><strong>Unopposed actions.</strong> If nothing opposes the action and the fiction raises no obstacle, the desired outcome occurs. No roll. Decide how it lands and what mark it leaves.</p>
+<p><strong>Opposed actions.</strong> Grade leverage <strong>Strong</strong> (the faction has the advantage) or <strong>Weak</strong> (plausible, but no strong basis). Roll 2d6.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Leverage</th>
+<th style="text-align: left;">Keep</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Strong</td>
+<td style="text-align: left;">The <strong>higher</strong> die</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weak</td>
+<td style="text-align: left;">The <strong>lower</strong> die</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 91%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>6</strong></td>
+<td style="text-align: left;">Desired outcome occurs, and something especially good may also occur</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>4–5</strong></td>
+<td style="text-align: left;">Desired outcome occurs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>2–3</strong></td>
+<td style="text-align: left;">The action proceeds, but the outcome is worse than desired</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Outcome worse than desired, and something especially bad may also occur</td>
+</tr>
+</tbody>
+</table>
+<p>Strong produces the desired outcome 75% of the time; Weak, 25%.</p>
+<p><strong>Actions in conflict.</strong> When two actions oppose each other directly, grade and roll each. If both outcomes can be true, both occur as rolled. If not, the higher kept die prevails and the other outcome is worse than desired. A tie is a standoff: both worse than desired.</p>
+<p><strong>Joint actions.</strong> Factions may pool their turns into one action. Each participant spends its action and names its specific contribution. One grade on the combined leverage, one roll; the outcome lands on all of them.</p>
+<p><strong>Bonuses.</strong> A named, spendable asset. Declare it in the Leverage section. It raises Weak to Strong; on an action already Strong, it turns a kept 4–5 into a 6.</p>
+<p><strong>Force of Nature.</strong> When both dice show the same number on an adjudication roll, you may introduce an event from outside any faction’s control (Part VIII). Once or twice per game.</p>
+<p><strong>RAT.</strong> Before writing any outcome, check: is it <strong>Reasonable</strong> (proportionate), <strong>Actionable</strong> (it leaves a hook for someone), <strong>Traceable</strong> (earlier fiction led here)?</p>
+<p><strong>No Action Without Friction.</strong> Every outcome leaves a mark. A success with no complicating consequence is not finished: ask who notices, what it costs, what it opens up. Complicate; do not block.</p>
+</section>
+<section id="part-iii-the-oracle" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-the-oracle">Part III: The Oracle</h2>
+<p>The Oracle answers any yes/no question about the world that the fiction has not settled: whether a mercenary company is for hire, whether a road is open, whether an AA accepts your offer.</p>
+<section id="asking" class="level3">
+<h3 class="anchored" data-anchor-id="asking">Asking</h3>
+<ol type="1">
+<li>Phrase a yes/no question.</li>
+<li>Set the odds from the established fiction:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Odds</th>
+<th style="text-align: left;">Roll</th>
+<th style="text-align: left;">Yes (4+)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Likely</strong></td>
+<td style="text-align: left;">2d6, keep the higher</td>
+<td style="text-align: left;">75%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Even</strong></td>
+<td style="text-align: left;">1d6</td>
+<td style="text-align: left;">50%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Unlikely</strong></td>
+<td style="text-align: left;">2d6, keep the lower</td>
+<td style="text-align: left;">25%</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li>Read the result:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Die</th>
+<th style="text-align: left;">Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Yes, and…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Yes, but…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">No, but…</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">No, and…</td>
+</tr>
+</tbody>
+</table>
+<p>“And” strengthens the answer; “but” softens it. Interpret it in the way that best fits the fiction, then write the answer down. It is now established fiction.</p>
+</section>
+<section id="oracle-discipline" class="level3">
+<h3 class="anchored" data-anchor-id="oracle-discipline">Oracle Discipline</h3>
+<ul>
+<li><strong>Choose odds before you roll.</strong> If you cannot decide between two levels, take the one closer to Even.</li>
+<li><strong>Ask once.</strong> Do not ask the same question again unless the fiction has changed.</li>
+<li><strong>Ask what you would ask a Referee.</strong> The Oracle replaces a Referee’s ruling, not your decisions. Never ask it what your own faction should do.</li>
+<li><strong>Doubles mean nothing</strong> on an Oracle roll. Force of Nature applies only to adjudication.</li>
+</ul>
+</section>
+<section id="open-questions" class="level3">
+<h3 class="anchored" data-anchor-id="open-questions">Open Questions</h3>
+<p>For questions that are not yes/no, use these:</p>
+<ul>
+<li><strong>Which faction?</strong> Number the factions involved and roll.</li>
+<li><strong>Which thread?</strong> Keep a numbered list of open threads (unresolved hooks from past Reports). Roll for one.</li>
+<li><strong>What kind of thing?</strong> Use the Inspiration Tables (Part VIII) and interpret.</li>
+</ul>
+</section>
+<section id="grading-leverage" class="level3">
+<h3 class="anchored" data-anchor-id="grading-leverage">Grading Leverage</h3>
+<p>Grading is the place where solo play goes wrong most easily: you will be tempted to call your own leverage Strong and your rivals’ Weak. Before calling any faction’s leverage Strong, check:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Is the resource or relationship <strong>explicitly established</strong> in prior fiction, not assumed?</label></li>
+<li><label><input type="checkbox">Has a prior action <strong>created the conditions</strong> for this one?</label></li>
+<li><label><input type="checkbox">Would a neutral reader of the Report agree this faction has the advantage?</label></li>
+</ul>
+<p>All three yes: Strong. Any clear no: Weak. If you genuinely cannot tell, ask the Oracle, <em>“Is the leverage Strong?”</em>, at Even odds. Apply the same checklist to every AA, above all to an AA acting against you.</p>
+</section>
+</section>
+<section id="part-iv-autonomous-actors" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-autonomous-actors">Part IV: Autonomous Actors</h2>
+<section id="the-aa-brief" class="level3">
+<h3 class="anchored" data-anchor-id="the-aa-brief">The AA Brief</h3>
+<p>Each AA has:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Objective</strong></td>
+<td style="text-align: left;">One sentence: what it wants most</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Position</strong></td>
+<td style="text-align: left;">One or two specific assets or vulnerabilities that matter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Leverage Type</strong></td>
+<td style="text-align: left;">Military, Economic, Geographic, Informational, Legitimacy, Popular, or the scenario’s own</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Behavior Rule</strong></td>
+<td style="text-align: left;">How it chooses what to do (below)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Disposition</strong></td>
+<td style="text-align: left;">Its attitude toward you (Part V)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Action Table</strong></td>
+<td style="text-align: left;">Six actions it might take (below)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Secret Table</strong></td>
+<td style="text-align: left;">Six things that might be true about it (Part VI)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Bonus</strong> <em>(optional)</em></td>
+<td style="text-align: left;">One named bonus</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="behavior-rules" class="level3">
+<h3 class="anchored" data-anchor-id="behavior-rules">Behavior Rules</h3>
+<p>Roll d6 for each AA at setup, or choose.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 12%">
+<col style="width: 85%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Behavior</th>
+<th style="text-align: left;">Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong>Consolidator</strong></td>
+<td style="text-align: left;">Secures what it holds. Acts against another faction only if that faction threatened it in the last Report.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong>Aggressor</strong></td>
+<td style="text-align: left;">Pushes toward its objective by the most direct means. Never holds two turns running.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>Opportunist</strong></td>
+<td style="text-align: left;">Targets the faction lowest on the Standing list.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>Balancer</strong></td>
+<td style="text-align: left;">Targets the faction highest on the Standing list.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong>Reactor</strong></td>
+<td style="text-align: left;">Holds until acted upon. Then targets the faction that last affected it.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><strong>Schemer</strong></td>
+<td style="text-align: left;">Acts on odd turns, holds on even turns. Keeps deals only while they serve it.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Holding.</strong> When its rule says an AA holds (a Reactor not acted upon last turn, a Schemer on an even turn, a Consolidator with nothing to defend), skip its table. It consolidates: an unopposed action that secures something it already has. Write it in the Report in one line.</p>
+<p>An AA never targets itself. If its rule points at itself, take the next faction down (Opportunist) or up (Balancer) the list.</p>
+</section>
+<section id="standing" class="level3">
+<h3 class="anchored" data-anchor-id="standing">Standing</h3>
+<p>Behavior rules need to know who looks strong and who looks exposed. Keep a <strong>Standing</strong> list of every faction, yours included, from <strong>Dominant</strong> at the top to <strong>Exposed</strong> at the bottom.</p>
+<ul>
+<li>Set it at setup from the Briefs.</li>
+<li>Revise it at the end of every turn, from the Report: who gained visible power, who lost it, who overreached.</li>
+<li>Judge by what a rival could see, not by what you privately know. A faction with a hidden weakness still looks strong until the weakness is public.</li>
+<li>If two factions are too close to order, roll.</li>
+</ul>
+</section>
+<section id="the-action-table" class="level3">
+<h3 class="anchored" data-anchor-id="the-action-table">The Action Table</h3>
+<p>Write a d6 table of six actions for each AA, consistent with its objective, leverage type and behavior rule. A balanced table:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Kind of action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1–2</td>
+<td style="text-align: left;">Direct moves toward its objective</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3–4</td>
+<td style="text-align: left;">Moves against a <strong>[target]</strong>: pressure, obstruction, attack, investigation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">A positional move: secure an asset, build a relationship, prepare</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Escalation: the boldest thing it would plausibly do</td>
+</tr>
+</tbody>
+</table>
+<p>Each entry is a verb and an object, short enough to read at a glance: <em>“Blockade the coast road against [target].”</em></p>
+<p><strong>Filling [target].</strong> If the behavior rule names a target (Opportunist, Balancer, Reactor), use it. Otherwise the target is the faction most in the way of the AA’s objective. Between equal candidates, an AA that is Hostile or Wary toward you picks you; one that is Open or Allied does not.</p>
+<p><strong>Writing the AA’s action.</strong> A table entry is a direction, not a finished action. Expand it into full Action / Outcome / Leverage, written as a competent player of that faction would write it, using its best established leverage. Play every AA to win. An AA played to lose is a game you have already won, and not worth playing.</p>
+<p><strong>Veto.</strong> If the rolled entry makes no sense in the current fiction (the target is gone, the location destroyed) or breaks the AA’s behavior rule (a Consolidator rolling an attack when no one threatened it), reroll once. If the reroll fails too, write an action from the behavior rule directly.</p>
+<p><strong>Bonuses.</strong> An AA with a bonus spends it the first time it acts within the bonus’s scope with Weak leverage, or in an action in conflict.</p>
+</section>
+<section id="adaptation" class="level3">
+<h3 class="anchored" data-anchor-id="adaptation">Adaptation</h3>
+<p>AAs change as the game does. Rewrite <strong>one</strong> entry of an AA’s Action Table, replacing the entry least relevant to the current fiction, when:</p>
+<ul>
+<li>the AA’s kept die is a <strong>6</strong> or a <strong>1</strong> on an adjudication roll;</li>
+<li>its objective is achieved: it takes a new objective, the next step its leverage makes possible;</li>
+<li>its objective becomes impossible: it takes a new objective consistent with its identity, and you roll a new behavior rule.</li>
+</ul>
+</section>
+<section id="elimination-and-new-powers" class="level3">
+<h3 class="anchored" data-anchor-id="elimination-and-new-powers">Elimination and New Powers</h3>
+<p>A faction can be eliminated: destroyed, absorbed, or reduced to irrelevance. When an AA is eliminated, ask the Oracle at the start of the next turn: <em>“Does a new power rise to fill the gap?”</em> (Likely if what it held still matters.) On a yes, create a minimal AA: objective, position, leverage type, behavior rule, a six-entry table. Its disposition toward you starts at Wary.</p>
+</section>
+</section>
+<section id="part-v-disposition-and-offers" class="level2">
+<h2 class="anchored" data-anchor-id="part-v-disposition-and-offers">Part V: Disposition and Offers</h2>
+<p>Talking is free. In Solo Mode, talking happens through <strong>Offers</strong>, and the AAs’ memory of how you have treated them is their <strong>Disposition</strong>.</p>
+<section id="disposition" class="level3">
+<h3 class="anchored" data-anchor-id="disposition">Disposition</h3>
+<p>Each AA has a disposition toward you on a five-step scale:</p>
+<p><strong>Hostile → Wary → Neutral → Open → Allied</strong></p>
+<p>Set the starting disposition from the Briefs: Wary if its objectives conflict with yours, Open if they align, Neutral otherwise. The scenario may set it directly.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 53%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Disposition</th>
+<th style="text-align: left;">Offers</th>
+<th style="text-align: left;">Targeting</th>
+<th style="text-align: left;">Keeping deals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Hostile</strong></td>
+<td style="text-align: left;">Refuses unless the deal serves its objective; then Unlikely</td>
+<td style="text-align: left;">Picks you whenever its rule allows a choice</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Wary</strong></td>
+<td style="text-align: left;">One step worse</td>
+<td style="text-align: left;">Picks you between equal candidates</td>
+<td style="text-align: left;">Even</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Neutral</strong></td>
+<td style="text-align: left;">No change</td>
+<td style="text-align: left;">No preference</td>
+<td style="text-align: left;">Likely</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Open</strong></td>
+<td style="text-align: left;">One step better</td>
+<td style="text-align: left;">Does not pick you between equal candidates</td>
+<td style="text-align: left;">Likely</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Allied</strong></td>
+<td style="text-align: left;">One step better; accepts without rolling if the deal serves its objective</td>
+<td style="text-align: left;">Never targets you unless its rule forces it</td>
+<td style="text-align: left;">Kept without a roll (Schemer: Likely)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Moving disposition.</strong> At the end of each turn, from the Report:</p>
+<ul>
+<li><strong>+1</strong> if you kept a deal with it, or your action clearly benefited it</li>
+<li><strong>−1</strong> if your action harmed it, even as a side effect, or it uncovered a covert action of yours aimed at it</li>
+<li><strong>−2</strong> if you broke a deal with it</li>
+</ul>
+<p>Apply each cause once per turn. Disposition never moves past Hostile or Allied.</p>
+</section>
+<section id="making-an-offer" class="level3">
+<h3 class="anchored" data-anchor-id="making-an-offer">Making an Offer</h3>
+<p>At the start of each turn you may make one Offer to each AA.</p>
+<ol type="1">
+<li><strong>State the deal.</strong> What you give and what you ask. Be specific: “Essaveth will allow Meranto’s agents through the passes; Meranto will delay Caldrath’s next loan.”</li>
+<li><strong>Set the odds.</strong> Start at Even, then shift one step for each that applies:
+<ul>
+<li><strong>Better:</strong> the deal clearly advances its objective; its disposition is Open or Allied</li>
+<li><strong>Worse:</strong> the deal costs it something its behavior rule protects, or helps its rival; its disposition is Wary</li>
+</ul>
+The odds run <strong>Refused → Unlikely → Even → Likely → Accepted</strong>. Past Likely, it accepts without rolling; past Unlikely, it refuses.</li>
+<li><strong>Ask the Oracle:</strong> <em>“Does [AA] accept?”</em></li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Answer</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Yes, and…</td>
+<td style="text-align: left;">Accepts, and adds something: information, extra help, or +1 disposition</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Accepts</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Yes, but…</td>
+<td style="text-align: left;">Accepts on one added condition. Take it or walk away.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No, but…</td>
+<td style="text-align: left;">Refuses, but says what it would accept instead</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Refuses</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No, and…</td>
+<td style="text-align: left;">Refuses and takes offense (−1 disposition), or leaks the offer to a rival (a crumb in the Report)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deals" class="level3">
+<h3 class="anchored" data-anchor-id="deals">Deals</h3>
+<p>Keep a <strong>Deals</strong> list: who, what, since which turn, until when.</p>
+<ul>
+<li><strong>Obligations replace the table.</strong> If a deal requires the AA to act this turn, that is its action; do not roll its table. If a deal requires it to refrain (not attack you, not close a route), table results that break the deal are rerolled.</li>
+<li><strong>Deals can break.</strong> When keeping a deal would cost the AA something real this turn, or every turn for a Schemer, ask: <em>“Does [AA] keep the deal?”</em> with odds from its disposition (table above). On a no, it breaks the deal, and its action this turn exploits the break. Strike the deal; the betrayal goes in the Report.</li>
+<li><strong>Your side counts too.</strong> If you break a deal, its disposition drops by 2 and the break goes in the Report.</li>
+</ul>
+</section>
+<section id="joint-actions-with-an-aa" class="level3">
+<h3 class="anchored" data-anchor-id="joint-actions-with-an-aa">Joint Actions with an AA</h3>
+<p>An Offer can propose a joint action. If accepted, each turn the joint action runs ask: <em>“Does [AA] confirm?”</em> (Likely; Allied confirms without rolling). On a no, the joint action proceeds without its contribution, the leverage is regraded, and the AA rolls its own table as normal.</p>
+</section>
+<section id="signals" class="level3">
+<h3 class="anchored" data-anchor-id="signals">Signals</h3>
+<p>AAs talk to you too. After adjudication, roll d6 for each AA:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1–2</td>
+<td style="text-align: left;">Silence</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>Warning.</strong> It warns you off something it cares about. Write the warning as a crumb in the Report.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>Offer.</strong> It proposes a deal, drawn from its objective. Answer at your next Offer step. Refusing an Open or Allied AA costs −1 disposition.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong>Exposure.</strong> It has overextended. Name the vulnerability in the Report.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><strong>Windfall.</strong> Its action this turn incidentally helps you. Write it as an unintended consequence.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="part-vi-secrets" class="level2">
+<h2 class="anchored" data-anchor-id="part-vi-secrets">Part VI: Secrets</h2>
+<p>You wrote every brief, so in principle you know everything. Secrets fix this by keeping the truth undecided until play uncovers it.</p>
+<section id="secret-tables" class="level3">
+<h3 class="anchored" data-anchor-id="secret-tables">Secret Tables</h3>
+<p>Each AA has a <strong>Secret Table</strong>: six things that <em>might</em> be true about it. Only the entry rolled when the secret is uncovered becomes true; the other five never were. You know the possibilities, not the answer.</p>
+<p>Write a table for each AA at setup, or use the generic table for its leverage type below (Popular is in Appendix C).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 32%">
+<col style="width: 30%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Military</th>
+<th style="text-align: left;">Economic</th>
+<th style="text-align: left;">Geographic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Its troops are unpaid; their loyalty is for sale</td>
+<td style="text-align: left;">It is insolvent; its wealth is borrowed</td>
+<td style="text-align: left;">There is a second way around its position, and it knows</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">A senior commander answers to someone else</td>
+<td style="text-align: left;">It is secretly financing a rival</td>
+<td style="text-align: left;">Its hold depends on a local who can be turned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Its supplies will run out sooner than anyone knows</td>
+<td style="text-align: left;">One creditor or client could ruin it</td>
+<td style="text-align: left;">The position is decaying: flood, disease, collapse</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">It has hidden a recent defeat</td>
+<td style="text-align: left;">Its records conceal a crime</td>
+<td style="text-align: left;">It has promised passage to someone</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">It is preparing to strike an unexpected target</td>
+<td style="text-align: left;">It has already sold something it publicly holds</td>
+<td style="text-align: left;">Its territory hides a resource no one has counted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Half its strength exists only on paper</td>
+<td style="text-align: left;">It is quietly buying control of something central</td>
+<td style="text-align: left;">It plans to close the route at the worst moment for someone</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 47%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Informational</th>
+<th style="text-align: left;">Legitimacy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">It has a spy in your camp</td>
+<td style="text-align: left;">Its authority rests on a contested or forged document</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Its best source is feeding it lies</td>
+<td style="text-align: left;">Its leadership is divided and close to splitting</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">It holds a document that would ruin a third faction</td>
+<td style="text-align: left;">It has promised recognition to two rivals</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">It has been leaking to a rival</td>
+<td style="text-align: left;">A scandal is waiting to break</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">It knows one of your private Position facts</td>
+<td style="text-align: left;">Its own founding precedent supports a rival’s claim</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Its reputation rests on a lie</td>
+<td style="text-align: left;">It will recognize whoever pays enough</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="uncovering-secrets" class="level3">
+<h3 class="anchored" data-anchor-id="uncovering-secrets">Uncovering Secrets</h3>
+<p>Roll on an AA’s Secret Table when:</p>
+<ul>
+<li><strong>You investigate it and succeed.</strong> On a 4–5, the secret is yours, privately. On a 6, roll twice and keep both, or keep one and gain a crumb on another faction. On a 2–3, it is a <strong>rumor</strong>: roll it, but it is unconfirmed until a second investigation or until it pays off in play.</li>
+<li><strong>It rolls a 1</strong> on any adjudication. The secret comes out publicly in the Report.</li>
+<li><strong>A Signal reveals Exposure</strong> and the vulnerability fits a secret better than a new invention.</li>
+</ul>
+<p>An uncovered secret is established fiction: it counts toward Strong leverage. Cross it off; reroll duplicates.</p>
+</section>
+<section id="your-own-secrets" class="level3">
+<h3 class="anchored" data-anchor-id="your-own-secrets">Your Own Secrets</h3>
+<p>Your private Brief and your covert actions are secrets too.</p>
+<ul>
+<li><strong>Covert actions.</strong> Write the outcome privately and plant a crumb in the Report as usual. At the end of the turn, ask: <em>“Is it noticed?”</em> Unlikely; Even if any AA has Informational leverage or the action targeted an AA. On a yes, roll to see which interested AA notices: its disposition drops by 1, it now knows, and its next <strong>[target]</strong> is you.</li>
+<li><strong>Investigated by an AA.</strong> When an AA’s action investigates you and succeeds, it learns one of your private Position facts or a past covert action of your choice. The AA may use it as leverage from then on.</li>
+</ul>
+</section>
+</section>
+<section id="part-vii-the-crisis-clock" class="level2">
+<h2 class="anchored" data-anchor-id="part-vii-the-crisis-clock">Part VII: The Crisis Clock</h2>
+<p>Rival players keep a group game under pressure. In Solo Mode, the Problem itself does.</p>
+<section id="the-clock" class="level3">
+<h3 class="anchored" data-anchor-id="the-clock">The Clock</h3>
+<p>The <strong>Crisis Clock</strong> is a track of boxes. Set its length to <strong>the number of turns minus one</strong>, unless the scenario fixes it: left alone, the crisis breaks before the last turn, and the final turn is played in its aftermath.</p>
+<p>Mark <strong>three Escalations</strong> on the track, roughly a third, two thirds, and the last box. The last is the <strong>Breaking Point</strong>.</p>
+<ul>
+<li><strong>Advance one box</strong> at the end of every turn.</li>
+<li><strong>Advance one more</strong> when an outcome’s “something especially bad” or a Force of Nature makes the Problem worse.</li>
+<li><strong>Push it back one box</strong> when an action whose Outcome addresses the Problem itself, not a rival, rolls a 6.</li>
+</ul>
+<p>When the clock reaches an Escalation, it happens in that turn’s Report, as a fact every faction must respond to.</p>
+</section>
+<section id="writing-escalations" class="level3">
+<h3 class="anchored" data-anchor-id="writing-escalations">Writing Escalations</h3>
+<p>Each Escalation is a specific worsening of the Problem. A good Escalation:</p>
+<ul>
+<li>follows from the Problem statement, visibly (Traceable);</li>
+<li>hurts at least two factions, and in different ways;</li>
+<li>opens at least one option that did not exist before.</li>
+</ul>
+<p>The <strong>Breaking Point</strong> is what happens if no one resolves the crisis: the default bad ending the Problem implies. It does not end the game. The remaining turn is played in the new world it creates, and that is often the most interesting turn of the game.</p>
+<p><em>Example:</em> the Crisis Clock of the Corentine Succession is in Appendix A. Its Breaking Point is the lapse of the bilateral treaties.</p>
+</section>
+</section>
+<section id="part-viii-inspiration-tables" class="level2">
+<h2 class="anchored" data-anchor-id="part-viii-inspiration-tables">Part VIII: Inspiration Tables</h2>
+<p>Use these when a result calls for something you have not thought of. Roll, then interpret through the fiction. If the result does not fit, take the nearest entry that does.</p>
+<section id="something-especially-good-on-a-6" class="level3">
+<h3 class="anchored" data-anchor-id="something-especially-good-on-a-6">Something Especially Good (on a 6)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">The faction also…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Gains an unexpected ally: a third party offers support</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Learns something: roll a Secret of a faction involved</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Establishes a fact that will support its next action in the same area</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Weakens a rival: move the opposing faction down one place in Standing</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Wins goodwill: one AA involved moves +1 disposition toward the actor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Eases the crisis locally: push the Crisis Clock back one box</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="something-especially-bad-on-a-1" class="level3">
+<h3 class="anchored" data-anchor-id="something-especially-bad-on-a-1">Something Especially Bad (on a 1)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">The faction also…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Is exposed: a covert action or a private fact becomes public</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Provokes backlash: one AA involved moves −1 disposition toward the actor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Loses an asset: a bonus, a holding, or a relationship</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Strengthens a rival: move the opposing faction up one place in Standing</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Overreaches: the attempt creates a new vulnerability; add it to the Position</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Worsens the crisis: advance the Crisis Clock one box</td>
+</tr>
+</tbody>
+</table>
+<p>When an AA is the actor, read entries 2 and 5 as disposition toward the faction it acted on, if that faction is you.</p>
+</section>
+<section id="friction" class="level3">
+<h3 class="anchored" data-anchor-id="friction">Friction</h3>
+<p>Use when an outcome leaves no mark.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 97%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">The outcome…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Was witnessed: name who saw it</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Cost more than planned</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Alarmed someone: the faction most affected now has a reason to act</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Set a precedent others can invoke</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Opened a door for someone else</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Is incomplete: one piece remains, to be finished later</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="force-of-nature" class="level3">
+<h3 class="anchored" data-anchor-id="force-of-nature">Force of Nature</h3>
+<p>Use on doubles, when you choose to. Roll the source, then tie it to the most recent unresolved thread.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 96%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Weather or terrain: a storm, a flood, a collapsed road</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Disease, fire or disaster</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Popular unrest: a crowd, a strike, a riot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">An outside power takes an interest</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">An economic shock: a failed harvest, a collapsed price</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">The past returns: a dead person’s letter, an old claim, a forgotten treaty</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="part-ix-setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="part-ix-setting-up">Part IX: Setting Up</h2>
+<p>To generate the whole scenario with dice instead, use Appendix C.</p>
+<ol type="1">
+<li><strong>The Problem.</strong> One sentence that names what has changed, implies competing interests, and points at no correct answer.</li>
+<li><strong>Your Actor.</strong> A full Brief: a short-term and a long-term objective, three Position bullets, at least one named bonus.</li>
+<li><strong>The AAs.</strong> Two to four, for three to five factions in total. Fewer than the 5–8 of a group game: you run every AA by hand. Give each an AA Brief, an Action Table and a Secret Table. Give each a different leverage type from yours and from each other’s where you can.</li>
+<li><strong>The Map.</strong> Three to five named locations, at least one contested.</li>
+<li><strong>The Crisis Clock.</strong> Length, three Escalations, the Breaking Point.</li>
+<li><strong>Standing.</strong> Order every faction from Dominant to Exposed.</li>
+<li><strong>Disposition.</strong> Set each AA’s starting disposition toward you.</li>
+<li><strong>Turn Zero.</strong> Ask the Oracle up to five questions about the world that matter for your first move, and record the answers. Then write down one or two things you deliberately leave unsettled.</li>
+</ol>
+<p>A game of three factions (you and two AAs) over six turns is a solid first run. The lighter game in Appendix A is exactly that.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Turns</th>
+<th style="text-align: left;">Feel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Sharp and fast: one strategic arc</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Standard: alliances form and break</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">Full campaign: long-term objectives come into reach</td>
+</tr>
+</tbody>
+</table>
+<p>The game ends at the stated turn count. No extensions.</p>
+</section>
+<section id="part-x-the-turn" class="level2">
+<h2 class="anchored" data-anchor-id="part-x-the-turn">Part X: The Turn</h2>
+<section id="take-stock" class="level3">
+<h3 class="anchored" data-anchor-id="take-stock">1. Take Stock</h3>
+<p>Read the last Report. Check the Standing list, the Deals list, and the Crisis Clock.</p>
+</section>
+<section id="talk" class="level3">
+<h3 class="anchored" data-anchor-id="talk">2. Talk</h3>
+<p>Answer any Offer an AA made last turn. Make up to one Offer to each AA (Part V).</p>
+</section>
+<section id="declare-your-action" class="level3">
+<h3 class="anchored" data-anchor-id="declare-your-action">3. Declare Your Action</h3>
+<p>Write your action in full: Action / Outcome / Leverage. Declare any bonus you spend. From here on, it does not change.</p>
+</section>
+<section id="generate-aa-actions" class="level3">
+<h3 class="anchored" data-anchor-id="generate-aa-actions">4. Generate AA Actions</h3>
+<p>For each AA, in order:</p>
+<ol type="1">
+<li>If a deal requires an action, that is its action. Check whether it keeps the deal if keeping it costs something.</li>
+<li>If its behavior rule says it holds, it consolidates.</li>
+<li>Otherwise, roll its Action Table, fill any <strong>[target]</strong>, and expand the entry into a full Action / Outcome / Leverage.</li>
+</ol>
+</section>
+<section id="adjudicate" class="level3">
+<h3 class="anchored" data-anchor-id="adjudicate">5. Adjudicate</h3>
+<ol type="1">
+<li>Identify which actions are unopposed, opposed, in conflict, or joint.</li>
+<li>Grade leverage for every opposed action (Part III checklist; Oracle if unsure).</li>
+<li>Roll. Apply 6s and 1s with the Inspiration Tables. Consider a Force of Nature on doubles.</li>
+<li>Check every outcome against RAT and No Action Without Friction.</li>
+<li>Uncover Secrets where results call for it (Part VI).</li>
+</ol>
+</section>
+<section id="signals-and-notice" class="level3">
+<h3 class="anchored" data-anchor-id="signals-and-notice">6. Signals and Notice</h3>
+<p>Roll a Signal for each AA. For each covert action you took, ask whether it is noticed.</p>
+</section>
+<section id="update" class="level3">
+<h3 class="anchored" data-anchor-id="update">7. Update</h3>
+<ul>
+<li>Disposition: apply the turn’s changes.</li>
+<li>Deals: add, strike, note breaks.</li>
+<li>Adaptation: rewrite table entries where a 6, a 1, or an objective change calls for it.</li>
+<li>Crisis Clock: advance it; if it hits an Escalation, it lands now.</li>
+<li>Standing: reorder from what the Report shows.</li>
+</ul>
+</section>
+<section id="write-the-report" class="level3">
+<h3 class="anchored" data-anchor-id="write-the-report">8. Write the Report</h3>
+<p>Third person, news-roundup style, short.</p>
+<ol type="1">
+<li><strong>Turn header:</strong> one sentence on where things stand.</li>
+<li><strong>One paragraph per action:</strong> the outcome as fact, its friction, at least one hook.</li>
+<li><strong>Crumbs</strong> for every private outcome, yours and the AAs’.</li>
+<li><strong>The Clock:</strong> one line if an Escalation landed.</li>
+<li><strong>Closing observation:</strong> one open thread no single faction owns.</li>
+</ol>
+<p>Add new hooks to your thread list. After each paragraph, ask: <em>does this put something in front of me or an AA that changes the next turn?</em> If not, rewrite it.</p>
+</section>
+</section>
+<section id="part-xi-the-debrief" class="level2">
+<h2 class="anchored" data-anchor-id="part-xi-the-debrief">Part XI: The Debrief</h2>
+<p>After the final Report, write a closing frame: one line per faction on where it ends. Then:</p>
+<ol type="1">
+<li><strong>Your objectives.</strong> Did you achieve the short-term one? Did you achieve or lay groundwork for the long-term one? Why?</li>
+<li><strong>The AAs’ objectives.</strong> For each AA, did it get what it wanted? Answer from the fiction; if the fiction does not settle it, ask the Oracle at Even. Compare your result with theirs. That comparison is the closest Solo Mode comes to a winner.</li>
+<li><strong>The surprise.</strong> Which turn surprised you most, and what produced it: an AA, the Clock, a Secret, or your own action’s consequences?</li>
+<li><strong>The design.</strong> What would you change: the Problem, an AA’s behavior or table, the Clock?</li>
+</ol>
+<p>A solo game that produced no surprises had AA tables that were too predictable or a Clock that was too slow. A game that felt incoherent had a Problem that did not generate distinct competing interests.</p>
+</section>
+<section id="part-xii-turn-sheet" class="level2">
+<h2 class="anchored" data-anchor-id="part-xii-turn-sheet">Part XII: Turn Sheet</h2>
+<pre><code>SOLO TURN
+1. Take stock: Report, Standing, Deals, Clock
+2. Talk: answer AA offers; one offer per AA
+3. Declare your action (Action / Outcome / Leverage, bonus)  [no changes after this]
+4. AA actions: deal obligation &gt; hold &gt; roll table, fill [target], expand
+5. Adjudicate: unopposed / opposed / conflict / joint; grade; roll;
+   6s and 1s on Inspiration Tables; doubles = Force of Nature?; RAT; friction; Secrets
+6. Signals (d6 per AA); notice checks for your covert actions
+7. Update: Disposition, Deals, Adaptation, Clock (+1), Standing
+8. Report: header, one paragraph per action, crumbs, clock, closing observation</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Oracle</th>
+<th style="text-align: left;">Roll</th>
+<th></th>
+<th style="text-align: left;">Die</th>
+<th style="text-align: left;">Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Likely</td>
+<td style="text-align: left;">2d6 keep higher</td>
+<td></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Yes, and…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Even</td>
+<td style="text-align: left;">1d6</td>
+<td></td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unlikely</td>
+<td style="text-align: left;">2d6 keep lower</td>
+<td></td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Yes, but…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">No, but…</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">No, and…</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Disposition</th>
+<th style="text-align: left;">Offer odds</th>
+<th style="text-align: left;">Keeps deals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Hostile</td>
+<td style="text-align: left;">Refused (Unlikely if it serves its objective)</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Wary</td>
+<td style="text-align: left;">−1 step</td>
+<td style="text-align: left;">Even</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Even</td>
+<td style="text-align: left;">Likely</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">+1 step</td>
+<td style="text-align: left;">Likely</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Allied</td>
+<td style="text-align: left;">+1 step; auto if it serves its objective</td>
+<td style="text-align: left;">Automatic (Schemer: Likely)</td>
+</tr>
+</tbody>
+</table>
+<p>Offer shifts: +1 if it advances the AA’s objective; −1 if it costs what its rule protects or helps its rival.</p>
+</section>
+<section id="appendix-a-the-corentine-succession-solo" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-a-the-corentine-succession-solo">Appendix A: The Corentine Succession (Solo)</h2>
+<p>A ready-to-play scenario for Solo Mode. It is the worked example scenario from the <a href="../docs/osg_handbook.html">Open Strategy Game Handbook</a>, Appendix G, with everything Solo Mode needs. You can play any of the five factions; the other four are AAs.</p>
+<p><strong>Full game:</strong> you and four AAs, six turns. Expect a long first turn.<br>
+<strong>Lighter game:</strong> Essaveth, Caldrath and House Meranto only, six turns. Saivorn and the Conclave remain in the world as background institutions: they exist and can be named in actions, but take no actions and have no disposition. This is the recommended first game, and the one used in Appendix B.</p>
+<section id="the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem">The Problem</h3>
+<blockquote class="blockquote">
+<p><em>The death of Arbiter Vethara has left the Corentine Peninsula without a recognized authority to renew the bilateral treaties that have kept its five polities at peace for thirty years.</em></p>
+</blockquote>
+</section>
+<section id="the-world" class="level3">
+<h3 class="anchored" data-anchor-id="the-world">The World</h3>
+<p>Five polities have coexisted under bilateral treaties ratified by the Arbiter, a title held for thirty years by Vethara of Corenth. The Arbiter held no army and claimed no territory; her authority rested on personal standing, the Conclave’s ratification, and everyone’s interest in having someone to call when things went wrong. She died twelve days ago and named no successor. The treaties have no renewal mechanism that all parties recognize.</p>
+</section>
+<section id="the-map" class="level3">
+<h3 class="anchored" data-anchor-id="the-map">The Map</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Corenth</strong></td>
+<td style="text-align: left;">The central city, seat of the old Arbiter, site of the Conclave’s extraterritorial temple. <strong>Contested.</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>The Northern Passes</strong></td>
+<td style="text-align: left;">Essaveth’s territory between Caldrath and Corenth. Caldrath’s army is camped at their foot; Corenth is three days’ march beyond them.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Caldrath</strong></td>
+<td style="text-align: left;">The kingdom’s heartland, to the north.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Saivorn</strong></td>
+<td style="text-align: left;">The coastal republic to the south, with the peninsula’s only two deep-water ports. Reaches Corenth by sea.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>The Southern Coast</strong></td>
+<td style="text-align: left;">Merchant country with no single power; House Meranto’s offices are here, but its leverage is everywhere.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="turn-zero-established" class="level3">
+<h3 class="anchored" data-anchor-id="turn-zero-established">Turn Zero: Established</h3>
+<p>These answers are settled before play. Do not ask the Oracle about them.</p>
+<ul>
+<li>The treaties remain in force until they lapse unrenewed at the end of Turn 4 (the Crisis Clock’s Breaking Point). Any faction may try to hasten or delay the lapse through action.</li>
+<li>Caldrath’s historical claim on Essaveth’s northern province is dormant until Caldrath formally declares it.</li>
+<li>The Conclave’s extraterritorial status in Corenth derives from the treaties. If they lapse, it becomes contested.</li>
+<li>Two mercenary companies operate on the peninsula. Both are expensive and in contact with more than one faction. Hiring one does not buy exclusivity.</li>
+</ul>
+<p><strong>Left unsettled on purpose:</strong> whether Vethara died naturally; what the unpublished treaty clauses say. Let play decide.</p>
+</section>
+<section id="the-crisis-clock" class="level3">
+<h3 class="anchored" data-anchor-id="the-crisis-clock">The Crisis Clock</h3>
+<p>Four boxes. The treaty deadline fixes the Breaking Point at the end of Turn 4, so this scenario overrides the usual length: two turns are played after the treaties lapse.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Box</th>
+<th style="text-align: left;">Escalation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong>Blood at the passes.</strong> A Caldrath patrol and Essaveth’s wardens clash at a gate tower; two men die. Each side names the other the aggressor.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>Grain panic in Corenth.</strong> Bread prices double in a week. The city guilds petition for “a protector”, and do not say whose.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>Breaking Point: the treaties lapse.</strong> No renewal has been ratified. Every border, toll and debt guaranteed by the old order is now open to dispute, and the Conclave’s temple is no longer clearly extraterritorial.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="starting-standing" class="level3">
+<h3 class="anchored" data-anchor-id="starting-standing">Starting Standing</h3>
+<p>Caldrath &gt; House Meranto &gt; Saivorn &gt; The Conclave &gt; Essaveth</p>
+<p>In the lighter game: Caldrath &gt; House Meranto &gt; Essaveth.</p>
+</section>
+<section id="starting-disposition" class="level3">
+<h3 class="anchored" data-anchor-id="starting-disposition">Starting Disposition</h3>
+<p>Read across: how each AA (row) feels toward you, depending on which faction you play (column).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">AA ↓ / You →</th>
+<th style="text-align: left;">Saivorn</th>
+<th style="text-align: left;">Caldrath</th>
+<th style="text-align: left;">Conclave</th>
+<th style="text-align: left;">Essaveth</th>
+<th style="text-align: left;">Meranto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Saivorn</strong></td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;">Wary</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Neutral</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Caldrath</strong></td>
+<td style="text-align: left;">Wary</td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Hostile</td>
+<td style="text-align: left;">Wary</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Conclave</strong></td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Wary</td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">Wary</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Essaveth</strong></td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">Hostile</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;">Neutral</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Meranto</strong></td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">n/a</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-republic-of-saivorn" class="level3">
+<h3 class="anchored" data-anchor-id="the-republic-of-saivorn">The Republic of Saivorn</h3>
+<p><em>Public:</em> the peninsula’s dominant commercial power; controls both major ports.</p>
+<p><strong>If you play Saivorn</strong></p>
+<ul>
+<li><em>Short-term:</em> Prevent any military action that closes the peninsula’s sea lanes before a new framework is established.</li>
+<li><em>Long-term:</em> Secure a successor treaty that guarantees commercial freedom of movement regardless of who holds political authority.</li>
+<li><em>Position:</em>
+<ul>
+<li>You control the only two deep-water ports on the peninsula. Any faction that needs to move goods or troops by sea needs your cooperation or your tolerance.</li>
+<li>You have no standing army. Hired companies and a small patrol fleet defend the harbours; they cannot project power inland.</li>
+<li>The Arbiter’s death is, privately, not unwelcome. Her last treaty imposed tariff concessions that cost you considerably. You want a new order, not the old one restored.</li>
+</ul></li>
+<li><em>Bonus:</em> <strong>The Harbour Writ (1x).</strong> Open or close both ports to any cargo, at once and with full legal cover.</li>
+</ul>
+<p><strong>As an AA</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Objective</td>
+<td style="text-align: left;">Keep the sea lanes open and get commercial freedom written into whatever comes next</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">Both deep-water ports; no army</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Leverage</td>
+<td style="text-align: left;">Geographic (secondary: economic)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behavior</td>
+<td style="text-align: left;">Opportunist</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bonus</td>
+<td style="text-align: left;">The Harbour Writ (1x)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Draft a commercial-freedom charter and seek signatures for it</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Escort merchant convoys to Corenth under the patrol fleet</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Raise harbour dues on, or refuse berths to, [target]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Offer [target]’s suppliers or creditors better terms, to pry them loose</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Hire a mercenary company to guard the harbours and the coast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Close both ports to all military cargo until a new framework is agreed</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Secret (what might be true)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">A Saivorn merchant paid the Arbiter’s physician in her last month</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">One of the two deep-water ports is silting up and will close within a year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">The hired companies are owed three months’ pay and are talking to Caldrath</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Saivorn owes Meranto far more than its published credits show</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Saivorn has been running arms to Essaveth in grain ships</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">The patrol fleet sails half-crewed</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-kingdom-of-caldrath" class="level3">
+<h3 class="anchored" data-anchor-id="the-kingdom-of-caldrath">The Kingdom of Caldrath</h3>
+<p><em>Public:</em> the strongest military force on the peninsula; has wanted more for a long time.</p>
+<p><strong>If you play Caldrath</strong></p>
+<ul>
+<li><em>Short-term:</em> Establish a military presence in Corenth before any other faction does.</li>
+<li><em>Long-term:</em> Have the King of Caldrath recognized, by the Conclave or by sufficient consensus, as the new Arbiter or equivalent authority.</li>
+<li><em>Position:</em>
+<ul>
+<li>You have the largest standing army on the peninsula, camped at the foot of the northern passes. Through the passes, Corenth is three days’ march away. Everyone knows this.</li>
+<li>Five years ago, Vethara publicly rebuked Caldrath over a border dispute with Essaveth and ruled against you. The rebuke is in the Conclave’s registers. It will be used against you.</li>
+<li>Your military expansion was financed largely by loans from House Meranto. The debt is significant and the terms are not favourable.</li>
+</ul></li>
+<li><em>Bonus:</em> <strong>The Old Muster Rolls (1x).</strong> Call up the reserve levies: a second army, for one campaign.</li>
+</ul>
+<p><strong>As an AA</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Objective</td>
+<td style="text-align: left;">Put troops in Corenth first, then have the King recognized as Arbiter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">The largest army, at the foot of the passes; deep in debt to Meranto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Leverage</td>
+<td style="text-align: left;">Military (secondary: geographic)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behavior</td>
+<td style="text-align: left;">Aggressor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bonus</td>
+<td style="text-align: left;">The Old Muster Rolls (1x)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">March a column through the northern passes toward Corenth</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Petition the Conclave to recognize the King as interim Arbiter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Demand right of passage from [target], backed by the army</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Seize a depot, toll post or road held by [target]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Hire one of the two mercenary companies</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Formally declare the claim on Essaveth’s northern province</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Secret (what might be true)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">The King is ill, and his heir opposes the campaign</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The army’s pay is three months in arrears</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">A Meranto agent sits on the King’s war council</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Part of the historical claim on Essaveth rests on a forged charter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">The King has secretly offered Saivorn a share of Corenth’s tolls</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Caldrath’s scouts have found a goat road around the passes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-conclave" class="level3">
+<h3 class="anchored" data-anchor-id="the-conclave">The Conclave</h3>
+<p><em>Public:</em> the religious body that ratified all the Arbiter’s treaties; holds the originals.</p>
+<p><strong>If you play the Conclave</strong></p>
+<ul>
+<li><em>Short-term:</em> Be formally recognized as the body that must ratify any new treaty framework or successor arrangement before it takes effect.</li>
+<li><em>Long-term:</em> Establish permanent Conclave oversight of whoever holds the Arbiter’s role, however they are chosen.</li>
+<li><em>Position:</em>
+<ul>
+<li>You hold the original copies of all bilateral treaties, including clauses never made public. What is written there, and what you choose to reveal or withhold, is leverage.</li>
+<li>Your temple complex in Corenth is extraterritorial. No faction can move against you there without the political cost of attacking a sacred institution.</li>
+<li>You have no military force and are substantially in debt to House Meranto for a building programme not yet complete.</li>
+</ul></li>
+<li><em>Bonus:</em> <strong>The Sealed Archive (1x).</strong> Produce an original treaty document whose authenticity no one can credibly dispute.</li>
+</ul>
+<p><strong>As an AA</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Objective</td>
+<td style="text-align: left;">Make Conclave ratification the price of any legitimate settlement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">The treaty originals and an extraterritorial temple; no army; in debt to Meranto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Leverage</td>
+<td style="text-align: left;">Legitimacy (secondary: informational)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behavior</td>
+<td style="text-align: left;">Balancer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bonus</td>
+<td style="text-align: left;">The Sealed Archive (1x)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Proclaim from the temple that no settlement is valid without Conclave ratification</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Convene a summit of all factions in Corenth, under the temple’s protection</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Publish an unpublished treaty clause that embarrasses [target]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Refuse to receive [target]’s envoys and denounce its conduct from the temple steps</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Seek a moratorium on its building-programme debt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Name an interim Arbiter of its own choosing</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Secret (what might be true)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">An unpublished clause grants Caldrath the northern province after thirty years, and the term has passed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Vethara named a successor in a sealed letter the Conclave is hiding</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">The Conclave is split: its Elder favors a settlement under Caldrath</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Money borrowed for the building programme was diverted</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">The Conclave has privately promised ratification to two different factions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">One of the original treaties was never signed</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-principality-of-essaveth" class="level3">
+<h3 class="anchored" data-anchor-id="the-principality-of-essaveth">The Principality of Essaveth</h3>
+<p><em>Public:</em> a small border state whose existence was guaranteed by Vethara’s last major treaty.</p>
+<p><strong>If you play Essaveth</strong></p>
+<ul>
+<li><em>Short-term:</em> Secure a written guarantee of territorial integrity from at least two other factions before Caldrath’s army moves.</li>
+<li><em>Long-term:</em> Have Essaveth’s borders explicitly named and protected in whatever successor treaty emerges.</li>
+<li><em>Position:</em>
+<ul>
+<li>Your principality sits at the peninsula’s crossroads. Caldrath’s army cannot reach Corenth from the north without passing through or around your territory. This is your primary leverage and your primary vulnerability.</li>
+<li>The Arbiter’s last major treaty created your current borders. Without it, Caldrath has a historical claim on your northern province that predates Vethara’s arbitration.</li>
+<li>Your garrison is small but well positioned. You can hold your passes for weeks, not months. You need allies, and you need them before the army moves.</li>
+</ul></li>
+<li><em>Bonus:</em> <strong>The Pass Wardens (2x).</strong> Essaveth’s hereditary gate-keepers: men who know every ledge and sally port. Scope: any action fought or enforced in the passes.</li>
+</ul>
+<p><strong>As an AA</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Objective</td>
+<td style="text-align: left;">Get its borders guaranteed in writing, by as many factions as possible</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">The northern passes, holdable for weeks; a dormant Caldrath claim on its northern province</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Leverage</td>
+<td style="text-align: left;">Geographic (secondary: diplomatic)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behavior</td>
+<td style="text-align: left;">Consolidator</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bonus</td>
+<td style="text-align: left;">The Pass Wardens (2x)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Seek a written border guarantee from the faction most likely to give one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Petition the Conclave to register its borders in the treaty archive</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Close the passes to [target]’s traffic</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Expose [target]’s designs on Essaveth to the other factions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Fortify the passes and call up the reserves</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Offer transit rights through the passes to whichever faction will guarantee its borders</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Secret (what might be true)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">The Prince is secretly negotiating a personal title from Caldrath</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The garrison’s stores will last ten days, not weeks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">The northern province would welcome Caldrath</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Essaveth’s new fortifications were built on Meranto credit it cannot repay</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Essaveth knows of a goat road around the passes and has told no one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Vethara left the Prince a private letter of guarantee the Conclave never countersigned</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="house-meranto" class="level3">
+<h3 class="anchored" data-anchor-id="house-meranto">House Meranto</h3>
+<p><em>Public:</em> a banking consortium with significant debts owed by every other faction.</p>
+<p><strong>If you play House Meranto</strong></p>
+<ul>
+<li><em>Short-term:</em> Restructure or call in debts from at least two factions to improve your position before a new political order is settled.</li>
+<li><em>Long-term:</em> Have financial obligations explicitly protected, and the Meranto family’s status as creditors formally recognised, in whatever treaty framework emerges.</li>
+<li><em>Position:</em>
+<ul>
+<li>You hold substantial debt from Caldrath, significant trade credits from Saivorn, and the Conclave’s building programme. Every other faction owes you something.</li>
+<li>You have no army, no territory, and no political claim. You can trigger a debt crisis that would damage every faction at once, including yourself.</li>
+<li>Your agents are present in every major city. You often know things before the people they concern.</li>
+</ul></li>
+<li><em>Bonus:</em> <strong>The Debt Clause (2x).</strong> The emergency clause in Meranto’s lending agreements: freeze a debtor’s discretionary spending for thirty days.</li>
+</ul>
+<p><strong>As an AA</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 62%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Objective</td>
+<td style="text-align: left;">Turn two factions’ debts into leverage before the new order is settled</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">Everyone’s creditor; agents everywhere; no army or territory</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Leverage</td>
+<td style="text-align: left;">Economic (secondary: informational)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Behavior</td>
+<td style="text-align: left;">Schemer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bonus</td>
+<td style="text-align: left;">The Debt Clause (2x)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Call in part of [target]’s debt, with a deadline</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Offer [target] restructured terms in exchange for a concession</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Buy up [target]’s outstanding paper from smaller creditors</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Sell what its agents know about [target] to that faction’s rival</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Move its reserves beyond the peninsula’s reach</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Freeze all new credit to the peninsula until creditors are protected</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Secret (what might be true)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Meranto is overextended: if two debtors default, the House fails</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Meranto financed both sides of the last border war</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">The head of the House was Vethara’s confidant and holds her private papers</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Meranto has already sold Caldrath’s debt to a foreign power</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">A Meranto clerk has been feeding the Conclave false records</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Meranto plans to buy the Southern Coast’s charters outright once the treaties lapse</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="appendix-b-a-worked-turn" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-b-a-worked-turn">Appendix B: A Worked Turn</h2>
+<p>The lighter game: you play <strong>Essaveth</strong>; Caldrath and House Meranto are AAs. Turn 1, logged in <a href="../docs/factionlog.html">Factionlog</a> notation, with commentary.</p>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">Setup</h3>
+<pre><code>Turn 0
+
+[Fac:Essaveth
+  | obj:two written guarantees before the army moves
+  | obj:+borders named in the successor treaty
+  | pos:the northern passes; the garrison holds for weeks
+]
+[Bon:Essaveth|Pass Wardens 2]
+[Rival:Caldrath|obj:troops in Corenth, then the King as Arbiter
+  |lev:military|behavior:Aggressor|disp:Hostile]
+[Rival:Meranto|obj:turn two factions' debts into leverage
+  |lev:economic|behavior:Schemer|disp:Neutral]
+[Clock:Crisis 0/4]
+[Standing:Board|order:Caldrath, Meranto, Essaveth]</code></pre>
+</section>
+<section id="take-stock-1" class="level3">
+<h3 class="anchored" data-anchor-id="take-stock-1">1. Take Stock</h3>
+<p>The army sits at the foot of the passes. Essaveth needs two guarantees and has none. Caldrath is Hostile and will not take an offer. Meranto is Neutral and wants leverage over debtors; Caldrath is its largest debtor.</p>
+</section>
+<section id="talk-1" class="level3">
+<h3 class="anchored" data-anchor-id="talk-1">2. Talk</h3>
+<pre><code>Turn 1
+
+Essaveth offers Meranto: our passes open to its agents and couriers;
+  Meranto delays Caldrath's next war-loan payment by a month
+? Does Meranto accept? (Likely)
+d: 2d6kh1[2,4]=4 -&gt; Yes, but...
+=&gt; Essaveth's toll revenue must clear through Meranto houses
+   for the duration
+[Deal:Essaveth/Meranto|agents' passage|Caldrath loan delayed
+  |tolls through Meranto|status:active|since Turn 1]</code></pre>
+<p><em>Odds:</em> Even to start; one step better because a delayed loan gives Meranto leverage over Caldrath, which serves its objective. Neutral disposition adds nothing. <em>Yes, but:</em> Meranto adds a condition. Essaveth accepts it: the tolls are small, and a creditor with an interest in Essaveth’s survival is worth having.</p>
+</section>
+<section id="declare" class="level3">
+<h3 class="anchored" data-anchor-id="declare">3. Declare</h3>
+<pre><code>@(Essaveth)
+  act: Close the northern passes to all armed movement and post
+       the Pass Wardens at every gate
+  out: Caldrath's army cannot cross this turn without fighting
+       its way through
+  lev: The passes are ours (Position); the garrison can hold for
+       weeks; the Wardens know every ledge and sally port
+       [Bon:Essaveth|Pass Wardens-1]</code></pre>
+<p>Written and fixed before either AA acts.</p>
+</section>
+<section id="aa-actions" class="level3">
+<h3 class="anchored" data-anchor-id="aa-actions">4. AA Actions</h3>
+<pre><code>tbl: Caldrath Action d6=3 -&gt; Demand right of passage from Essaveth
+
+@(Caldrath)
+  act: Send a herald to the gate towers demanding right of passage
+       for the army, with the army drawn up in sight of the walls
+  out: Essaveth opens the passes; the army is through by the turn's end
+  lev: The largest army on the peninsula, a day from the gates;
+       Essaveth's garrison is small and everyone knows it
+
+(note: Meranto acts on its deal with Essaveth instead of rolling)
+
+@(Meranto)
+  act: Inform Caldrath's treasury that the next war-loan payment is
+       deferred pending a review of the House's exposure
+  out: Caldrath's campaign chest runs a month short
+  lev: Meranto holds the loan and its terms</code></pre>
+<p><em>Caldrath:</em> Aggressor, so it acts. The [target] is the faction most in its way: Essaveth, which it would pick anyway as a Hostile AA. It is written as a competent Caldrath player would write it: the strongest version, using the army it actually has.<br>
+<em>Meranto:</em> Schemer, odd turn, so it acts, but its deal obligation replaces the table roll. Keeping the deal costs it nothing yet, so no check.</p>
+</section>
+<section id="adjudicate-1" class="level3">
+<h3 class="anchored" data-anchor-id="adjudicate-1">5. Adjudicate</h3>
+<pre><code>(note: Essaveth and Caldrath are in conflict)
+
+@(Essaveth)
+d: Strong +[Pass Wardens] 2d6kh1[3,5]=5 -&gt; Success
+(ruling: Pass Wardens on Strong leverage: the 5 counts as a 6)
+
+@(Caldrath)
+d: Strong 2d6kh1[4,4]=4 -&gt; Success
+
+d: Conflict Essaveth 6 vs Caldrath 4 -&gt; Essaveth prevails
+=&gt; The gates stay shut; the herald is turned away at the first tower
+=&gt; Caldrath's outcome is worse than desired: the army does not cross
+tbl: Especially Good d6=4 -&gt; Weakens a rival
+=&gt; The army stood in sight of the walls and did nothing; every
+   court on the peninsula hears of it by week's end
+(note: doubles on Caldrath's roll; no Force of Nature fits yet, declined)
+
+@(Meranto)
+d: Unopposed -&gt; Success
+=&gt; Caldrath's treasury receives the deferral notice
+=&gt; Caldrath's chancellor knows who is squeezing the war chest</code></pre>
+<p><em>Grades:</em> both sides pass the checklist. Essaveth’s control of the passes is in its Position; Caldrath’s army is in its Position and in sight. Strong against Strong. The Pass Wardens turn Essaveth’s 5 into a 6, and the higher kept die prevails.<br>
+<em>Doubles:</em> the rules allow a Force of Nature, but no thread is ready to carry one. Saving it costs nothing.<br>
+<em>Friction on Meranto’s unopposed success:</em> the deferral works, but Caldrath now has a reason to look at Meranto. That is the hook.</p>
+</section>
+<section id="signals-and-notice-1" class="level3">
+<h3 class="anchored" data-anchor-id="signals-and-notice-1">6. Signals and Notice</h3>
+<pre><code>tbl: Caldrath Signal d6=3 -&gt; Warning
+=&gt; The herald's parting words: "The King does not ask twice."
+tbl: Meranto Signal d6=5 -&gt; Exposure
+=&gt; Meranto's couriers in the passes are now visible to Caldrath's scouts</code></pre>
+<p>Essaveth took no covert action, so there is no notice check. The deal with Meranto is private: it goes in the log, and a crumb goes in the Report.</p>
+</section>
+<section id="update-1" class="level3">
+<h3 class="anchored" data-anchor-id="update-1">7. Update</h3>
+<pre><code>[Rival:Meranto|disp:Neutral&gt;Open]
+(note: Essaveth kept its side of the deal)
+[Clock:Crisis+1]
+[Standing:Board|order:Meranto, Caldrath, Essaveth]
+[Thread:The herald's warning|Open]
+[Thread:Meranto's couriers in the passes|Open]</code></pre>
+<p>Caldrath stays Hostile: it was harmed, but it is already at the floor. No AA rolled a 6 or a 1, so no table changes. Essaveth won the exchange but stays last in Standing: a small state that shut a gate is still a small state, and the Opportunist rules of a fuller game would still find it.</p>
+</section>
+<section id="the-report" class="level3">
+<h3 class="anchored" data-anchor-id="the-report">8. The Report</h3>
+<pre><code>\---
+Twelve days after the Arbiter's death, the peninsula waits on
+the northern passes.
+
+Essaveth closed its gates to armed movement on the 13th. A
+Caldrath herald demanding passage was turned away at the first
+tower while the army stood drawn up below the walls. The army
+has not moved. The herald's last words are being repeated in
+every market on the peninsula: "The King does not ask twice."
+
+Caldrath's treasury has received notice from House Meranto
+deferring the next payment on its war loans. The chancellor
+has made no public reply.
+
+Merchants report unfamiliar couriers using the gate towers'
+stables, paid in Meranto silver.
+
+A shut gate has stopped an army once. Everyone is now asking
+how long it can do it again.
+---\</code></pre>
+<p>The couriers are the crumb for the private deal. The herald’s words, the chancellor’s silence and the stables are hooks for next turn: Caldrath has a reason to turn on Meranto, Meranto’s Exposure gives it a target, and the Crisis Clock will reach its first Escalation, <em>blood at the passes</em>, at the end of Turn 2.</p>
+</section>
+</section>
+<section id="appendix-c-scenario-generator" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-c-scenario-generator">Appendix C: Scenario Generator</h2>
+<p>Build a new solo scenario in about half an hour. The tables are genre-neutral: read every entry through the setting you have in mind, whether that is fantasy kingdoms, Renaissance city-states, a colonial frontier, a mining colony or a boardroom.</p>
+<p><strong>Reading d66:</strong> roll two dice, one after the other. The first is the tens, the second the units: a 3 then a 5 is 35.</p>
+<p>When a result does not fit, reroll it or bend it. When two results seem to contradict each other, look twice before rerolling: the gap between them is often where the scenario is.</p>
+<section id="procedure" class="level3">
+<h3 class="anchored" data-anchor-id="procedure">Procedure</h3>
+<ol type="1">
+<li><strong>The Problem:</strong> roll an Event, an Absence and a Stake; write one sentence.</li>
+<li><strong>Factions:</strong> for each of three to five factions, roll an Archetype, a secondary leverage, a Stance, a Vulnerability and a Tie.</li>
+<li><strong>Briefs:</strong> turn each faction’s rolls into objectives and a Position. One becomes yours; the rest become AAs.</li>
+<li><strong>AA tables:</strong> give each AA the generic Action Table and Secret Table for its leverage type, then customize at least two entries of each.</li>
+<li><strong>The Crisis Clock:</strong> two Escalations and a Breaking Point.</li>
+<li><strong>The Map:</strong> the seat of the absence, plus a location for each faction and one or two more.</li>
+<li><strong>Check it.</strong></li>
+</ol>
+</section>
+<section id="the-problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem-1">1. The Problem</h3>
+<p><strong>The Event: what just happened (d66)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 43%">
+<col style="width: 6%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Death and succession</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Collapse and failure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">The ruler dies with no named heir</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">The largest bank defaults</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">The founder dies, leaving a will that satisfies no one</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">The treasury runs dry</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">The heir is proved illegitimate</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">The army mutinies over pay</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">Two heirs are proclaimed on the same day</td>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">The governing council deadlocks and dissolves</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">The ruler abdicates</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">The great work fails: the dam, the wall, the canal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">The guarantor of the peace is assassinated</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">The protecting power withdraws</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 60%">
+<col style="width: 8%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Discovery and arrival</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Violence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">A rich resource is found under contested ground</td>
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">A massacre no faction admits to</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">A new route opens that bypasses the old one</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">A coup half-succeeds in the capital</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">A foreign envoy arrives with an offer for whoever can sign</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">A border skirmish kills someone who mattered</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">Refugees arrive in numbers no one can absorb</td>
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">Raiders take the main road</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">A new technique makes an old monopoly worthless</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">A fortress changes hands overnight</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">A lost claimant returns, with proof</td>
+<td style="text-align: left;">46</td>
+<td style="text-align: left;">A ceasefire breaks, and both sides deny firing first</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 38%">
+<col style="width: 14%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Disaster</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Rupture</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">Plague</td>
+<td style="text-align: left;">61</td>
+<td style="text-align: left;">A treaty expires and cannot be renewed as written</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">The harvest fails</td>
+<td style="text-align: left;">62</td>
+<td style="text-align: left;">A leaked document proves a long-standing lie</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">53</td>
+<td style="text-align: left;">A flood moves the river that marked the border</td>
+<td style="text-align: left;">63</td>
+<td style="text-align: left;">The dominant faith splits over a doctrine</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">Fire destroys the archive of deeds and treaties</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">A province declares independence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">A storm wrecks the only port</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">An election result is disputed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">The water source begins to fail</td>
+<td style="text-align: left;">66</td>
+<td style="text-align: left;">A charter or monopoly is revoked</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Absence: what is now missing (d66)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 31%">
+<col style="width: 10%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Authority</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Law and record</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">A recognized ruler</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">A court whose rulings bind</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">An arbiter every faction accepts</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">An agreed record of who owns what</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">A council that can still decide</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">A treaty that holds the borders</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">A single voice to speak for the region abroad</td>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">A law that covers the new situation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">A commander the army obeys</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">An accepted count of votes or claims</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">Anyone entitled to summon the assembly</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">A precedent everyone recognizes</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 40%">
+<col style="width: 15%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Security</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Wealth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">A force that keeps the roads safe</td>
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">A currency everyone accepts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">A ceasefire anyone trusts</td>
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">Credit, for anyone</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">The protection of a greater power</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">A buyer for the region’s main export</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">A garrison in the contested place</td>
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">The funds to pay what is owed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">Neutral ground where enemies can meet</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">An agreed share of the tolls and revenues</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">A common enemy to keep rivals in line</td>
+<td style="text-align: left;">46</td>
+<td style="text-align: left;">A single market</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 42%">
+<col style="width: 6%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Resources and routes</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Belief and legitimacy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">Enough water or grain for everyone</td>
+<td style="text-align: left;">61</td>
+<td style="text-align: left;">An official faith</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">Safe passage through the only route</td>
+<td style="text-align: left;">62</td>
+<td style="text-align: left;">A ruler blessed by tradition</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">53</td>
+<td style="text-align: left;">An agreed claim on the new resource</td>
+<td style="text-align: left;">63</td>
+<td style="text-align: left;">A story about the past that everyone believes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">Control of the only port</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">The consent of the governed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">The supply everyone depends on</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">A symbol that confers the right to rule: a crown, a seal, a relic</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">Working infrastructure: the bridge, the canal, the line</td>
+<td style="text-align: left;">66</td>
+<td style="text-align: left;">A founding promise that still holds</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Stake: what happens if no one resolves it (d6).</strong> This is the Breaking Point of the Crisis Clock.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 87%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Breaking Point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Open war breaks out</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">The old order lapses for good: the treaty, the charter, the mandate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">An outside power steps in and imposes its own settlement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">The contested resource runs out or is ruined</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">The people rise and take matters into their own hands</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">The region splits apart</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Writing the sentence.</strong> Name the event, the place, and the absence:</p>
+<blockquote class="blockquote">
+<p><em>[The Event] has left [the region] without [the Absence].</em></p>
+</blockquote>
+<p>Make every part specific: a named ruler, a named river, a named treaty. Leave the Stake out of the sentence; it belongs to the Clock. Then apply the <strong>Three-Angles Test</strong>: can you argue for three different responses from three different positions, none obviously right? If not, reroll the Absence.</p>
+</section>
+<section id="factions" class="level3">
+<h3 class="anchored" data-anchor-id="factions">2. Factions</h3>
+<p>Roll three to five factions. One will be yours.</p>
+<p><strong>Archetype (d66).</strong> The first die is the faction’s <strong>primary leverage</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 8%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Military</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Economic</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Geographic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">A standing army under an ambitious commander</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">A banking house</td>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">A small state holding the pass</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">A mercenary company</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">A merchant league</td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">A port city</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">A border garrison</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">A craft guild</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">A river toll lord</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">A fleet</td>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">A chartered trading company</td>
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">A frontier settlement</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">A militant religious order</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">A great landowning family</td>
+<td style="text-align: left;">35</td>
+<td style="text-align: left;">The holders of the mine or the well</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">A warlord’s household</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">A smuggling ring</td>
+<td style="text-align: left;">36</td>
+<td style="text-align: left;">A fortress town at the crossroads</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 33%">
+<col style="width: 7%">
+<col style="width: 25%">
+<col style="width: 7%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Informational</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Legitimacy</th>
+<th style="text-align: left;">d66</th>
+<th style="text-align: left;">Popular</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">A spy network</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">A priesthood</td>
+<td style="text-align: left;">61</td>
+<td style="text-align: left;">A workers’ league</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">42</td>
+<td style="text-align: left;">A press or broadsheet</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">A high court</td>
+<td style="text-align: left;">62</td>
+<td style="text-align: left;">A peasant movement</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">A university or archive</td>
+<td style="text-align: left;">53</td>
+<td style="text-align: left;">A dynasty in exile</td>
+<td style="text-align: left;">63</td>
+<td style="text-align: left;">A city crowd and its tribune</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">The courier service</td>
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">An ancient assembly</td>
+<td style="text-align: left;">64</td>
+<td style="text-align: left;">A refugee community</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">45</td>
+<td style="text-align: left;">A diplomatic corps without a state</td>
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">An electoral college</td>
+<td style="text-align: left;">65</td>
+<td style="text-align: left;">A reform movement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">46</td>
+<td style="text-align: left;">A secret society</td>
+<td style="text-align: left;">56</td>
+<td style="text-align: left;">The late ruler’s household</td>
+<td style="text-align: left;">66</td>
+<td style="text-align: left;">A sect of the faithful</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Popular</strong> leverage is numbers: crowds, strikes, votes, labor. Slow to direct, hard to stop, and dangerous to whoever it turns against.</p>
+<p><strong>Asymmetry.</strong> If a faction rolls the same primary leverage as one already in the game, reroll the first die once. Two factions can share a type, but then they must use it differently.</p>
+<p><strong>Secondary leverage (d6).</strong> 1 Military, 2 Economic, 3 Geographic, 4 Informational, 5 Legitimacy, 6 Popular. Reroll if it matches the primary.</p>
+<p><strong>Stance: how the Problem touches it (d6).</strong> The Stance gives the faction its objectives and a suggested behavior rule.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 10%">
+<col style="width: 36%">
+<col style="width: 34%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Stance</th>
+<th style="text-align: left;">Short-term objective</th>
+<th style="text-align: left;">Long-term objective</th>
+<th style="text-align: left;">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong>Claimant</strong>: wants to fill the absence</td>
+<td style="text-align: left;">Seize the seat of the absence, or be first to act as what is missing</td>
+<td style="text-align: left;">Be recognized as what is missing</td>
+<td style="text-align: left;">Aggressor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong>Guardian</strong>: wants the old order back, with itself at the center</td>
+<td style="text-align: left;">Be acknowledged as indispensable to any settlement</td>
+<td style="text-align: left;">Restore what is missing under its own oversight</td>
+<td style="text-align: left;">Balancer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>Threatened</strong>: may not survive the change</td>
+<td style="text-align: left;">Win guarantees from two factions before the first Escalation</td>
+<td style="text-align: left;">Have its survival written into the new order</td>
+<td style="text-align: left;">Consolidator</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>Opportunist</strong>: the change frees it</td>
+<td style="text-align: left;">Use the crisis to throw off its worst burden</td>
+<td style="text-align: left;">Make the new order better for it than the old</td>
+<td style="text-align: left;">Opportunist</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong>Creditor</strong>: everyone owes it something</td>
+<td style="text-align: left;">Turn two factions’ obligations into leverage before the order is settled</td>
+<td style="text-align: left;">Have its claims protected in whatever comes next</td>
+<td style="text-align: left;">Schemer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><strong>Outsider</strong>: was never part of the old order</td>
+<td style="text-align: left;">Win a seat where the settlement will be decided</td>
+<td style="text-align: left;">Be part of the new order on equal terms</td>
+<td style="text-align: left;">Reactor</td>
+</tr>
+</tbody>
+</table>
+<p>A scenario needs at least one <strong>Claimant</strong> and one <strong>Threatened</strong>. If none came up, change the stance of the faction that fits best.</p>
+<p><strong>Vulnerability (d6).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Vulnerability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">In debt to another faction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Divided at the top</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">On a deadline: its strength lasts weeks, not months</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Compromised by a public past: a rebuke, a defeat, a scandal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Dependent on a route or supply another faction controls</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Has no force of its own</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tie (d6).</strong> Roll once for each faction, with a random other faction.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">This faction…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Owes the other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Is owed by the other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Has an old grievance against the other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Has a secret understanding with the other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Wants the same thing as the other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Shares an enemy with the other</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="briefs" class="level3">
+<h3 class="anchored" data-anchor-id="briefs">3. Briefs</h3>
+<p>Turn the rolls into sentences. Make each specific: replace “the seat of the absence” with the named place, “its worst burden” with the named tariff or treaty.</p>
+<ul>
+<li><strong>Objectives:</strong> the Stance templates, made specific. Apply the Pithy Test: add “!” and read it aloud. It should sound like something a faction leader would shout.</li>
+<li><strong>Position:</strong> three bullets. One asset from the Archetype and its leverage, one Vulnerability, one Tie. Ask of each: could two people read this bullet and argue different things from it? If so, make it more specific.</li>
+<li><strong>Bonus:</strong> one named, scoped bonus for your faction; optionally one per AA.</li>
+<li><strong>Your faction:</strong> pick one, or roll. Everyone else becomes an AA: objective (the short-term one), position (the asset and the vulnerability), leverage, behavior rule (the Stance’s suggestion, or roll), starting disposition (Wary if its objectives conflict with yours, Open if they align, Neutral otherwise).</li>
+</ul>
+</section>
+<section id="generic-aa-action-tables" class="level3">
+<h3 class="anchored" data-anchor-id="generic-aa-action-tables">4. Generic AA Action Tables</h3>
+<p>Start each AA with the table for its primary leverage. Then rewrite at least two entries to name real places, assets and rivals from the scenario.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Military</th>
+<th style="text-align: left;">Economic</th>
+<th style="text-align: left;">Geographic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Move forces to take or hold the contested place</td>
+<td style="text-align: left;">Buy what its objective needs: votes, land, loyalty</td>
+<td style="text-align: left;">Assert control of its ground: tolls, permits, patrols</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Show force to back its claim: a march, a review, a patrol</td>
+<td style="text-align: left;">Fund a faction whose success serves its objective</td>
+<td style="text-align: left;">Grant passage to a faction that serves its objective</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Demand concessions from [target] under threat of force</td>
+<td style="text-align: left;">Call in debts from, or raise prices on, [target]</td>
+<td style="text-align: left;">Close its route or territory to [target]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Strike [target]’s exposed asset: a depot, an escort, an outpost</td>
+<td style="text-align: left;">Buy up or cut off [target]’s supplies or credit</td>
+<td style="text-align: left;">Raise the price of passage for [target]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Recruit, hire or resupply</td>
+<td style="text-align: left;">Move its money to safety</td>
+<td style="text-align: left;">Fortify, survey or settle its ground</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Open hostilities against [target]</td>
+<td style="text-align: left;">Freeze credit or trade across the region</td>
+<td style="text-align: left;">Cut the route entirely until its terms are met</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 40%">
+<col style="width: 31%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Informational</th>
+<th style="text-align: left;">Legitimacy</th>
+<th style="text-align: left;">Popular</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Spread its version of the crisis</td>
+<td style="text-align: left;">Proclaim the rule by which the crisis must be settled</td>
+<td style="text-align: left;">Rally in the streets for its demand</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Trade a secret to a faction that serves its objective</td>
+<td style="text-align: left;">Recognize or endorse a faction that serves its objective</td>
+<td style="text-align: left;">Lend its numbers to a faction that serves its objective</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Investigate [target] (on a success, roll its Secret Table)</td>
+<td style="text-align: left;">Withhold recognition from [target], and denounce it</td>
+<td style="text-align: left;">Strike, boycott or picket [target]</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Leak something damaging about [target]</td>
+<td style="text-align: left;">Produce a precedent, document or ruling against [target]</td>
+<td style="text-align: left;">Occupy or wreck [target]’s property</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Plant agents, or protect its own sources</td>
+<td style="text-align: left;">Convene a council, summit or hearing</td>
+<td style="text-align: left;">Organize: choose leaders, raise a fund, recruit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Publish a revelation that changes the crisis</td>
+<td style="text-align: left;">Name a successor, deliver a verdict, or cast someone out</td>
+<td style="text-align: left;">Rise: a general strike or open revolt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Secret Tables.</strong> Use the generic tables in Part VI. For Popular factions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Popular</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Its leaders are paid by another faction</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">It is far smaller than it looks</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">A splinter wants violence and is arming</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Its central grievance rests on a falsehood</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">One of its leaders is an informer</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">It is about to split over the crisis</td>
+</tr>
+</tbody>
+</table>
+<p>Rewrite at least two entries of each AA’s Secret Table to connect it to another faction: a debt, a hidden understanding, a shared lie. Secrets that tie factions together are the ones that change a game when they surface.</p>
+</section>
+<section id="the-crisis-clock-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-crisis-clock-1">5. The Crisis Clock</h3>
+<p>Length: the number of turns minus one. The Breaking Point is the Stake. Roll two Escalations (reroll a duplicate), mark them at about one third and two thirds of the track, and make each one specific to the Problem.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Escalation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong>Blood:</strong> the first deaths that can be blamed on someone</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong>Shortage:</strong> prices spike; something everyone needs runs short</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>Outside interest:</strong> an envoy, a fleet or an army appears at the edge of the map</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong>Defection:</strong> someone important inside one faction changes sides</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong>Public anger:</strong> crowds gather and demand that someone act</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><strong>Deadline:</strong> a date is set after which something becomes final</td>
+</tr>
+</tbody>
+</table>
+<p>Check each Escalation: does it hurt at least two factions, differently? Does it open an option that did not exist before?</p>
+</section>
+<section id="the-map-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-map-1">6. The Map</h3>
+<p>Start with the <strong>seat of the absence</strong>: the place where what is missing used to live (the capital, the court, the dam, the temple). It is contested. Give each faction a home location. Then roll one or two more locations, so the map has three to five places in all.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">d6</th>
+<th style="text-align: left;">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">A crossing: a pass, a bridge, a ford</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">A harbour or station</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">A source: a mine, a well, rich fields</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">A stronghold</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">A market or exchange</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">A shrine, archive or court</td>
+</tr>
+</tbody>
+</table>
+<p>Draw the connections. Ask which faction must pass through another’s ground to reach the contested place. That route is where the first conflict will happen.</p>
+</section>
+<section id="check-it" class="level3">
+<h3 class="anchored" data-anchor-id="check-it">7. Check It</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">The Problem is one sentence and passes the Three-Angles Test.</label></li>
+<li><label><input type="checkbox">There is at least one Claimant and one Threatened faction.</label></li>
+<li><label><input type="checkbox">Each faction’s objectives conflict with at least one AA’s, and yours conflict with at least two.</label></li>
+<li><label><input type="checkbox">No two factions use the same leverage the same way.</label></li>
+<li><label><input type="checkbox">Every Position bullet is specific enough to argue from.</label></li>
+<li><label><input type="checkbox">Every AA has at least two customized Action Table entries and two customized Secret Table entries.</label></li>
+<li><label><input type="checkbox">Each Escalation hurts at least two factions differently.</label></li>
+</ul>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p><strong>Rolls:</strong> Event 53 (a flood moves the border river), Absence 23 (a treaty that holds the borders), Stake 1 (open war).</p>
+<blockquote class="blockquote">
+<p><em>The spring flood that moved the Varn into its old bed has left the Three Valleys without a treaty that holds their borders.</em></p>
+</blockquote>
+<p>Three factions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 33%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Archetype</th>
+<th style="text-align: left;">Leverage</th>
+<th style="text-align: left;">Stance</th>
+<th style="text-align: left;">Vulnerability</th>
+<th style="text-align: left;">Tie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">33 River toll lord, the House of Esk</td>
+<td style="text-align: left;">Geographic / Economic</td>
+<td style="text-align: left;">Threatened</td>
+<td style="text-align: left;">5 Its toll stations depend on the river’s course</td>
+<td style="text-align: left;">2 Is owed by the garrison</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">13 Border garrison of Harrow Ford</td>
+<td style="text-align: left;">Military / Legitimacy</td>
+<td style="text-align: left;">Claimant</td>
+<td style="text-align: left;">3 Its supplies last weeks, not months</td>
+<td style="text-align: left;">1 Owes the toll lord</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">52 The Valley Court</td>
+<td style="text-align: left;">Legitimacy / Informational</td>
+<td style="text-align: left;">Guardian</td>
+<td style="text-align: left;">6 Has no force of its own</td>
+<td style="text-align: left;">4 Secret understanding with the garrison</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>The House of Esk</strong> (Threatened). Short-term: <em>“Get the Court and the garrison to swear our stations stand, before the first blood is spilled!”</em> Long-term: <em>“Write the toll rights into whatever treaty redraws the Varn!”</em> Its toll stations are now on the wrong bank.</li>
+<li><strong>Harrow Ford</strong> (Claimant). Short-term: <em>“Plant the garrison’s banner on the new bank first!”</em> Long-term: <em>“Make the garrison commander the warden of the Three Valleys!”</em> It owes Esk for a winter’s grain, and its stores will not last the summer.</li>
+<li><strong>The Valley Court</strong> (Guardian). Short-term: <em>“No new border is lawful until the Court rules on it!”</em> Long-term: <em>“Put the Court’s survey above every claim in the valleys!”</em> It has no force of its own, and it has quietly promised the garrison commander a favorable ruling.</li>
+</ul>
+<p>The conflicts are already there. The garrison needs Esk’s grain and wants Esk’s ground. The Court’s secret promise to the garrison betrays the river lord who believes the Court will protect him. Escalations, rolled: 1 <strong>Blood</strong> (a toll keeper drowned at the new ford) and 3 <strong>Outside interest</strong> (the duke downstream sends surveyors). The Breaking Point is <strong>open war</strong> between the valleys.</p>
+</section>
+</section>
+<section id="glossary" class="level2">
+<h2 class="anchored" data-anchor-id="glossary">Glossary</h2>
+<p><strong>AA (Autonomous Actor)</strong>: A faction run by its brief, behavior rule and tables instead of a player.</p>
+<p><strong>Action Table</strong>: Six actions an AA might take, rolled on d6 each turn it acts.</p>
+<p><strong>Behavior Rule</strong>: How an AA chooses what to do and whom to target: Consolidator, Aggressor, Opportunist, Balancer, Reactor, Schemer.</p>
+<p><strong>Crisis Clock</strong>: A track that advances each turn as the Problem worsens, with three Escalations ending in a Breaking Point.</p>
+<p><strong>Deal</strong>: An agreement with an AA, struck through an Offer. Its obligations replace the AA’s table roll; it may break.</p>
+<p><strong>Disposition</strong>: An AA’s attitude toward you: Hostile, Wary, Neutral, Open, Allied. Sets offer odds, targeting and deal-keeping.</p>
+<p><strong>Escalation</strong>: A specific worsening of the Problem, triggered when the Crisis Clock reaches its box.</p>
+<p><strong>Holding</strong>: An AA’s turn of consolidation when its behavior rule says it does not act.</p>
+<p><strong>Offer</strong>: A deal you propose to an AA, answered by the Oracle.</p>
+<p><strong>Oracle</strong>: A yes/no question answered with dice: Likely keeps the higher of 2d6, Even rolls 1d6, Unlikely keeps the lower.</p>
+<p><strong>Rumor</strong>: A Secret rolled on a partial investigation result; unconfirmed until verified or until it pays off.</p>
+<p><strong>Secret Table</strong>: Six things that might be true about an AA. Only the one rolled when uncovered becomes true.</p>
+<p><strong>Signal</strong>: An AA’s unprompted communication, rolled after adjudication: warning, offer, exposure or windfall.</p>
+<p><strong>Stance</strong>: In the Scenario Generator, how the Problem touches a faction: Claimant, Guardian, Threatened, Opportunist, Creditor or Outsider. It sets the faction’s objectives.</p>
+<p><strong>Standing</strong>: A ranking of every faction from Dominant to Exposed, revised each turn, used by AA behavior rules.</p>
+<p><strong>Thread</strong>: An unresolved hook from a past Report, kept on a numbered list.</p>
+</section>
+<section id="credits-license" class="level2">
+<h2 class="anchored" data-anchor-id="credits-license">Credits &amp; License</h2>
+<p>© 2026 Roberto Bisceglie</p>
+<p>The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.</p>
+<p>This work is licensed under Creative Commons Attribution-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></section></div></main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var sidebar = document.getElementById("quarto-margin-sidebar");
+  var formats = document.querySelector(".quarto-alternate-formats");
+  if (sidebar && formats) {
+    sidebar.insertBefore(formats, sidebar.firstChild);
+  }
+
+  // Rename "Typst" label to "PDF"
+  document.querySelectorAll(".quarto-alternate-formats a").forEach(function (a) {
+    a.childNodes.forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === "Typst") {
+        node.textContent = "PDF";
+      }
+    });
+  });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/openstrategygames\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Logo by <a href="https://delapouite.com">Delapouite</a> under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -72,18 +75,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../docs/assets/logo.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f6c01fde8906d65facae5dd47b986891.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b6a8749c83ab260b89725db5f5bc3495.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8fc9db7139d8dc2e4952ab5c2b2a0ec3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-be6c7f82690220120cda2b1a25d5e540.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -141,6 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -170,13 +175,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -270,6 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -284,15 +296,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Open Strategy Games</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -301,10 +312,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../docs/osg_handbook.html"> 
 <span class="menu-text">Learn</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../docs/contested_ground.html"> 
-<span class="menu-text">Play</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-play" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Play</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-play">    
+        <li>
+    <a class="dropdown-item" href="../docs/contested_ground.html">
+ <span class="dropdown-text">Contested Ground</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../docs/solo_mode.html">
+ <span class="dropdown-text">Solo Mode</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link active" href="../docs/factionlog.html" aria-current="page"> 
 <span class="menu-text">Log</span></a>
@@ -327,8 +349,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -337,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -353,51 +376,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#digital-format-markdown" id="toc-digital-format-markdown" class="nav-link" data-scroll-target="#digital-format-markdown">2.1 Digital Format (Markdown)</a></li>
   <li><a href="#analog-format-notebooks" id="toc-analog-format-notebooks" class="nav-link" data-scroll-target="#analog-format-notebooks">2.2 Analog Format (Notebooks)</a></li>
-  <li><a href="#format-examples" id="toc-format-examples" class="nav-link" data-scroll-target="#format-examples">2.3 Format Examples</a></li>
+  <li><a href="#indentation" id="toc-indentation" class="nav-link" data-scroll-target="#indentation">2.3 Indentation</a></li>
+  <li><a href="#format-examples" id="toc-format-examples" class="nav-link" data-scroll-target="#format-examples">2.4 Format Examples</a></li>
   </ul></li>
   <li><a href="#core-notation" id="toc-core-notation" class="nav-link" data-scroll-target="#core-notation">3. Core Notation</a>
   <ul class="collapse">
-  <li><a href="#faction-actions" id="toc-faction-actions" class="nav-link" data-scroll-target="#faction-actions">3.1 Faction Actions (<code>@</code>)</a></li>
-  <li><a href="#leverage-grade-lev" id="toc-leverage-grade-lev" class="nav-link" data-scroll-target="#leverage-grade-lev">3.2 Leverage Grade (<code>[Lev:]</code>)</a></li>
-  <li><a href="#the-dice-mechanic-d" id="toc-the-dice-mechanic-d" class="nav-link" data-scroll-target="#the-dice-mechanic-d">3.3 The Dice Mechanic (<code>d:</code>)</a></li>
-  <li><a href="#adjudication-result--" id="toc-adjudication-result--" class="nav-link" data-scroll-target="#adjudication-result--">3.4 Adjudication Result (<code>-&gt;</code>)</a></li>
-  <li><a href="#consequences-and-board-state" id="toc-consequences-and-board-state" class="nav-link" data-scroll-target="#consequences-and-board-state">3.5 Consequences and Board State (<code>=&gt;</code>)</a></li>
-  <li><a href="#the-report-block" id="toc-the-report-block" class="nav-link" data-scroll-target="#the-report-block">3.6 The Report Block</a></li>
+  <li><a href="#faction-actions-faction" id="toc-faction-actions-faction" class="nav-link" data-scroll-target="#faction-actions-faction">3.1 Faction Actions (<code>@(Faction)</code>)</a></li>
+  <li><a href="#the-roll-d" id="toc-the-roll-d" class="nav-link" data-scroll-target="#the-roll-d">3.2 The Roll (<code>d:</code>)</a></li>
+  <li><a href="#consequences" id="toc-consequences" class="nav-link" data-scroll-target="#consequences">3.3 Consequences (<code>=&gt;</code>)</a></li>
+  <li><a href="#the-report-block--------" id="toc-the-report-block--------" class="nav-link" data-scroll-target="#the-report-block--------">3.4 The Report Block (<code>\---</code> … <code>---\</code>)</a></li>
+  <li><a href="#questions-and-tables-tbl" id="toc-questions-and-tables-tbl" class="nav-link" data-scroll-target="#questions-and-tables-tbl">3.5 Questions and Tables (<code>?</code>, <code>tbl:</code>)</a></li>
+  <li><a href="#compact-form" id="toc-compact-form" class="nav-link" data-scroll-target="#compact-form">3.6 Compact Form</a></li>
   </ul></li>
   <li><a href="#optional-layers" id="toc-optional-layers" class="nav-link" data-scroll-target="#optional-layers">4. Optional Layers</a>
   <ul class="collapse">
   <li><a href="#persistent-elements" id="toc-persistent-elements" class="nav-link" data-scroll-target="#persistent-elements">4.1 Persistent Elements</a></li>
-  <li><a href="#turn-zero-t0" id="toc-turn-zero-t0" class="nav-link" data-scroll-target="#turn-zero-t0">4.2 Turn Zero (<code>[T0]</code>)</a></li>
+  <li><a href="#turn-zero" id="toc-turn-zero" class="nav-link" data-scroll-target="#turn-zero">4.2 Turn Zero</a></li>
   <li><a href="#meta-notes" id="toc-meta-notes" class="nav-link" data-scroll-target="#meta-notes">4.3 Meta Notes</a></li>
   </ul></li>
   <li><a href="#optional-structure" id="toc-optional-structure" class="nav-link" data-scroll-target="#optional-structure">5. Optional Structure</a>
   <ul class="collapse">
   <li><a href="#game-header" id="toc-game-header" class="nav-link" data-scroll-target="#game-header">5.1 Game Header</a></li>
   <li><a href="#session-header" id="toc-session-header" class="nav-link" data-scroll-target="#session-header">5.2 Session Header</a></li>
-  <li><a href="#debrief" id="toc-debrief" class="nav-link" data-scroll-target="#debrief">5.3 Debrief</a></li>
+  <li><a href="#turn-headers" id="toc-turn-headers" class="nav-link" data-scroll-target="#turn-headers">5.3 Turn Headers</a></li>
+  <li><a href="#debrief" id="toc-debrief" class="nav-link" data-scroll-target="#debrief">5.4 Debrief</a></li>
   </ul></li>
   <li><a href="#complete-turn-example" id="toc-complete-turn-example" class="nav-link" data-scroll-target="#complete-turn-example">6. Complete Turn Example</a></li>
   <li><a href="#solo-extension" id="toc-solo-extension" class="nav-link" data-scroll-target="#solo-extension">7. Solo Extension</a>
   <ul class="collapse">
-  <li><a href="#oracle-queries" id="toc-oracle-queries" class="nav-link" data-scroll-target="#oracle-queries">7.1 Oracle Queries (<code>?</code>)</a></li>
-  <li><a href="#aa-action-tables-tbl" id="toc-aa-action-tables-tbl" class="nav-link" data-scroll-target="#aa-action-tables-tbl">7.2 AA Action Tables (<code>tbl:</code>)</a></li>
+  <li><a href="#oracle-questions" id="toc-oracle-questions" class="nav-link" data-scroll-target="#oracle-questions">7.1 Oracle Questions (<code>?</code>)</a></li>
+  <li><a href="#aa-tables-tbl" id="toc-aa-tables-tbl" class="nav-link" data-scroll-target="#aa-tables-tbl">7.2 AA Tables (<code>tbl:</code>)</a></li>
   <li><a href="#rival-tags-rival" id="toc-rival-tags-rival" class="nav-link" data-scroll-target="#rival-tags-rival">7.3 Rival Tags (<code>[Rival:]</code>)</a></li>
+  <li><a href="#offers-and-deals-deal" id="toc-offers-and-deals-deal" class="nav-link" data-scroll-target="#offers-and-deals-deal">7.4 Offers and Deals (<code>[Deal:]</code>)</a></li>
+  <li><a href="#standing-secrets-threads-and-the-crisis-clock" id="toc-standing-secrets-threads-and-the-crisis-clock" class="nav-link" data-scroll-target="#standing-secrets-threads-and-the-crisis-clock">7.5 Standing, Secrets, Threads and the Crisis Clock</a></li>
   </ul></li>
   <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">8. Best Practices</a></li>
   <li><a href="#quick-reference" id="toc-quick-reference" class="nav-link" data-scroll-target="#quick-reference">9. Quick Reference</a>
   <ul class="collapse">
   <li><a href="#core-symbols" id="toc-core-symbols" class="nav-link" data-scroll-target="#core-symbols">Core Symbols</a></li>
   <li><a href="#action-argument" id="toc-action-argument" class="nav-link" data-scroll-target="#action-argument">Action Argument</a></li>
-  <li><a href="#dice-results" id="toc-dice-results" class="nav-link" data-scroll-target="#dice-results">Dice Results</a></li>
+  <li><a href="#verdicts" id="toc-verdicts" class="nav-link" data-scroll-target="#verdicts">Verdicts</a></li>
+  <li><a href="#oracle-solo" id="toc-oracle-solo" class="nav-link" data-scroll-target="#oracle-solo">Oracle (solo)</a></li>
   <li><a href="#tags" id="toc-tags" class="nav-link" data-scroll-target="#tags">Tags</a></li>
+  <li><a href="#structure-and-meta" id="toc-structure-and-meta" class="nav-link" data-scroll-target="#structure-and-meta">Structure and Meta</a></li>
   </ul></li>
   <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">10. FAQ</a></li>
+  <li><a href="#appendix-a-migrating-from-factionlog-0.2" id="toc-appendix-a-migrating-from-factionlog-0.2" class="nav-link" data-scroll-target="#appendix-a-migrating-from-factionlog-0.2">Appendix A: Migrating from Factionlog 0.2</a></li>
   <li><a href="#credits-license" id="toc-credits-license" class="nav-link" data-scroll-target="#credits-license">Credits &amp; License</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/openstrategygames/osg_resources/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="factionlog.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="factionlog.odt"><i class="bi bi-file"></i>OpenOffice</a></li><li><a href="factionlog.epub"><i class="bi bi-file"></i>ePub</a></li><li><a href="factionlog.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -435,7 +465,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="what-factionlog-does" class="level3">
 <h3 class="anchored" data-anchor-id="what-factionlog-does">1.2 What Factionlog Does</h3>
-<p>For live tables, asynchronous campaigns, and archived records, this notation helps you:</p>
+<p>For live tables, asynchronous campaigns, solo games and archived records, this notation helps you:</p>
 <ul>
 <li>Record every faction’s three-part action (act / out / lev) in a consistent structure</li>
 <li>Document the leverage grade and dice result for every adjudicated action</li>
@@ -453,44 +483,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="how-to-use-this-notation" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-use-this-notation">1.3 How to Use This Notation</h3>
-<p>Five elements mirror the natural flow of OSG adjudication:</p>
+<p>Four elements mirror the natural flow of OSG adjudication:</p>
 <ul>
-<li><code>@</code> for each faction’s submitted action (three-part argument)</li>
-<li><code>d:</code> for the dice mechanic (<code>2d6kh1</code> or <code>2d6kl1</code>)</li>
-<li><code>-&gt;</code> for the adjudicated outcome</li>
-<li><code>=&gt;</code> for the consequence on the board state</li>
-<li>The Report block for the public summary</li>
+<li><code>@(Faction)</code> for each faction’s submitted action (three-part argument)</li>
+<li><code>d:</code> for the roll: leverage grade, dice, kept die, and the verdict after <code>-&gt;</code></li>
+<li><code>=&gt;</code> for what the outcome changes in the world</li>
+<li>the Report block, between <code>\---</code> and <code>---\</code>, for the public summary</li>
 </ul>
 <p>That’s the core. Everything else (faction tags, bonus tracking, location markers, clocks) is optional. Add it when the game’s complexity requires it.</p>
 </section>
 <section id="quick-start-one-turn" class="level3">
 <h3 class="anchored" data-anchor-id="quick-start-one-turn">1.4 Quick Start: One Turn</h3>
-<pre><code>@ Meranto
+<pre><code>@(Meranto)
   act: Send the debt review notice to Caldrath's treasury
   out: Delay Caldrath's army movement for thirty days
-  lev: We hold all loan documentation; emergency clause has precedent
-[Lev:Strong]
-d: 2d6kh1 [5, 3] = 5
--&gt; Partial success — review opens, but scope is disputed
-=&gt; Caldrath treasury enters review; army movement delayed one turn
+  lev: We hold all loan documentation; the emergency clause has precedent
+d: Strong 2d6kh1[5,3]=5 -&gt; Success
+=&gt; Caldrath's treasury enters review, but the scope of the review is disputed
 
-@ Caldrath
+@(Caldrath)
   act: Deploy advance units to Essaveth's northern pass
-  out: Establish military presence before any treaty negotiation
-  lev: Largest army on the peninsula; units are one day's march away
-[Lev:Strong]
-d: 2d6kh1 [6, 2] = 6
--&gt; Success, and...
-=&gt; [Fac:Caldrath | pos:pass occupied]
+  out: Establish a military presence before any treaty negotiation
+  lev: Largest army on the peninsula, camped at the foot of the passes
+d: Strong 2d6kh1[6,2]=6 -&gt; Success, and...
 =&gt; Essaveth's border garrison stands down without resistance
+[Fac:Caldrath|pos:pass occupied]
 
- Meranto stalls Caldrath's army. Caldrath moves on Essaveth.
-    The Conclave issues no statement. The pass is occupied. </code></pre>
+\---
+Meranto's auditors are in Caldrath's treasury. Caldrath's army is in
+Essaveth's pass. The Conclave has issued no statement.
+---\</code></pre>
 <p>That is a full turn. Everything else in this document handles complexity when you need it.</p>
 </section>
 <section id="factionlog-and-lonelog" class="level3">
 <h3 class="anchored" data-anchor-id="factionlog-and-lonelog">1.5 Factionlog and Lonelog</h3>
-<p>Factionlog is a fork of Lonelog, a notation system for solo RPG session logging. Lonelog’s core philosophy (separate mechanics from fiction, stay compact, scale from one-shots to campaigns) carries directly into OSG play. The tag system and formatting conventions are shared. The core symbols shift to reflect OSG’s specific model: faction-scale play, simultaneous action submission, and the three-part argument that structures every action.</p>
+<p>Factionlog is a fork of Lonelog, a notation system for solo RPG session logging, and follows Lonelog v1.7. Lonelog’s core philosophy (separate mechanics from fiction, stay compact, scale from one-shots to campaigns) carries directly into OSG play. The symbols, the <code>d:</code> line, the tag system, progress tags, meta notes and long blocks are shared.</p>
+<p>Factionlog changes three things to fit OSG’s model of faction-scale play, simultaneous submission, and the three-part argument:</p>
+<ul>
+<li>Actions are always attributed: <code>@(Faction)</code>. In solo play, a bare <code>@</code> may stand for your own faction.</li>
+<li>Each action carries an argument on three indented lines: <code>act:</code>, <code>out:</code>, <code>lev:</code>.</li>
+<li>The <code>d:</code> line uses the leverage grade as its label, and its verdicts are OSG’s four result bands.</li>
+</ul>
 <p>If you know Lonelog, you’ll feel at home. If you don’t, this document is fully standalone.</p>
 </section>
 </section>
@@ -501,11 +534,11 @@ d: 2d6kh1 [6, 2] = 6
 <p>In digital markdown files:</p>
 <ul>
 <li>Campaign metadata: YAML front matter, top of file</li>
-<li>Campaign title: Level 1 heading</li>
-<li>Sessions: Level 2 headings (<code>## Session 1</code>)</li>
-<li>Turns: <code>[Turn:N]</code> markers within sessions</li>
+<li>Campaign title: level-1 heading</li>
+<li>Sessions: level-2 headings (<code>## Session 1</code>)</li>
+<li>Turns: level-3 headings (<code>### Turn 1</code>)</li>
 <li>Core notation and tracking: inside code blocks</li>
-<li>Report text: regular prose between code blocks</li>
+<li>Commentary: regular prose between code blocks</li>
 </ul>
 <blockquote class="blockquote">
 <p><strong>Note:</strong> Always wrap notation in code blocks when using digital markdown. This prevents conflicts with Markdown syntax and ensures symbols like <code>=&gt;</code> render correctly.</p>
@@ -516,53 +549,58 @@ d: 2d6kh1 [6, 2] = 6
 <p>In paper notebooks:</p>
 <ul>
 <li>Write headers and metadata directly as shown</li>
+<li>Write each turn header on its own line: <code>Turn 1</code></li>
 <li>Core notation works identically but without code fences</li>
-<li>Use the same symbols and structure</li>
 <li>Brackets and tags help scanning paper pages</li>
 </ul>
 </section>
+<section id="indentation" class="level3">
+<h3 class="anchored" data-anchor-id="indentation">2.3 Indentation</h3>
+<p>Indentation carries no meaning, except under a <code>tbl:</code> line, where indented lines are the table’s entries. Indent the <code>act:</code>, <code>out:</code> and <code>lev:</code> lines, and the continuation lines of a long argument, because it makes the log easier to read.</p>
+</section>
 <section id="format-examples" class="level3">
-<h3 class="anchored" data-anchor-id="format-examples">2.3 Format Examples</h3>
+<h3 class="anchored" data-anchor-id="format-examples">2.4 Format Examples</h3>
 <p><strong>Digital:</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Session 1</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Date: 2026-05-01 | Turns: 1–2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>[Turn:1]
-
-@ Meranto
-  act: File debt review against Caldrath's treasury
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Date: 2026-05-01 | Turns: 1–2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">### Turn 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>@(Meranto)
+  act: File a debt review against Caldrath's treasury
   out: Delay army movement thirty days
   lev: Emergency clause, full documentation, precedent established
-[Lev:Strong]
-d: 2d6kh1 [6, 2] = 6
--&gt; Success
-=&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]</code></pre>
+d: Strong 2d6kh1[6,2]=6 -&gt; Success, and...
+=&gt; The army is held at the border
+[Fac:Caldrath|pos:army held at border]
+[Clock:Liquidity Review 1/3]</code></pre>
 <p><strong>Analog:</strong></p>
 <pre><code>Turn 1
 
-@ Meranto
-  act: File debt review against Caldrath's treasury
+@(Meranto)
+  act: File a debt review against Caldrath's treasury
   out: Delay army movement thirty days
   lev: Emergency clause, full documentation, precedent established
-[Lev:Strong]
-d: 2d6kh1 [6, 2] = 6
--&gt; Success
-=&gt; [Fac:Caldrath | pos:army held | Clock:LiquidityReview 1/3]</code></pre>
+d: Strong 2d6kh1[6,2]=6 -&gt; Success, and...
+=&gt; The army is held at the border
+[Fac:Caldrath|pos:army held at border]
+[Clock:Liquidity Review 1/3]</code></pre>
 <p>Both formats use identical notation; only the wrapping differs.</p>
 </section>
 </section>
 <section id="core-notation" class="level2">
 <h2 class="anchored" data-anchor-id="core-notation">3. Core Notation</h2>
-<p>This is the heart of the system. Five elements mirror the natural flow of OSG adjudication: the faction argues its action, the Referee grades leverage, dice decide, and the board changes.</p>
-<section id="faction-actions" class="level3">
-<h3 class="anchored" data-anchor-id="faction-actions">3.1 Faction Actions (<code>@</code>)</h3>
-<p>The <code>@</code> symbol represents a faction submitting its turn action. Every action in OSG follows the same three-part structure:</p>
-<pre><code>@ FactionName
+<p>This is the heart of the system. The elements mirror the natural flow of OSG adjudication: the faction argues its action, the Referee grades leverage, the dice give a verdict, and the board changes.</p>
+<p><strong>Where symbols go.</strong> In the <strong>standard form</strong>, each element (<code>@(…)</code>, <code>?</code>, <code>d:</code>, <code>tbl:</code>, <code>-&gt;</code>, <code>=&gt;</code>) starts its own line, as in the examples below. In the <strong>compact form</strong>, elements follow one another on one line, each symbol preceded by a space. Compact form suits fast play (§3.6).</p>
+<section id="faction-actions-faction" class="level3">
+<h3 class="anchored" data-anchor-id="faction-actions-faction">3.1 Faction Actions (<code>@(Faction)</code>)</h3>
+<p><code>@(Faction)</code> records a faction submitting its turn action. Every action in OSG follows the same three-part structure:</p>
+<pre><code>@(FactionName)
   act: What specifically are they doing?
   out: What result do they want?
   lev: Why is this action likely to produce that outcome?</code></pre>
 <p>The three sub-lines are not optional decoration. They are the argument the Referee adjudicates. <code>act</code> commits the faction to a specific course of conduct. <code>out</code> separates what they are doing from what they want: the Referee adjudicates the outcome, not just the action. <code>lev</code> is the case for why the plan should work, grounded in established fiction: resources, relationships, positioning, prior actions.</p>
 <p><strong>Example: full argument:</strong></p>
-<pre><code>@ Meranto
+<pre><code>@(Meranto)
   act: Send formal notice of debt review to Caldrath's treasury,
        citing the emergency clause in our lending agreements
   out: Delay Caldrath's army movement by forcing a liquidity
@@ -572,214 +610,332 @@ d: 2d6kh1 [6, 2] = 6
        minister knows invoking it freezes discretionary spending for
        thirty days. We hold documentation for every transaction.</code></pre>
 <p><strong>Example: compact (fast play):</strong></p>
-<pre><code>@ Meranto
+<pre><code>@(Meranto)
   act: Invoke emergency debt clause against Caldrath
   out: Freeze army expenditure for one turn
   lev: Full documentation; clause has precedent</code></pre>
 <p>Both are valid. Use the level of detail the game requires.</p>
+<section id="joint-actions-ab" class="level4">
+<h4 class="anchored" data-anchor-id="joint-actions-ab">3.1.1 Joint Actions (<code>@(A+B)</code>)</h4>
+<p>When two or more factions pool their turns into one joint action, name them all, joined by <code>+</code>. The <code>lev:</code> line names each participant’s contribution:</p>
+<pre><code>@(Meranto+Essaveth)
+  act: Close the passes to Caldrath's supply trains and freeze
+       its credit in the same week
+  out: Caldrath's army cannot provision a march on Corenth
+  lev: Essaveth holds the passes; Meranto holds Caldrath's loans</code></pre>
+<p>Lonelog’s Lead/Assist form <code>@(A &gt; B)</code> is not used: an OSG faction either spends its action or does not.</p>
+</section>
 <section id="spendable-bonuses-in-the-argument" class="level4">
-<h4 class="anchored" data-anchor-id="spendable-bonuses-in-the-argument">3.1.1 Spendable Bonuses in the Argument</h4>
-<p>If an action spends a named bonus asset, record the spend inside the leverage line using the <code>[Bon:]</code> tag:</p>
-<pre><code>@ Saivorn
+<h4 class="anchored" data-anchor-id="spendable-bonuses-in-the-argument">3.1.2 Spendable Bonuses in the Argument</h4>
+<p>If an action spends a named bonus, record the spend inside the leverage line, with a <code>[Bon:]</code> tag update (§4.1.2):</p>
+<pre><code>@(Saivorn)
   act: Rush naval assets to the Corenth harbour mouth
   out: Establish a naval blockade before Caldrath can resupply
   lev: Two deep-water ports give unmatched transit speed;
-       [Bon:HarbourRights 1/2 → 0/2] — treaty access to
-       Corenth's outer anchorage invoked</code></pre>
-<p>The bonus tag ticks down at the point of use, visible in the leverage argument where it matters for adjudication.</p>
+       treaty access to Corenth's outer anchorage invoked
+       [Bon:Saivorn|Harbour Rights-1]</code></pre>
+<p>The bonus ticks down at the point of use, visible in the leverage argument where it matters for adjudication.</p>
 </section>
 </section>
-<section id="leverage-grade-lev" class="level3">
-<h3 class="anchored" data-anchor-id="leverage-grade-lev">3.2 Leverage Grade (<code>[Lev:]</code>)</h3>
-<p>Before rolling, the Referee grades the acting faction’s leverage as <strong>Strong</strong> or <strong>Weak</strong> relative to any opposition.</p>
-<p>Record the grade on its own line between the argument and the roll:</p>
-<pre><code>[Lev:Strong]
-[Lev:Weak]</code></pre>
-<p><strong>Strong</strong> means the faction has enough established advantage (resources, relationships, positioning, prior actions) that success is more likely than not.</p>
-<p><strong>Weak</strong> means the attempt is plausible but without a strong basis for expecting success: thin resources, an entrenched opponent, no established presence in the relevant domain.</p>
-<p>The Referee is not scoring a debate. Strong or Weak is a qualitative judgment following from the leverage argument and the established fiction.</p>
-</section>
-<section id="the-dice-mechanic-d" class="level3">
-<h3 class="anchored" data-anchor-id="the-dice-mechanic-d">3.3 The Dice Mechanic (<code>d:</code>)</h3>
-<p>OSG uses <code>2d6kh1</code> (keep highest die) for Strong leverage, <code>2d6kl1</code> (keep lowest die) for Weak leverage.</p>
-<pre><code>d: 2d6kh1 [5, 3] = 5   (Strong)
-d: 2d6kl1 [5, 3] = 3   (Weak)</code></pre>
-<p><strong>Result interpretation:</strong></p>
+<section id="the-roll-d" class="level3">
+<h3 class="anchored" data-anchor-id="the-roll-d">3.2 The Roll (<code>d:</code>)</h3>
+<p>The <code>d:</code> line records the adjudication: the leverage grade, the dice, the kept die, and the verdict.</p>
+<pre><code>d: &lt;Grade&gt; &lt;dice&gt;[&lt;die results&gt;]=&lt;kept&gt; -&gt; &lt;verdict&gt;</code></pre>
+<pre><code>d: Strong 2d6kh1[5,3]=5 -&gt; Success
+d: Weak 2d6kl1[5,3]=3 -&gt; Worse</code></pre>
+<p><strong>The grade is the label.</strong> Strong leverage keeps the highest die (<code>2d6kh1</code>); Weak keeps the lowest (<code>2d6kl1</code>). Strong means the faction has enough established advantage (resources, relationships, positioning, prior actions) that success is more likely than not. Weak means the attempt is plausible but without a strong basis. The Referee is not scoring a debate: the grade is a qualitative judgment following from the argument and the established fiction.</p>
+<p><strong>The verdict</strong> follows <code>-&gt;</code> on the same line:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 19%">
+<col style="width: 4%">
+<col style="width: 66%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Kept die</th>
-<th style="text-align: left;">Outcome</th>
+<th style="text-align: left;">Verdict</th>
+<th style="text-align: left;">Code</th>
+<th style="text-align: left;">Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">Success; something especially good may also occur</td>
+<td style="text-align: left;"><code>Success, and...</code></td>
+<td style="text-align: left;"><code>Sa</code></td>
+<td style="text-align: left;">Desired outcome; something especially good may also occur</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4–5</td>
+<td style="text-align: left;"><code>Success</code></td>
+<td style="text-align: left;"><code>S</code></td>
 <td style="text-align: left;">Desired outcome occurs</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2–3</td>
-<td style="text-align: left;">Action proceeds, but outcome is worse than desired</td>
+<td style="text-align: left;"><code>Worse</code></td>
+<td style="text-align: left;"><code>W</code></td>
+<td style="text-align: left;">Action proceeds, but the outcome is worse than desired</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">Worst outcome; something especially bad may also occur</td>
+<td style="text-align: left;"><code>Worse, and...</code></td>
+<td style="text-align: left;"><code>Wa</code></td>
+<td style="text-align: left;">Worse than desired; something especially bad may occur</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Roll context.</strong> When something specific is active for this roll, such as a bonus, list it before the dice, as Lonelog does: <code>d: Strong +[Debt Clause] 2d6kh1[4,6]=6 -&gt; Success, and...</code>.</p>
+<p><strong>Unopposed actions</strong> have no roll. Record the rule that decided them:</p>
+<pre><code>d: Unopposed -&gt; Success</code></pre>
+<p><strong>Actions in conflict.</strong> When two actions oppose each other directly, record each roll, then the comparison:</p>
+<pre><code>@(Essaveth)
+...
+d: Strong 2d6kh1[3,5]=5 -&gt; Success
+
+@(Caldrath)
+...
+d: Strong 2d6kh1[4,4]=4 -&gt; Success
+
+d: Conflict Essaveth 5 vs Caldrath 4 -&gt; Essaveth prevails
+=&gt; Caldrath's outcome is worse than desired: the gates stay shut</code></pre>
+<p>On a tie: <code>-&gt; Standoff</code>.</p>
 <section id="force-of-nature-doubles" class="level4">
-<h4 class="anchored" data-anchor-id="force-of-nature-doubles">3.3.1 Force of Nature (Doubles)</h4>
-<p>When both dice show the same number, the Referee may introduce a Force of Nature: a chaotic event outside any faction’s control. Record it on its own line:</p>
-<pre><code>d: 2d6 [3, 3]  DOUBLES
-[FoN: harbour storm grounds all sea transit next turn]
-=&gt; All sea transit actions opposed next turn
-=&gt; Saivorn's naval advantage temporarily neutralized</code></pre>
+<h4 class="anchored" data-anchor-id="force-of-nature-doubles">3.2.1 Force of Nature (Doubles)</h4>
+<p>When both dice show the same number, the Referee may introduce a Force of Nature: a chaotic event outside any faction’s control. The die results in brackets show the doubles. Mark the event with an event tag:</p>
+<pre><code>d: Strong 2d6kh1[3,3]=3 -&gt; Worse
+[E:Harbour Storm|Force of Nature]
+=&gt; All sea transit actions are opposed next turn
+=&gt; Saivorn's naval advantage is temporarily neutralized</code></pre>
 <p>The Force of Nature is a prompt, not a requirement. Use it only when it fits the fiction and creates genuine complications, at most once or twice per game.</p>
 </section>
 </section>
-<section id="adjudication-result--" class="level3">
-<h3 class="anchored" data-anchor-id="adjudication-result--">3.4 Adjudication Result (<code>-&gt;</code>)</h3>
-<p>The <code>-&gt;</code> line declares the adjudicated outcome: what actually happened, following from the leverage grade and the dice.</p>
-<pre><code>-&gt; Success
--&gt; Partial success — review opens, but scope is disputed
--&gt; Failure — Corenth does not respond
--&gt; Success, and... Essaveth's garrison stands down unprompted
--&gt; Failure, and... Caldrath learns of the attempt</code></pre>
-<p>The result should pass the RAT check: <strong>Reasonable</strong> (proportionate to the fiction), <strong>Actionable</strong> (leaves something for other factions to respond to), and <strong>Traceable</strong> (points to earlier events). If an outcome fails any of these, rewrite it before moving to consequences.</p>
-</section>
-<section id="consequences-and-board-state" class="level3">
-<h3 class="anchored" data-anchor-id="consequences-and-board-state">3.5 Consequences and Board State (<code>=&gt;</code>)</h3>
-<p>The <code>=&gt;</code> symbol records what changes in the world as a result of the adjudicated outcome: faction positions, contested zones, clock progress, and anything other factions must now contend with.</p>
-<pre><code>=&gt; [Fac:Caldrath | pos:army held at border | Clock:LiquidityReview 1/3]
+<section id="consequences" class="level3">
+<h3 class="anchored" data-anchor-id="consequences">3.3 Consequences (<code>=&gt;</code>)</h3>
+<p>The <code>=&gt;</code> symbol records what the outcome means in the world: what happened, what changed, and what other factions must now contend with. The verdict on the <code>d:</code> line says how well it went; the <code>=&gt;</code> lines say what that looks like.</p>
+<pre><code>d: Strong 2d6kh1[5,3]=5 -&gt; Success
+=&gt; The review opens, but its scope is disputed
 =&gt; Caldrath's chancellor publicly accuses Meranto of bad faith
-=&gt; [Fac:Meranto | pos:diplomatically exposed in Corenth]</code></pre>
-<p>Chain multiple <code>=&gt;</code> lines for cascading effects. Every outcome should leave at least one visible hook for another faction.</p>
+[Fac:Meranto|pos:diplomatically exposed in Corenth]</code></pre>
+<p>Chain multiple <code>=&gt;</code> lines for cascading effects. Every outcome should pass the RAT check: <strong>Reasonable</strong> (proportionate to the fiction), <strong>Actionable</strong> (leaves something for other factions to respond to), and <strong>Traceable</strong> (points to earlier events). If it fails any of these, rewrite it before moving on.</p>
 </section>
-<section id="the-report-block" class="level3">
-<h3 class="anchored" data-anchor-id="the-report-block">3.6 The Report Block</h3>
-<p>At the end of each turn, the Referee publishes a public Report. Record it in a delimited block immediately after the turn’s adjudications:</p>
-<pre><code>
- Meranto's debt clause stalls Caldrath's army at the border.
-    Saivorn's diplomatic overture is rebuffed — and Caldrath now
-    knows. Essaveth has gone quiet. The Conclave has summoned
-    representatives from all factions to the temple complex.
-    Next turn: the question is who arrives first. </code></pre>
-<p>The `<code>delimiters separate the Report narrative from the notation log. The Report is public fiction; everything inside it is known to all factions. Private outcomes not in the Report are logged only in</code>=&gt;` consequence lines inside the relevant faction’s block.</p>
+<section id="the-report-block--------" class="level3">
+<h3 class="anchored" data-anchor-id="the-report-block--------">3.4 The Report Block (<code>\---</code> … <code>---\</code>)</h3>
+<p>At the end of each turn, the Referee publishes a public Report. Record it as a long block, between a <code>\---</code> line and a <code>---\</code> line, immediately after the turn’s adjudications:</p>
+<pre><code>\---
+Meranto's debt clause stalls Caldrath's army at the border.
+Saivorn's diplomatic overture is rebuffed, and Caldrath now
+knows of it. Essaveth has gone quiet. The Conclave has summoned
+representatives from all factions to the temple complex.
+Next turn, the question is who arrives first.
+---\</code></pre>
+<p>The Report is public fiction; everything inside the block is known to all factions. Private outcomes are logged only in <code>=&gt;</code> lines inside the relevant faction’s entry.</p>
+</section>
+<section id="questions-and-tables-tbl" class="level3">
+<h3 class="anchored" data-anchor-id="questions-and-tables-tbl">3.5 Questions and Tables (<code>?</code>, <code>tbl:</code>)</h3>
+<p><code>?</code> asks a question that the fiction has not settled, and <code>tbl:</code> records random content. A Referee uses them for world questions; a solo player uses them constantly (§7).</p>
+<pre><code>? Are the mercenary companies still for hire? (Likely)
+d: 2d6kh1[2,5]=5 -&gt; Yes</code></pre>
+<pre><code>tbl: Mercenary Company (d6) [Grey Lances, Salt Brothers, Grey Lances, Salt Brothers, both, neither]
+tbl: Mercenary Company d6=2 -&gt; Salt Brothers</code></pre>
+<p>As in Lonelog: <code>d:</code> gives a <strong>verdict</strong> (did it work? is it so?), <code>tbl:</code> gives <strong>content</strong> (what? who?).</p>
+</section>
+<section id="compact-form" class="level3">
+<h3 class="anchored" data-anchor-id="compact-form">3.6 Compact Form</h3>
+<p>For fast play, chain the elements on one line:</p>
+<pre><code>@(Caldrath) act: advance on the pass out: occupy it lev: largest army d: Strong 2d6kh1[6,2]=6 -&gt; Sa =&gt; garrison stands down</code></pre>
+<p>Use it for quick turns and minor factions. The full argument stays traceable; it is just shorter.</p>
 </section>
 </section>
 <section id="optional-layers" class="level2">
 <h2 class="anchored" data-anchor-id="optional-layers">4. Optional Layers</h2>
 <section id="persistent-elements" class="level3">
 <h3 class="anchored" data-anchor-id="persistent-elements">4.1 Persistent Elements</h3>
+<p>Tags record state. They <strong>accumulate</strong>: a later tag for the same element adds to what is already known, without restating everything.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Write</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>value</code></td>
+<td style="text-align: left;">Adds a value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>-value</code></td>
+<td style="text-align: left;">Removes a value</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>old&gt;new</code></td>
+<td style="text-align: left;">Replaces one value</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>category:value</code></td>
+<td style="text-align: left;">Replaces what the category held</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>category:+v</code> / <code>category:-v</code></td>
+<td style="text-align: left;">Adds or removes one entry in a category</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Name N</code> / <code>Name+N</code> / <code>Name-N</code></td>
+<td style="text-align: left;">Sets or adjusts a number</td>
+</tr>
+</tbody>
+</table>
+<p>A tag can span several lines: open with <code>[Type:Name</code>, put each <code>| value</code> on its own indented line, and close with <code>]</code> on its own line.</p>
 <section id="faction-tags-fac" class="level4">
 <h4 class="anchored" data-anchor-id="faction-tags-fac">4.1.1 Faction Tags (<code>[Fac:]</code>)</h4>
-<p>Track faction state across turns. Establish at <code>[T0]</code> and update as the board changes.</p>
-<pre><code>[Fac:Meranto | obj:control Corenth debt leverage
-             | pos:agents everywhere, no map token
-             | bon:"Emergency Recall" 1/1, "Debt Clause" 2/2]</code></pre>
-<p>Fields:</p>
+<p>Track faction state across turns. Establish at Turn Zero and update as the board changes.</p>
+<pre><code>[Fac:Meranto
+  | obj:control Corenth debt leverage
+  | pos:agents everywhere, no map token
+]</code></pre>
+<p>Categories:</p>
 <ul>
 <li><code>obj:</code> the faction’s objectives (from the Brief; does not change)</li>
-<li><code>pos:</code> the current position on the board (updates each turn)</li>
-<li><code>bon:</code> spendable bonuses with remaining uses</li>
+<li><code>pos:</code> its current position on the board</li>
 </ul>
-<p>Updating faction state: show only what changed:</p>
-<pre><code>[Fac:Caldrath | pos:army held at border]
-[Fac:Caldrath | pos:pass occupied]
-[Fac:Saivorn  | pos:diplomatically exposed]</code></pre>
+<p>Show only what changed:</p>
+<pre><code>[Fac:Caldrath|pos:army held at border]
+[Fac:Caldrath|pos:army held at border&gt;pass occupied]
+[Fac:Saivorn|pos:+diplomatically exposed]</code></pre>
 </section>
 <section id="spendable-bonuses-bon" class="level4">
 <h4 class="anchored" data-anchor-id="spendable-bonuses-bon">4.1.2 Spendable Bonuses (<code>[Bon:]</code>)</h4>
-<pre><code>[Bon:"Debt Clause" 2/2]      — full, two uses remaining
-[Bon:"Debt Clause" 1/2]      — one use spent
-[Bon:"Debt Clause" 0/2]      — exhausted</code></pre>
+<p>The tag is named for the faction that owns the bonuses; each bonus is a labelled number of remaining uses.</p>
+<pre><code>[Bon:Meranto|Debt Clause 2|Emergency Recall 1]
+[Bon:Meranto|Debt Clause-1]</code></pre>
 <p>A bonus should be contextually bounded: its narrative name indicates when it applies. A spent bonus cannot be recovered.</p>
 </section>
 <section id="npa-tags-npa" class="level4">
 <h4 class="anchored" data-anchor-id="npa-tags-npa">4.1.3 NPA Tags (<code>[NPA:]</code>)</h4>
 <p>For Non-Player Actors controlled by the Referee, track objective, position, and behavior rule:</p>
-<pre><code>[NPA:Conclave | obj:Corenth remains neutral | pos:temple complex
-             | behavior:mediates; escalates if temple threatened]</code></pre>
-<p>NPA actions use <code>@</code> notation identical to player faction actions. The Referee adjudicates them the same way.</p>
+<pre><code>[NPA:Conclave|obj:Corenth remains neutral|pos:temple complex
+  |behavior:mediates; escalates if the temple is threatened]</code></pre>
+<p>NPA actions use <code>@(Name)</code> notation identical to player faction actions. The Referee adjudicates them the same way.</p>
 </section>
 <section id="locations-l" class="level4">
 <h4 class="anchored" data-anchor-id="locations-l">4.1.4 Locations (<code>[L:]</code>)</h4>
 <p>Mark significant locations and their current control state.</p>
-<pre><code>[L:Corenth       | contested | Conclave extraterritorial temple]
-[L:Northern Pass | Caldrath-occupied]
-[L:Harbour Mouth | Saivorn-patrolled]</code></pre>
+<pre><code>[L:Corenth|status:contested|Conclave extraterritorial temple]
+[L:Northern Pass|control:Caldrath]
+[L:Harbour Mouth|control:Saivorn]</code></pre>
 </section>
 <section id="objectives-obj" class="level4">
 <h4 class="anchored" data-anchor-id="objectives-obj">4.1.5 Objectives (<code>[Obj:]</code>)</h4>
-<p>Track each faction’s objectives from the Brief. Mark them at game end for the debrief.</p>
-<pre><code>[Obj:Control Corenth debt leverage      | Open]
-[Obj:Prevent Caldrath military presence | Open]
-[Obj:Isolate Saivorn from Conclave      | Achieved T4]
-[Obj:Preserve Meranto financial network | Failed]</code></pre>
+<p>Track each faction’s objectives from the Brief. An objective holds one state, changed with <code>old&gt;new</code>.</p>
+<pre><code>[Obj:Control Corenth debt leverage|Open]
+[Obj:Prevent Caldrath military presence|Open]
+[Obj:Isolate Saivorn from Conclave|Open&gt;Achieved]
+[Obj:Preserve Meranto financial network|Open&gt;Failed]</code></pre>
 </section>
-<section id="events-and-clocks-e-clock" class="level4">
-<h4 class="anchored" data-anchor-id="events-and-clocks-e-clock">4.1.6 Events and Clocks (<code>[E:]</code>, <code>Clock:</code>)</h4>
-<pre><code>[E:CaldhrathLiquidity | Clock: 1/3]   — Caldrath treasury under review
-[E:ConclaveSummit     | Clock: 0/1]   — imminent
-[E:EssavethResistance | Clock: 2/4]   — building</code></pre>
+<section id="events-and-progress-e-clock-track-timer" class="level4">
+<h4 class="anchored" data-anchor-id="events-and-progress-e-clock-track-timer">4.1.6 Events and Progress (<code>[E:]</code>, <code>[Clock:]</code>, <code>[Track:]</code>, <code>[Timer:]</code>)</h4>
+<p>An event tag marks something notable that happened, a turning point you will want to find again:</p>
+<pre><code>=&gt; The Conclave summons every faction to Corenth [E:Conclave Summit Called]</code></pre>
+<p>Anything that builds up toward a result is a progress tag:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tag</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>[Clock:Name X/Y]</code></td>
+<td style="text-align: left;">Fills up toward a threat</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Track:Name X/Y]</code></td>
+<td style="text-align: left;">Fills up toward a goal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[Timer:Name X]</code></td>
+<td style="text-align: left;">Counts down to zero</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Clock:Name+1]</code></td>
+<td style="text-align: left;">Advances a counter</td>
+</tr>
+</tbody>
+</table>
+<pre><code>[Clock:Caldrath Liquidity 1/3]
+[Track:Essaveth Guarantees 1/2]
+[Timer:Conclave Summit 1]
+[Clock:Caldrath Liquidity+1]</code></pre>
+</section>
+<section id="threads-thread" class="level4">
+<h4 class="anchored" data-anchor-id="threads-thread">4.1.7 Threads (<code>[Thread:]</code>)</h4>
+<p>A thread is an open hook from a Report: something unresolved that a faction may act on.</p>
+<pre><code>[Thread:Meranto agents near the garrison road|Open]
+[Thread:Meranto agents near the garrison road|Open&gt;Closed]</code></pre>
 </section>
 </section>
-<section id="turn-zero-t0" class="level3">
-<h3 class="anchored" data-anchor-id="turn-zero-t0">4.2 Turn Zero (<code>[T0]</code>)</h3>
-<p>Turn Zero is the pre-game clarification session. Log world assumptions, faction setups, and any rulings made before Turn 1 here.</p>
-<pre><code>[T0]
-rule: Unopposed actions succeed; the Referee still determines
-      how they land — every success reshapes the board
-rule: Talking is free — negotiation between factions costs no
-      turn; only what you actually do costs your action
-rule: One action per faction per turn; two things in one
-      action will be returned for revision
-assumption: Caldrath's army is one day's march from Corenth
-            at game start
-assumption: Meranto has no physical presence on the map —
-            leverage only, no tokens
+<section id="turn-zero" class="level3">
+<h3 class="anchored" data-anchor-id="turn-zero">4.2 Turn Zero</h3>
+<p>Turn Zero is the pre-game clarification session. Log world assumptions, faction setups, and any rulings made before Turn 1 under a <code>Turn 0</code> header. Record rulings as meta notes.</p>
+<pre><code>Turn 0
 
-[Fac:Meranto | obj:control Corenth debt leverage
-             | pos:agents everywhere, no map token
-             | bon:"Emergency Recall" 1/1, "Debt Clause" 2/2]
-[NPA:Caldrath  | obj:military dominance of Corenth
-               | pos:army at northern border
-               | behavior:aggressive; moves on Corenth if unopposed by T3]
-[NPA:Saivorn   | obj:secure port access to Corenth
-               | pos:coast, two deep-water ports
-               | behavior:opportunistic if Caldrath weakened]
-[NPA:Essaveth  | obj:preserve pass autonomy
-               | pos:northern passes, small garrison
-               | behavior:defensive; seeks alliance if threatened]
-[NPA:Conclave  | obj:Corenth remains neutral
-               | pos:temple complex, extraterritorial
-               | behavior:mediates; escalates if temple threatened]</code></pre>
+(ruling: unopposed actions succeed; the Referee still decides how
+  they land, and every success reshapes the board)
+(ruling: talking is free; only what a faction does costs its action)
+(ruling: one action per faction per turn; two things in one action
+  are returned for revision)
+(ruling: Caldrath's army is camped at the foot of the northern
+  passes at game start)
+(ruling: Meranto has no physical presence on the map; leverage
+  only, no tokens)
+
+[Fac:Meranto
+  | obj:control Corenth debt leverage
+  | pos:agents everywhere, no map token
+]
+[Bon:Meranto|Debt Clause 2|Emergency Recall 1]
+[NPA:Caldrath|obj:military dominance of Corenth|pos:army at the passes
+  |behavior:aggressive; moves on Corenth if unopposed by Turn 3]
+[NPA:Saivorn|obj:secure port access to Corenth|pos:coast, two ports
+  |behavior:opportunistic if Caldrath is weakened]
+[NPA:Essaveth|obj:preserve pass autonomy|pos:northern passes, small garrison
+  |behavior:defensive; seeks alliance if threatened]
+[NPA:Conclave|obj:Corenth remains neutral|pos:temple, extraterritorial
+  |behavior:mediates; escalates if the temple is threatened]</code></pre>
 </section>
 <section id="meta-notes" class="level3">
 <h3 class="anchored" data-anchor-id="meta-notes">4.3 Meta Notes</h3>
-<p>Step outside the fiction for rulings, design notes, and retrospective annotations.</p>
-<pre><code>(rule: NPA behavior tables rolled before each turn, results private
-       until logged as @ actions)
-(post: Turn 3 reconstructed from notes — dialogue is paraphrased)
-(note: Caldrath player absent Turn 2; NPA holding action used)</code></pre>
+<p>Step outside the fiction for rulings, design notes, and retrospective annotations. Use Lonelog’s labels: <code>note:</code>, <code>house:</code>, <code>ruling:</code>, <code>interp:</code>, <code>retcon:</code>, <code>todo:</code>, <code>question:</code>, <code>reflection:</code>, <code>source:</code>, <code>break:</code>.</p>
+<pre><code>(ruling: NPA behavior tables are rolled before each turn; results stay
+  private until logged as actions)
+(note: Turn 3 reconstructed from notes; dialogue is paraphrased)
+(note: Caldrath player absent Turn 2; NPA holding action used)
+(house: bonuses may be spent on Strong leverage to turn a 4–5 into a 6)</code></pre>
+<p><strong>Corrections.</strong> Do not edit the log silently. Leave the original line and add a <code>retcon:</code> note after it:</p>
+<pre><code>d: Weak 2d6kl1[5,3]=3 -&gt; Worse
+(retcon: leverage should have been Strong: 2d6kh1 keeps 5, Success)</code></pre>
 </section>
 </section>
 <section id="optional-structure" class="level2">
 <h2 class="anchored" data-anchor-id="optional-structure">5. Optional Structure</h2>
 <section id="game-header" class="level3">
 <h3 class="anchored" data-anchor-id="game-header">5.1 Game Header</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> The Corentine Crisis</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span><span class="kw">:</span><span class="at"> Open Strategy Game</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hack</span><span class="kw">:</span><span class="at"> Factionlog</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">turns</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">factions</span><span class="kw">:</span><span class="at"> Meranto, Caldrath, Saivorn, Essaveth, Conclave</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-05-01</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> The Corentine Crisis</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span><span class="kw">:</span><span class="at"> Open Strategy Game</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">notation</span><span class="kw">:</span><span class="at"> Factionlog 0.3.0</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">turns</span><span class="kw">:</span><span class="at"> </span><span class="dv">6</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">factions</span><span class="kw">:</span><span class="at"> Meranto, Caldrath, Saivorn, Essaveth, Conclave</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2026-05-01</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="session-header" class="level3">
 <h3 class="anchored" data-anchor-id="session-header">5.2 Session Header</h3>
@@ -790,55 +946,59 @@ Turns: 1–2
 Recap: Turn Zero complete. Factions established.
        Caldrath is already moving.</code></pre>
 </section>
+<section id="turn-headers" class="level3">
+<h3 class="anchored" data-anchor-id="turn-headers">5.3 Turn Headers</h3>
+<p>Each turn opens with a header: a level-3 heading in digital files, a plain line on paper. Add a short context in asterisks if it helps:</p>
+<pre><code>### Turn 3 *The Corenth summit*</code></pre>
+</section>
 <section id="debrief" class="level3">
-<h3 class="anchored" data-anchor-id="debrief">5.3 Debrief</h3>
-<p>At game end, record each faction’s self-assessment:</p>
-<pre><code>[Debrief]
-Meranto:  Debt Clause delayed Caldrath two turns. Conclave
-          alliance failed. Financial network intact.
-          Obj:1 Achieved | Obj:2 Partial | Obj:3 Failed
+<h3 class="anchored" data-anchor-id="debrief">5.4 Debrief</h3>
+<p>At game end, record each faction’s self-assessment under a <code>Debrief</code> header:</p>
+<pre><code>Debrief
 
-[Obj:Control Corenth debt leverage      | Achieved]
-[Obj:Prevent Caldrath military presence | Partial]
-[Obj:Preserve Meranto financial network | Achieved]</code></pre>
+Meranto: The Debt Clause delayed Caldrath two turns. The Conclave
+  alliance failed. The financial network is intact.
+[Obj:Control Corenth debt leverage|Open&gt;Achieved]
+[Obj:Prevent Caldrath military presence|Open&gt;Partial]
+[Obj:Preserve Meranto financial network|Open&gt;Achieved]</code></pre>
 </section>
 </section>
 <section id="complete-turn-example" class="level2">
 <h2 class="anchored" data-anchor-id="complete-turn-example">6. Complete Turn Example</h2>
 <p>A full multi-faction turn from <em>The Corentine Crisis</em>, Turn 2.</p>
-<pre><code>[Turn:2]
+<pre><code>Turn 2
 
-@ Meranto
-  act: Approach Essaveth privately — offer to underwrite their
+@(Meranto)
+  act: Approach Essaveth privately: offer to underwrite their
        garrison costs in exchange for pass access rights
   out: Establish a quiet alliance before Caldrath occupies the pass
   lev: Essaveth is under military pressure and has no defensive pact.
        Meranto holds their small infrastructure debt. Immediate
-       financial relief — something Caldrath cannot match.
-       [Bon:"Debt Clause" 2/2 → 1/2]
-[Lev:Strong]
-d: 2d6kh1 [4, 6] = 6
--&gt; Success, and... Essaveth accepts — and volunteers intelligence
-   on Caldrath's supply line through the pass
-=&gt; [Fac:Essaveth | pos:quiet Meranto ally | Bon:IntelligenceFile 1/1]
-=&gt; [Fac:Meranto  | pos:pass access secured | bon:"Debt Clause" 1/2]
-=&gt; Essaveth's public posture remains neutral — alliance is secret
+       financial relief, something Caldrath cannot match.
+       [Bon:Meranto|Debt Clause-1]
+d: Strong +[Debt Clause] 2d6kh1[4,6]=6 -&gt; Success, and...
+=&gt; Essaveth accepts, and volunteers intelligence on Caldrath's
+   supply line through the pass
+=&gt; Essaveth's public posture stays neutral; the alliance is secret
+[Fac:Essaveth|pos:quiet Meranto ally]
+[Bon:Essaveth|Intelligence File 1]
+[Fac:Meranto|pos:pass access secured]
 
-@ Caldrath
+@(Caldrath)
   act: Send an envoy to Essaveth demanding right of passage for
        the army, framed as a treaty obligation
   out: Secure legal cover for army movement through the pass
   lev: Largest army on the peninsula; Essaveth owes historical
        obligations from the old compact; the army is already visible
-       at the border — implicit threat requires no elaboration
-[Lev:Strong]
-d: 2d6kh1 [2, 5] = 5
--&gt; Partial success — Essaveth stalls, citing the need for
-   Conclave ratification before any troop movement
-=&gt; [Fac:Caldrath | pos:army delayed at border | Clock:PassNegotiation 1/3]
-=&gt; Caldrath's envoy returns empty-handed — publicly noted
+       at the border, and the implicit threat needs no elaboration
+d: Strong 2d6kh1[2,3]=3 -&gt; Worse
+=&gt; Essaveth stalls, citing the need for Conclave ratification
+   before any troop movement
+=&gt; Caldrath's envoy returns empty-handed, and it is publicly noted
+[Fac:Caldrath|pos:army delayed at border]
+[Clock:Pass Negotiation 1/3]
 
-@ Conclave (NPA)
+@(Conclave)
   act: Issue a formal invitation to all factions for a Corenth
        summit, citing the army movements as a threat to the
        neutral zone
@@ -847,65 +1007,152 @@ d: 2d6kh1 [2, 5] = 5
   lev: Extraterritorial status; all factions have obligations
        under the old treaty; the neutral city gives the Conclave
        standing no other actor can claim
-[Lev:Strong]
-d: 2d6kh1 [3, 5] = 5
--&gt; Success — all factions receive the invitation
-=&gt; [E:ConclaveSummit | Clock: 1/1] — summit is imminent, Turn 3
+d: Strong 2d6kh1[3,5]=5 -&gt; Success
+=&gt; All factions receive the invitation [E:Conclave Summit Called]
 =&gt; Every faction must now decide: attend, refuse, or act before it
+[Timer:Conclave Summit 1]
 
- Caldrath's envoy returns from Essaveth without an answer.
-    The Conclave has summoned all factions to Corenth.
-    The summit will be held next turn. Essaveth has gone quiet.
-    Meranto's agents were seen near the northern pass.
-    The question now is who arrives in Corenth, and how. </code></pre>
+\---
+Caldrath's envoy returns from Essaveth without an answer.
+The Conclave has summoned all factions to Corenth.
+The summit will be held next turn. Essaveth has gone quiet.
+Meranto's agents were seen near the northern pass.
+The question now is who arrives in Corenth, and how.
+---\</code></pre>
 </section>
 <section id="solo-extension" class="level2">
 <h2 class="anchored" data-anchor-id="solo-extension">7. Solo Extension</h2>
-<p>When playing OSG solo (see Part IX of <em>Contested Ground</em> or the Solo OSG rules), the Referee role collapses into the player. Factionlog’s core notation works unchanged; every Autonomous Actor’s action is logged with <code>@</code> notation exactly like a player faction’s. Two additions support solo-specific mechanics.</p>
-<section id="oracle-queries" class="level3">
-<h3 class="anchored" data-anchor-id="oracle-queries">7.1 Oracle Queries (<code>?</code>)</h3>
-<p>Use the <code>?</code> symbol to record any query to a random table or oracle system used to generate an AA’s action or resolve uncertainty:</p>
-<pre><code>? What does Caldrath attempt this turn?
-- NPAAction d6 → 3: Military advance
+<p>When playing OSG solo (see <a href="../docs/solo_mode.html">Contested Ground: Solo Mode</a>), the Referee role collapses into the player. Factionlog’s core notation works unchanged: every Autonomous Actor’s action is logged with <code>@(Name)</code> exactly like a player faction’s. You may write your own faction’s actions with a bare <code>@</code>, as Lonelog does for the primary character; naming it is clearer in a shared log. The additions below cover the solo procedures.</p>
+<section id="oracle-questions" class="level3">
+<h3 class="anchored" data-anchor-id="oracle-questions">7.1 Oracle Questions (<code>?</code>)</h3>
+<p>Put the odds in parentheses at the end of the question. The roll and answer follow in any of Lonelog’s three forms:</p>
+<pre><code>? Are the mercenary companies still for hire? (Likely)
+d: 2d6kh1[2,5]=5 -&gt; Yes
 
-@ Caldrath
-  act: [generated from table result: advance on the pass]
-  ...</code></pre>
-<p>The oracle query is logged so the reasoning behind a generated action is visible when reviewing the record later.</p>
+? Does the road flood? (Even)
+-&gt; No, but... (d6=3)
+
+? Does the Conclave know? (Unlikely)
+-&gt; Nb</code></pre>
+<p>Odds and rolls: <code>(Likely)</code> is <code>2d6kh1</code>, <code>(Even)</code> is <code>d6</code>, <code>(Unlikely)</code> is <code>2d6kl1</code>. The six answers and their codes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Die</th>
+<th style="text-align: left;">Answer</th>
+<th style="text-align: left;">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Yes, and…</td>
+<td style="text-align: left;"><code>Ya</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><code>Y</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Yes, but…</td>
+<td style="text-align: left;"><code>Yb</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">No, but…</td>
+<td style="text-align: left;"><code>Nb</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;"><code>N</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">No, and…</td>
+<td style="text-align: left;"><code>Na</code></td>
+</tr>
+</tbody>
+</table>
+<p>When the grade itself is uncertain, ask about it:</p>
+<pre><code>? Is Caldrath's leverage Strong? (Even)
+-&gt; Yes (d6=5)</code></pre>
 </section>
-<section id="aa-action-tables-tbl" class="level3">
-<h3 class="anchored" data-anchor-id="aa-action-tables-tbl">7.2 AA Action Tables (<code>tbl:</code>)</h3>
-<p>Inline table definitions make the log self-contained:</p>
-<pre><code>tbl: CaldhrathAction d6
-  1 Hold position
-  2 Apply diplomatic pressure
-  3 Military advance
-  4 Economic blockade
-  5 Alliance approach
-  6 Escalate — open aggression
-tbl: CaldhrathAction d6 → 3
-- Military advance</code></pre>
-<p>Define each AA’s action table once at <code>[T0]</code> and reference it by name on subsequent turns.</p>
+<section id="aa-tables-tbl" class="level3">
+<h3 class="anchored" data-anchor-id="aa-tables-tbl">7.2 AA Tables (<code>tbl:</code>)</h3>
+<p>Define each AA’s Action Table once, at Turn Zero, with indented numbered entries:</p>
+<pre><code>tbl: Caldrath Action (d6)
+  1: March a column through the northern passes toward Corenth
+  2: Petition the Conclave to recognize the King as interim Arbiter
+  3: Demand right of passage from [target], backed by the army
+  4: Seize a depot, toll post or road held by [target]
+  5: Hire one of the two mercenary companies
+  6: Formally declare the claim on Essaveth's northern province</code></pre>
+<p>Log each roll as a result, with the target filled in:</p>
+<pre><code>tbl: Caldrath Action d6=3 -&gt; Demand right of passage from Essaveth</code></pre>
+<p>An AA that holds, or acts on a deal obligation, rolls nothing. Say why in a note:</p>
+<pre><code>(note: Meranto holds: Schemer, even turn)
+(note: Meranto acts on its deal with Essaveth instead of rolling)</code></pre>
+<p>Open questions, Signals, Secrets and Inspiration Tables are content, so they are <code>tbl:</code> too:</p>
+<pre><code>tbl: Which Faction (d6) [Caldrath, Meranto, Caldrath, Meranto, Caldrath, Meranto]
+tbl: Which Faction d6=2 -&gt; Meranto
+tbl: Caldrath Signal d6=3 -&gt; Warning
+tbl: Especially Good d6=4 -&gt; Weakens a rival</code></pre>
 </section>
 <section id="rival-tags-rival" class="level3">
 <h3 class="anchored" data-anchor-id="rival-tags-rival">7.3 Rival Tags (<code>[Rival:]</code>)</h3>
-<p>In solo play, use <code>[Rival:]</code> in place of <code>[NPA:]</code> to distinguish AA-driven factions from Referee-controlled NPAs in a hybrid game:</p>
-<pre><code>[Rival:Saivorn | obj:secure port access | pos:coast
-              | behavior:opportunistic if Caldrath weakened]</code></pre>
+<p>Use <code>[Rival:]</code> for AA state: objective, leverage, behavior rule and disposition toward you.</p>
+<pre><code>[Rival:Meranto|obj:turn two factions' debts into leverage|lev:economic
+  |behavior:Schemer|disp:Neutral]
+[Rival:Meranto|disp:Neutral&gt;Open]</code></pre>
+<p>In a hybrid game, <code>[Rival:]</code> distinguishes AA-driven factions from Referee-controlled <code>[NPA:]</code> factions.</p>
+</section>
+<section id="offers-and-deals-deal" class="level3">
+<h3 class="anchored" data-anchor-id="offers-and-deals-deal">7.4 Offers and Deals (<code>[Deal:]</code>)</h3>
+<p>Write the offer as a line of prose, put it to the Oracle, and record the deal:</p>
+<pre><code>Essaveth offers Meranto: passage for its couriers; Meranto delays
+  Caldrath's next war-loan payment by a month
+? Does Meranto accept? (Likely)
+d: 2d6kh1[2,4]=4 -&gt; Yes, but...
+=&gt; Essaveth's toll revenue must clear through Meranto houses
+[Deal:Essaveth/Meranto|passage for couriers|Caldrath loan delayed
+  |tolls through Meranto|status:active|since Turn 1]</code></pre>
+<p>When a deal breaks or ends, change its status:</p>
+<pre><code>[Deal:Essaveth/Meranto|status:active&gt;broken by Meranto, Turn 3]</code></pre>
+</section>
+<section id="standing-secrets-threads-and-the-crisis-clock" class="level3">
+<h3 class="anchored" data-anchor-id="standing-secrets-threads-and-the-crisis-clock">7.5 Standing, Secrets, Threads and the Crisis Clock</h3>
+<pre><code>[Standing:Board|order:Meranto, Caldrath, Essaveth]
+[Secret:Caldrath 2|army pay three months in arrears|status:rumor]
+[Secret:Caldrath 2|status:rumor&gt;confirmed]
+[Thread:The herald's warning|Open]
+[Clock:Crisis 1/4]
+[Clock:Crisis+1]
+=&gt; Blood at the passes [E:Escalation: Blood at the Passes]</code></pre>
+<ul>
+<li><code>[Standing:]</code> lists every faction from Dominant to Exposed. Restate the whole order each turn; the new <code>order:</code> replaces the old.</li>
+<li><code>[Secret:]</code> is named for the faction and the table number. Its status is <code>private</code>, <code>public</code>, <code>rumor</code> or <code>confirmed</code>.</li>
+<li><code>[Thread:]</code> keeps the numbered list of open hooks the solo rules roll on.</li>
+<li>The Crisis Clock is an ordinary <code>[Clock:]</code>. When it reaches an Escalation, mark the event.</li>
+</ul>
 </section>
 </section>
 <section id="best-practices" class="level2">
 <h2 class="anchored" data-anchor-id="best-practices">8. Best Practices</h2>
 <p><strong>Do</strong> write the full three-part argument before recording the leverage grade. The grade follows from the argument, not the other way around.</p>
 <p><strong>Don’t</strong> record a leverage grade and then construct an argument to justify it. The argument is what gets adjudicated.</p>
-<p><strong>Do</strong> log NPA and AA actions with the same <code>@</code> structure as player faction actions, including the full argument.</p>
-<p><strong>Don’t</strong> log faction actions as bare outcomes: <code>@ Caldrath moves army.</code> Without the argument, the log is not traceable.</p>
-<p><strong>Do</strong> let the <code>-&gt;</code> outcome be proportionate and leave a hook. Every result, success or failure, should give at least one other faction something to respond to.</p>
-<p><strong>Don’t</strong> write outcomes that close the fiction: <code>-&gt; Success. Caldrath is defeated.</code> OSG ends after a fixed number of turns, not when one faction is eliminated.</p>
+<p><strong>Do</strong> log NPA and AA actions with the same <code>@(Name)</code> structure as player faction actions, including the full argument.</p>
+<p><strong>Don’t</strong> log faction actions as bare outcomes: <code>@(Caldrath) moves army.</code> Without the argument, the log is not traceable.</p>
+<p><strong>Do</strong> keep the verdict on the <code>d:</code> line and the story in the <code>=&gt;</code> lines. The verdict says how well it went; the consequences say what that looks like.</p>
+<p><strong>Do</strong> let the consequences be proportionate and leave a hook. Every result, success or failure, should give at least one other faction something to respond to.</p>
+<p><strong>Don’t</strong> write outcomes that close the fiction: <code>=&gt; Caldrath is defeated.</code> OSG ends after a fixed number of turns, not when one faction is eliminated.</p>
 <p><strong>Do</strong> tick down <code>[Bon:]</code> tags at the moment of spend, inside the leverage argument where they appear.</p>
 <p><strong>Don’t</strong> track bonuses separately from the argument. The spend is part of the case for why the action should succeed.</p>
 <p><strong>Do</strong> write the Report block in the voice of the public record: what all factions know. Keep private outcomes out of it.</p>
-<p><strong>Don’t</strong> put private intelligence or secret alliance details in the Report block. Log them in <code>=&gt;</code> consequence lines, not in the public summary.</p>
+<p><strong>Don’t</strong> put private intelligence or secret alliance details in the Report block. Log them in <code>=&gt;</code> lines, not in the public summary.</p>
+<p><strong>Do</strong> correct mistakes with a <code>(retcon: …)</code> note after the original line. Never rewrite the log silently.</p>
 </section>
 <section id="quick-reference" class="level2">
 <h2 class="anchored" data-anchor-id="quick-reference">9. Quick Reference</h2>
@@ -913,9 +1160,9 @@ tbl: CaldhrathAction d6 → 3
 <h3 class="anchored" data-anchor-id="core-symbols">Core Symbols</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 53%">
-<col style="width: 38%">
+<col style="width: 13%">
+<col style="width: 45%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -926,73 +1173,131 @@ tbl: CaldhrathAction d6 → 3
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;"><code>@(Name)</code></td>
 <td style="text-align: left;">Faction action (three-part argument)</td>
-<td style="text-align: left;"><code>@ Meranto</code></td>
+<td style="text-align: left;"><code>@(Meranto)</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>d:</code></td>
-<td style="text-align: left;">OSG dice roll (2d6kh1/kl1)</td>
-<td style="text-align: left;"><code>d: 2d6kh1 [4, 6] = 6</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>-&gt;</code></td>
-<td style="text-align: left;">Adjudicated outcome</td>
-<td style="text-align: left;"><code>-&gt; Partial success</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>=&gt;</code></td>
-<td style="text-align: left;">Board-state consequence</td>
-<td style="text-align: left;"><code>=&gt; [Fac:Caldrath \| pos:...]</code></td>
+<td style="text-align: left;"><code>@(A+B)</code></td>
+<td style="text-align: left;">Joint action</td>
+<td style="text-align: left;"><code>@(Meranto+Essaveth)</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>?</code></td>
-<td style="text-align: left;">Oracle query <em>(solo extension)</em></td>
-<td style="text-align: left;"><code>? What does Saivorn attempt?</code></td>
+<td style="text-align: left;">Question, with optional odds</td>
+<td style="text-align: left;"><code>? Does Meranto accept? (Likely)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>d:</code></td>
+<td style="text-align: left;">Roll or rule that gives a <strong>verdict</strong></td>
+<td style="text-align: left;"><code>d: Strong 2d6kh1[4,6]=6 -&gt; Success, and...</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tbl:</code></td>
+<td style="text-align: left;">Random result that gives <strong>content</strong></td>
+<td style="text-align: left;"><code>tbl: Caldrath Action d6=3 -&gt; Demand passage</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>-&gt;</code></td>
+<td style="text-align: left;">Verdict or answer</td>
+<td style="text-align: left;"><code>-&gt; Yes, but... (d6=4)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>=&gt;</code></td>
+<td style="text-align: left;">Consequence</td>
+<td style="text-align: left;"><code>=&gt; The gates stay shut</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\---</code> … <code>---\</code></td>
+<td style="text-align: left;">Report block</td>
+<td style="text-align: left;">see §3.4</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="action-argument" class="level3">
 <h3 class="anchored" data-anchor-id="action-argument">Action Argument</h3>
-<pre><code>@ FactionName
+<pre><code>@(FactionName)
   act: What specifically are they doing?
   out: What result do they want?
   lev: Why is this likely to produce that outcome?
-[Lev:Strong] or [Lev:Weak]
-d: 2d6kh1/kl1 [results] = kept
--&gt; outcome
+d: Strong 2d6kh1[results]=kept -&gt; verdict
 =&gt; consequence</code></pre>
 </section>
-<section id="dice-results" class="level3">
-<h3 class="anchored" data-anchor-id="dice-results">Dice Results</h3>
+<section id="verdicts" class="level3">
+<h3 class="anchored" data-anchor-id="verdicts">Verdicts</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Kept die</th>
-<th style="text-align: left;">Outcome</th>
+<th style="text-align: left;">Verdict</th>
+<th style="text-align: left;">Code</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">6</td>
-<td style="text-align: left;">Success, and… (something especially good may occur)</td>
+<td style="text-align: left;">Success, and…</td>
+<td style="text-align: left;"><code>Sa</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">4–5</td>
-<td style="text-align: left;">Desired outcome occurs</td>
+<td style="text-align: left;">Success</td>
+<td style="text-align: left;"><code>S</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2–3</td>
-<td style="text-align: left;">Outcome worse than desired</td>
+<td style="text-align: left;">Worse</td>
+<td style="text-align: left;"><code>W</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">Failure, and… (something especially bad may occur)</td>
+<td style="text-align: left;">Worse, and…</td>
+<td style="text-align: left;"><code>Wa</code></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Doubles</td>
-<td style="text-align: left;">Potential Force of Nature</td>
+<td style="text-align: left;">Possible Force of Nature: <code>[E:Name\|Force of Nature]</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No roll</td>
+<td style="text-align: left;"><code>d: Unopposed -&gt; Success</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conflict</td>
+<td style="text-align: left;"><code>d: Conflict A 5 vs B 4 -&gt; A prevails</code> / <code>-&gt; Standoff</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="oracle-solo" class="level3">
+<h3 class="anchored" data-anchor-id="oracle-solo">Oracle (solo)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Odds</th>
+<th style="text-align: left;">Roll</th>
+<th style="text-align: left;">Answers (6 to 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>(Likely)</code></td>
+<td style="text-align: left;"><code>2d6kh1</code></td>
+<td style="text-align: left;"><code>Ya</code> <code>Y</code> <code>Yb</code> <code>Nb</code> <code>N</code> <code>Na</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>(Even)</code></td>
+<td style="text-align: left;"><code>d6</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>(Unlikely)</code></td>
+<td style="text-align: left;"><code>2d6kl1</code></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
@@ -1002,8 +1307,8 @@ d: 2d6kh1/kl1 [results] = kept
 <table class="caption-top table">
 <colgroup>
 <col style="width: 28%">
-<col style="width: 26%">
-<col style="width: 45%">
+<col style="width: 28%">
+<col style="width: 42%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1014,59 +1319,107 @@ d: 2d6kh1/kl1 [results] = kept
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>[Fac:Name \| ...]</code></td>
+<td style="text-align: left;"><code>[Fac:Name\|...]</code></td>
 <td style="text-align: left;">Faction state</td>
-<td style="text-align: left;"><code>[Fac:Meranto \| pos:...]</code></td>
+<td style="text-align: left;"><code>[Fac:Meranto\|pos:pass access secured]</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>[NPA:Name \| ...]</code></td>
+<td style="text-align: left;"><code>[Bon:Owner\|Bonus N]</code></td>
+<td style="text-align: left;">Spendable bonuses</td>
+<td style="text-align: left;"><code>[Bon:Meranto\|Debt Clause-1]</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[NPA:Name\|...]</code></td>
 <td style="text-align: left;">NPA state</td>
-<td style="text-align: left;"><code>[NPA:Conclave \| behavior:...]</code></td>
+<td style="text-align: left;"><code>[NPA:Conclave\|behavior:...]</code></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>[Rival:Name \| ...]</code></td>
+<tr class="even">
+<td style="text-align: left;"><code>[Rival:Name\|...]</code></td>
 <td style="text-align: left;">AA state <em>(solo)</em></td>
-<td style="text-align: left;"><code>[Rival:Caldrath \| behavior:...]</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>[Lev:Strong/Weak]</code></td>
-<td style="text-align: left;">Leverage grade</td>
-<td style="text-align: left;"><code>[Lev:Strong]</code></td>
+<td style="text-align: left;"><code>[Rival:Caldrath\|disp:Hostile]</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>[Bon:Name N/max]</code></td>
-<td style="text-align: left;">Spendable bonus</td>
-<td style="text-align: left;"><code>[Bon:"Debt Clause" 1/2]</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>[Obj:... \| state]</code></td>
+<td style="text-align: left;"><code>[Obj:Name\|state]</code></td>
 <td style="text-align: left;">Faction objective</td>
-<td style="text-align: left;"><code>[Obj:Isolate Saivorn \| Achieved T4]</code></td>
+<td style="text-align: left;"><code>[Obj:Isolate Saivorn\|Open&gt;Achieved]</code></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><code>[L:Name \| ...]</code></td>
+<tr class="even">
+<td style="text-align: left;"><code>[L:Name\|...]</code></td>
 <td style="text-align: left;">Location state</td>
-<td style="text-align: left;"><code>[L:Corenth \| contested]</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>[E:Name \| Clock: X/Y]</code></td>
-<td style="text-align: left;">Event / clock</td>
-<td style="text-align: left;"><code>[E:ConclaveSummit \| Clock: 1/1]</code></td>
+<td style="text-align: left;"><code>[L:Corenth\|status:contested]</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>[Turn:N]</code></td>
-<td style="text-align: left;">Turn marker</td>
-<td style="text-align: left;"><code>[Turn:3]</code></td>
+<td style="text-align: left;"><code>[E:Name]</code></td>
+<td style="text-align: left;">Notable event</td>
+<td style="text-align: left;"><code>[E:Conclave Summit Called]</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>[T0]</code></td>
-<td style="text-align: left;">Turn Zero block</td>
-<td style="text-align: left;"><code>[T0]</code></td>
+<td style="text-align: left;"><code>[Clock:Name X/Y]</code></td>
+<td style="text-align: left;">Progress toward a threat</td>
+<td style="text-align: left;"><code>[Clock:Crisis 1/4]</code></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><code>[Debrief]</code></td>
+<td style="text-align: left;"><code>[Track:Name X/Y]</code></td>
+<td style="text-align: left;">Progress toward a goal</td>
+<td style="text-align: left;"><code>[Track:Essaveth Guarantees 1/2]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Timer:Name X]</code></td>
+<td style="text-align: left;">Countdown</td>
+<td style="text-align: left;"><code>[Timer:Conclave Summit 1]</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[Thread:Name\|state]</code></td>
+<td style="text-align: left;">Open hook</td>
+<td style="text-align: left;"><code>[Thread:The herald's warning\|Open]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Deal:A/B\|...]</code></td>
+<td style="text-align: left;">Deal with an AA <em>(solo)</em></td>
+<td style="text-align: left;"><code>[Deal:Essaveth/Meranto\|status:active]</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[Secret:Name N\|...]</code></td>
+<td style="text-align: left;">Uncovered secret <em>(solo)</em></td>
+<td style="text-align: left;"><code>[Secret:Caldrath 2\|status:rumor]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Standing:Board\|order:...]</code></td>
+<td style="text-align: left;">Faction ranking <em>(solo)</em></td>
+<td style="text-align: left;"><code>[Standing:Board\|order:Meranto, Caldrath]</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="structure-and-meta" class="level3">
+<h3 class="anchored" data-anchor-id="structure-and-meta">Structure and Meta</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>### Turn N</code></td>
+<td style="text-align: left;">Turn header (digital); <code>Turn N</code> on paper</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Turn 0</code></td>
+<td style="text-align: left;">Turn Zero</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Debrief</code></td>
 <td style="text-align: left;">End-of-game assessment</td>
-<td style="text-align: left;"><code>[Debrief]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>(label: text)</code></td>
+<td style="text-align: left;">Meta note: <code>note:</code>, <code>ruling:</code>, <code>house:</code>, <code>retcon:</code>, …</td>
 </tr>
 </tbody>
 </table>
@@ -1075,31 +1428,119 @@ d: 2d6kh1/kl1 [results] = kept
 <section id="faq" class="level2">
 <h2 class="anchored" data-anchor-id="faq">10. FAQ</h2>
 <p><strong>Q: Does every submitted action need to be logged in full?</strong> A: Yes, always, but compact form is fine for fast play. <code>act/out/lev</code> can each be a single line. What matters is that all three are present. The leverage line is what gets graded; without it, the adjudication has no record.</p>
-<p><strong>Q: How do I log an Unopposed action?</strong> A: Write the <code>@</code> block and the <code>=&gt;</code> consequence normally; omit the <code>[Lev:]</code> grade and <code>d:</code> roll. Mark the outcome as Unopposed if clarity requires it:</p>
-<pre><code>@ Meranto
+<p><strong>Q: How do I log an Unopposed action?</strong> A: Write the <code>@(Name)</code> block normally, then record the rule instead of a roll:</p>
+<pre><code>@(Meranto)
   act: Establish a courier network across the eastern provinces
   out: Ensure private message delivery regardless of road conditions
   lev: Existing agent network; no competing faction present
--&gt; Unopposed — network established
-=&gt; [Fac:Meranto | pos:eastern courier network active]</code></pre>
-<p><strong>Q: How do I handle a faction that drops out mid-game?</strong> A: Convert them to an NPA. Add a <code>behavior:</code> field to their tag and note the transition:</p>
-<pre><code>[NPA:Essaveth | pos:occupied | behavior:passive; holds position
-             | note: player absent from T4, NPA from T4]</code></pre>
-<p><strong>Q: Can I use Factionlog for a game I’m running as Referee, not playing in?</strong> A: Yes. That is the primary use case. All <code>@</code> blocks log submitted actions as the Referee received them. The Referee’s own reasoning is recorded in the <code>[Lev:]</code> grade and <code>-&gt;</code> outcome lines.</p>
+d: Unopposed -&gt; Success
+=&gt; The network is running by the end of the month
+[Fac:Meranto|pos:+eastern courier network]</code></pre>
+<p><strong>Q: How do I handle a faction that drops out mid-game?</strong> A: Convert it to an NPA. Add a <code>behavior:</code> category to its tag and note the transition:</p>
+<pre><code>[NPA:Essaveth|pos:occupied|behavior:passive; holds position]
+(note: Essaveth player absent from Turn 4; run as an NPA from Turn 4)</code></pre>
+<p><strong>Q: Can I use Factionlog for a game I’m running as Referee, not playing in?</strong> A: Yes. That is the primary use case. All <code>@(Name)</code> blocks log submitted actions as the Referee received them. The Referee’s own reasoning is recorded in the grade on the <code>d:</code> line and in the <code>=&gt;</code> lines.</p>
 <p><strong>Q: Does Factionlog work with any OSG scenario?</strong> A: Yes. The notation is system-agnostic within the OSG framework: it assumes the three-part action structure, the <code>2d6kh1</code>/<code>2d6kl1</code> mechanic, and the turn/report cycle. Scenario-specific mechanics (spendable bonuses, NPAs, maps) are all optional layers.</p>
 <p><strong>Q: How does Factionlog relate to Lonelog add-ons?</strong> A: Factionlog is a fork, not an add-on. It replaces the solo character-action model entirely. Lonelog add-ons (Combat, Dungeon Crawling, Resource Tracking) are not designed for faction-scale play and are not compatible with Factionlog without adaptation.</p>
+<p><strong>Q: My logs use the Factionlog 0.2 forms. Are they still valid?</strong> A: Yes. Old logs stay readable; Appendix A lists each older form with its current equivalent.</p>
+</section>
+<section id="appendix-a-migrating-from-factionlog-0.2" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-a-migrating-from-factionlog-0.2">Appendix A: Migrating from Factionlog 0.2</h2>
+<p>Factionlog 0.3 follows Lonelog v1.7. These 0.2 forms remain readable, with the meaning shown on the right.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Factionlog 0.2</th>
+<th style="text-align: left;">Factionlog 0.3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>@ Meranto</code></td>
+<td style="text-align: left;"><code>@(Meranto)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Lev:Strong]</code> on its own line, then <code>d: 2d6kh1 [5, 3] = 5</code></td>
+<td style="text-align: left;"><code>d: Strong 2d6kh1[5,3]=5 -&gt; Success</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>-&gt; Partial success: ...</code> on its own line after a roll</td>
+<td style="text-align: left;">The verdict on the <code>d:</code> line; the detail in <code>=&gt;</code> lines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>-&gt; Unopposed: ...</code></td>
+<td style="text-align: left;"><code>d: Unopposed -&gt; Success</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[FoN: storm]</code></td>
+<td style="text-align: left;"><code>[E:Storm\|Force of Nature]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[E:Name \| Clock: X/Y]</code></td>
+<td style="text-align: left;"><code>[Clock:Name X/Y]</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[Bon:"Debt Clause" 1/2]</code></td>
+<td style="text-align: left;"><code>[Bon:Meranto\|Debt Clause 1]</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>bon:</code> inside <code>[Fac:]</code></td>
+<td style="text-align: left;">A separate <code>[Bon:Owner\|...]</code> tag</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[Fac:Name \| pos:...]</code> (spaces, aligned continuation lines)</td>
+<td style="text-align: left;"><code>[Fac:Name\|pos:...]</code>; multi-line tags close with <code>]</code> on its own line</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Obj:Name \| Achieved T4]</code></td>
+<td style="text-align: left;"><code>[Obj:Name\|Open&gt;Achieved]</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[T0]</code>, <code>[Turn:N]</code></td>
+<td style="text-align: left;"><code>Turn 0</code>, <code>Turn N</code> headers</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[Debrief]</code></td>
+<td style="text-align: left;"><code>Debrief</code> header</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>rule:</code> and <code>assumption:</code> lines</td>
+<td style="text-align: left;"><code>(ruling: …)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>(post: …)</code></td>
+<td style="text-align: left;"><code>(note: …)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tbl: Name d6</code> with unnumbered entries</td>
+<td style="text-align: left;"><code>tbl: Name (d6)</code> with <code>1:</code> … <code>6:</code> entries</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>tbl: Name d6 → 3</code> and a <code>- result</code> line</td>
+<td style="text-align: left;"><code>tbl: Name d6=3 -&gt; result</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>? What does Caldrath attempt?</code> with a <code>- result</code> line</td>
+<td style="text-align: left;"><code>tbl: Caldrath Action d6=3 -&gt; result</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="credits-license" class="level2">
 <h2 class="anchored" data-anchor-id="credits-license">Credits &amp; License</h2>
 <p>© 2026 Roberto Bisceglie</p>
-<p>Factionlog is forked from Lonelog v1.4.0 by Roberto Bisceglie. It shares Lonelog’s core philosophy, tag system, and structural conventions, adapted for Open Strategy Game play.</p>
+<p>Factionlog is forked from Lonelog v1.7.0 by Roberto Bisceglie. It shares Lonelog’s core philosophy, symbols, tag system, and structural conventions, adapted for Open Strategy Game play.</p>
 <p>The Open Strategy Game format was defined by Chris McDowall, originating in the Matrix Game tradition established by Chris Engle and Tom Mouat. This document draws on the practice and analysis of Chris McDowall and Sam Doebler.</p>
 <p>Version History:</p>
 <ul>
+<li>v 0.3.0 Rebased on Lonelog v1.7.0: <code>@(Faction)</code> actions and <code>@(A+B)</code> joint actions; verdict on the <code>d:</code> line with the leverage grade as label; <code>Sa</code>/<code>S</code>/<code>W</code>/<code>Wa</code> codes; unopposed and conflict rolls; <code>[Clock:]</code>, <code>[Track:]</code>, <code>[Timer:]</code>, <code>[Thread:]</code>; accumulating tags with <code>old&gt;new</code>; owner-named <code>[Bon:]</code>; turn headers; labelled meta notes and retcons; Report as a <code>\---</code> … <code>---\</code> long block; compact form. Solo extension aligned with <em>Contested Ground: Solo Mode</em> (Oracle odds and answer codes, Offers and Deals, Standing, Signals, Secrets). Appendix A: migration from 0.2.</li>
 <li>v 0.2.0 Reframed as Referee session log; solo extension moved to §7</li>
 <li>v 0.1.0 Initial draft</li>
 </ul>
-<p>This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. Session logs and play records created using this notation are your own work and are not subject to this license.</p>
 
 
 </section>
@@ -1127,15 +1568,50 @@ document.addEventListener("DOMContentLoaded", function () {
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1214,7 +1690,8 @@ document.addEventListener("DOMContentLoaded", function () {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1223,8 +1700,69 @@ document.addEventListener("DOMContentLoaded", function () {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1238,6 +1776,7 @@ document.addEventListener("DOMContentLoaded", function () {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1400,44 +1939,54 @@ document.addEventListener("DOMContentLoaded", function () {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1535,6 +2084,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 <footer class="footer">
